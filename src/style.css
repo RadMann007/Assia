@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Clemente';
+  src: url('/fonts/ClementePDaj-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clemente';
+  src: url('/fonts/ClementePDam-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clemente';
+  src: url('/fonts/ClementePDaq-UltraBold.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
