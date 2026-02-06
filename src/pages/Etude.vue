@@ -1,10 +1,7 @@
 <template>
   <div class="font-clemente bg-[#F9FDF9] min-h-screen overflow-x-hidden text-slate-800">
-    <NavBar />
+    <!-- <NavBar /> -->
     <section class="relative py-20 px-6 max-w-7xl mx-auto flex flex-col items-center">
-      <h2 class="title-green text-3xl md:text-6xl text-center mb-12 uppercase font-black leading-tight">
-        Tout en considérant <br> les enjeux environnementaux
-      </h2>
       
       <div class="env-image-container w-full max-w-5xl rounded-[40px] overflow-hidden shadow-2xl mb-12 border-[12px] border-white">
         <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2026&auto=format&fit=crop" 
@@ -61,9 +58,9 @@
     </section>
 
     <section class="py-20 px-6 max-w-5xl mx-auto text-center">
-      <div class="waste-content space-y-12 opacity-0">
+      <div ref="textRevealContainer" class="waste-content space-y-12 opacity-0">
         <p class="text-xl md:text-3xl leading-relaxed text-slate-700">
-          Nous tendons vers le <span class="text-[#64C27D] font-black">0 déchet</span> et alimentons chaque jour le <span class="text-[#64C27D] font-black">compost</span> de La Turbine, qui est notre pépinière bien implantée dans son territoire, à Cergy.
+          <span class="reveal-word">Nous</span> <span class="reveal-word">tendons</span> <span class="reveal-word">vers</span> <span class="reveal-word">le</span> <span class="reveal-word text-[#64C27D] font-black">0</span> <span class="reveal-word text-[#64C27D] font-black">déchet</span> <span class="reveal-word">et</span> <span class="reveal-word">alimentons</span> <span class="reveal-word">chaque</span> <span class="reveal-word">jour</span> <span class="reveal-word">le</span> <span class="reveal-word text-[#64C27D] font-black">compost</span> <span class="reveal-word">de</span> <span class="reveal-word">La</span> <span class="reveal-word">Turbine,</span> <span class="reveal-word">qui</span> <span class="reveal-word">est</span> <span class="reveal-word">notre</span> <span class="reveal-word">pépinière</span> <span class="reveal-word">bien</span> <span class="reveal-word">implantée</span> <span class="reveal-word">dans</span> <span class="reveal-word">son</span> <span class="reveal-word">territoire,</span> <span class="reveal-word">à</span> <span class="reveal-word">Cergy.</span>
         </p>
         <p class="text-xl md:text-3xl leading-relaxed text-slate-700">
           Où nous rapprochons l’emploi des territoires, et nos collaborateurs habitant dans d’autres régions sont en télétravail. Cette organisation permet de <span class="text-[#64C27D] font-black">limiter les déplacements professionnels</span>, majoritairement réalisés à vélo ou en transports en commun.
@@ -109,14 +106,18 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref, nextTick } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import NavBar from '../components/NavBar.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
-onMounted(() => {
+const textRevealContainer = ref(null);
+
+onMounted(async () => {
+  await nextTick();
+  
   // Animation titre
   gsap.from(".title-green", { y: 60, opacity: 0, duration: 1, ease: "power3.out" });
 
@@ -128,17 +129,43 @@ onMounted(() => {
 
   // Cartes
   gsap.from(".eco-card", {
-    scrollTrigger: { trigger: ".eco-card", start: "top 90%", scrub: 1 },
-    y: 80, opacity: 0, stagger: 0.2
+    scrollTrigger: { trigger: ".eco-card", start: "top 85%", end: "top 30%", scrub: 1 },
+    y: 100, 
+    opacity: 0, 
+    rotationX: 15,
+    scale: 0.9,
+    stagger: 0.3,
+    ease: "power2.out"
   });
 
   // Magie Opère
   const magicTl = gsap.timeline({
-    scrollTrigger: { trigger: ".magic-text", start: "top 80%", end: "bottom 20%", scrub: 1.5 }
+    scrollTrigger: { 
+      trigger: ".magic-text", 
+      start: "top 80%", 
+      end: "bottom 30%", 
+      scrub: 1.2 
+    }
   });
-  magicTl.from(".magic-text", { x: -100, opacity: 0 })
-         .from(".magic-img-1", { x: 200, opacity: 0 }, "-=1")
-         .from(".magic-img-2", { y: 50, opacity: 0 }, "-=0.5");
+  
+  magicTl.from(".magic-text h2", { 
+    y: 100, 
+    opacity: 0, 
+    skewY: 10,
+    duration: 1.5 
+  })
+  .from(".magic-img-1", { 
+    scale: 0.8, 
+    opacity: 0, 
+    x: 100,
+    duration: 1.5 
+  }, "-=1")
+  .from(".magic-img-2", { 
+    scale: 0.5, 
+    opacity: 0, 
+    y: 100,
+    duration: 1.5 
+  }, "-=1.2");
 
   // Texte Déchets
   gsap.to(".waste-content", {
@@ -157,6 +184,29 @@ onMounted(() => {
     scrollTrigger: { trigger: ".map-container", start: "top 70%" },
     scale: 0, stagger: 0.5, ease: "back.out(3)", duration: 1.2
   });
+
+  // ANIMATION DE TEXTE RÉVÉLATION AU SCROLL
+  const textWords = document.querySelectorAll('.reveal-word');
+  if (textWords.length > 0) {
+    gsap.set(textWords, { opacity: 0.15 });
+    
+    const textTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: textRevealContainer.value,
+        start: "top 80%",
+        end: "top 30%",
+        scrub: 1,
+      }
+    });
+    
+    textWords.forEach((word, i) => {
+      textTl.to(word, {
+        opacity: 1,
+        duration: 0.1,
+        ease: "power2.out"
+      }, i * 0.03);
+    });
+  }
 });
 </script>
 

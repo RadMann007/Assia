@@ -1,27 +1,40 @@
 <template>
   <nav 
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-6"
-    :class="[
-      isScrolled ? 'py-3 bg-white/90 backdrop-blur-md shadow-md' : 'py-6 bg-transparent'
-    ]"
+    :class="[currentPath === '/application' ? 'py-3 bg-[#ff925c] backdrop-blur-md shadow-md' : 'py-3 bg-[#00A3B5] backdrop-blur-md shadow-md']"
+
   >
     <div class="container mx-auto flex items-center justify-between">
       
       <!-- LOGO -->
-      <a href="/" class="logo font-display text-2xl font-black uppercase tracking-tighter flex items-center gap-2 transition-transform hover:scale-105"
-         :class="isScrolled ? 'text-[#00A3B5]' : 'text-[#00A3B5] md:text-white'">
-         <!-- NOTE: J'ai mis md:text-white pour que le logo soit blanc sur grand écran quand on est en haut (sur le fond orange), 
-              et bleu quand on scrolle. Si vos autres pages ont un fond blanc en haut, mettez juste text-[#00A3B5] partout. -->
-        edossah
+      <a href="/" class="logo flex items-center gap-2 transition-transform hover:scale-105">
+        <img v-if="currentPath === '/application'" 
+             src="/logo/LogoAssia.png" 
+             alt="Assia" 
+             class="h-10 w-auto" />
+        <img v-else 
+             src="/logo/LogoEdossah.png" 
+             alt="Edossah" 
+             class="h-10 w-auto" />
       </a>
 
       <!-- MENU DESKTOP -->
-      <ul class="hidden md:flex items-center gap-1 font-display font-black uppercase text-[12px] tracking-widest border-2 border-[#00A3B5] p-1.5 rounded-full bg-white/50 backdrop-blur-sm text-[#00A3B5] shadow-sm">
+      <ul 
+        class="hidden md:flex items-center gap-1 font-display font-black uppercase text-[12px] tracking-widest p-1.5 rounded-xl backdrop-blur-sm shadow-sm border-2 transition-colors duration-300"
+        :class="[
+          currentPath === '/application' 
+            ? 'border-[#ff925c] bg-white text-[#ff925c]' 
+            : 'border-[#00A3B5] bg-white text-[#00A3B5]'
+        ]"
+      >
         
-        <!-- On vérifie si currentPath est égal à l'url du lien pour activer la couleur -->
         <a v-for="(link, index) in links" :key="index" :href="link.url"
-           class="px-5 py-2.5 rounded-full cursor-pointer transition-all duration-300 hover:bg-[#00A3B5] hover:text-white"
-           :class="{ 'bg-[#00A3B5] text-white': currentPath === link.url }">
+           class="px-5 py-2.5 rounded-lg cursor-pointer transition-all duration-300"
+           :class="[
+             currentPath === '/application'
+               ? (currentPath === link.url ? 'bg-[#ff925c] text-white' : 'hover:bg-[#ff925c] hover:text-white')
+               : (currentPath === link.url ? 'bg-[#00A3B5] text-white' : 'hover:bg-[#00A3B5] hover:text-white')
+           ]">
            {{ link.name }}
         </a>
 
@@ -30,8 +43,14 @@
       <!-- ACTION & MOBILE -->
       <div class="flex items-center gap-4">
         <!-- BOUTON CONTACT -->
-        <a href="/contact" class="hidden md:block bg-[#FF9F6F] text-white px-8 py-3 font-bold rounded-full hover:bg-[#ff8f5a] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 uppercase text-xs tracking-wider">
-          Contact
+        <a href="/contact" 
+           class="hidden md:block text-white px-8 py-3 font-bold rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 uppercase text-xs tracking-wider"
+           :class="[
+             currentPath !== '/application' 
+               ? 'bg-[#008d9d] hover:bg-[#00A3B5]' 
+               : 'bg-[#e07b48] hover:bg-[#ff925c]'
+           ]">
+          Demander une démo
         </a>
 
         <!-- BURGER MENU (MOBILE) -->
@@ -49,11 +68,15 @@
       <div v-if="isMobileMenuOpen" class="absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl flex flex-col p-6 gap-4 md:hidden">
         <a v-for="(link, index) in links" :key="index" :href="link.url" 
            class="font-display font-black uppercase text-sm text-center py-3 border-b border-gray-100 transition-colors"
-           :class="currentPath === link.url ? 'text-[#FF9F6F]' : 'text-[#00A3B5] hover:text-[#FF9F6F]'">
+           :class="currentPath === link.url ? 'text-[#ff925c]' : 'text-[#00A3B5] hover:text-[#ff925c]'">
           {{ link.name }}
         </a>
-        <a href="/contact" class="bg-[#FF9F6F] text-white w-full py-4 font-bold rounded-xl uppercase tracking-widest mt-2">
-          Contact
+        <a href="/contact" 
+           class="text-white w-full py-4 font-bold rounded-xl uppercase tracking-widest mt-2"
+           :class="[
+             currentPath === '/' ? 'bg-[#00A3B5]' : 'bg-[#ff925c]'
+           ]">
+          Demander une démo
         </a>
       </div>
     </transition>
@@ -71,8 +94,8 @@ const currentPath = ref('/'); // Par défaut '/'
 const links = [
   { name: 'Accueil', url: '/' },
   { name: 'Assia', url: '/application' },
-  { name: 'Études de cas', url: '/etude' },
-  { name: 'Actualités', url: '/actus' },
+  { name: 'Actualités', url: '/articles' },
+  { name: 'Contact', url: '/contact' },
 ];
 
 const handleScroll = () => {

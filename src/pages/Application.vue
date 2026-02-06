@@ -1,35 +1,54 @@
 <template>
-  <div class="main bg-white font-body min-h-screen selection:bg-orange-400 selection:text-white overflow-x-hidden" ref="mainContainer">
+  <div class="main bg-white font-body min-h-screen selection:bg-[#ff925c] selection:text-white overflow-x-hidden" ref="mainContainer">
     
+    <!-- LOADER AVEC LOGO ASSIA -->
+    <div ref="loader" class="fixed inset-0 bg-[#ff925c] z-[100] flex items-center justify-center">
+      <div class="relative text-center">
+        <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
+          <span class="text-6xl md:text-8xl font-bold tracking-tighter">ASSIA</span>
+        </div>
+        <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
+          L'application métier du social
+        </div>
+        <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
+      </div>
+    </div>
+
     <NavBar />
 
     <!-- 1. SECTION HERO -->
-    <section class="relative font-clemente min-h-screen bg-orange-400 pt-32 pb-20 px-6 rounded-b-[80px] flex flex-col items-center justify-center text-white text-center overflow-hidden">
-      <div class="flex flex-wrap justify-center items-center gap-6 mb-12">
-        <div class="hero-card-left bg-white text-orange-400 p-8 md:p-12 rounded-[40px] shadow-2xl">
-          <h2 class="text-3xl md:text-5xl font-black uppercase leading-tight">À la croisée de<br>l'expertise de l'AHI</h2>
+    <section class="relative font-clemente min-h-screen bg-[#ff925c] pt-32 pb-20 px-0 flex flex-col items-center justify-center text-white text-center overflow-hidden">
+      <!-- Container stretches to edges -->
+      <div class="w-full flex flex-col md:flex-row justify-center items-stretch gap-0 mb-16 relative z-10">
+        <div class="hero-card-left flex-1 bg-white text-[#ff925c] p-10 md:p-16 rounded-r-[60px] md:rounded-r-[80px] rounded-l-none shadow-none">
+          <h2 class="text-4xl md:text-6xl font-black uppercase leading-none tracking-tight">À la croisée de<br>l'expertise de l'AHI</h2>
         </div>
-        <span class="hero-ampersand text-6xl font-display font-black">&</span>
-        <div class="hero-card-right bg-white text-orange-400 p-8 md:p-12 rounded-[40px] shadow-2xl">
-          <h2 class="text-3xl md:text-5xl font-black uppercase leading-tight">De la<br>technologie</h2>
+        
+        <div class="hero-ampersand-container flex items-center justify-center px-6 md:px-12 py-4 z-20">
+          <span class="hero-ampersand text-6xl md:text-8xl font-display font-black text-white">&</span>
+        </div>
+
+        <div class="hero-card-right flex-1 bg-white text-[#ff925c] p-10 md:p-16 rounded-l-[60px] md:rounded-l-[80px] rounded-r-none shadow-none">
+          <h2 class="text-4xl md:text-6xl font-black uppercase leading-none tracking-tight">De la<br>technologie</h2>
         </div>
       </div>
-      <div class="max-w-2xl stagger-hero">
-        <p class="text-xl md:text-2xl font-medium leading-relaxed italic">
-          Ce n'est pas seulement un outil de reporting pour les financeurs, c'est surtout <b class="font-black border-b-4 border-white">un logiciel du quotidien</b> souhaité par les directions et les travailleurs sociaux.
+      
+      <div class="max-w-5xl stagger-hero mt-8 px-6">
+        <p class="text-3xl md:text-5xl font-medium leading-tight">
+          Ce n'est pas seulement un outil de reporting pour les financeurs, c'est surtout <b class="font-black">un logiciel du quotidien</b> souhaité par les directions et les travailleurs sociaux.
         </p>
       </div>
     </section>
 
     <!-- 2. SECTION INTRO -->
     <section class="py-24 px-6">
-      <div class="max-w-6xl mx-auto p-12 bg-white relative overflow-hidden group">
-        <div class="flex flex-col items-center gap-12">
-          <div class="relative w-full max-w-4xl flex justify-center items-end gap-4 mockup-container">
-            <img src="/img/ordi1.png" alt="Logiciel ASSIA" class="w-full h-auto drop-shadow-2xl">
+      <div class="max-w-7xl mx-auto p-0 relative overflow-hidden group">
+        <div class="flex flex-col items-center gap-16">
+          <div class="relative w-full max-w-5xl flex justify-center items-end gap-4 mockup-container">
+            <img src="/img/ordi1.png" alt="Logiciel ASSIA" class="w-full h-auto">
           </div>
-          <h1 class="text-2xl font-clemente md:text-4xl font-black text-[#00A3B5] text-center leading-tight max-w-4xl">
-            ASSIA est un logiciel métier co-construit avec les professionnels, pour traduire leurs pratiques réelles en un système d'information simple, utile et évolutif.
+          <h1 ref="textRevealContainer" class="text-4xl md:text-6xl font-black text-[#00A3B5] text-center leading-tight max-w-6xl font-clemente uppercase tracking-tight">
+            <span class="reveal-word">ASSIA</span> <span class="reveal-word">est</span> <span class="reveal-word">un</span> <span class="reveal-word">logiciel</span> <span class="reveal-word">métier</span> <span class="reveal-word">co-construit</span> <span class="reveal-word">avec</span> <span class="reveal-word">les</span> <span class="reveal-word">professionnels,</span> <span class="reveal-word">pour</span> <span class="reveal-word">traduire</span> <span class="reveal-word">leurs</span> <span class="reveal-word">pratiques</span> <span class="reveal-word">réelles</span> <span class="reveal-word">en</span> <span class="reveal-word">un</span> <span class="reveal-word">système</span> <span class="reveal-word">d'information</span> <span class="reveal-word">simple,</span> <span class="reveal-word">utile</span> <span class="reveal-word">et</span> <span class="reveal-word">évolutif.</span>
           </h1>
         </div>
       </div>
@@ -41,8 +60,8 @@
     <!-- 4. SECTION EXCLUSION SOCIALE (DESIGN CORRIGÉ) -->
     <section class="pb-20 w-full">
       <!-- Titre retravaillé pour plus d'impact -->
-      <h1 class="w-full text-orange-400 text-center font-clemente text-4xl md:text-6xl font-black uppercase mb-12 tracking-tighter">
-        PARCE QU'ON DOIT LUTTER CONTRE <br class="hidden md:block"> <span class="text-[#00A3B5]">L'EXCLUSION SOCIALE !</span>
+      <h1 class="w-full text-[#00A3B5] text-center font-clemente text-4xl md:text-6xl font-black uppercase mb-12 tracking-tighter">
+        PARCE QU'ON DOIT LUTTER CONTRE <br class="hidden md:block"> L'EXCLUSION SOCIALE !
       </h1>
 
        <!-- ACCOMPAGNEMENT SOCIAL -->
@@ -59,21 +78,21 @@
         <div class="actions-container flex flex-col gap-24 pb-20 overflow-hidden">
         
         <!-- Bloc 1 : L'outil permet notamment (ORANGE) -->
-        <section class="action-section-left mr-4 md:mr-32 border-4 border-l-0 border-orange-400 rounded-r-[60px] p-8 md:p-12 bg-white shadow-lg">
+        <section class="action-section-left mr-4 md:mr-32 border-4 border-l-0 border-[#ff925c] rounded-r-[60px] p-8 md:p-12 bg-white shadow-lg">
             <div class="flex flex-col md:flex-row items-center gap-12">
               <div class="action-content flex-1 flex flex-col gap-4 order-2 md:order-1 w-full">
-                  <div class="font-clemente bg-orange-400 p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
+                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
                       <p class="text-lg md:text-xl font-bold uppercase leading-tight">Gestion des mesures avec spécificités</p>
                   </div>
-                  <div class="font-clemente bg-orange-400 p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
+                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
                       <p class="text-lg md:text-xl font-bold uppercase leading-tight">Suivi des délais et alertes rapports</p>
                   </div>
-                  <div class="font-clemente bg-orange-400 p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
+                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
                       <p class="text-lg md:text-xl font-bold uppercase leading-tight">Génération de convocations</p>
                   </div>
               </div>
               <div class="action-title flex-1 order-1 md:order-2 text-center md:text-left">
-                  <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-orange-400 leading-none">
+                  <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#ff925c] leading-none">
                       L'outil permet <br>notamment :
                   </h1>
               </div>
@@ -103,18 +122,18 @@
         </section>
 
         <!-- Bloc 3 : Troisième bloc unique (ORANGE) -->
-         <section class="action-section-left mr-4 md:mr-32 border-4 border-l-0 border-orange-400 rounded-r-[60px] p-8 md:p-12 bg-white shadow-lg">
+         <section class="action-section-left mr-4 md:mr-32 border-4 border-l-0 border-[#ff925c] rounded-r-[60px] p-8 md:p-12 bg-white shadow-lg">
             <div class="flex flex-col md:flex-row items-center gap-12">
               <div class="action-content flex-1 flex flex-col gap-4 order-2 md:order-1 w-full">
-                  <div class="font-clemente bg-orange-400 p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
+                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
                       <p class="text-lg md:text-xl font-bold uppercase">Centralisation des données</p>
                   </div>
-                  <div class="font-clemente bg-orange-400 p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
+                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
                       <p class="text-lg md:text-xl font-bold uppercase">Sécurité et hébergement HDS</p>
                   </div>
               </div>
               <div class="action-title flex-1 order-1 md:order-2 text-center md:text-left">
-                  <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-orange-400 leading-none">
+                  <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#ff925c] leading-none">
                       Pour une gestion <br>sécurisée :
                   </h1>
               </div>
@@ -130,7 +149,7 @@
         Nous sommes engagés pour soutenir votre impact
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl">
-        <div v-for="(item, index) in engagementItems" :key="index" class="engagement-card flex flex-col justify-center items-center p-10 rounded-[50px] bg-white border-2 border-transparent hover:border-orange-400 transition-all duration-500 group shadow-sm hover:shadow-xl">
+        <div v-for="(item, index) in engagementItems" :key="index" class="engagement-card flex flex-col justify-center items-center p-10 rounded-[50px] bg-white border-2 border-transparent hover:border-[#ff925c] transition-all duration-500 group shadow-sm hover:shadow-xl">
           <div :class="['w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:rotate-12 group-hover:scale-110 shadow-md', item.color]">
             <component :is="item.icon" class="text-white w-8 h-8" stroke-width="2.5" />
           </div>
@@ -145,7 +164,7 @@
     <!-- 9. SECTION TEMOIGNAGES -->
     <section class="py-24 px-6 bg-white rounded-t-[100px] shadow-[0_-20px_60px_rgba(0,0,0,0.05)] mt-10 border-t border-orange-100">
       <div class="max-w-7xl mx-auto text-center">
-        <h2 class="font-clemente text-orange-400 text-4xl md:text-6xl font-black uppercase tracking-tighter mb-16">
+        <h2 class="font-clemente text-[#ff925c] text-4xl md:text-6xl font-black uppercase tracking-tighter mb-16">
           Ils témoignent de <br> notre engagement
         </h2>
         <section class="py-10 overflow-hidden mb-20">
@@ -163,8 +182,8 @@
               <img :src="testi.image" :alt="testi.name" class="w-full h-full object-cover">
             </div>
             <h4 class="font-clemente text-xl font-black uppercase text-gray-800 leading-tight mb-1">{{ testi.name }}</h4>
-            <p class="text-sm text-orange-400 font-bold mb-4 italic">{{ testi.role }}</p>
-            <div class="flex gap-1 mb-6 text-orange-400">
+            <p class="text-sm text-[#ff925c] font-bold mb-4 italic">{{ testi.role }}</p>
+            <div class="flex gap-1 mb-6 text-[#ff925c]">
               <Star v-for="s in 5" :key="s" class="w-5 h-5 fill-current" />
             </div>
             <p class="text-gray-600 text-md leading-relaxed italic font-medium">"{{ testi.text }}"</p>
@@ -177,7 +196,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, nextTick } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from '@studio-freight/lenis';
@@ -192,6 +211,8 @@ import Block3 from '../components/Application/Block3.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const loader = ref(null);
+const textRevealContainer = ref(null);
 const activeCollapse = ref(null);
 const contentRefs = ref([]);
 const isSocialOpen = ref(false); 
@@ -211,11 +232,11 @@ const partners = [
 ];
 
 const engagementItems = [
-  { title: "Assistance", icon: Headphones, color: "bg-orange-400", textColor: "text-orange-400" },
+  { title: "Assistance", icon: Headphones, color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
   { title: "Accompagnement", icon: Users, color: "bg-[#00A3B5]", textColor: "text-[#00A3B5]" },
-  { title: "Formation", icon: BookOpen, color: "bg-orange-400", textColor: "text-orange-400" },
+  { title: "Formation", icon: BookOpen, color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
   { title: "Sécurité", icon: ShieldCheck, color: "bg-[#00A3B5]", textColor: "text-[#00A3B5]" },
-  { title: "Adaptabilité", icon: Settings2, color: "bg-orange-400", textColor: "text-orange-400" },
+  { title: "Adaptabilité", icon: Settings2, color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
   { title: "Évolutivité", icon: RefreshCcw, color: "bg-[#00A3B5]", textColor: "text-[#00A3B5]" }
 ];
 
@@ -249,15 +270,30 @@ const toggleSocial = () => {
     }
 };
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
+  
   const lenis = new Lenis({ duration: 1.2 });
   function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
   requestAnimationFrame(raf);
 
-  gsap.from(".hero-card-left", { x: -300, opacity: 0, rotate: -10, duration: 1.5, ease: "power4.out" });
-  gsap.from(".hero-card-right", { x: 300, opacity: 0, rotate: 10, duration: 1.5, ease: "power4.out" });
-  gsap.from(".hero-ampersand", { scale: 0, opacity: 0, duration: 1, delay: 0.8, ease: "back.out(1.7)" });
-  gsap.from(".stagger-hero", { y: 50, opacity: 0, duration: 1, delay: 1, ease: "power3.out" });
+  // ANIMATION DU LOADER ASSIA
+  const loaderTl = gsap.timeline();
+  loaderTl.to('.loader-text', { opacity: 1, duration: 0.5, delay: 0.2 })
+    .to('.loader-subtitle', { opacity: 1, duration: 0.5 }, "-=0.3")
+    .to('.loader-progress', { width: '100%', duration: 1.5, ease: 'power2.out' }, '-=0.5')
+    .to('.loader-text', { opacity: 0, duration: 0.5, delay: 0.3 })
+    .to('.loader-subtitle', { opacity: 0, duration: 0.5 }, "<")
+    .to(loader.value, { 
+      y: '-100%', 
+      duration: 1.2, 
+      ease: 'power4.inOut' 
+    });
+
+  gsap.from(".hero-card-left", { x: -300, opacity: 0, rotate: -10, duration: 1.5, ease: "power4.out", delay: 2.5 });
+  gsap.from(".hero-card-right", { x: 300, opacity: 0, rotate: 10, duration: 1.5, ease: "power4.out", delay: 2.5 });
+  gsap.from(".hero-ampersand", { scale: 0, opacity: 0, duration: 1, delay: 3.3, ease: "back.out(1.7)" });
+  gsap.from(".stagger-hero", { y: 50, opacity: 0, duration: 1, delay: 3.5, ease: "power3.out" });
 
   gsap.from(".action-section-left", {
     x: -300, opacity: 0, duration: 1.2, ease: "expo.out",
@@ -268,6 +304,29 @@ onMounted(() => {
     x: 300, opacity: 0, duration: 1.2, ease: "expo.out",
     scrollTrigger: { trigger: ".action-section-right", start: "top 85%" }
   });
+
+  // ANIMATION DE TEXTE RÉVÉLATION AU SCROLL
+  const textWords = document.querySelectorAll('.reveal-word');
+  if (textWords.length > 0) {
+    gsap.set(textWords, { opacity: 0.15 });
+    
+    const textTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: textRevealContainer.value,
+        start: "top 80%",
+        end: "top 30%",
+        scrub: 1,
+      }
+    });
+    
+    textWords.forEach((word, i) => {
+      textTl.to(word, {
+        opacity: 1,
+        duration: 0.1,
+        ease: "power2.out"
+      }, i * 0.05);
+    });
+  }
 });
 </script>
 

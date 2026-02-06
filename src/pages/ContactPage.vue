@@ -1,9 +1,22 @@
 <template>
   <div class="font-clemente w-full min-h-screen bg-white text-slate-700 overflow-x-hidden">
     
+    <!-- LOADER AVEC LOGO ASSIA -->
+    <div ref="loader" class="fixed inset-0 bg-[#8CD898] z-[100] flex items-center justify-center">
+      <div class="relative text-center">
+        <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
+          <span class="text-6xl md:text-8xl font-bold tracking-tighter">CONTACT</span>
+        </div>
+        <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
+          Nous contacter
+        </div>
+        <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
+      </div>
+    </div>
+
     <!-- Navbar (Composant importé) -->
     <NavBar />
-
+    
     <!-- 1. SECTION FORMULAIRE -->
     <div class="max-w-7xl mx-auto px-6 md:px-12 py-16 mt-36">
       
@@ -142,20 +155,38 @@
     </div>
 
   </div>
+  <Etude />
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref, nextTick } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import NavBar from '../components/NavBar.vue';
+import Etude from './Etude.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const loader = ref(null);
 const infoSection = ref(null);
 let ctx = null;
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
+  
+  // ANIMATION DU LOADER ASSIA
+  const loaderTl = gsap.timeline();
+  loaderTl.to('.loader-text', { opacity: 1, duration: 0.5, delay: 0.2 })
+    .to('.loader-subtitle', { opacity: 1, duration: 0.5 }, "-=0.3")
+    .to('.loader-progress', { width: '100%', duration: 1.5, ease: 'power2.out' }, '-=0.5')
+    .to('.loader-text', { opacity: 0, duration: 0.5, delay: 0.3 })
+    .to('.loader-subtitle', { opacity: 0, duration: 0.5 }, "<")
+    .to(loader.value, { 
+      y: '-100%', 
+      duration: 1.2, 
+      ease: 'power4.inOut' 
+    });
+
   ctx = gsap.context(() => {
     
     // Animation Carte Gauche (Arrive de la GAUCHE)

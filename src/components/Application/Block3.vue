@@ -2,11 +2,11 @@
   <div class="font-clemente relative mb-20 text-slate-700 w-full">
     
     <div @click="toggleDiscovery" 
-         class="relative z-20 py-8 px-10 md:px-16 mx-4 md:mx-10 lg:mx-20 flex justify-center items-center select-none bg-orange-400 text-white rounded-[40px] cursor-pointer hover:bg-orange-500 transition-all active:scale-95">
-      <h3 class="text-lg md:text-3xl font-black uppercase tracking-wider text-center leading-tight">
+         class="relative z-20 py-8 px-10 md:px-16 mx-0 md:mx-0 flex justify-between items-center select-none bg-[#ff925c] text-white rounded-[50px] cursor-pointer hover:bg-[#ff925c] transition-all active:scale-95 w-full">
+      <h3 class="text-2xl md:text-3xl font-black uppercase tracking-wider text-left flex-1 pr-8 leading-tight">
         DÉCOUVRIR ASSIA DANS VOTRE CONTEXTE
       </h3>
-      <div class="absolute right-6 md:right-10 w-12 h-12 flex items-center justify-center text-5xl font-light transition-transform duration-500"
+      <div class="right-6 md:right-10 w-16 h-16 flex items-center justify-center text-5xl font-light transition-transform duration-500 flex-shrink-0"
            :style="{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }">+
       </div>
     </div>
@@ -24,14 +24,14 @@
               C'est pourquoi, dès l'origine, la conception d'ASSIA a été pensée comme celle d'un outil s'adaptant au plus près des réalités de terrain.
             </p>
             <div class="pt-4">
-              <button class="bg-orange-400 text-white font-clemente font-bold py-3 px-8 rounded-full hover:bg-orange-500 transition-transform hover:scale-105 uppercase tracking-wide">
+              <button class="bg-[#ff925c] text-white font-clemente font-bold py-3 px-8 rounded-full hover:bg-[#ff925c] transition-transform hover:scale-105 uppercase tracking-wide">
                 Voir des cas d'usage
               </button>
             </div>
           </div>
 
           <div class="flex-1 relative">
-            <div class="absolute -inset-4 bg-orange-400 rounded-full blur-3xl opacity-10"></div>
+            <div class="absolute -inset-4 bg-[#ff925c] rounded-full blur-3xl opacity-10"></div>
             <img src="/img/ordi1.png" 
                  alt="Logiciel ASSIA sur ordinateur" 
                  class="w-full h-auto transform rotate-2 hover:rotate-0 transition-all duration-500 relative z-10">

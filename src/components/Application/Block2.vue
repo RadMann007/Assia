@@ -3,11 +3,11 @@
     
     <!-- BOUTON D'OUVERTURE -->
     <div @click="toggleSocial" 
-         class="relative z-20 py-8 px-10 md:px-16 mx-4 md:mx-10 lg:mx-20 flex justify-center items-center select-none bg-orange-400 text-white rounded-[40px] shadow-xl cursor-pointer hover:bg-orange-500 transition-all active:scale-95">
-      <h3 class="text-lg md:text-3xl font-black uppercase tracking-tight text-center leading-tight">
+         class="relative z-20 py-8 px-10 md:px-16 mx-0 md:mx-0 flex justify-between items-center select-none bg-[#ff925c] text-white rounded-[50px] shadow-none cursor-pointer hover:bg-[#ff925c] transition-all active:scale-95 w-full">
+      <h3 class="text-2xl md:text-4xl font-black uppercase tracking-tight text-left flex-1 pr-8 leading-tight">
         ASSIA S'ADRESSE AUX STRUCTURES <br class="md:hidden"> D'ACCOMPAGNEMENT SOCIAL
       </h3>
-      <div class="absolute right-6 md:right-10 w-12 h-12 flex items-center justify-center text-5xl font-light transition-transform duration-500"
+      <div class="w-16 h-16 flex items-center justify-center text-5xl font-light transition-transform duration-500 flex-shrink-0"
            :style="{ transform: isSocialOpen ? 'rotate(45deg)' : 'rotate(0deg)' }">+
       </div>
     </div>
@@ -18,10 +18,10 @@
          
        <div class="px-6 md:px-16 py-20 flex flex-col items-center gap-12 pt-32 max-w-7xl mx-auto">
           
-          <div class="flex flex-col lg:flex-row items-start gap-12 w-full">
+          <div class="flex flex-col lg:flex-row items-center gap-12 w-full">
             <div class="w-full lg:w-1/3 relative">
-              <div class="absolute -inset-2 bg-orange-400 rounded-[45px] rotate-2 opacity-20"></div>
-              <div class="w-full h-[400px] rounded-[40px] overflow-hidden border-8 border-white shadow-lg relative z-10">
+              <div class="absolute -inset-2 bg-[#ff925c] rounded-[45px] rotate-2 opacity-20"></div>
+              <div class="w-full h-[400px] rounded-[40px] overflow-hidden relative z-10">
                  <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070&auto=format&fit=crop" alt="Bénéficiaire" class="w-full h-full object-cover">
               </div>
             </div>
