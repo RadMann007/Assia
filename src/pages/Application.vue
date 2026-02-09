@@ -45,9 +45,9 @@
       <div class="max-w-7xl mx-auto p-0 relative overflow-hidden group">
         <div class="flex flex-col items-center gap-16">
           <div class="relative w-full max-w-5xl flex justify-center items-end gap-4 mockup-container">
-            <img src="/img/ordi1.png" alt="Logiciel ASSIA" class="w-full h-auto">
+            <img src="/img/assia/1.png" alt="Logiciel ASSIA" class="w-full h-auto rounded-[54px]">
           </div>
-          <h1 ref="textRevealContainer" class="text-4xl md:text-6xl font-black text-[#00A3B5] text-center leading-tight max-w-6xl font-clemente uppercase tracking-tight">
+          <h1 ref="textRevealContainer" class="text-4xl md:text-6xl font-black text-[#03A3B5] text-center leading-tight max-w-6xl font-clemente uppercase tracking-tight">
             <span class="reveal-word">ASSIA</span> <span class="reveal-word">est</span> <span class="reveal-word">un</span> <span class="reveal-word">logiciel</span> <span class="reveal-word">métier</span> <span class="reveal-word">co-construit</span> <span class="reveal-word">avec</span> <span class="reveal-word">les</span> <span class="reveal-word">professionnels,</span> <span class="reveal-word">pour</span> <span class="reveal-word">traduire</span> <span class="reveal-word">leurs</span> <span class="reveal-word">pratiques</span> <span class="reveal-word">réelles</span> <span class="reveal-word">en</span> <span class="reveal-word">un</span> <span class="reveal-word">système</span> <span class="reveal-word">d'information</span> <span class="reveal-word">simple,</span> <span class="reveal-word">utile</span> <span class="reveal-word">et</span> <span class="reveal-word">évolutif.</span>
           </h1>
         </div>
@@ -60,7 +60,7 @@
     <!-- 4. SECTION EXCLUSION SOCIALE (DESIGN CORRIGÉ) -->
     <section class="pb-20 w-full">
       <!-- Titre retravaillé pour plus d'impact -->
-      <h1 class="w-full text-[#00A3B5] text-center font-clemente text-4xl md:text-6xl font-black uppercase mb-12 tracking-tighter">
+      <h1 class="w-full text-[#03A3B5] text-center font-clemente text-4xl md:text-6xl font-black uppercase mb-12 tracking-tighter">
         PARCE QU'ON DOIT LUTTER CONTRE <br class="hidden md:block"> L'EXCLUSION SOCIALE !
       </h1>
 
@@ -68,7 +68,7 @@
         <Block2 />
 
        <!-- TITRE QUE FAIT ASSIA -->
-       <h2 class="font-clemente text-[#00A3B5] mt-24 mb-16 text-4xl md:text-7xl font-black uppercase text-center tracking-tighter">
+       <h2 class="font-clemente text-[#03A3B5] mt-24 mb-16 text-4xl md:text-7xl font-black uppercase text-center tracking-tighter">
           QUE FAIT ASSIA ?
        </h2>
     </section>
@@ -100,21 +100,21 @@
         </section>
 
         <!-- Bloc 2 : Structures qui recherchent (BLEU) -->
-        <section class="action-section-right ml-4 md:ml-32 border-4 border-r-0 border-[#00A3B5] rounded-l-[60px] p-8 md:p-12 bg-white shadow-lg">
+        <section class="action-section-right ml-4 md:ml-32 border-4 border-r-0 border-[#03A3B5] rounded-l-[60px] p-8 md:p-12 bg-white shadow-lg">
             <div class="flex flex-col md:flex-row-reverse items-center gap-12">
               <div class="action-content flex-1 flex flex-col gap-4 w-full">
-                  <div class="font-clemente bg-[#00A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
+                  <div class="font-clemente bg-[#03A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
                     <p class="text-xl font-bold uppercase">Un logiciel qui plaît aux pros</p>
                   </div>
-                  <div class="font-clemente bg-[#00A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
+                  <div class="font-clemente bg-[#03A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
                     <p class="text-xl font-bold uppercase">Un prestataire expert du métier</p>
                   </div>
-                  <div class="font-clemente bg-[#00A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
+                  <div class="font-clemente bg-[#03A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
                     <p class="text-xl font-bold uppercase">Une solution évolutive et durable</p>
                   </div>
               </div>
               <div class="action-title flex-1 text-center md:text-right">
-                  <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#00A3B5] leading-none">
+                  <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#03A3B5] leading-none">
                       Et surtout à des <br> structures qui :
                   </h1>
               </div>
@@ -145,15 +145,13 @@
 
     <!-- 7. SECTION ENGAGEMENT -->
     <section class="pb-32 px-6 flex flex-col gap-12 items-center">
-      <h2 class="font-clemente text-[#00A3B5] text-4xl md:text-5xl font-black uppercase text-center tracking-tighter">
+      <h2 class="font-clemente text-[#03A3B5] text-4xl md:text-5xl font-black uppercase text-center tracking-tighter">
         Nous sommes engagés pour soutenir votre impact
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl">
-        <div v-for="(item, index) in engagementItems" :key="index" class="engagement-card flex flex-col justify-center items-center p-10 rounded-[50px] bg-white border-2 border-transparent hover:border-[#ff925c] transition-all duration-500 group shadow-sm hover:shadow-xl">
-          <div :class="['w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:rotate-12 group-hover:scale-110 shadow-md', item.color]">
-            <component :is="item.icon" class="text-white w-8 h-8" stroke-width="2.5" />
-          </div>
-          <h3 class="font-clemente text-2xl font-black uppercase mb-4 text-center" :class="item.textColor">{{ item.title }}</h3>
+        <div v-for="(item, index) in engagementItems" :key="index" class="engagement-card flex flex-col justify-center items-center p-10 rounded-[50px] bg-orange-400 border-2 border-transparent hover:border-[#ff925c] transition-all duration-500 group shadow-sm hover:shadow-xl">
+          <img :src="item.image" :alt="item.title" class="w-28 h-28 object-contain mb-6 " />
+          <h3 class="font-clemente text-2xl font-black uppercase mb-4 text-center text-white" >{{ item.title }}</h3>
         </div>
       </div>
     </section>
@@ -193,6 +191,7 @@
     </section>
 
   </div>
+  <Footer/>
 </template>
 
 <script setup>
@@ -203,11 +202,12 @@ import Lenis from '@studio-freight/lenis';
 import NavBar from '../components/NavBar.vue';
 
 import { 
-  Headphones, Users, BookOpen, ShieldCheck, Settings2, RefreshCcw, Star
+  Star
 } from 'lucide-vue-next';
 import BlocRealite from '../components/Application/BlocRealite.vue';
 import Block2 from '../components/Application/Block2.vue';
 import Block3 from '../components/Application/Block3.vue';
+import Footer from '../components/Footer.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -232,12 +232,12 @@ const partners = [
 ];
 
 const engagementItems = [
-  { title: "Assistance", icon: Headphones, color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
-  { title: "Accompagnement", icon: Users, color: "bg-[#00A3B5]", textColor: "text-[#00A3B5]" },
-  { title: "Formation", icon: BookOpen, color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
-  { title: "Sécurité", icon: ShieldCheck, color: "bg-[#00A3B5]", textColor: "text-[#00A3B5]" },
-  { title: "Adaptabilité", icon: Settings2, color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
-  { title: "Évolutivité", icon: RefreshCcw, color: "bg-[#00A3B5]", textColor: "text-[#00A3B5]" }
+  { title: "Assistance", image: "/img/assia/icon/assistance.png", color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
+  { title: "Accompagnement", image: "/img/assia/icon/accompagnement.png", color: "bg-[#03A3B5]", textColor: "text-[#03A3B5]" },
+  { title: "Formation", image: "/img/assia/icon/formation.png", color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
+  { title: "Sécurité", image: "/img/assia/icon/security.png", color: "bg-[#03A3B5]", textColor: "text-[#03A3B5]" },
+  { title: "Adaptabilité", image: "/img/assia/icon/adaptability.png", color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
+  { title: "Évolutivité", image: "/img/assia/icon/evolution.png", color: "bg-[#03A3B5]", textColor: "text-[#03A3B5]" }
 ];
 
 const testimonials = [

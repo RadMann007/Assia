@@ -20,7 +20,7 @@
             <h1 class="font-clemente text-orange-400 text-3xl md:text-4xl font-black leading-tight">
               Chaque structure est différente et a ses propres besoins.
             </h1>
-            <p class="text-[#00A3B5] font-medium text-lg leading-relaxed">
+            <p class="text-[#03A3B5] font-medium text-lg leading-relaxed">
               C'est pourquoi, dès l'origine, la conception d'ASSIA a été pensée comme celle d'un outil s'adaptant au plus près des réalités de terrain.
             </p>
             <div class="pt-4">
@@ -32,9 +32,9 @@
 
           <div class="flex-1 relative">
             <div class="absolute -inset-4 bg-[#ff925c] rounded-full blur-3xl opacity-10"></div>
-            <img src="/img/ordi1.png" 
+            <img src="/img/assia/2.png" 
                  alt="Logiciel ASSIA sur ordinateur" 
-                 class="w-full h-auto transform rotate-2 hover:rotate-0 transition-all duration-500 relative z-10">
+                 class="w-full h-auto transform relative z-10">
           </div>
           
        </div>

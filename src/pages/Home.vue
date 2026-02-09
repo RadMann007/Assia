@@ -148,7 +148,7 @@ onMounted(async () => {
     <section class="container mx-auto px-6 h-screen flex flex-col justify-center pt-32 pb-12 relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
         <div class="space-y-6 overflow-hidden text-center lg:text-left flex flex-col justify-center">
-          <h1 class="hero-title text-xl md:text-[80px] font-display font-black leading-[0.85] text-primary uppercase tracking-tighter shrink-0 flex flex-col">
+          <h1 class="hero-title text-[40px] md:text-[80px] font-display font-black leading-[0.85] text-primary uppercase tracking-tighter shrink-0 flex flex-col">
             <span class="inline-block">Le</span> 
             <span class="inline-block">numérique</span>
             <span class="inline-block">pensé pour</span>
@@ -156,8 +156,8 @@ onMounted(async () => {
           </h1>
         </div>
         <div class="relative hero-image flex justify-center lg:justify-end items-center">
-          <div class="w-90 h-90 md:w-[550px] md:h-[550px] rounded-3xl overflow-hidden border-8 border-white shadow-2xl relative z-10">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Dashboard" />
+          <div class="w-100 h-90 md:w-[550px] md:h-[550px] rounded-3xl overflow-hidden border-8 border-white shadow-2xl relative z-10">
+            <img src="/img/heroPC.png" class="w-full h-full object-cover" alt="Dashboard" />
           </div>
         </div>
       </div>
@@ -233,21 +233,21 @@ onMounted(async () => {
         </h2>
     </section>
 
-    <section class="bg-primary/5 p-8 md:p-20 mb-20">
+    <section class="bg-primary p-8 md:p-20">
         <div class="container mx-auto">
             <div class="grid lg:grid-cols-2 gap-16 mb-20 items-center">
-                <div class="p-2 overflow-hidden rounded-[50px] border-4 border-white shadow-xl enjeux-image">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover"/>
+                <div class="p-2 overflow-hidden enjeux-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="w-full rounded-3xl h-full object-cover"/>
                 </div>
                 <div class="flex flex-col gap-8 text-center lg:text-left enjeux-content">
-                    <h2 class="text-3xl md:text-[45px] font-display font-black uppercase leading-tight text-primary">Nous accompagnons les structures face à des enjeux très concrets</h2>
-                    <p class="text-xl md:text-[30px] font-medium text-primary">Les structures que nous accompagnons rencontrent fréquemment les situations suivantes :</p>
+                    <h2 class="text-3xl md:text-[45px] font-display font-black uppercase leading-tight text-white">Nous accompagnons les structures face à des enjeux très concrets</h2>
+                    <p class="text-xl md:text-[30px] font-medium text-white">Les structures que nous accompagnons rencontrent fréquemment les situations suivantes :</p>
                 </div>
             </div>
 
             <div class="flex justify-center w-full">
                 <div class="w-full max-w-4xl border-2 border-primary cursor-pointer transition-all duration-500 overflow-hidden rounded-[80px]"
-                     :class="isComplexOpen ? 'bg-primary text-white shadow-2xl' : 'bg-white text-primary shadow-lg'"
+                     :class="isComplexOpen ? 'bg-white text-primary shadow-lg' : 'bg-white text-primary shadow-2xl'"
                      @click="toggleComplex">
                     
                     <div class="p-10 flex flex-col md:flex-row justify-center items-center gap-6 select-none relative">
@@ -256,16 +256,18 @@ onMounted(async () => {
                     </div>
 
                     <div class="complex-content h-0 opacity-0 overflow-hidden px-8">
-                        <div class="pb-12 space-y-10 text-center" :class="isComplexOpen ? 'text-white' : 'text-primary'">
+                        <div class="pb-12 space-y-10 text-center" :class="isComplexOpen ? 'text-primary' : 'text-white'">
                             <p class="text-xl font-medium leading-relaxed max-w-2xl mx-auto">
                                 Vos équipes passent plus de temps sur les tableurs que sur l'accompagnement humain. Nous simplifions vos processus pour :
                             </p>
                             <ul class="flex flex-col items-start gap-6 max-w-2xl mx-auto">
                                 <li v-for="(point, i) in [
-                                    'Simplifier la saisie des données sociales au quotidien',
-                                     'Générer automatiquement vos rapports d activité financeurs',
-                                        'Améliorer le suivi des parcours de vos usagers',
-                                        'Sécuriser l hébergement de vos données de santé (HDS)'
+                                    'Des outils multiples, peu connectés ou non-adaptables',
+                                     'Des besoins métiers mal couverts par les solutions existantes',
+                                        'Des indicateurs demandés par les financeurs difficiles a produire',
+                                        'Des pratiques de terrain complexes, peu traduites dans les outils numériques',
+                                        'Des contraintes réglementaires et RGPD insuffisamment outillées',
+                                        'Un manque de temps et de roussources internes pour piloter les projets numériques'
                                 ]" :key="i" class="flex flex-col md:flex-row items-center gap-6 group">
                                     <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">0{{i+1}}</span>
                                     <span class="text-lg font-medium lowercase tracking-tight text-left">{{ point }}</span>
@@ -276,6 +278,83 @@ onMounted(async () => {
                 </div>
             </div>
         </div>
+        <!-- Roles -->
+            <div class="container mx-auto mt-32 text-center text-white">
+              <h2 class="text-4xl md:text-6xl font-black font-display uppercase mb-8 px-4 leading-[0.9] tracking-tighter">
+               Notre Rôle ?
+              </h2>
+              <p class="text-xl md:text-3xl font-medium max-w-5xl mx-auto mb-12 leading-tight">
+                Structurer, concevoir et faire évoluer votre système d'information. Chaque accompagnement est pensé en fonction du contexte, des 
+                usages et des moyens de la structure.
+              </p>
+
+              <div>
+                <button class="bg-white text-primary font-black uppercase text-lg md:text-xl py-4 px-10 rounded-full shadow-2xl hover:scale-105 transition-transform duration-300">
+                  Je découvre les cas pratiques
+                </button>
+              </div>
+            </div>
+    </section>
+
+    <!-- section ASSIA -->
+    <section class="bg-[#ff925c]/70 py-20 mb-20">
+      <div class="container mx-auto px-6">
+        
+        <!-- 1. Grid: Titre + Image -->
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16">
+          <div class="flex flex-col gap-8 text-center lg:text-left">
+              <h2 class="text-3xl md:text-[50px] font-display font-black uppercase leading-[0.9] tracking-tighter text-white">
+                Assia: <br /> une réponse mutualisée à un besoin partagé
+              </h2>
+          </div>
+          <div class="relative">
+              <div class="w-full h-[300px] md:h-[400px] rounded-[40px] overflow-hidden">
+                <img src="/img/mutualise.png" class="w-full h-full object-cover" alt="Assia Team"/>
+              </div>
+          </div>
+        </div>
+
+        <!-- 2. Flux Vertical de Contenu -->
+        <div class="flex flex-col items-center text-center gap-10 text-white max-w-4xl mx-auto">
+            
+            <p class="text-xl md:text-2xl font-medium leading-relaxed">
+              Lorsque plusieurs associations rencontrent des besoins métier similaires, nous faisons le choix de la mutualisation.
+            </p>
+
+            <button class="bg-white text-[#ff925c] font-black uppercase text-lg md:text-xl py-4 px-10 rounded-full shadow-xl hover:scale-105 transition-transform duration-300 pointer-events-none">
+              ASSIA est l'un de ces projets :
+            </button>
+
+            <p class="text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
+              Un outil métier dédié au travail social, co-construit avec les professionnels, évolutif et partagé au sein d'un club utilisateurs.
+            </p>
+
+            <p class="text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
+              ASSIA incarne notre capacité à comprendre les réalités de terrain et à les traduire en systèmes d'information concrets et opérationnels.
+            </p>
+
+            <div class="pt-4">
+               <button class="bg-white text-[#ff925c] font-black uppercase text-xl md:text-2xl py-5 px-12 rounded-full shadow-2xl hover:bg-orange-50 transition-colors duration-300 border-4 border-white cursor-pointer">
+                 Je découvre ASSIA
+               </button>
+            </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="py-16 overflow-hidden mb-20">
+      <h2 class="text-4xl md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-20">
+               On les accompagne tous les jours
+              </h2>
+      <div class="w-full relative fade-mask ">
+        <div class="flex items-center gap-20 md:gap-32 w-max marquee-track">
+          <div v-for="(p, index) in [...partners, ...partners, ...partners]" :key="index" class="flex-shrink-0">
+            <img :src="p.logo" :alt="p.name" class="h-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer" />
+          </div>
+        </div>
+      </div>
     </section>
 
     <Footer />
@@ -284,7 +363,7 @@ onMounted(async () => {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700;900&display=swap');
-:root { --primary: #00A3B5; }
+:root { --primary: #03A3B5; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background-color: #fff; overflow-x: hidden; color: #1a1a1a; font-family: 'Inter', sans-serif; }
 .font-display { font-family: 'Montserrat', sans-serif; }

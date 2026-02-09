@@ -8,7 +8,7 @@
     <header v-if="article" class="relative pt-40 pb-20 px-6 container mx-auto">
       <router-link 
         to="/articles" 
-        class="inline-flex items-center gap-2 mb-10 text-[#00A3B5] font-bold uppercase tracking-widest hover:translate-x-[-10px] transition-transform"
+        class="inline-flex items-center gap-2 mb-10 text-[#03A3B5] font-bold uppercase tracking-widest hover:translate-x-[-10px] transition-transform"
       >
         <ArrowLeft class="w-5 h-5" />
         Retour aux actualités
@@ -25,7 +25,7 @@
         </div>
         
         <h1 
-          class="text-4xl md:text-7xl font-clemente font-black text-[#00A3B5] uppercase leading-tight tracking-tighter"
+          class="text-4xl md:text-7xl font-clemente font-black text-[#03A3B5] uppercase leading-tight tracking-tighter"
           v-html="article.title.rendered"
         ></h1>
       </div>
@@ -66,7 +66,7 @@
     <!-- LOADING STATE -->
     <div v-if="loading" class="min-h-screen flex items-center justify-center">
       <div class="text-center">
-        <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#00A3B5] mb-4"></div>
+        <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#03A3B5] mb-4"></div>
         <p class="text-gray-500 font-bold uppercase tracking-widest">Chargement de l'article...</p>
       </div>
     </div>
@@ -84,11 +84,11 @@
     </div>
 
     <!-- FOOTER (Matching Articles.vue) -->
-    <footer v-if="article" class="bg-[#00A3B5] text-white py-20 px-6 rounded-t-[100px]">
+    <footer v-if="article" class="bg-[#03A3B5] text-white py-20 px-6 rounded-t-[100px]">
       <div class="container mx-auto text-center">
         <h2 class="text-4xl md:text-6xl font-clemente font-black uppercase mb-8">Partager cet article</h2>
         <div class="flex justify-center gap-6">
-          <a href="#" class="bg-white text-[#00A3B5] px-10 py-4 rounded-full font-bold uppercase hover:scale-105 transition-transform shadow-lg">
+          <a href="#" class="bg-white text-[#03A3B5] px-10 py-4 rounded-full font-bold uppercase hover:scale-105 transition-transform shadow-lg">
             Copier le lien
           </a>
         </div>
@@ -182,7 +182,7 @@ onMounted(() => {
 .article-content h2, .article-content h3 {
   font-family: 'Clemente', sans-serif;
   font-weight: 900;
-  color: #00A3B5;
+  color: #03A3B5;
   text-transform: uppercase;
   margin: 2rem 0 1rem 0;
 }

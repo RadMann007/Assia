@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer-container bg-[#00A3B5] text-white pt-24 pb-12 px-6 rounded-t-[80px] md:rounded-t-[100px] mt-20 relative overflow-hidden opacity-0 translate-y-20">
+  <footer class="footer-container bg-[#03A3B5] text-white pt-24 pb-12 px-6 rounded-t-[80px] md:rounded-t-[100px] mt-20 relative overflow-hidden opacity-0 translate-y-20">
     <!-- Fond décoratif discret -->
     <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
     

@@ -2,7 +2,7 @@
   <div class="font-clemente w-full min-h-screen bg-white text-slate-700 overflow-x-hidden">
     
     <!-- LOADER AVEC LOGO ASSIA -->
-    <div ref="loader" class="fixed inset-0 bg-[#8CD898] z-[100] flex items-center justify-center">
+    <div ref="loader" class="fixed inset-0 bg-primary z-[100] flex items-center justify-center">
       <div class="relative text-center">
         <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
           <span class="text-6xl md:text-8xl font-bold tracking-tighter">CONTACT</span>
@@ -32,14 +32,18 @@
             <!-- Input Nom -->
             <div class="flex flex-col gap-2">
               <label class="ml-6 font-bold text-slate-500 text-sm uppercase tracking-wide">Nom*</label>
-              <input type="text" 
+              <input type="text"
+                     v-model="formData.nom"
+                     placeholder="Votre nom"
                      class="w-full border-2 border-[#119DA4] rounded-full py-4 px-8 text-lg focus:outline-none focus:ring-4 focus:ring-[#119DA4]/20 transition-all bg-white" />
             </div>
 
             <!-- Input Email -->
             <div class="flex flex-col gap-2">
               <label class="ml-6 font-bold text-slate-500 text-sm uppercase tracking-wide">Email*</label>
-              <input type="email" 
+              <input type="email"
+                     v-model="formData.email"
+                     placeholder="Votre email"
                      class="w-full border-2 border-[#119DA4] rounded-full py-4 px-8 text-lg focus:outline-none focus:ring-4 focus:ring-[#119DA4]/20 transition-all bg-white" />
             </div>
           </div>
@@ -68,11 +72,23 @@
             <div class="relative w-full">
                 <label class="absolute -top-3 left-8 bg-white px-2 font-bold text-slate-500 text-sm uppercase tracking-wide">Votre message</label>
                 <textarea placeholder="..." 
+                        v-model="formData.message"
                         class="w-full h-64 md:h-80 border-2 border-[#119DA4] rounded-[35px] p-8 text-lg focus:outline-none focus:ring-4 focus:ring-[#119DA4]/20 transition-all bg-white resize-none"></textarea>
             </div>
             
-            <button class="bg-[#119DA4] text-white font-black italic text-xl py-4 px-10 rounded-full shadow-xl hover:bg-[#0e858b] hover:shadow-2xl transition-all hover:-translate-y-1 active:translate-y-0 w-full md:w-auto self-end mt-2">
-              Envoyer mon message
+            <!-- Feedback Message -->
+            <div v-if="feedbackMessage.text" 
+                 :class="{'text-green-600': feedbackMessage.type === 'success', 'text-red-500': feedbackMessage.type === 'error'}"
+                 class="px-4 font-bold text-center">
+              {{ feedbackMessage.text }}
+            </div>
+
+            <button 
+              @click="submitForm" 
+              :disabled="isLoading"
+              class="bg-[#119DA4] text-white font-black italic text-xl py-4 px-10 rounded-full shadow-xl hover:bg-[#0e858b] hover:shadow-2xl transition-all hover:-translate-y-1 active:translate-y-0 w-full md:w-auto self-end mt-2 disabled:opacity-70 disabled:cursor-not-allowed">
+              <span v-if="!isLoading">Envoyer mon message</span>
+              <span v-else>Envoi en cours...</span>
             </button>
           </div>
         </div>
@@ -130,7 +146,7 @@
           
           <!-- Photo -->
           <div class="w-full md:w-[90%] h-64 md:h-[500px] bg-gray-300 rounded-[40px] overflow-hidden shadow-2xl mb-12 border-8 border-white/20">
-             <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2000&auto=format&fit=crop" 
+             <img src="/img/contact/1.jpg" 
                   alt="Équipe Edossah" 
                   class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700">
           </div>
@@ -156,20 +172,85 @@
 
   </div>
   <Etude />
+  <Footer/>
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref, nextTick } from 'vue';
+import { onMounted, onUnmounted, ref, nextTick, reactive } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import NavBar from '../components/NavBar.vue';
 import Etude from './Etude.vue';
+import Footer from '../components/Footer.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const loader = ref(null);
 const infoSection = ref(null);
 let ctx = null;
+
+// --- LOGIC CONTACT FORM ---
+const formData = reactive({
+  nom: '',
+  email: '',
+  message: ''
+});
+
+const isLoading = ref(false);
+const feedbackMessage = reactive({
+  text: '',
+  type: '' // 'success' or 'error'
+});
+
+const submitForm = async () => {
+  // Reset feedback
+  feedbackMessage.text = '';
+  feedbackMessage.type = '';
+
+  // Basic client-side validation
+  if (!formData.nom || !formData.email || !formData.message) {
+    feedbackMessage.text = 'Veuillez remplir tous les champs.';
+    feedbackMessage.type = 'error';
+    return;
+  }
+
+  isLoading.value = true;
+
+  try {
+    const response = await fetch('https://edossah.fr/wp-json/vue-api/v1/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        nom: formData.nom,
+        email: formData.email,
+        message: formData.message
+      })
+    });
+
+    if (response.ok) {
+        // Success
+        feedbackMessage.text = 'Votre message a bien été envoyé !';
+        feedbackMessage.type = 'success';
+        // Clear form
+        formData.nom = '';
+        formData.email = '';
+        formData.message = '';
+    } else {
+        // Handle server errors
+        const errorData = await response.json().catch(() => ({}));
+        feedbackMessage.text = errorData.message || "Une erreur est survenue lors de l'envoi.";
+        feedbackMessage.type = 'error';
+    }
+  } catch (error) {
+    console.error('Erreur API:', error);
+    feedbackMessage.text = "Impossible de contacter le serveur. Veuillez réessayer plus tard.";
+    feedbackMessage.type = 'error';
+  } finally {
+    isLoading.value = false;
+  }
+};
 
 onMounted(async () => {
   await nextTick();

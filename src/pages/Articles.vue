@@ -19,7 +19,7 @@
 
     <!-- HERO SECTION -->
     <header class="relative pt-32 pb-20 px-6 container mx-auto text-center">
-      <h1 class="text-5xl md:text-8xl font-clemente font-black text-[#00A3B5] uppercase leading-tight tracking-tighter mb-8">
+      <h1 class="text-5xl md:text-8xl font-clemente font-black text-[#03A3B5] uppercase leading-tight tracking-tighter mb-8">
         Nos <span class="text-[#ff925c]">Actualités</span>
       </h1>
       <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 font-medium leading-relaxed">
@@ -35,7 +35,7 @@
             v-model="searchQuery" 
             type="text" 
             placeholder="Rechercher un article..."
-            class="w-full pl-12 pr-6 py-4 bg-gray-50 border-none rounded-full focus:ring-2 focus:ring-[#00A3B5] transition-all font-medium"
+            class="w-full pl-12 pr-6 py-4 bg-gray-50 border-none rounded-full focus:ring-2 focus:ring-[#03A3B5] transition-all font-medium"
           >
           <Search class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
         </div>
@@ -48,7 +48,7 @@
             :class="[
               'px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all',
               selectedCategory === cat.slug 
-                ? 'bg-[#00A3B5] text-white shadow-md scale-105' 
+                ? 'bg-[#03A3B5] text-white shadow-md scale-105' 
                 : 'bg-orange-50 text-orange-400 hover:bg-orange-100'
             ]"
           >
@@ -86,7 +86,7 @@
         <div class="text-6xl mb-6">🔍</div>
         <h3 class="text-2xl font-black text-gray-800 uppercase mb-4">Aucun résultat</h3>
         <p class="text-gray-600">Aucun article ne correspond à votre recherche pour le moment.</p>
-        <button @click="resetFilters" class="mt-8 text-[#00A3B5] font-bold border-b-2 border-[#00A3B5]">
+        <button @click="resetFilters" class="mt-8 text-[#03A3B5] font-bold border-b-2 border-[#03A3B5]">
           Réinitialiser les filtres
         </button>
       </div>
@@ -105,7 +105,7 @@
               :alt="article.title.rendered"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-[#00A3B5] tracking-widest">
+            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-[#03A3B5] tracking-widest">
               {{ getCategoryName(article) }}
             </div>
           </div>
@@ -116,7 +116,7 @@
               {{ formatDate(article.date) }}
             </div>
             <h2 
-              class="text-2xl font-bold text-gray-800 leading-tight mb-4 group-hover:text-[#00A3B5] transition-colors line-clamp-2"
+              class="text-2xl font-bold text-gray-800 leading-tight mb-4 group-hover:text-[#03A3B5] transition-colors line-clamp-2"
               v-html="article.title.rendered"
             ></h2>
             <div 
@@ -133,7 +133,7 @@
               </div>
               <router-link 
                 :to="'/articles/' + article.id" 
-                class="w-10 h-10 rounded-full bg-[#00A3B5] text-white flex items-center justify-center hover:scale-110 transition-transform"
+                class="w-10 h-10 rounded-full bg-[#03A3B5] text-white flex items-center justify-center hover:scale-110 transition-transform"
               >
                 <ArrowRight class="w-5 h-5" />
               </router-link>
@@ -144,20 +144,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-[#00A3B5] text-white py-20 px-6 rounded-t-[100px]">
-      <div class="container mx-auto text-center">
-        <h2 class="text-4xl md:text-6xl font-clemente font-black uppercase mb-8">Restons en contact</h2>
-        <p class="text-xl opacity-80 mb-12">Suivez nos actualités et l'évolution d'ASSIA au quotidien.</p>
-        <div class="flex flex-col md:flex-row justify-center gap-6">
-          <a href="#" class="bg-white text-[#00A3B5] px-10 py-4 rounded-full font-bold uppercase hover:scale-105 transition-transform shadow-lg">
-            S'inscrire à la newsletter
-          </a>
-          <a href="#" class="border-2 border-white px-10 py-4 rounded-full font-bold uppercase hover:bg-white hover:text-[#00A3B5] transition-all">
-            Nous suivre sur LinkedIn
-          </a>
-        </div>
-      </div>
-    </footer>
+     <Footer/>
 
   </div>
 </template>
@@ -168,6 +155,7 @@ import { Search, ArrowRight } from 'lucide-vue-next';
 import NavBar from '../components/NavBar.vue';
 import gsap from 'gsap';
 import Lenis from '@studio-freight/lenis';
+import Footer from '../components/Footer.vue';
 
 const loader = ref(null);
 const articles = ref([]);

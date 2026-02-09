@@ -15,7 +15,7 @@
           <div class="px-6 md:px-12 lg:px-20 pb-0 pt-20 flex flex-col gap-10">
 
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-              <div class="flex-1 text-[#00A3B5]">
+              <div class="flex-1 text-[#03A3B5]">
                 <p class="mb-8 font-bold text-xl md:text-2xl leading-relaxed">Sur le terrain, les équipes font face à :</p>
                 <ul class="space-y-6">
                   <li class="flex items-start gap-4">
@@ -41,7 +41,7 @@
                 </ul>
               </div>
               <div class="flex-1 w-full flex justify-center">
-                <img src="/img/meet2.avif" alt="Illustration" class="w-full max-w-md h-[400px] object-cover rounded-[50px]" />
+                <img src="/img/assia/3.jpg" alt="Illustration" class="w-full max-w-md h-[400px] object-cover rounded-[50px]" />
               </div>
             </div>
 
@@ -52,9 +52,9 @@
             </div>
 
             <!-- SECTION BLEUE -->
-            <div class="bg-[#00A3B5] -mx-6 md:-mx-12 lg:-mx-20 p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 text-white">
+            <div class="bg-[#03A3B5] -mx-6 md:-mx-12 lg:-mx-20 p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 text-white">
               <div class="flex-1 w-full">
-                <img src="/img/ordi1.png" alt="Mockup ASSIA" class="w-full h-auto transform -rotate-1 rounded-3xl" />
+                <img src="/img/assia/4.png" alt="Mockup ASSIA" class="w-full h-auto transform -rotate-1 rounded-3xl" />
               </div>
               <div class="flex-1 flex flex-col gap-8">
                 <h2 class="text-2xl md:text-4xl font-black leading-tight uppercase">
@@ -82,7 +82,7 @@
         <div :ref="el => contentRefs[1] = el" class="collapse-content relative z-10 overflow-hidden bg-[#FFF5F0] rounded-none -mt-10 h-0 opacity-0 w-full">
           <div class="px-6 md:px-12 lg:px-20 pb-16 pt-20 flex flex-col gap-10">
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-              <div class="flex-1 text-[#00A3B5]">
+              <div class="flex-1 text-[#03A3B5]">
                 <p class="mb-6 font-bold text-lg md:text-xl leading-relaxed">ASSIA est née parce que plusieurs associations exprimaient les mêmes besoins métier, sans trouver de réponse satisfaisante.</p>
                 <ul class="space-y-4">
                   <li class="flex items-start gap-3">
@@ -96,7 +96,7 @@
                 </ul>
               </div>
               <div class="flex-1 w-full flex justify-center">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2968&auto=format&fit=crop" alt="Illustration" class="w-full max-w-md h-[400px] object-cover rounded-[50px] rotate-1" />
+                <img src="/img/assia/5.png" alt="Illustration" class="w-full max-w-md h-[400px] object-cover rounded-[50px] rotate-1" />
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@
           <div class="px-6 md:px-12 lg:px-20 pb-16 pt-20 flex flex-col gap-10">
 
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-start max-w-7xl mx-auto">
-              <div class="flex-1 text-[#00A3B5] space-y-6">
+              <div class="flex-1 text-[#03A3B5] space-y-6">
                 <p class="font-bold text-lg md:text-xl leading-relaxed">
                   ASSIA a été conçue sur le terrain, directement auprès des professionnels. Chaque évolution est guidée par les pratiques de terrain, pas par une logique de fonctionnalités.
                 </p>
@@ -128,7 +128,7 @@
                 </p>
               </div>
               <div class="flex-1 w-full flex justify-center md:justify-end">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2968&auto=format&fit=crop" alt="Co-construction" class="w-full max-w-sm h-auto object-cover rounded-[50px]" />
+                <img src="/img/assia/6.jpg" alt="Co-construction" class="w-full max-w-sm h-auto object-cover rounded-[50px]" />
               </div>
             </div>
 

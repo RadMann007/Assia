@@ -22,7 +22,7 @@
             <div class="w-full lg:w-1/3 relative">
               <div class="absolute -inset-2 bg-[#ff925c] rounded-[45px] rotate-2 opacity-20"></div>
               <div class="w-full h-[400px] rounded-[40px] overflow-hidden relative z-10">
-                 <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070&auto=format&fit=crop" alt="Bénéficiaire" class="w-full h-full object-cover">
+                 <img src="/img/assia/7.jpg" alt="Bénéficiaire" class="w-full h-full object-cover">
               </div>
             </div>
 
@@ -39,7 +39,7 @@
           </div>
 
           <div class="w-full bg-white/40 p-8 rounded-[40px] border-2 border-orange-100">
-            <p class="text-[#00A3B5] font-bold text-lg md:text-xl leading-relaxed">
+            <p class="text-[#03A3B5] font-bold text-lg md:text-xl leading-relaxed">
               ASSIA est bien adaptée aux activités pré et post-sentencielles :
               <span class="text-orange-400">
                 hébergement sortant de prison, placement extérieur, CJSE, CPPV, composition pénale, sursis probatoire, ESR, enquêtes de personnalité, stages de responsabilité, médiation pénale, réparation pénale des mineurs etc.

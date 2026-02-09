@@ -4,7 +4,7 @@
     <section class="relative py-20 px-6 max-w-7xl mx-auto flex flex-col items-center">
       
       <div class="env-image-container w-full max-w-5xl rounded-[40px] overflow-hidden shadow-2xl mb-12 border-[12px] border-white">
-        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2026&auto=format&fit=crop" 
+        <img src="/img/contact/2.jpg" 
              alt="Environnement" class="w-full h-[500px] object-cover transform scale-110">
       </div>
 
@@ -25,12 +25,14 @@
 
         <div class="eco-card p-10 rounded-[45px] border-2 border-[#64C27D]/20 bg-white shadow-xl text-center flex flex-col items-center justify-between min-h-[320px]">
           <p class="italic text-slate-600 text-lg">Notre serveur web et notre suite d’outils numériques sont <br><span class="text-[#64C27D] font-black not-italic text-2xl uppercase">propres et durables</span>, grâce à :</p>
-          <div class="text-4xl font-black text-[#00A3B5] tracking-tighter">infomaniak</div>
+          <div class="text-4xl font-black text-[#03A3B5] tracking-tighter">infomaniak</div>
         </div>
 
         <div class="eco-card p-10 rounded-[45px] border-2 border-[#64C27D]/20 bg-white shadow-xl text-center flex flex-col items-center justify-between min-h-[320px]">
           <p class="italic text-slate-600 text-lg">Nous accompagnons les <br><span class="text-[#64C27D] font-black not-italic text-2xl uppercase">futurs professionnels</span> sur des terrains bienveillants et formateurs.</p>
-          <div class="text-6xl">🎓</div>
+          <div class="text-6xl">
+            <img src="/img/contact/etudiant.png" class="w-16 h-16 object-cover" />
+          </div>
         </div>
       </div>
 
@@ -48,10 +50,10 @@
         </div>
         <div class="relative">
           <div class="magic-img-1 w-full h-[500px] rounded-[50px] overflow-hidden border-[15px] border-[#F9FDF9] shadow-2xl relative z-10">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover">
+            <img src="/img/contact/4.jfif" class="w-full h-full object-cover">
           </div>
           <div class="magic-img-2 absolute -bottom-10 -left-10 w-3/4 h-64 rounded-[40px] overflow-hidden border-[12px] border-white shadow-2xl z-20 hidden md:block">
-            <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1925&auto=format&fit=crop" class="w-full h-full object-cover">
+            <img src="/img/contact/3.jpg" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
@@ -71,13 +73,13 @@
     <section class="py-16 px-6 max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
         <div class="jungle-img h-80 rounded-[40px] overflow-hidden shadow-xl -rotate-2">
-          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover">
+          <img src="/img/contact/5.jpeg" class="w-full h-full object-cover">
         </div>
         <div class="jungle-img h-[500px] rounded-[50px] overflow-hidden shadow-2xl z-10 border-8 border-white">
-          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1932&auto=format&fit=crop" class="w-full h-full object-cover">
+          <img src="/img/contact/6.jpeg" class="w-full h-full object-cover">
         </div>
         <div class="jungle-img h-80 rounded-[40px] overflow-hidden shadow-xl rotate-2">
-          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover">
+          <img src="/img/contact/5.jpeg" class="w-full h-full object-cover">
         </div>
       </div>
       <h3 class="jungle-title text-[#64C27D] text-3xl md:text-5xl font-black uppercase text-center mt-12 tracking-tighter">
@@ -85,7 +87,7 @@
       </h3>
     </section>
 
-    <section class="mt-24 bg-[#00A3B5] py-24 px-6 text-white overflow-hidden rounded-t-[60px]">
+    <section class="mt-24 bg-[#03A3B5] py-24 px-6 text-white overflow-hidden rounded-t-[60px]">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div class="map-text space-y-8">
           <h2 class="text-6xl md:text-8xl font-black uppercase leading-none">Bientôt <br> chez <br> vous ?!</h2>
@@ -96,8 +98,8 @@
         </div>
         <div class="map-container relative flex justify-center">
           <div class="relative w-full max-w-md">
-            <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/France_blank_map.svg" class="w-full h-auto brightness-0 invert opacity-20"> -->
-            <!-- <div class="map-pin absolute top-[28%] left-[48%] w-5 h-5 bg-white rounded-full"></div> <div class="map-pin absolute top-[48%] left-[28%] w-5 h-5 bg-white rounded-full"></div> -->
+            <img src="/img/contact/carte.png" class="w-full h-auto">
+            <div class="map-pin absolute top-[28%] left-[48%] w-5 h-5 bg-white rounded-full"></div> <div class="map-pin absolute top-[48%] left-[28%] w-5 h-5 bg-white rounded-full"></div>
         </div>
         </div>
       </div>
