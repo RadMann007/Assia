@@ -43,7 +43,7 @@
       <!-- ACTION & MOBILE -->
       <div class="flex items-center gap-4">
         <!-- BOUTON CONTACT -->
-        <a href="/contact" 
+        <button @click="openDemoModal" 
            class="hidden md:block text-white px-8 py-3 font-bold rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 uppercase text-xs tracking-wider"
            :class="[
              currentPath !== '/application' 
@@ -51,7 +51,7 @@
                : 'bg-[#e07b48] hover:bg-[#ff925c]'
            ]">
           Demander une démo
-        </a>
+        </button>
 
         <!-- BURGER MENU (MOBILE) -->
         <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="md:hidden text-[#03A3B5] focus:outline-none bg-white/80 p-2 rounded-lg">
@@ -71,25 +71,82 @@
            :class="currentPath === link.url ? 'text-[#ff925c]' : 'text-[#03A3B5] hover:text-[#ff925c]'">
           {{ link.name }}
         </a>
-        <a href="/contact" 
+        <button @click="openDemoModal" 
            class="text-white w-full py-4 font-bold rounded-xl uppercase tracking-widest mt-2"
            :class="[
              currentPath === '/' ? 'bg-[#03A3B5]' : 'bg-[#ff925c]'
            ]">
           Demander une démo
-        </a>
+        </button>
       </div>
     </transition>
+
+    <!-- DEMO MODAL -->
+    <Teleport to="body">
+      <transition name="fade">
+        <div v-if="showDemoModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <!-- Background Overlay with stronger blur -->
+          <div class="absolute inset-0 bg-black/60 backdrop-blur-md" @click="closeDemoModal"></div>
+          
+          <!-- Modal Card -->
+          <div class="bg-white relative z-10 w-full max-w-md rounded-[30px] p-8 md:p-10 shadow-2xl transform transition-all">
+            <button @click="closeDemoModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            <h2 class="font-display font-black text-2xl md:text-3xl text-center mb-2 uppercase text-[#03A3B5]">Demander une démo</h2>
+            <p class="text-center text-gray-500 mb-8 text-sm">Remplissez ce formulaire pour être recontacté.</p>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-gray-500 mb-1 ml-3">Nom</label>
+                <input type="text" v-model="demoForm.nom" placeholder="Votre nom" class="w-full bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-[#03A3B5] transition-colors">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-gray-500 mb-1 ml-3">Email</label>
+                <input type="email" v-model="demoForm.email" placeholder="votre@email.com" class="w-full bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-[#03A3B5] transition-colors">
+              </div>
+
+              <!-- Feedback Message -->
+              <div v-if="feedbackMessage.text" 
+                  :class="{'text-green-600': feedbackMessage.type === 'success', 'text-red-500': feedbackMessage.type === 'error'}"
+                  class="px-2 text-sm font-bold text-center">
+                {{ feedbackMessage.text }}
+              </div>
+
+              <button @click="submitDemo" :disabled="isLoading" class="w-full bg-[#03A3B5] text-white font-bold uppercase py-4 rounded-xl hover:bg-[#028a95] transition-colors mt-4 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-300">
+                <span v-if="!isLoading">Envoyer la demande</span>
+                <span v-else>Envoi en cours...</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </Teleport>
 
   </nav>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, reactive, onMounted, onUnmounted } from 'vue';
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
 const currentPath = ref('/'); // Par défaut '/'
+const showDemoModal = ref(false);
+const isLoading = ref(false);
+
+const demoForm = reactive({
+  nom: '',
+  email: ''
+});
+
+const feedbackMessage = reactive({
+  text: '',
+  type: ''
+});
 
 const links = [
   { name: 'Accueil', url: '/' },
@@ -101,6 +158,67 @@ const links = [
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20;
 };
+
+const openDemoModal = () => {
+  showDemoModal.value = true;
+  isMobileMenuOpen.value = false;
+};
+
+const closeDemoModal = () => {
+  showDemoModal.value = false;
+  feedbackMessage.text = '';
+  feedbackMessage.type = '';
+  demoForm.nom = '';
+  demoForm.email = '';
+};
+
+const submitDemo = async () => {
+  feedbackMessage.text = '';
+  feedbackMessage.type = '';
+
+  if (!demoForm.nom || !demoForm.email) {
+    feedbackMessage.text = 'Veuillez remplir tous les champs.';
+    feedbackMessage.type = 'error';
+    return;
+  }
+
+  isLoading.value = true;
+
+  try {
+    const response = await fetch('https://edossah.fr/wp-json/vue-api/v1/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        nom: demoForm.nom,
+        email: demoForm.email,
+        message: 'demo'
+      })
+    });
+
+    if (response.ok) {
+        feedbackMessage.text = 'Votre demande a bien été envoyée !';
+        feedbackMessage.type = 'success';
+        demoForm.nom = '';
+        demoForm.email = '';
+        setTimeout(() => {
+          closeDemoModal();
+        }, 2000);
+    } else {
+        const errorData = await response.json().catch(() => ({}));
+        feedbackMessage.text = errorData.message || "Une erreur est survenue lors de l'envoi.";
+        feedbackMessage.type = 'error';
+    }
+  } catch (error) {
+    console.error('Erreur API:', error);
+    feedbackMessage.text = "Impossible de contacter le serveur. Veuillez réessayer plus tard.";
+    feedbackMessage.type = 'error';
+  } finally {
+    isLoading.value = false;
+  }
+};
+
 
 onMounted(() => {
   // 1. Détection de l'URL actuelle au chargement de la page

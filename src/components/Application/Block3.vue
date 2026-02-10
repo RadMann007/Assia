@@ -18,16 +18,17 @@
           
           <div class="flex-1 space-y-6">
             <h1 class="font-clemente text-orange-400 text-3xl md:text-4xl font-black leading-tight">
-              Chaque structure est différente et a ses propres besoins.
+              Chaque structure est différente et a ses propres besoins
             </h1>
             <p class="text-[#03A3B5] font-medium text-lg leading-relaxed">
-              C'est pourquoi, dès l'origine, la conception d'ASSIA a été pensée comme celle d'un outil s'adaptant au plus près des réalités de terrain.
+              C’est pourquoi, dès l’origine, la conception d’ASSIA a été pensée comme celle d’un outil s’adaptant au plus près des réalités de terrain. 
+              Et la diversité des associations déjà outillées nous permet devous indiquer comment ASSIA peut - ou non - répondre à vosbesoins.
             </p>
-            <div class="pt-4">
+            <!-- <div class="pt-4">
               <button class="bg-[#ff925c] text-white font-clemente font-bold py-3 px-8 rounded-full hover:bg-[#ff925c] transition-transform hover:scale-105 uppercase tracking-wide">
                 Voir des cas d'usage
               </button>
-            </div>
+            </div> -->
           </div>
 
           <div class="flex-1 relative">

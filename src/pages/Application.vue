@@ -35,7 +35,7 @@
       
       <div class="max-w-5xl stagger-hero mt-8 px-6">
         <p class="text-3xl md:text-5xl font-medium leading-tight">
-          Ce n'est pas seulement un outil de reporting pour les financeurs, c'est surtout <b class="font-black">un logiciel du quotidien</b> souhaité par les directions et les travailleurs sociaux.
+          Ce n’est pas seulement un outil de reporting,c’est surtout <b class="font-clemente">un logiciel du quotidien</b> utile aux professionnels de terrain
         </p>
       </div>
     </section>
@@ -82,18 +82,18 @@
             <div class="flex flex-col md:flex-row items-center gap-12">
               <div class="action-content flex-1 flex flex-col gap-4 order-2 md:order-1 w-full">
                   <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
-                      <p class="text-lg md:text-xl font-bold uppercase leading-tight">Gestion des mesures avec spécificités</p>
+                      <p class="text-lg md:text-xl font-bold uppercase leading-tight">Fluidifier la prise en charge des bénéficiaires</p>
                   </div>
                   <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
-                      <p class="text-lg md:text-xl font-bold uppercase leading-tight">Suivi des délais et alertes rapports</p>
+                      <p class="text-lg md:text-xl font-bold uppercase leading-tight">Réduire le temps d’administratif</p>
                   </div>
                   <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
-                      <p class="text-lg md:text-xl font-bold uppercase leading-tight">Génération de convocations</p>
+                      <p class="text-lg md:text-xl font-bold uppercase leading-tight">Adapter l’outil sur mesure pour votre dispositif</p>
                   </div>
               </div>
               <div class="action-title flex-1 order-1 md:order-2 text-center md:text-left">
                   <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#ff925c] leading-none">
-                      L'outil permet <br>notamment :
+                     CollaborATION entre professionnels sur chaque suivi :
                   </h1>
               </div>
             </div>
@@ -104,18 +104,21 @@
             <div class="flex flex-col md:flex-row-reverse items-center gap-12">
               <div class="action-content flex-1 flex flex-col gap-4 w-full">
                   <div class="font-clemente bg-[#03A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
-                    <p class="text-xl font-bold uppercase">Un logiciel qui plaît aux pros</p>
+                    <p class="text-xl font-bold uppercase">Tout avoir à portée de main : transversalité et pilotage</p>
                   </div>
                   <div class="font-clemente bg-[#03A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
-                    <p class="text-xl font-bold uppercase">Un prestataire expert du métier</p>
+                    <p class="text-xl font-bold uppercase">Module Hébergement</p>
                   </div>
                   <div class="font-clemente bg-[#03A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
-                    <p class="text-xl font-bold uppercase">Une solution évolutive et durable</p>
+                    <p class="text-xl font-bold uppercase">Module Paiement</p>
+                  </div>
+                  <div class="font-clemente bg-[#03A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
+                    <p class="text-xl font-bold uppercase">Module Asile et plein d’autres</p>
                   </div>
               </div>
               <div class="action-title flex-1 text-center md:text-right">
                   <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#03A3B5] leading-none">
-                      Et surtout à des <br> structures qui :
+                      Faciliter le quotidien à tous les niveaux :
                   </h1>
               </div>
             </div>
@@ -126,15 +129,18 @@
             <div class="flex flex-col md:flex-row items-center gap-12">
               <div class="action-content flex-1 flex flex-col gap-4 order-2 md:order-1 w-full">
                   <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
-                      <p class="text-lg md:text-xl font-bold uppercase">Centralisation des données</p>
+                      <p class="text-lg md:text-xl font-bold uppercase">Produire des indicateurs d’activité rapides</p>
                   </div>
                   <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
-                      <p class="text-lg md:text-xl font-bold uppercase">Sécurité et hébergement HDS</p>
+                      <p class="text-lg md:text-xl font-bold uppercase">Paramétrer des indicateurs d’activité spécifiques</p>
+                  </div>
+                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
+                      <p class="text-lg md:text-xl font-bold uppercase">Une gestion sécurisée des données</p>
                   </div>
               </div>
               <div class="action-title flex-1 order-1 md:order-2 text-center md:text-left">
                   <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#ff925c] leading-none">
-                      Pour une gestion <br>sécurisée :
+                      Suivre et piloter l’activité des services
                   </h1>
               </div>
             </div>
@@ -174,23 +180,30 @@
             </div>
           </div>
         </section>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div v-for="(testi, idx) in testimonials" :key="idx" class="testimonial-card bg-[#FFF5F0] border-2 border-orange-100 p-10 rounded-[60px] flex flex-col items-center shadow-lg hover:shadow-2xl transition-all group">
-            <div class="w-24 h-24 rounded-full overflow-hidden mb-6 border-4 border-white shadow-xl group-hover:scale-110 transition-transform">
-              <img :src="testi.image" :alt="testi.name" class="w-full h-full object-cover">
-            </div>
-            <h4 class="font-clemente text-xl font-black uppercase text-gray-800 leading-tight mb-1">{{ testi.name }}</h4>
-            <p class="text-sm text-[#ff925c] font-bold mb-4 italic">{{ testi.role }}</p>
-            <div class="flex gap-1 mb-6 text-[#ff925c]">
-              <Star v-for="s in 5" :key="s" class="w-5 h-5 fill-current" />
-            </div>
-            <p class="text-gray-600 text-md leading-relaxed italic font-medium">"{{ testi.text }}"</p>
-          </div>
-        </div>
+        <Temoignage />
       </div>
     </section>
 
   </div>
+  <section class="py-24">
+
+      <h2 class="text-4xl mt-16 md:text-6xl text-center text-[#ff925c] font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+        Des Questions ?
+      </h2>
+
+      <a href="/contact" class="text-[#ff925c] border-4 border-[#ff925c] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
+        Par ici les réponses
+      </a>
+    </section>
+
+    <section class="py-24 border-4 border-[#ff925c] bg-[#ff925c]/20 w-fit  mx-auto rounded-[34px] mt-14">
+      <h2 class="text-4xl md:text-6xl text-center text-[#ff925c] font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+        Besoin de plus d'informations ?
+      </h2>
+      <button class="text-white bg-[#ff925c] border-4 border-[#ff925c] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
+        écrivez-nous
+      </button>
+    </section>
   <Footer/>
 </template>
 
@@ -200,10 +213,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from '@studio-freight/lenis';
 import NavBar from '../components/NavBar.vue';
+import Temoignage from '../components/Application/Temoignage.vue'; // New import
 
-import { 
-  Star
-} from 'lucide-vue-next';
 import BlocRealite from '../components/Application/BlocRealite.vue';
 import Block2 from '../components/Application/Block2.vue';
 import Block3 from '../components/Application/Block3.vue';
@@ -240,11 +251,7 @@ const engagementItems = [
   { title: "Évolutivité", image: "/img/assia/icon/evolution.png", color: "bg-[#03A3B5]", textColor: "text-[#03A3B5]" }
 ];
 
-const testimonials = [
-  { name: "Kassim Said Abdou", role: "Directeur de Esperer 95", image: "https://randomuser.me/api/portraits/men/32.jpg", text: "Très satisfait(e) de mon expérience ! Le service est professionnel." },
-  { name: "Sandra Aldi Bara", role: "Directrice de Esperer 95", image: "https://randomuser.me/api/portraits/women/44.jpg", text: "Un outil métier co-construit qui s'adapte réellement." },
-  { name: "Christoph Daniel", role: "Directeur de Esperer 95", image: "https://randomuser.me/api/portraits/men/45.jpg", text: "Une approche innovante pour le secteur AHI." }
-];
+
 
 const toggleCollapse = (index) => {
   const currentEl = contentRefs.value[index];

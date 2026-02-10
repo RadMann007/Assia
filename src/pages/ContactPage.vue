@@ -270,38 +270,69 @@ onMounted(async () => {
 
   ctx = gsap.context(() => {
     
+    // Animation Formulaire (Sequence)
+    const formTl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 }});
+    formTl.from("h1", { y: 50, opacity: 0, delay: 0.5 })
+          .from("input", { y: 30, opacity: 0, stagger: 0.1 }, "-=0.6")
+          .from("textarea", { y: 30, opacity: 0 }, "-=0.6")
+          .from("button", { scale: 0.9, opacity: 0 }, "-=0.4")
+          .from(".social-card", { x: -50, opacity: 0 }, "-=0.8") // Petite intro douce si visible
+          
     // Animation Carte Gauche (Arrive de la GAUCHE)
-    // On utilise fromTo pour éviter que ça disparaisse si on recharge
     gsap.fromTo(".social-card", 
-      { x: -200, opacity: 0 }, // DÉPART
+      { x: -100, opacity: 0 }, 
       { 
         x: 0, 
         opacity: 1, 
-        ease: "power2.out",
+        duration: 1.2,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: infoSection.value,
-          start: "top 90%", // Déclenche un peu plus tôt
-          end: "top 40%",
-          scrub: 1, // Effet fluide lié au scroll
+          start: "top 85%",
         }
       }
     );
 
     // Animation Carte Droite (Arrive de la DROITE)
     gsap.fromTo(".address-card", 
-      { x: 200, opacity: 0 }, // DÉPART
+      { x: 100, opacity: 0 }, 
       { 
         x: 0, 
         opacity: 1, 
-        ease: "power2.out",
+        duration: 1.2,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: infoSection.value,
-          start: "top 90%",
-          end: "top 40%",
-          scrub: 1,
+          start: "top 85%",
         }
       }
     );
+
+    // Parallaxe Photo Equipe
+    gsap.to(".bg-gray-300 img", {
+      y: 50,
+      scale: 1.1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".bg-gray-300",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+
+    // Compteur Animé (12 experts)
+    gsap.from(".text-[120px]", {
+      textContent: 0,
+      duration: 2,
+      ease: "power1.out",
+      snap: { textContent: 1 },
+      stagger: 1,
+      scrollTrigger: {
+        trigger: ".text-[120px]",
+        start: "top 80%",
+      }
+    });
 
   }, infoSection.value);
 });

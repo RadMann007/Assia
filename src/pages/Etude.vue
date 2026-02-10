@@ -120,95 +120,104 @@ const textRevealContainer = ref(null);
 onMounted(async () => {
   await nextTick();
   
-  // Animation titre
-  gsap.from(".title-green", { y: 60, opacity: 0, duration: 1, ease: "power3.out" });
+  const ctx = gsap.context(() => {
+     // Animation titre
+    gsap.from(".title-green", { 
+      y: 100, 
+      opacity: 0, 
+      duration: 1.5, 
+      ease: "power4.out",
+      scrollTrigger: { trigger: ".title-green", start: "top 85%" }
+    });
 
-  // Parallaxe Image Env
-  gsap.to(".env-image-container img", {
-    scrollTrigger: { trigger: ".env-image-container", start: "top bottom", end: "bottom top", scrub: true },
-    scale: 1, y: 30
-  });
-
-  // Cartes
-  gsap.from(".eco-card", {
-    scrollTrigger: { trigger: ".eco-card", start: "top 85%", end: "top 30%", scrub: 1 },
-    y: 100, 
-    opacity: 0, 
-    rotationX: 15,
-    scale: 0.9,
-    stagger: 0.3,
-    ease: "power2.out"
-  });
-
-  // Magie Opère
-  const magicTl = gsap.timeline({
-    scrollTrigger: { 
-      trigger: ".magic-text", 
-      start: "top 80%", 
-      end: "bottom 30%", 
-      scrub: 1.2 
-    }
-  });
-  
-  magicTl.from(".magic-text h2", { 
-    y: 100, 
-    opacity: 0, 
-    skewY: 10,
-    duration: 1.5 
-  })
-  .from(".magic-img-1", { 
-    scale: 0.8, 
-    opacity: 0, 
-    x: 100,
-    duration: 1.5 
-  }, "-=1")
-  .from(".magic-img-2", { 
-    scale: 0.5, 
-    opacity: 0, 
-    y: 100,
-    duration: 1.5 
-  }, "-=1.2");
-
-  // Texte Déchets
-  gsap.to(".waste-content", {
-    scrollTrigger: { trigger: ".waste-content", start: "top 80%", scrub: 1 },
-    opacity: 1, y: -30
-  });
-
-  // Galerie Jungle
-  gsap.from(".jungle-img", {
-    scrollTrigger: { trigger: ".jungle-img", start: "top 90%", scrub: 2 },
-    y: 100, stagger: 0.3, ease: "power2.out"
-  });
-
-  // Carte Pins
-  gsap.from(".map-pin", {
-    scrollTrigger: { trigger: ".map-container", start: "top 70%" },
-    scale: 0, stagger: 0.5, ease: "back.out(3)", duration: 1.2
-  });
-
-  // ANIMATION DE TEXTE RÉVÉLATION AU SCROLL
-  const textWords = document.querySelectorAll('.reveal-word');
-  if (textWords.length > 0) {
-    gsap.set(textWords, { opacity: 0.15 });
-    
-    const textTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: textRevealContainer.value,
-        start: "top 80%",
-        end: "top 30%",
-        scrub: 1,
+    // Parallaxe Image Env
+    gsap.fromTo(".env-image-container img", 
+      { scale: 1.2, y: -50 },
+      {
+        scale: 1, y: 50,
+        ease: "none",
+        scrollTrigger: { 
+          trigger: ".env-image-container", 
+          start: "top bottom", 
+          end: "bottom top", 
+          scrub: true 
+        }
       }
+    );
+
+    // Cartes Eco (Staggered pop)
+    gsap.from(".eco-card", {
+      scrollTrigger: { trigger: ".eco-card", start: "top 85%" },
+      y: 100, 
+      opacity: 0, 
+      duration: 1,
+      stagger: 0.2,
+      ease: "back.out(1.7)"
+    });
+
+    // Banner Serveur
+    gsap.from(".server-banner", {
+      scrollTrigger: { trigger: ".server-banner", start: "top 90%" },
+      scale: 0.9, opacity: 0, duration: 1, ease: "power3.out"
+    });
+
+    // Magie Opère - Texte
+    gsap.from(".magic-text h2", {
+      scrollTrigger: { trigger: ".magic-text", start: "top 75%" },
+      x: -100, opacity: 0, duration: 1.5, ease: "power4.out"
+    });
+
+    // Magie Opère - Images
+    gsap.from(".magic-img-1", {
+      scrollTrigger: { trigger: ".magic-text", start: "top 75%" },
+      x: 100, opacity: 0, duration: 1.5, bgDelay: 0.2, ease: "power4.out"
     });
     
-    textWords.forEach((word, i) => {
-      textTl.to(word, {
-        opacity: 1,
-        duration: 0.1,
-        ease: "power2.out"
-      }, i * 0.03);
+    gsap.from(".magic-img-2", {
+      scrollTrigger: { trigger: ".magic-text", start: "top 60%" },
+      y: 100, opacity: 0, duration: 1.5, delay: 0.4, ease: "power4.out"
     });
-  }
+
+
+    // Texte Déchets (Reveal Word by Word)
+    const textWords = document.querySelectorAll('.reveal-word');
+    if (textWords.length > 0) {
+      gsap.from(textWords, {
+        scrollTrigger: {
+          trigger: textRevealContainer.value,
+          start: "top 85%",
+          end: "bottom 85%",
+          scrub: 1,
+        },
+        opacity: 0.1,
+        stagger: 0.05,
+        ease: "power2.out"
+      });
+      // Fade in container
+      gsap.to(".waste-content", { opacity: 1, duration: 0.5 });
+    }
+
+    // Galerie Jungle (Parallaxe différencié)
+    gsap.from(".jungle-img", {
+      scrollTrigger: { trigger: ".jungle-img", start: "top bottom", end: "bottom top", scrub: 1 },
+      y: (i) => i % 2 === 0 ? 50 : -50,
+      ease: "none"
+    });
+    
+    // Titre Jungle
+    gsap.from(".jungle-title", {
+      scrollTrigger: { trigger: ".jungle-title", start: "top 90%" },
+      scale: 0.8, opacity: 0, duration: 1, ease: "back.out(1.7)"
+    });
+
+
+    // Carte Pins (Pop effect)
+    gsap.from(".map-pin", {
+      scrollTrigger: { trigger: ".map-container", start: "top 75%" },
+      scale: 0, opacity: 0, stagger: 0.3, duration: 0.8, ease: "elastic.out(1, 0.5)"
+    });
+  });
+
 });
 </script>
 

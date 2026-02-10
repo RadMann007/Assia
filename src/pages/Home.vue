@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from '@studio-freight/lenis';
 import NavBar from '../components/NavBar.vue';
 import Footer from '../components/Footer.vue';
+import Temoignage from '../components/Application/Temoignage.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,10 +26,10 @@ const partners = [
 ];
 
 const approachItems = [
-  { title: "01. Diagnostic Terrain", content: "Nous nous immergeons dans votre quotidien pour comprendre les frictions réelles de vos équipes sociales." },
-  { title: "02. Stratégie Digitale", content: "Conception d'une roadmap personnalisée : choix des outils et architecture de données." },
-  { title: "03. Développement & Intégration", content: "Mise en place de vos solutions sur mesure avec une attention particulière à l'interopérabilité." },
-  { title: "04. Accompagnement au Changement", content: "Formation de vos collaborateurs pour garantir que l'outil soit réellement adopté." }
+  { title: "Comprendre le terrain", content: "Nous nous immergeons dans votre quotidien pour comprendre les frictions réelles de vos équipes sociales." },
+  { title: "Concevoir auprès des équipes", content: "Conception d'une roadmap personnalisée : choix des outils et architecture de données." },
+  { title: "Livrer au plus vite", content: "Mise en place de vos solutions sur mesure avec une attention particulière à l'interopérabilité." },
+  { title: "Accompagner dans la durée", content: "Formation de vos collaborateurs pour garantir que l'outil soit réellement adopté." }
 ];
 
 const itemStates = ref(approachItems.map(() => false));
@@ -173,8 +174,8 @@ onMounted(async () => {
       </div>
     </section>
 
-    <section ref="textRevealContainer" class="flex w-full py-24 px-6 md:px-20 bg-primary/5">
-      <p class="text-primary text-center mx-auto font-display text-4xl md:text-[45px] font-black leading-tight max-w-5xl">
+    <section ref="textRevealContainer" class="flex w-full py-24 px-6 md:px-20 bg-primary">
+      <p class="text-white text-center mx-auto font-display text-4xl md:text-[45px] font-black leading-tight max-w-5xl">
         <span class="reveal-word">Nous</span> <span class="reveal-word">vous</span> <span class="reveal-word">accompagnons</span> <span class="reveal-word">dans</span> <span class="reveal-word">la</span> <span class="reveal-word">conception,</span> <span class="reveal-word">l'évolution</span> <span class="reveal-word">et</span> <span class="reveal-word">le</span> <span class="reveal-word">déploiement</span> <span class="reveal-word">de</span> <span class="reveal-word">vos</span> <span class="reveal-word">outils</span> <span class="reveal-word">numériques.</span> <span class="reveal-word">Et</span> <span class="reveal-word">grâce</span> <span class="reveal-word">à</span> <span class="reveal-word">notre</span> <span class="reveal-word">connaissance</span> <span class="reveal-word">de</span> <span class="reveal-word">vos</span> <span class="reveal-word">métiers,</span> <span class="reveal-word">nos</span> <span class="reveal-word">propositions</span> <span class="reveal-word">sont</span> <span class="reveal-word">adaptées,</span> <span class="reveal-word">durables</span> <span class="reveal-word">et</span> <span class="reveal-word">très</span> <span class="reveal-word">utiles.</span>
       </p>
     </section>
@@ -186,8 +187,10 @@ onMounted(async () => {
            <h2 class="font-display text-4xl md:text-[45px] text-primary font-black uppercase text-center leading-tight">Pourquoi <br/> Edossah ?</h2>
         </div>
         <div class="md:w-2/3 p-12 md:p-20 flex flex-col justify-center text-center md:text-left space-y-8">
-          <h3 class="text-4xl md:text-[45px] text-primary font-black uppercase leading-tight">"On comprend vos besoins"</h3>
-          <p class="text-2xl md:text-[35px] text-primary leading-tight font-medium">Grâce à notre expérience du terrain, nous parlons le même langage que vos équipes. Pas de jargon technique, juste de l'efficacité brute.</p>
+          <p class="text-2xl md:text-[35px] text-primary">Tout simplement pour notre expérience du terrain: <b>on comprend vos besoins !</b></p>
+          <p class="text-2xl md:text-[35px] text-primary leading-tight font-medium">
+            Les professionnels méritent un outil qui allège leur quotidien, et on y répond de manière sur mesure pour permettre à votre organisation de se concentrer sur le plus important : <b> son activité.</b>.
+          </p>
         </div>
       </div>
     </section>
@@ -197,7 +200,7 @@ onMounted(async () => {
         <h2 class="font-display text-4xl md:text-6xl text-center uppercase font-black mb-16 text-primary tracking-tighter">Notre Approche</h2>
         <div class="flex flex-col gap-6 max-w-4xl mx-auto">
             <div v-for="(item, index) in approachItems" :key="index" 
-                 class="border-2 border-primary cursor-pointer transition-all duration-500 rounded-[50px] overflow-hidden"
+                 class="border-2 border-primary cursor-pointer transition-all duration-500 rounded-[25px] overflow-hidden"
                  :class="itemStates[index] ? 'bg-white text-primary' : 'bg-primary text-white'"
                  @click="toggleItem(index)">
                 <div class="p-8 flex justify-between items-center select-none">
@@ -217,12 +220,37 @@ onMounted(async () => {
     <section class="w-full flex justify-center py-20 px-6"> 
       <div class="slide-right-2 flex flex-col md:flex-row max-w-[90%] md:max-w-7xl border-2 border-[#ff925c] bg-white rounded-[60px] md:rounded-[100px] overflow-hidden">
         <div class="md:w-1/3 flex flex-col items-center justify-center p-12 border-b-2 md:border-b-0 md:border-r-2 border-[#ff925c] bg-[#ff925c]/5">
-           <img src="/img/adn.jpeg" class="w-48 h-48 object-contain mb-8 rotate-12 rounded-2xl"/>
-           <h2 class="font-display text-4xl md:text-[45px] text-[#ff925c] font-black uppercase text-center tracking-tighter leading-tight">notre <br/> ADN</h2>
+           <h3 class="font-display text-xl md:text-2xl text-[#ff925c] font-black text-center tracking-tight leading-tight mb-4 max-w-[80%]">
+             Issus du secteur associatif et de l'AHI
+           </h3>
+           <img src="/img/adn.png" class="w-40 h-40 object-contain mb-4 rotate-12 rounded-2xl"/>
+           <h2 class="font-display text-4xl md:text-[45px] text-[#ff925c] font-black text-center tracking-tighter leading-tight">Notre <br/> ADN</h2>
         </div>
         <div class="md:w-2/3 p-12 md:p-20 flex flex-col justify-center text-center md:text-left space-y-8">
-          <h3 class="text-4xl md:text-[45px] text-[#ff925c] font-black uppercase tracking-tighter">"Expertise & Proximité"</h3>
-          <p class="text-2xl md:text-[30px] text-[#ff925c] leading-tight font-black uppercase">Parce que transformer le social demande plus que du code : il faut une compréhension réelle des enjeux humains et une présence constante à vos côtés.</p>
+          <p class="text-[#ff925c] space-y-4 text-lg md:text-xl font-medium">Cet ancrage se traduit par des choix concrets :</p>
+          
+          <ul class="text-[#ff925c] space-y-4 text-lg md:text-xl font-medium">
+            <li class="flex items-start gap-3">
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-[#ff925c] flex-shrink-0"></span>
+              <span>Un support client humain et accessible</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-[#ff925c] flex-shrink-0"></span>
+              <span>Des solutions co-construites avec les professionnels de terrain</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-[#ff925c] flex-shrink-0"></span>
+              <span>Des tarifs adaptés aux réalités budgétaires des associations</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-[#ff925c] flex-shrink-0"></span>
+              <span>Une capacité à livrer rapidement des versions opérationnelles</span>
+            </li>
+          </ul>
+
+          <p class="text-[#ff925c] space-y-4 text-lg md:text-xl font-medium">
+            Parce que nous connaissons les réalités du secteur, nous concevons des outils qui s'y adaptent réellement.
+          </p>
         </div>
       </div>
     </section>
@@ -237,11 +265,11 @@ onMounted(async () => {
         <div class="container mx-auto">
             <div class="grid lg:grid-cols-2 gap-16 mb-20 items-center">
                 <div class="p-2 overflow-hidden enjeux-image">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="w-full rounded-3xl h-full object-cover"/>
+                    <img src="/img/2hand.jpg" class="w-full rounded-3xl h-full object-cover"/>
                 </div>
                 <div class="flex flex-col gap-8 text-center lg:text-left enjeux-content">
-                    <h2 class="text-3xl md:text-[45px] font-display font-black uppercase leading-tight text-white">Nous accompagnons les structures face à des enjeux très concrets</h2>
-                    <p class="text-xl md:text-[30px] font-medium text-white">Les structures que nous accompagnons rencontrent fréquemment les situations suivantes :</p>
+                    <h2 class="text-xl md:text-[45px] font-display font-black leading-tight text-white font-clemente">Nous accompagnons les structures face à des enjeux très concrets</h2>
+                    <p class="text-xl md:text-[30px] font-medium text-white font-clemente">Les structures que nous accompagnons rencontrent fréquemment les situations suivantes :</p>
                 </div>
             </div>
 
@@ -280,19 +308,19 @@ onMounted(async () => {
         </div>
         <!-- Roles -->
             <div class="container mx-auto mt-32 text-center text-white">
-              <h2 class="text-4xl md:text-6xl font-black font-display uppercase mb-8 px-4 leading-[0.9] tracking-tighter">
+              <h2 class="text-4xl md:text-6xl font-black font-display uppercase font-clemente mb-8 px-4 leading-[0.9] tracking-tighter">
                Notre Rôle ?
               </h2>
-              <p class="text-xl md:text-3xl font-medium max-w-5xl mx-auto mb-12 leading-tight">
+              <p class="md:text-3xl max-w-5xl mx-auto mb-12 font-clemente">
                 Structurer, concevoir et faire évoluer votre système d'information. Chaque accompagnement est pensé en fonction du contexte, des 
                 usages et des moyens de la structure.
               </p>
 
-              <div>
+              <!-- <div>
                 <button class="bg-white text-primary font-black uppercase text-lg md:text-xl py-4 px-10 rounded-full shadow-2xl hover:scale-105 transition-transform duration-300">
                   Je découvre les cas pratiques
                 </button>
-              </div>
+              </div> -->
             </div>
     </section>
 
@@ -303,7 +331,7 @@ onMounted(async () => {
         <!-- 1. Grid: Titre + Image -->
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16">
           <div class="flex flex-col gap-8 text-center lg:text-left">
-              <h2 class="text-3xl md:text-[50px] font-display font-black uppercase leading-[0.9] tracking-tighter text-white">
+              <h2 class="text-3xl md:text-[50px] font-display font-black font-clemente uppercase leading-[0.9] tracking-tighter text-white">
                 Assia: <br /> une réponse mutualisée à un besoin partagé
               </h2>
           </div>
@@ -315,28 +343,28 @@ onMounted(async () => {
         </div>
 
         <!-- 2. Flux Vertical de Contenu -->
-        <div class="flex flex-col items-center text-center gap-10 text-white max-w-4xl mx-auto">
+        <div class="flex flex-col items-center text-center gap-10 text-white max-w-4xl mx-auto font-clemente">
             
             <p class="text-xl md:text-2xl font-medium leading-relaxed">
               Lorsque plusieurs associations rencontrent des besoins métier similaires, nous faisons le choix de la mutualisation.
             </p>
 
-            <button class="bg-white text-[#ff925c] font-black uppercase text-lg md:text-xl py-4 px-10 rounded-full shadow-xl hover:scale-105 transition-transform duration-300 pointer-events-none">
+            <button class="text-white bg-[#ff925c] font-black uppercase text-lg md:text-xl py-4 px-10 rounded-full shadow-xl hover:scale-105 transition-transform duration-300 pointer-events-none">
               ASSIA est l'un de ces projets :
             </button>
 
             <p class="text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
-              Un outil métier dédié au travail social, co-construit avec les professionnels, évolutif et partagé au sein d'un club utilisateurs.
+              <b>Un outil métier</b> dédié au <b>travail social, co-construit</b> avec les professionnels, <b>évolutif</b> et toujours <b>au service du quotidien.</b>
             </p>
 
             <p class="text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
-              ASSIA incarne notre capacité à comprendre les réalités de terrain et à les traduire en systèmes d'information concrets et opérationnels.
+              ASSIA incarne notre capacité à <b>comprendre</b> les réalités de terrain et à les <b>traduire</b> en systèmes d'information <b>concrets</b> et <b>opérationnels.</b>
             </p>
 
             <div class="pt-4">
-               <button class="bg-white text-[#ff925c] font-black uppercase text-xl md:text-2xl py-5 px-12 rounded-full shadow-2xl hover:bg-orange-50 transition-colors duration-300 border-4 border-white cursor-pointer">
+               <a href="/application" class="text-white bg-[#ff925c] text-xl md:text-2xl py-5 px-12 rounded-full cursor-pointer">
                  Je découvre ASSIA
-               </button>
+               </a>
             </div>
 
         </div>
@@ -355,6 +383,49 @@ onMounted(async () => {
           </div>
         </div>
       </div>
+    </section>
+    <div class="max-w-7xl mx-auto text-center">
+      <Temoignage />
+    </div>
+
+    <section class="py-24">
+      <h2 class="text-4xl md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+        Ils nous ont soutenu
+      </h2>
+      <div class="bg-primary container rounded-[34px] mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+        <div class="w-96 h-64 p-8 flex items-center justify-center">
+          <img src="/logo/idf.png" class="w-full h-full object-contain brightness-0 invert" alt="Ile de France"/>
+        </div>
+        <div class="w-96 h-64 p-8 flex items-center justify-center">
+          <img src="/logo/bpi.png" class="w-full h-full object-contain brightness-0 invert" alt="BPI France"/>
+        </div>
+      </div>
+
+      <h2 class="text-4xl mt-16 md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+        Des Questions ?
+      </h2>
+
+      <a href="/contact" class="text-primary border-2 border-primary flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
+        Par ici les réponses
+      </a>
+    </section>
+
+    <section>
+      <h2 class="text-4xl md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+        Ils nous font confiance
+      </h2>
+      <button class="text-white bg-primary border-2 border-primary flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
+        j'arrive
+      </button>
+    </section>
+
+    <section class="py-24 border border-primary w-fit  mx-auto rounded-[34px] mt-14">
+      <h2 class="text-4xl md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+        Besoin de plus d'informations ?
+      </h2>
+      <button class="text-white bg-primary border-2 border-primary flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
+        écrivez-nous
+      </button>
     </section>
 
     <Footer />
