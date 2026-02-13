@@ -18,8 +18,25 @@
 import { Star } from 'lucide-vue-next';
 
 const testimonials = [
-  { name: "Kassim Said Abdou", role: "Directeur de Esperer 95", image: "https://randomuser.me/api/portraits/men/32.jpg", text: "Très satisfait(e) de mon expérience ! Le service est professionnel." },
-  { name: "Sandra Aldi Bara", role: "Directrice de Esperer 95", image: "https://randomuser.me/api/portraits/women/44.jpg", text: "Un outil métier co-construit qui s'adapte réellement." },
-  { name: "Christoph Daniel", role: "Directeur de Esperer 95", image: "https://randomuser.me/api/portraits/men/45.jpg", text: "Une approche innovante pour le secteur AHI." }
+  { 
+    name: "Kassim Said Abdou", 
+    role: "Directeur de Esperer", 
+    image: "https://randomuser.me/api/portraits/men/32.jpg", 
+    text: "Très satisfait(e) de mon expérience ! Le service est professionnel, rapide et à l’écoute. La qualité est au rendez-vous et le résultat a dépassé mes attentes. Je recommande sans hésitation et je ferai de nouveau appel à cette entreprise." 
+  },
+
+  { 
+    name: "Sandra Aldi Bara", 
+    role: "Directrice de Esperer", 
+    image: "https://randomuser.me/api/portraits/women/44.jpg", 
+    text: "Très satisfait(e) de mon expérience ! Le service est professionnel, rapide et à l’écoute. La qualité est au rendez-vous et le résultat a dépassé mes attentes. Je recommande sans hésitation et je ferai de nouveau appel à cette entreprise." 
+  },
+
+  { 
+    name: "Christoph Daniel", 
+    role: "Directeur de Esperer", 
+    image: "https://randomuser.me/api/portraits/men/45.jpg", 
+    text: "Très satisfait(e) de mon expérience ! Le service est professionnel, rapide et à l’écoute. La qualité est au rendez-vous et le résultat a dépassé mes attentes. Je recommande sans hésitation et je ferai de nouveau appel à cette entreprise." 
+  }
 ];
 </script>

@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        clemente: ['Clemente', 'sans-serif'],
+        clementeMini: ['Clemente-mini', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

@@ -90,8 +90,8 @@
     <section class="mt-24 bg-[#03A3B5] py-24 px-6 text-white overflow-hidden rounded-t-[60px]">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div class="map-text space-y-8">
-          <h2 class="text-6xl md:text-8xl font-black uppercase leading-none">Bientôt <br> chez <br> vous ?!</h2>
-          <div class="space-y-6 text-xl md:text-2xl opacity-95 font-medium leading-relaxed">
+          <h2 class="text-6xl md:text-8xl uppercase leading-none">Bientôt <br> chez <br> vous ?!</h2>
+          <div class="space-y-6 md:text-2xl opacity-95">
             <p>Notre équipe est basée en Ile-de-France, avec un bureau historique à Cergy (la ville de naissance d’ASSIA).</p>
             <p>Nous avons récemment ouvert une antenne à Nantes, et nous nous déployons sur de multiples territoires.</p>
           </div>
@@ -111,7 +111,6 @@
 import { onMounted, ref, nextTick } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import NavBar from '../components/NavBar.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -222,7 +221,6 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.font-clemente { font-family: 'Clemente', sans-serif; }
 .map-pin::after {
   content: ''; position: absolute; inset: -10px;
   border-radius: 50%; background: white; opacity: 0.4;

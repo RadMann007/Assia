@@ -17,11 +17,12 @@
     <NavBar />
 
     <!-- 1. SECTION HERO -->
-    <section class="relative font-clemente min-h-screen bg-[#ff925c] pt-32 pb-20 px-0 flex flex-col items-center justify-center text-white text-center overflow-hidden">
+    <section class="relative min-h-screen bg-[#ff925c] pt-32 pb-20 px-0 flex flex-col items-center justify-center text-white text-center overflow-hidden">
       <!-- Container stretches to edges -->
       <div class="w-full flex flex-col md:flex-row justify-center items-stretch gap-0 mb-16 relative z-10">
         <div class="hero-card-left flex-1 bg-white text-[#ff925c] p-10 md:p-16 rounded-r-[60px] md:rounded-r-[80px] rounded-l-none shadow-none">
-          <h2 class="text-4xl md:text-6xl font-black uppercase leading-none tracking-tight">À la croisée de<br>l'expertise de l'AHI</h2>
+          <!-- animer de gauche vers le centre -->
+          <h2 class="text-4xl md:text-6xl font-black uppercase leading-none tracking-tight font-clemente text-right">À la croisée de<br>l'expertise de l'AHI</h2>
         </div>
         
         <div class="hero-ampersand-container flex items-center justify-center px-6 md:px-12 py-4 z-20">
@@ -29,12 +30,13 @@
         </div>
 
         <div class="hero-card-right flex-1 bg-white text-[#ff925c] p-10 md:p-16 rounded-l-[60px] md:rounded-l-[80px] rounded-r-none shadow-none">
-          <h2 class="text-4xl md:text-6xl font-black uppercase leading-none tracking-tight">De la<br>technologie</h2>
+          <!-- animer de droite vers le centre -->
+          <h2 class="text-4xl md:text-6xl text-left font-black uppercase leading-none tracking-tight font-clemente">De la<br>technologie</h2>
         </div>
       </div>
       
       <div class="max-w-5xl stagger-hero mt-8 px-6">
-        <p class="text-3xl md:text-5xl font-medium leading-tight">
+        <p class="text-3xl font-clementeMini md:text-5xl leading-tight">
           Ce n’est pas seulement un outil de reporting,c’est surtout <b class="font-clemente">un logiciel du quotidien</b> utile aux professionnels de terrain
         </p>
       </div>
@@ -47,7 +49,7 @@
           <div class="relative w-full max-w-5xl flex justify-center items-end gap-4 mockup-container">
             <img src="/img/assia/1.png" alt="Logiciel ASSIA" class="w-full h-auto rounded-[54px]">
           </div>
-          <h1 ref="textRevealContainer" class="text-4xl md:text-6xl font-black text-[#03A3B5] text-center leading-tight max-w-6xl font-clemente uppercase tracking-tight">
+          <h1 ref="textRevealContainer" class="text-4xl md:text-5xl font-black text-[#03A3B5] text-center leading-tight max-w-6xl font-clemente uppercase tracking-tight">
             <span class="reveal-word">ASSIA</span> <span class="reveal-word">est</span> <span class="reveal-word">un</span> <span class="reveal-word">logiciel</span> <span class="reveal-word">métier</span> <span class="reveal-word">co-construit</span> <span class="reveal-word">avec</span> <span class="reveal-word">les</span> <span class="reveal-word">professionnels,</span> <span class="reveal-word">pour</span> <span class="reveal-word">traduire</span> <span class="reveal-word">leurs</span> <span class="reveal-word">pratiques</span> <span class="reveal-word">réelles</span> <span class="reveal-word">en</span> <span class="reveal-word">un</span> <span class="reveal-word">système</span> <span class="reveal-word">d'information</span> <span class="reveal-word">simple,</span> <span class="reveal-word">utile</span> <span class="reveal-word">et</span> <span class="reveal-word">évolutif.</span>
           </h1>
         </div>
@@ -55,7 +57,9 @@
     </section>
 
     <!-- 3. SECTION ACCORDION (CONTENU CORRIGÉ SELON L'IMAGE) -->
-     <BlocRealite />
+     <section class="mx-[10%]">
+       <BlocRealite />
+     </section>
 
     <!-- 4. SECTION EXCLUSION SOCIALE (DESIGN CORRIGÉ) -->
     <section class="pb-20 w-full">
@@ -65,93 +69,35 @@
       </h1>
 
        <!-- ACCOMPAGNEMENT SOCIAL -->
-        <Block2 />
+        <div class="mx-[10%]">
+          <Block2 />
+        </div>
 
        <!-- TITRE QUE FAIT ASSIA -->
-       <h2 class="font-clemente text-[#03A3B5] mt-24 mb-16 text-4xl md:text-7xl font-black uppercase text-center tracking-tighter">
+       <h2 class="font-clemente text-[#03A3B5] text-4xl md:text-8xl font-black uppercase text-center tracking-tighter py-24">
           QUE FAIT ASSIA ?
        </h2>
     </section>
 
     <!-- 5. SECTION ACTIONS (MANUELLE - SANS BOUCLE) -->
-    <section class="py-12 bg-gray-50/50">
+    <section class="bg-gray-50/50">
         <div class="actions-container flex flex-col gap-24 pb-20 overflow-hidden">
         
-        <!-- Bloc 1 : L'outil permet notamment (ORANGE) -->
-        <section class="action-section-left mr-4 md:mr-32 border-4 border-l-0 border-[#ff925c] rounded-r-[60px] p-8 md:p-12 bg-white shadow-lg">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-              <div class="action-content flex-1 flex flex-col gap-4 order-2 md:order-1 w-full">
-                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
-                      <p class="text-lg md:text-xl font-bold uppercase leading-tight">Fluidifier la prise en charge des bénéficiaires</p>
-                  </div>
-                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
-                      <p class="text-lg md:text-xl font-bold uppercase leading-tight">Réduire le temps d’administratif</p>
-                  </div>
-                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
-                      <p class="text-lg md:text-xl font-bold uppercase leading-tight">Adapter l’outil sur mesure pour votre dispositif</p>
-                  </div>
-              </div>
-              <div class="action-title flex-1 order-1 md:order-2 text-center md:text-left">
-                  <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#ff925c] leading-none">
-                     CollaborATION entre professionnels sur chaque suivi :
-                  </h1>
-              </div>
-            </div>
-        </section>
+          <!-- Bloc 1 : L'outil permet notamment (ORANGE) -->
+          <Role1 />
 
-        <!-- Bloc 2 : Structures qui recherchent (BLEU) -->
-        <section class="action-section-right ml-4 md:ml-32 border-4 border-r-0 border-[#03A3B5] rounded-l-[60px] p-8 md:p-12 bg-white shadow-lg">
-            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
-              <div class="action-content flex-1 flex flex-col gap-4 w-full">
-                  <div class="font-clemente bg-[#03A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
-                    <p class="text-xl font-bold uppercase">Tout avoir à portée de main : transversalité et pilotage</p>
-                  </div>
-                  <div class="font-clemente bg-[#03A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
-                    <p class="text-xl font-bold uppercase">Module Hébergement</p>
-                  </div>
-                  <div class="font-clemente bg-[#03A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
-                    <p class="text-xl font-bold uppercase">Module Paiement</p>
-                  </div>
-                  <div class="font-clemente bg-[#03A3B5] p-6 rounded-[25px] text-white text-center shadow-md hover:scale-105 transition-transform">
-                    <p class="text-xl font-bold uppercase">Module Asile et plein d’autres</p>
-                  </div>
-              </div>
-              <div class="action-title flex-1 text-center md:text-right">
-                  <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#03A3B5] leading-none">
-                      Faciliter le quotidien à tous les niveaux :
-                  </h1>
-              </div>
-            </div>
-        </section>
+          <!-- Bloc 2 : Structures qui recherchent (BLEU) -->
+          <Role2 />
 
-        <!-- Bloc 3 : Troisième bloc unique (ORANGE) -->
-         <section class="action-section-left mr-4 md:mr-32 border-4 border-l-0 border-[#ff925c] rounded-r-[60px] p-8 md:p-12 bg-white shadow-lg">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-              <div class="action-content flex-1 flex flex-col gap-4 order-2 md:order-1 w-full">
-                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
-                      <p class="text-lg md:text-xl font-bold uppercase">Produire des indicateurs d’activité rapides</p>
-                  </div>
-                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
-                      <p class="text-lg md:text-xl font-bold uppercase">Paramétrer des indicateurs d’activité spécifiques</p>
-                  </div>
-                  <div class="font-clemente bg-[#ff925c] p-5 rounded-[25px] text-white text-center hover:scale-105 transition-transform shadow-md">
-                      <p class="text-lg md:text-xl font-bold uppercase">Une gestion sécurisée des données</p>
-                  </div>
-              </div>
-              <div class="action-title flex-1 order-1 md:order-2 text-center md:text-left">
-                  <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#ff925c] leading-none">
-                      Suivre et piloter l’activité des services
-                  </h1>
-              </div>
-            </div>
-        </section>
+          <!-- Bloc 3 : Troisième bloc unique (ORANGE) -->
+          <Role3 />
 
         </div>
     </section>
 
     <!-- 7. SECTION ENGAGEMENT -->
     <section class="pb-32 px-6 flex flex-col gap-12 items-center">
-      <h2 class="font-clemente text-[#03A3B5] text-4xl md:text-5xl font-black uppercase text-center tracking-tighter">
+      <h2 class="font-clemente text-[#03A3B5] text-4xl mx-[30%] md:text-5xl font-black uppercase text-center tracking-tighter">
         Nous sommes engagés pour soutenir votre impact
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl">
@@ -163,7 +109,9 @@
     </section>
 
     <!-- 8. SECTION DECOUVRIR ASSIA -->
-     <Block3 />
+     <section class="mx-[10%]">
+       <Block3 />
+     </section>
 
     <!-- 9. SECTION TEMOIGNAGES -->
     <section class="py-24 px-6 bg-white rounded-t-[100px] shadow-[0_-20px_60px_rgba(0,0,0,0.05)] mt-10 border-t border-orange-100">
@@ -187,20 +135,20 @@
   </div>
   <section class="py-24">
 
-      <h2 class="text-4xl mt-16 md:text-6xl text-center text-[#ff925c] font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+      <h1 class="text-6xl font-clemente mt-4 md:text-8xl text-center text-[#ff925c] font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
         Des Questions ?
-      </h2>
+      </h1>
 
-      <a href="/contact" class="text-[#ff925c] border-4 border-[#ff925c] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
-        Par ici les réponses
+      <a href="/contact" class="text-[#ff925c] border-4 border-[#ff925c] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clementeMini cursor-pointer">
+        Par ici les réponses ...
       </a>
     </section>
 
     <section class="py-24 border-4 border-[#ff925c] bg-[#ff925c]/20 w-fit  mx-auto rounded-[34px] mt-14">
-      <h2 class="text-4xl md:text-6xl text-center text-[#ff925c] font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+      <h2 class="text-4xl md:text-6xl text-center mx-[20%] text-[#ff925c] font-black font-display uppercase font-clemente px-4 leading-[0.9] tracking-tighter mb-16">
         Besoin de plus d'informations ?
       </h2>
-      <button class="text-white bg-[#ff925c] border-4 border-[#ff925c] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
+      <button class="text-white font-clementeMini font-bold bg-[#ff925c] border-4 border-[#ff925c] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase cursor-pointer">
         écrivez-nous
       </button>
     </section>
@@ -219,6 +167,9 @@ import BlocRealite from '../components/Application/BlocRealite.vue';
 import Block2 from '../components/Application/Block2.vue';
 import Block3 from '../components/Application/Block3.vue';
 import Footer from '../components/Footer.vue';
+import Role1 from '../components/RoleApplication/Role1.vue';
+import Role2 from '../components/RoleApplication/Role2.vue';
+import Role3 from '../components/RoleApplication/Role3.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -297,20 +248,40 @@ onMounted(async () => {
       ease: 'power4.inOut' 
     });
 
-  gsap.from(".hero-card-left", { x: -300, opacity: 0, rotate: -10, duration: 1.5, ease: "power4.out", delay: 2.5 });
-  gsap.from(".hero-card-right", { x: 300, opacity: 0, rotate: 10, duration: 1.5, ease: "power4.out", delay: 2.5 });
-  gsap.from(".hero-ampersand", { scale: 0, opacity: 0, duration: 1, delay: 3.3, ease: "back.out(1.7)" });
-  gsap.from(".stagger-hero", { y: 50, opacity: 0, duration: 1, delay: 3.5, ease: "power3.out" });
+  gsap.from(".hero-card-left", { x: -800, opacity: 0, rotate: -10, duration: 1.8, ease: "power4.out", delay: 2.2 });
+  gsap.from(".hero-card-right", { x: 800, opacity: 0, rotate: 10, duration: 1.8, ease: "power4.out", delay: 2.2 });
+  gsap.from(".hero-ampersand", { scale: 0, opacity: 0, duration: 1.2, delay: 3.0, ease: "back.out(2)" });
+  gsap.from(".stagger-hero", { y: 100, opacity: 0, duration: 1.2, delay: 3.2, ease: "power3.out" });
 
-  gsap.from(".action-section-left", {
-    x: -300, opacity: 0, duration: 1.2, ease: "expo.out",
-    scrollTrigger: { trigger: ".action-section-left", start: "top 85%" }
+  // ANIMATIONS DES COMPOSANTS ROLE (SLIDE COMPLET)
+  gsap.utils.toArray(".action-section-left").forEach(section => {
+    gsap.from(section, {
+      x: -300,
+      opacity: 0,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 95%",
+        end: "top 70%",
+        scrub: 1
+      }
+    });
   });
 
-  gsap.from(".action-section-right", {
-    x: 300, opacity: 0, duration: 1.2, ease: "expo.out",
-    scrollTrigger: { trigger: ".action-section-right", start: "top 85%" }
+  gsap.utils.toArray(".action-section-right").forEach(section => {
+    gsap.from(section, {
+      x: 300,
+      opacity: 0,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 95%",
+        end: "top 70%",
+        scrub: 1
+      }
+    });
   });
+
 
   // ANIMATION DE TEXTE RÉVÉLATION AU SCROLL
   const textWords = document.querySelectorAll('.reveal-word');

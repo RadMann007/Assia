@@ -26,10 +26,10 @@ const partners = [
 ];
 
 const approachItems = [
-  { title: "Comprendre le terrain", content: "Nous nous immergeons dans votre quotidien pour comprendre les frictions réelles de vos équipes sociales." },
-  { title: "Concevoir auprès des équipes", content: "Conception d'une roadmap personnalisée : choix des outils et architecture de données." },
-  { title: "Livrer au plus vite", content: "Mise en place de vos solutions sur mesure avec une attention particulière à l'interopérabilité." },
-  { title: "Accompagner dans la durée", content: "Formation de vos collaborateurs pour garantir que l'outil soit réellement adopté." }
+  { title: "Comprendre le terrain", content: "Analyse des pratiques métier, des flux réels et des contraintes spécifiques à chaque structure." },
+  { title: "Co-construire avec les équipes", content: "Ateliers, tests utilisateurs et itérations continues pour concevoir des outils réellement utiles." },
+  { title: "Livrer vite pour rassurer", content: "Des cycles courts permettant de proposer rapidement des versions opérationnelles, testables et ajustables." },
+  { title: "Penser dans la durée", content: "Des architectures évolutives capables d’accompagner les changements de dispositifs, de réglementation et de montée en charge." }
 ];
 
 const itemStates = ref(approachItems.map(() => false));
@@ -86,9 +86,19 @@ onMounted(async () => {
   heroTl.from(".hero-title span", { y: 100, rotate: 5, duration: 1, stagger: 0.1, ease: "power4.out" })
         .from(".hero-image", { x: 200, opacity: 0, duration: 1.5, ease: "power4.out" }, "-=0.8");
 
-  gsap.from(".slide-right", { x: -400, opacity: 0, scrollTrigger: { trigger: ".slide-right", start: "top bottom", end: "top center", scrub: 1 } });
-  gsap.from(".slide-left", { x: 400, opacity: 0, scrollTrigger: { trigger: ".slide-left", start: "top bottom", end: "top center", scrub: 1 } });
-  gsap.from(".slide-right-2", { x: -400, opacity: 0, scrollTrigger: { trigger: ".slide-right-2", start: "top bottom", end: "top center", scrub: 1 } });
+  // ANIMATIONS DES SECTIONS (GAUCHE / DROITE)
+  gsap.from(".slide-right", { 
+    x: -300, opacity: 0, ease: "power2.out",
+    scrollTrigger: { trigger: ".slide-right", start: "top 95%", end: "top 70%", scrub: 1 } 
+  });
+  gsap.from(".slide-left", { 
+    x: 300, opacity: 0, ease: "power2.out",
+    scrollTrigger: { trigger: ".slide-left", start: "top 95%", end: "top 70%", scrub: 1 } 
+  });
+  gsap.from(".slide-right-2", { 
+    x: -300, opacity: 0, ease: "power2.out",
+    scrollTrigger: { trigger: ".slide-right-2", start: "top 95%", end: "top 70%", scrub: 1 } 
+  });
 
   gsap.from(".enjeux-title", { 
     y: 100, opacity: 0, duration: 1.2, ease: "power4.out",
@@ -146,18 +156,15 @@ onMounted(async () => {
 
     <NavBar />
 
-    <section class="container mx-auto px-6 h-screen flex flex-col justify-center pt-32 pb-12 relative z-10">
+    <section class="container mx-auto px-6 h-screen flex flex-col justify-center relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
-        <div class="space-y-6 overflow-hidden text-center lg:text-left flex flex-col justify-center">
-          <h1 class="hero-title text-[40px] md:text-[80px] font-display font-black leading-[0.85] text-primary uppercase tracking-tighter shrink-0 flex flex-col">
-            <span class="inline-block">Le</span> 
-            <span class="inline-block">numérique</span>
-            <span class="inline-block">pensé pour</span>
-            <span class="inline-block">fluidifier le quotidien des associations</span>
+        <div>
+          <h1 class="hero-title text-[30px] md:text-[70px] font-display font-black leading-[0.85] text-primary uppercase tracking-tighter shrink-0 flex flex-col">
+            Le numérique pensé pour fluidifier le quotidien des associations
           </h1>
         </div>
         <div class="relative hero-image flex justify-center lg:justify-end items-center">
-          <div class="w-100 h-90 md:w-[550px] md:h-[550px] rounded-3xl overflow-hidden border-8 border-white shadow-2xl relative z-10">
+          <div class="rounded-3xl overflow-hidden relative z-10">
             <img src="/img/heroPC.png" class="w-full h-full object-cover" alt="Dashboard" />
           </div>
         </div>
@@ -175,40 +182,42 @@ onMounted(async () => {
     </section>
 
     <section ref="textRevealContainer" class="flex w-full py-24 px-6 md:px-20 bg-primary">
-      <p class="text-white text-center mx-auto font-display text-4xl md:text-[45px] font-black leading-tight max-w-5xl">
-        <span class="reveal-word">Nous</span> <span class="reveal-word">vous</span> <span class="reveal-word">accompagnons</span> <span class="reveal-word">dans</span> <span class="reveal-word">la</span> <span class="reveal-word">conception,</span> <span class="reveal-word">l'évolution</span> <span class="reveal-word">et</span> <span class="reveal-word">le</span> <span class="reveal-word">déploiement</span> <span class="reveal-word">de</span> <span class="reveal-word">vos</span> <span class="reveal-word">outils</span> <span class="reveal-word">numériques.</span> <span class="reveal-word">Et</span> <span class="reveal-word">grâce</span> <span class="reveal-word">à</span> <span class="reveal-word">notre</span> <span class="reveal-word">connaissance</span> <span class="reveal-word">de</span> <span class="reveal-word">vos</span> <span class="reveal-word">métiers,</span> <span class="reveal-word">nos</span> <span class="reveal-word">propositions</span> <span class="reveal-word">sont</span> <span class="reveal-word">adaptées,</span> <span class="reveal-word">durables</span> <span class="reveal-word">et</span> <span class="reveal-word">très</span> <span class="reveal-word">utiles.</span>
+      <p class="text-white font-clementeMini text-center mx-[25%] text-4xl md:text-[45px] leading-tight max-w-5xl">
+        <span class="reveal-word">Nous</span> <span class="reveal-word">vous</span> <span class="reveal-word">accompagnons</span> <span class="reveal-word">dans</span> <span class="reveal-word">la</span> <span class="reveal-word font-clemente">conception,</span> <span class="reveal-word font-clemente">l'évolution</span> <span class="reveal-word">et</span> <span class="reveal-word">le</span> <span class="reveal-word font-clemente">déploiement</span> <span class="reveal-word">de</span> <span class="reveal-word">vos</span> <span class="reveal-word">outils</span> <span class="reveal-word">numériques.</span> <span class="reveal-word">Et</span> <span class="reveal-word">grâce</span> <span class="reveal-word">à</span> <span class="reveal-word">notre</span> <span class="reveal-word font-clemente">connaissance</span> <span class="reveal-word font-clemente">de</span> <span class="reveal-word font-clemente">vos</span> <span class="reveal-word font-clemente">métiers,</span> <span class="reveal-word">nos</span> <span class="reveal-word">propositions</span> <span class="reveal-word">sont</span> <span class="reveal-word font-clemente">adaptées,</span> <span class="reveal-word font-clemente">durables</span> <span class="reveal-word">et</span> <span class="reveal-word font-clemente">très</span> <span class="reveal-word font-clemente">utiles.</span>
       </p>
     </section>
 
-    <section class="w-full flex justify-center py-20 px-6"> 
-      <div class="slide-right flex flex-col md:flex-row max-w-[90%] md:max-w-7xl border-2 border-primary bg-white rounded-[60px] md:rounded-[100px] overflow-hidden">
-        <div class="md:w-1/3 flex flex-col items-center justify-center p-12 border-b-2 md:border-b-0 md:border-r-2 border-primary bg-primary/5">
+    <!-- Section Pourquoi Edossah -->
+    <section class="w-full py-20 font-clementeMini overflow-hidden">
+      <div class="slide-right flex flex-col md:flex-row mr-4 md:mr-32 border-4 border-l-0 border-primary bg-white rounded-r-[60px] md:rounded-r-[100px] shadow-lg overflow-hidden">
+        <div class="md:w-1/3 flex flex-col items-center justify-center p-12 border-b-4 md:border-b-0 md:border-r-4 border-primary bg-primary/5">
            <img src="/img/tree.png" class="w-48 h-48 object-contain mb-8"/>
            <h2 class="font-display text-4xl md:text-[45px] text-primary font-black uppercase text-center leading-tight">Pourquoi <br/> Edossah ?</h2>
         </div>
         <div class="md:w-2/3 p-12 md:p-20 flex flex-col justify-center text-center md:text-left space-y-8">
           <p class="text-2xl md:text-[35px] text-primary">Tout simplement pour notre expérience du terrain: <b>on comprend vos besoins !</b></p>
-          <p class="text-2xl md:text-[35px] text-primary leading-tight font-medium">
-            Les professionnels méritent un outil qui allège leur quotidien, et on y répond de manière sur mesure pour permettre à votre organisation de se concentrer sur le plus important : <b> son activité.</b>.
+          <p class="text-2xl md:text-[35px] text-primary leading-tight font-clementeMini">
+            Les professionnels méritent un outil qui allège leur quotidien, et on y répond de manière 
+            sur mesure pour permettre à votre organisation de se concentrer sur le plus important : <b> son activité.</b>
           </p>
         </div>
       </div>
     </section>
 
-    <section class="w-full flex justify-center py-20 px-6">
-      <div class="slide-left max-w-[90%] md:max-w-7xl border-2 border-primary p-12 md:p-20 bg-white rounded-[60px] md:rounded-[100px]">
-        <h2 class="font-display text-4xl md:text-6xl text-center uppercase font-black mb-16 text-primary tracking-tighter">Notre Approche</h2>
+    <section class="w-full py-20 overflow-hidden">
+      <div class="slide-left ml-4 md:ml-32 border-4 border-r-0 border-primary p-12 md:p-20 bg-white rounded-l-[60px] md:rounded-l-[100px] shadow-lg">
+        <h2 class="font-display text-4xl md:text-6xl text-center uppercase font-black mb-16 text-primary tracking-tighter font-clemente">Notre Approche</h2>
         <div class="flex flex-col gap-6 max-w-4xl mx-auto">
             <div v-for="(item, index) in approachItems" :key="index" 
                  class="border-2 border-primary cursor-pointer transition-all duration-500 rounded-[25px] overflow-hidden"
                  :class="itemStates[index] ? 'bg-white text-primary' : 'bg-primary text-white'"
                  @click="toggleItem(index)">
                 <div class="p-8 flex justify-between items-center select-none">
-                    <h3 class="text-2xl md:text-[40px] font-black uppercase tracking-tighter leading-none">{{ item.title }}</h3>
+                    <h3 class="text-3xl md:text-[50px] font-black tracking-tighter leading-none font-clemente">{{ item.title }}</h3>
                     <div class="approach-icon text-5xl font-light transition-transform duration-300" :class="itemStates[index] ? 'text-primary' : 'text-white'">+</div>
                 </div>
                 <div class="approach-content h-0 opacity-0 overflow-hidden px-8">
-                  <p class="text-xl font-medium leading-relaxed pb-8" :class="itemStates[index] ? 'text-slate-900' : 'text-white/90'">
+                  <p class="text-3xl font-clementeMini leading-relaxed pb-8" :class="itemStates[index] ? 'text-slate-900' : 'text-white/90'">
                     {{ item.content }}
                   </p>
                 </div>
@@ -217,38 +226,38 @@ onMounted(async () => {
       </div>
     </section>
 
-    <section class="w-full flex justify-center py-20 px-6"> 
-      <div class="slide-right-2 flex flex-col md:flex-row max-w-[90%] md:max-w-7xl border-2 border-[#ff925c] bg-white rounded-[60px] md:rounded-[100px] overflow-hidden">
-        <div class="md:w-1/3 flex flex-col items-center justify-center p-12 border-b-2 md:border-b-0 md:border-r-2 border-[#ff925c] bg-[#ff925c]/5">
-           <h3 class="font-display text-xl md:text-2xl text-[#ff925c] font-black text-center tracking-tight leading-tight mb-4 max-w-[80%]">
+    <section class="w-full py-20 overflow-hidden"> 
+      <div class="slide-right-2 flex flex-col md:flex-row mr-4 md:mr-32 border-4 border-l-0 border-primary bg-white rounded-r-[60px] md:rounded-r-[100px] shadow-lg overflow-hidden">
+        <div class="md:w-1/3 flex flex-col items-center justify-center p-12 border-b-4 md:border-b-0 md:border-r-4 border-primary">
+           <h3 class="font-display text-2xl md:text-3xl text-primary font-black text-center tracking-tight leading-tight mb-4 max-w-[80%]">
              Issus du secteur associatif et de l'AHI
            </h3>
            <img src="/img/adn.png" class="w-40 h-40 object-contain mb-4 rotate-12 rounded-2xl"/>
-           <h2 class="font-display text-4xl md:text-[45px] text-[#ff925c] font-black text-center tracking-tighter leading-tight">Notre <br/> ADN</h2>
+           <h2 class="font-display text-4xl md:text-[45px] text-primary font-black text-center tracking-tighter leading-tight">Notre <br/> ADN</h2>
         </div>
         <div class="md:w-2/3 p-12 md:p-20 flex flex-col justify-center text-center md:text-left space-y-8">
-          <p class="text-[#ff925c] space-y-4 text-lg md:text-xl font-medium">Cet ancrage se traduit par des choix concrets :</p>
+          <p class="text-2xl md:text-[35px] text-primary leading-tight font-clementeMini">Cet ancrage se traduit par des choix concrets :</p>
           
-          <ul class="text-[#ff925c] space-y-4 text-lg md:text-xl font-medium">
+          <ul class="text-2xl md:text-[35px] text-primary leading-tight font-clementeMini">
             <li class="flex items-start gap-3">
-              <span class="mt-2.5 w-2 h-2 rounded-full bg-[#ff925c] flex-shrink-0"></span>
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
               <span>Un support client humain et accessible</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="mt-2.5 w-2 h-2 rounded-full bg-[#ff925c] flex-shrink-0"></span>
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
               <span>Des solutions co-construites avec les professionnels de terrain</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="mt-2.5 w-2 h-2 rounded-full bg-[#ff925c] flex-shrink-0"></span>
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
               <span>Des tarifs adaptés aux réalités budgétaires des associations</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="mt-2.5 w-2 h-2 rounded-full bg-[#ff925c] flex-shrink-0"></span>
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
               <span>Une capacité à livrer rapidement des versions opérationnelles</span>
             </li>
           </ul>
 
-          <p class="text-[#ff925c] space-y-4 text-lg md:text-xl font-medium">
+          <p class="text-2xl md:text-[35px] text-primary leading-tight font-clementeMini">
             Parce que nous connaissons les réalités du secteur, nous concevons des outils qui s'y adaptent réellement.
           </p>
         </div>
@@ -268,8 +277,10 @@ onMounted(async () => {
                     <img src="/img/2hand.jpg" class="w-full rounded-3xl h-full object-cover"/>
                 </div>
                 <div class="flex flex-col gap-8 text-center lg:text-left enjeux-content">
-                    <h2 class="text-xl md:text-[45px] font-display font-black leading-tight text-white font-clemente">Nous accompagnons les structures face à des enjeux très concrets</h2>
-                    <p class="text-xl md:text-[30px] font-medium text-white font-clemente">Les structures que nous accompagnons rencontrent fréquemment les situations suivantes :</p>
+                    <h2 class="text-4xl md:text-[60px] font-display font-black leading-tight text-white font-clemente">
+                      Nous accompagnons les structures face à des enjeux très concrets
+                    </h2>
+                    <!-- <p class="text-xl md:text-[30px] font-medium text-white font-clemente">Les structures que nous accompagnons rencontrent fréquemment les situations suivantes :</p> -->
                 </div>
             </div>
 
@@ -279,28 +290,46 @@ onMounted(async () => {
                      @click="toggleComplex">
                     
                     <div class="p-10 flex flex-col md:flex-row justify-center items-center gap-6 select-none relative">
-                        <h3 class="text-2xl md:text-3xl font-black lowercase tracking-tighter text-center">voir les situations</h3>
+                        <h3 class="text-4xl md:text-5xl font-black lowercase tracking-tighter text-center">voir les situations</h3>
                         <div class="complex-icon text-5xl font-light transition-transform duration-300">+</div>
                     </div>
 
                     <div class="complex-content h-0 opacity-0 overflow-hidden px-8">
                         <div class="pb-12 space-y-10 text-center" :class="isComplexOpen ? 'text-primary' : 'text-white'">
-                            <p class="text-xl font-medium leading-relaxed max-w-2xl mx-auto">
+                            <p class="text-2xl md:text-[35px] text-primary leading-tight font-clementeMini">
                                 Vos équipes passent plus de temps sur les tableurs que sur l'accompagnement humain. Nous simplifions vos processus pour :
                             </p>
-                            <ul class="flex flex-col items-start gap-6 max-w-2xl mx-auto">
-                                <li v-for="(point, i) in [
-                                    'Des outils multiples, peu connectés ou non-adaptables',
-                                     'Des besoins métiers mal couverts par les solutions existantes',
-                                        'Des indicateurs demandés par les financeurs difficiles a produire',
-                                        'Des pratiques de terrain complexes, peu traduites dans les outils numériques',
-                                        'Des contraintes réglementaires et RGPD insuffisamment outillées',
-                                        'Un manque de temps et de roussources internes pour piloter les projets numériques'
-                                ]" :key="i" class="flex flex-col md:flex-row items-center gap-6 group">
-                                    <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">0{{i+1}}</span>
-                                    <span class="text-lg font-medium lowercase tracking-tight text-left">{{ point }}</span>
+                            <ul class="flex flex-col items-start gap-6 max-w-2xl mx-auto ">
+                                <li class="flex flex-col md:flex-row items-center gap-6 group">
+                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">01</span>
+                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Des outils multiples, peu connectés ou non-adaptables</span>
                                 </li>
-                            </ul>
+
+                                <li class="flex flex-col md:flex-row items-center gap-6 group">
+                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">02</span>
+                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Des besoins métiers mal couverts par les solutions existantes</span>
+                                </li>
+
+                                <li class="flex flex-col md:flex-row items-center gap-6 group">
+                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">03</span>
+                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Des indicateurs demandés par les financeurs difficiles à produire</span>
+                                </li>
+
+                                <li class="flex flex-col md:flex-row items-center gap-6 group">
+                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">04</span>
+                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Des pratiques de terrain complexes, peu traduites dans les outils numériques</span>
+                                </li>
+
+                                <li class="flex flex-col md:flex-row items-center gap-6 group">
+                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">05</span>
+                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Des contraintes réglementaires et RGPD insuffisamment outillées</span>
+                                </li>
+
+                                <li class="flex flex-col md:flex-row items-center gap-6 group">
+                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">06</span>
+                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Un manque de temps et de ressources internes pour piloter les projets numériques</span>
+                                </li>
+                              </ul>
                         </div>
                     </div>
                 </div>
@@ -311,8 +340,8 @@ onMounted(async () => {
               <h2 class="text-4xl md:text-6xl font-black font-display uppercase font-clemente mb-8 px-4 leading-[0.9] tracking-tighter">
                Notre Rôle ?
               </h2>
-              <p class="md:text-3xl max-w-5xl mx-auto mb-12 font-clemente">
-                Structurer, concevoir et faire évoluer votre système d'information. Chaque accompagnement est pensé en fonction du contexte, des 
+              <p class="md:text-3xl max-w-5xl mx-auto mb-12 font-clementeMini">
+                <b class="font-clemente">Structurer, concevoir</b> et <b class="font-clemente">faire évoluer</b> votre système d'information. Chaque accompagnement est pensé en fonction du contexte, des 
                 usages et des moyens de la structure.
               </p>
 
@@ -325,39 +354,49 @@ onMounted(async () => {
     </section>
 
     <!-- section ASSIA -->
-    <section class="bg-[#ff925c]/70 py-20 mb-20">
+    <section class="bg-[#fff3ee] py-20 mb-20">
       <div class="container mx-auto px-6">
         
         <!-- 1. Grid: Titre + Image -->
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16">
-          <div class="flex flex-col gap-8 text-center lg:text-left">
-              <h2 class="text-3xl md:text-[50px] font-display font-black font-clemente uppercase leading-[0.9] tracking-tighter text-white">
-                Assia: <br /> une réponse mutualisée à un besoin partagé
+          <div class="flex flex-col justify-end items-end gap-4">
+
+              <h2 class="text-3xl md:text-[70px] text-[#ff925c] font-clemente text-right">
+                Assia :
+              </h2>
+              <h2 class="text-3xl md:text-[50px]  text-right text-[#03A3B5] font-clemente">
+                une réponse
+              </h2>
+              <h2 class="text-3xl md:text-[50px] text-right text-[#03A3B5] font-clemente">
+                mutualisée à un
+              </h2>
+              <h2 class="text-3xl md:text-[50px] text-right text-[#03A3B5] font-clemente">
+                besoin partagé
               </h2>
           </div>
           <div class="relative">
-              <div class="w-full h-[300px] md:h-[400px] rounded-[40px] overflow-hidden">
+              <div class="size-3/4 rounded-[40px] overflow-hidden">
                 <img src="/img/mutualise.png" class="w-full h-full object-cover" alt="Assia Team"/>
               </div>
           </div>
         </div>
 
         <!-- 2. Flux Vertical de Contenu -->
-        <div class="flex flex-col items-center text-center gap-10 text-white max-w-4xl mx-auto font-clemente">
+        <div class="flex flex-col items-center text-center gap-10 text-white max-w-4xl mx-auto">
             
-            <p class="text-xl md:text-2xl font-medium leading-relaxed">
+            <p class="text-2xl md:text-3xl font-clementeMini leading-relaxed text-[#03A3B5]">
               Lorsque plusieurs associations rencontrent des besoins métier similaires, nous faisons le choix de la mutualisation.
             </p>
 
-            <button class="text-white bg-[#ff925c] font-black uppercase text-lg md:text-xl py-4 px-10 rounded-full shadow-xl hover:scale-105 transition-transform duration-300 pointer-events-none">
+            <!-- <button class="text-white bg-[#ff925c] font-black uppercase text-lg md:text-xl py-4 px-10 rounded-full shadow-xl hover:scale-105 transition-transform duration-300 pointer-events-none">
               ASSIA est l'un de ces projets :
-            </button>
+            </button> -->
 
-            <p class="text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
-              <b>Un outil métier</b> dédié au <b>travail social, co-construit</b> avec les professionnels, <b>évolutif</b> et toujours <b>au service du quotidien.</b>
+            <p class="text-2xl md:text-3xl font-clementeMini leading-relaxed text-[#03A3B5]">
+              <b>ASSIA est l'outil métier</b> dédié au <b>travail social, co-construit</b> avec les professionnels, <b>évolutif</b> et toujours <b>au service du quotidien.</b>
             </p>
 
-            <p class="text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
+            <p class="text-2xl md:text-3xl font-clementeMini leading-relaxed text-[#03A3B5]">
               ASSIA incarne notre capacité à <b>comprendre</b> les réalités de terrain et à les <b>traduire</b> en systèmes d'information <b>concrets</b> et <b>opérationnels.</b>
             </p>
 
@@ -410,22 +449,22 @@ onMounted(async () => {
       </a>
     </section>
 
-    <section>
+    <!-- <section>
       <h2 class="text-4xl md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
         Ils nous font confiance
       </h2>
       <button class="text-white bg-primary border-2 border-primary flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
         j'arrive
       </button>
-    </section>
+    </section> -->
 
-    <section class="py-24 border border-primary w-fit  mx-auto rounded-[34px] mt-14">
+    <section class="p-28 border-2 border-primary w-fit  mx-auto rounded-[34px]">
       <h2 class="text-4xl md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
         Besoin de plus d'informations ?
       </h2>
-      <button class="text-white bg-primary border-2 border-primary flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
+      <a href="/contact" class="text-white bg-primary border-2 border-primary flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
         écrivez-nous
-      </button>
+      </a>
     </section>
 
     <Footer />
@@ -434,9 +473,9 @@ onMounted(async () => {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700;900&display=swap');
-:root { --primary: #03A3B5; }
+:root { --primary: #03A3B5; --secondary: #ff925c; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: #fff; overflow-x: hidden; color: #1a1a1a; font-family: 'Inter', sans-serif; }
+body { background-color: #F5F5F5; overflow-x: hidden; color: #1a1a1a; font-family: 'Inter', sans-serif; }
 .font-display { font-family: 'Montserrat', sans-serif; }
 .text-primary { color: var(--primary); }
 .bg-primary { background-color: var(--primary); }

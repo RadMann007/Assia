@@ -12,17 +12,17 @@
     </div>
 
     <div ref="contentRef"
-         class="relative z-10 overflow-hidden bg-[#FFF5F0] rounded-none -mt-12 h-0 opacity-0 w-full">
+         class="relative z-10 overflow-hidden bg-white rounded-none -mt-12 h-0 opacity-0 w-full">
          
-       <div class="px-6 md:px-16 py-20 flex flex-col md:flex-row items-center gap-12 pt-28 max-w-6xl mx-auto">
+        <div class="px-6 md:px-16 py-20 flex flex-col md:flex-row items-center gap-12 pt-28 max-w-7xl mx-auto">
           
-          <div class="flex-1 space-y-6">
-            <h1 class="font-clemente text-orange-400 text-3xl md:text-4xl font-black leading-tight">
+          <div class="anim-left flex-1 space-y-6">
+            <h1 class="font-clemente text-orange-400 text-4xl md:text-6xl font-black leading-tight">
               Chaque structure est différente et a ses propres besoins
             </h1>
-            <p class="text-[#03A3B5] font-medium text-lg leading-relaxed">
+            <p class="text-[#03A3B5] font-clementeMini text-3xl md:text-4xl leading-relaxed">
               C’est pourquoi, dès l’origine, la conception d’ASSIA a été pensée comme celle d’un outil s’adaptant au plus près des réalités de terrain. 
-              Et la diversité des associations déjà outillées nous permet devous indiquer comment ASSIA peut - ou non - répondre à vosbesoins.
+              Et la diversité des associations déjà outillées nous permet de vous indiquer comment ASSIA peut - ou non - répondre à vos besoins.
             </p>
             <!-- <div class="pt-4">
               <button class="bg-[#ff925c] text-white font-clemente font-bold py-3 px-8 rounded-full hover:bg-[#ff925c] transition-transform hover:scale-105 uppercase tracking-wide">
@@ -31,11 +31,11 @@
             </div> -->
           </div>
 
-          <div class="flex-1 relative">
+          <div class="anim-right flex-1 relative">
             <div class="absolute -inset-4 bg-[#ff925c] rounded-full blur-3xl opacity-10"></div>
             <img src="/img/assia/2.png" 
                  alt="Logiciel ASSIA sur ordinateur" 
-                 class="w-full h-auto transform relative z-10">
+                 class="w-full h-auto transform relative z-10 rounded-[50px]">
           </div>
           
        </div>
@@ -44,11 +44,40 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const isOpen = ref(false);
 const contentRef = ref(null);
+
+onMounted(() => {
+  gsap.from(".anim-left", {
+    x: -300,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: ".anim-left",
+      start: "top 95%",
+      scrub: 1
+    }
+  });
+
+  gsap.from(".anim-right", {
+    x: 300,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: ".anim-right",
+      start: "top 95%",
+      scrub: 1
+    }
+  });
+});
 
 const toggleDiscovery = () => {
   if (isOpen.value) {

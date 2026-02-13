@@ -22,3 +22,10 @@
   font-weight: 900;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Clemente-mini';
+  src: url('/fonts/ClementePDag-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}

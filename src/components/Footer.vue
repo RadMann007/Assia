@@ -65,8 +65,8 @@
 
       <!-- Bottom bar -->
       <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-        <p class="text-white/40 text-sm font-bold uppercase tracking-widest">
-          &copy; {{ new Date().getFullYear() }} Avenir-Green — Tous droits réservés
+        <p class="text-white/40 text-sm font-bold uppercase font-clementeMini tracking-widest">
+          &copy; {{ new Date().getFullYear() }} Edossah — Tous droits réservés
         </p>
       </div>
     </div>
