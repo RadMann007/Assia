@@ -156,11 +156,12 @@ onMounted(async () => {
       <div class="relative text-center">
         <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
           <!-- Texte responsive pour le loader -->
-          <span class="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter">EDOSSAH</span>
+          <!-- <span class="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter">EDOSSAH</span> -->
+          <img src="/img/loader/edoLoader.jpeg" class="w-200 h-60 object-cover" alt="edoLoader" />
         </div>
-        <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-base sm:text-lg mb-6">
+        <!-- <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-base sm:text-lg mb-6">
           Le numérique pensé pour les associations
-        </div>
+        </div> -->
         <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
       </div>
     </div>
@@ -168,15 +169,15 @@ onMounted(async () => {
     <NavBar />
 
     <!-- HERO SECTION -->
-    <section class="container mx-auto px-4 sm:px-6 min-h-screen flex flex-col justify-center relative z-10 py-20 md:py-0">
-      <div class="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center w-full">
+    <section class="container mx-auto px-6 h-screen flex flex-col justify-center relative z-10">
+      <div class=" grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
         <div>
-          <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-[70px] font-display font-black leading-[0.9] md:leading-[0.85] text-primary uppercase tracking-tighter shrink-0 flex flex-col">
+          <h1 class="hero-title">
             Le numérique pensé pour fluidifier le quotidien des associations
           </h1>
         </div>
-        <div class="relative hero-image flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
-          <div class="rounded-3xl overflow-hidden relative z-10 w-full max-w-md lg:max-w-none">
+        <div class="relative hero-image flex justify-center lg:justify-end items-center">
+          <div class="rounded-3xl overflow-hidden relative z-10">
             <img src="/img/heroPC.png" class="w-full h-full object-cover" alt="Dashboard" />
           </div>
         </div>
@@ -202,39 +203,36 @@ onMounted(async () => {
     </section>
 
     <!-- Section Pourquoi Edossah -->
-    <section class="w-full py-12 md:py-20 font-clementeMini overflow-hidden">
-      <!-- Ajout de mx-4 pour centrer sur mobile, et ajustement des bordures -->
-      <div class="slide-right flex flex-col md:flex-row mx-4 md:mr-4 md:md:mr-32 border-4 border-l-4 md:border-l-0 border-primary bg-white rounded-[40px] md:rounded-r-[100px] shadow-lg overflow-hidden">
-        <div class="md:w-1/3 flex flex-col items-center justify-center p-8 md:p-12 border-b-4 md:border-b-0 md:border-r-4 border-primary bg-primary/5">
-           <img src="/img/tree.png" class="w-32 h-32 md:w-48 md:h-48 object-contain mb-6"/>
-           <h2 class="font-display text-3xl md:text-[45px] text-primary font-black uppercase text-center leading-tight">Pourquoi <br/> Edossah ?</h2>
+    <section class="w-full py-20">
+      <div class="slide-right flex flex-col md:flex-row mr-4 md:mr-32 border-2 border-l-0 border-primary rounded-r-[60px] md:rounded-r-[50px] ">
+        <div class="md:w-1/3 flex flex-col items-center justify-center p-12   border-primary bg-primary/5">
+           <img src="/img/tree.png" class="w-48 h-48 object-contain mb-8"/>
+           <h2 class="font-display text-4xl md:text-[40px] text-primary font-black uppercase text-center leading-tight">Pourquoi <br/> Edossah ?</h2>
         </div>
-        <div class="md:w-2/3 p-8 md:p-12 lg:p-20 flex flex-col justify-center text-center md:text-left space-y-6 md:space-y-8">
-          <p class="text-xl md:text-2xl lg:text-[35px] text-primary">Tout simplement pour notre expérience du terrain: <b>on comprend vos besoins !</b></p>
-          <p class="text-xl md:text-2xl lg:text-[35px] text-primary leading-tight font-clementeMini">
-            Les professionnels méritent un outil qui allège leur quotidien, et on y répond de manière 
-            sur mesure pour permettre à votre organisation de se concentrer sur le plus important : <b> son activité.</b>
+        <div class=" md:w-2/3 p-12 md:p-20 flex flex-col justify-center text-center md:text-left space-y-8">
+          <p class="font-clementeMini text-2xl md:text-[30px] text-primary">Tout simplement pour notre expérience du terrain: <b class="italic">on comprend vos besoins !</b></p>
+          <p class="font-clementeMini text-2xl md:text-[30px] text-primary">
+            Les professionnels méritent un outil qui allège leur quotidien, et on y répond de manière sur mesure pour permettre à votre organisation de se concentrer sur le plus important : <b class="italic"> son activité.</b>
           </p>
         </div>
       </div>
     </section>
 
     <!-- Notre Approche -->
-    <section class="w-full py-12 md:py-20 overflow-hidden">
-      <div class="slide-left mx-4 md:ml-4 md:md:ml-32 border-4 border-r-4 md:border-r-0 border-primary p-8 md:p-12 lg:p-20 bg-white rounded-[40px] md:rounded-l-[100px] shadow-lg">
-        <h2 class="font-display text-3xl md:text-4xl lg:text-6xl text-center uppercase font-black mb-10 md:mb-16 text-primary tracking-tighter font-clemente">Notre Approche</h2>
-        <div class="flex flex-col gap-4 md:gap-6 max-w-4xl mx-auto">
+    <section class="w-full py-20 overflow-hidden">
+      <div class="slide-left  md:ml-32 border-2 border-r-0 border-primary p-8 bg-white rounded-l-[60px] md:rounded-l-[var(--border-radius-primary)]">
+        <h2 class="font-display text-3xl md:text-6xl text-center uppercase font-black mb-8 text-primary tracking-tighter font-clemente">Notre Approche</h2>
+        <div class="flex flex-col gap-5 max-w-4xl mx-auto">
             <div v-for="(item, index) in approachItems" :key="index" 
-                 class="border-2 border-primary cursor-pointer transition-all duration-500 rounded-[20px] md:rounded-[25px] overflow-hidden"
+                 class="border-2 border-primary cursor-pointer transition-all duration-500 rounded-[15px] overflow-hidden"
                  :class="itemStates[index] ? 'bg-white text-primary' : 'bg-primary text-white'"
                  @click="toggleItem(index)">
-                <div class="p-6 md:p-8 flex justify-between items-center select-none">
-                    <!-- Taille de titre réduite pour mobile -->
-                    <h3 class="text-xl md:text-3xl lg:text-[50px] font-black tracking-tighter leading-none font-clemente">{{ item.title }}</h3>
-                    <div class="approach-icon text-3xl md:text-5xl font-light transition-transform duration-300" :class="itemStates[index] ? 'text-primary' : 'text-white'">+</div>
+                <div class="p-3 flex justify-between items-center select-none">
+                    <h3 class="text-2xl md:text-[25px] font-black tracking-tighter leading-none font-clemente">{{ item.title }}</h3>
+                    <div class="approach-icon text-3xl font-light transition-transform duration-300" :class="itemStates[index] ? 'text-primary' : 'text-white'">+</div>
                 </div>
-                <div class="approach-content h-0 opacity-0 overflow-hidden px-6 md:px-8">
-                  <p class="text-base md:text-xl lg:text-3xl font-clementeMini leading-relaxed pb-6 md:pb-8" :class="itemStates[index] ? 'text-slate-900' : 'text-white/90'">
+                <div class="approach-content h-0 opacity-0 overflow-hidden px-8">
+                  <p class="text-3xl font-clementeMini leading-relaxed" :class="itemStates[index] ? 'text-slate-900' : 'text-white/90'">
                     {{ item.content }}
                   </p>
                 </div>
@@ -244,39 +242,38 @@ onMounted(async () => {
     </section>
 
     <!-- Notre ADN -->
-    <section class="w-full py-12 md:py-20 overflow-hidden"> 
-      <div class="slide-right-2 flex flex-col md:flex-row mx-4 md:mr-4 md:md:mr-32 border-4 border-l-4 md:border-l-0 border-primary bg-white rounded-[40px] md:rounded-r-[100px] shadow-lg overflow-hidden">
-        <div class="md:w-1/3 flex flex-col items-center justify-center p-8 md:p-12 border-b-4 md:border-b-0 md:border-r-4 border-primary">
-           <h3 class="font-display text-xl md:text-2xl lg:text-3xl text-primary font-black text-center tracking-tight leading-tight mb-4 max-w-[80%]">
-             Issus du secteur associatif et de l'AHI
+    <section class="w-full py-20 overflow-hidden"> 
+      <div class="slide-right-2 flex flex-col md:flex-row mr-4 md:mr-32 border-2 border-l-0 border-[var(--primary)] bg-white rounded-r-[60px] md:rounded-r-[var(--border-radius-primary)] ">
+        <div class="md:w-1/2 flex flex-col items-center justify-center p-20 border-[var(--primary)]">
+           <h3 class="font-clemente italic font-display md:text-4xl text-[var(--primary)]  tracking-tight leading-tight mb-4 max-w-[80%]">
+             Issus du secteur associatif, et de l'AHI
            </h3>
-           <img src="/img/adn.png" class="w-28 h-28 md:w-40 md:h-40 object-contain mb-4 rotate-12 rounded-2xl"/>
-           <h2 class="font-display text-3xl md:text-[45px] text-primary font-black text-center tracking-tighter leading-tight">Notre <br/> ADN</h2>
+           <img src="/img/adn.png" class="w-40 h-40 object-contain mb-4 rotate-12 rounded-2xl"/>
+           <h2 class="font-clemente font-display text-4xl md:text-[50px] text-[var(--primary)] font-black text-center tracking-tighter leading-tight uppercase">Notre ADN</h2>
         </div>
-        <div class="md:w-2/3 p-8 md:p-12 lg:p-20 flex flex-col justify-center text-center md:text-left space-y-6 md:space-y-8">
-          <p class="text-xl md:text-2xl lg:text-[35px] text-primary leading-tight font-clementeMini">Cet ancrage se traduit par des choix concrets :</p>
+        <div class="md:w-1/2 p-12 flex flex-col justify-center text-center md:text-left space-y-8">
+          <p class="text-[var(--primary)] space-y-4 text-2xl md:text-3xl font-clementeMini">Cet ancrage se traduit par des choix concrets :</p>
           
-          <!-- Liste avec textes ajustés -->
-          <ul class="text-lg md:text-xl lg:text-[35px] text-primary leading-tight font-clementeMini space-y-4">
+          <ul class="text-[var(--primary)] ml-10 text-[20px] md:text-[21px] font-clementeMini">
             <li class="flex items-start gap-3">
-              <span class="mt-2 w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-[var(--primary)] flex-shrink-0"></span>
               <span>Un support client humain et accessible</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="mt-2 w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-[var(--primary)] flex-shrink-0"></span>
               <span>Des solutions co-construites avec les professionnels de terrain</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="mt-2 w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-[var(--primary)] flex-shrink-0"></span>
               <span>Des tarifs adaptés aux réalités budgétaires des associations</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="mt-2 w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-[var(--primary)] flex-shrink-0"></span>
               <span>Une capacité à livrer rapidement des versions opérationnelles</span>
             </li>
           </ul>
 
-          <p class="text-xl md:text-2xl lg:text-[35px] text-primary leading-tight font-clementeMini">
+          <p class="text-[var(--primary)]  text-2xl md:text-3xl font-clementeMini">
             Parce que nous connaissons les réalités du secteur, nous concevons des outils qui s'y adaptent réellement.
           </p>
         </div>
@@ -491,5 +488,17 @@ body { background-color: #F5F5F5; overflow-x: hidden; color: #1a1a1a; font-famil
 .fade-mask {
   mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.hero-title {
+  /* letter-spacing: -0.04em; */
+  font-size: 64px;   /* essaie entre 56px et 72px */
+  font-family: 'Clemente', sans-serif; /* font-display */
+  font-weight: 700;                  /* font-black */
+  line-height:  1.05;            /* tracking-[-1.5px] */
+  color: var(--primary);             /* text-primary */
+  text-transform: uppercase;         /* uppercase */
+  display: flex;                     /* flex */
+  flex-direction: column; 
 }
 </style>

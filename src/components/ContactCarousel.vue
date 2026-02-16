@@ -8,17 +8,27 @@
     </div>
 
     <div class="carousel-container relative w-full flex overflow-hidden">
-      <div class="carousel-track flex items-center gap-6 md:gap-10 pl-6 md:pl-12">
+      <div class="carousel-track flex items-stretch gap-6 md:gap-10 pl-6 md:pl-12">
         <!-- Original Set -->
-        <div v-for="(img, index) in images" :key="'orig-'+index" class="carousel-item relative flex-shrink-0 w-[280px] md:w-[450px] aspect-[4/3] rounded-[35px] overflow-hidden shadow-xl group cursor-pointer">
-           <img :src="img.src" :alt="img.alt" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-           <div class="absolute inset-0 bg-[#03A3B5]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div v-for="(card, index) in cards" :key="'orig-'+index" 
+             class="carousel-item relative flex-shrink-0 w-[300px] md:w-[400px] bg-primary border-2 border-[#03A3B5] rounded-[35px] p-8 md:p-10 flex flex-col gap-4 shadow-lg hover:shadow-xl transition-shadow cursor-default group">
+            <h3 class="text-2xl md:text-3xl font-black text-white uppercase font-display ">
+              {{ card.title }}
+            </h3>
+            <p class="text-base md:text-lg text-white font-clementeMini leading-relaxed">
+              {{ card.content }}
+            </p>
         </div>
 
         <!-- Duplicate Set for Infinite Loop -->
-        <div v-for="(img, index) in images" :key="'copy-'+index" class="carousel-item relative flex-shrink-0 w-[280px] md:w-[450px] aspect-[4/3] rounded-[35px] overflow-hidden shadow-xl group cursor-pointer">
-           <img :src="img.src" :alt="img.alt" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-           <div class="absolute inset-0 bg-[#03A3B5]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div v-for="(card, index) in cards" :key="'copy-'+index" 
+             class="carousel-item relative flex-shrink-0 w-[300px] md:w-[400px] bg-primary border-2 border-[#03A3B5] rounded-[35px] p-8 md:p-10 flex flex-col gap-4 shadow-lg hover:shadow-xl transition-shadow cursor-default group">
+            <h3 class="text-2xl md:text-3xl font-black text-white uppercase font-display ">
+              {{ card.title }}
+            </h3>
+            <p class="text-base md:text-lg text-white font-clementeMini leading-relaxed">
+              {{ card.content }}
+            </p>
         </div>
       </div>
     </div>
@@ -29,17 +39,40 @@
 import { onMounted, ref } from 'vue';
 import gsap from 'gsap';
 
-const images = [
-  { src: '/img/contact/1.jpg', alt: 'Bureau Assia' },
-  { src: '/img/contact/2.jpg', alt: 'L\'équipe' },
-  { src: '/img/contact/3.jpg', alt: 'Espace de travail' },
-  { src: '/img/contact/5.jpeg', alt: 'Collaboration' },
-  { src: '/img/contact/6.jpeg', alt: 'Moment de détente' },
+const cards = [
+  { 
+    title: 'Engagement', 
+    content: 'Nous sommes issus du terrain et engagés aux côtés des acteurs du travail social. Tout ce que nous construisons vise une utilité sociale concrète, au service du quotidien des professionnels.' 
+  },
+  { 
+    title: 'Proximité', 
+    content: 'Nous avançons au même niveau que nos partenaires : à l’écoute, disponibles et accessibles. La relation compte autant que l’outil.' 
+  },
+  { 
+    title: 'Valorisation', 
+    content: 'Nous croyons profondément à la valeur du travail social. Nos solutions visent à rendre visible l’essentiel, soutenir l’expertise métier et reconnaître ce qui est souvent invisible.' 
+  },
+  { 
+    title: 'Simplicité', 
+    content: 'Nous concevons des fonctionnalités claires, intuitives et pensées pour alléger l’administratif. Moins de complexité, plus de temps pour l’accompagnement.' 
+  },
+  { 
+    title: 'Responsabilité', 
+    content: 'Nous adoptons des pratiques sobres et responsables au quotidien. Sans en faire un argument, nous avançons avec attention et cohérence pour limiter notre impact environnemental.' 
+  },
+  { 
+    title: 'Confiance', 
+    content: 'Nous faisons ce que nous disons. Sécurité, confidentialité, éthique et constance sont les bases de relations durables et sereines.' 
+  },
+  { 
+    title: 'Agilité', 
+    content: 'Nous évoluons avec les réalités du terrain. Les retours des professionnels guident nos choix et nourrissent une amélioration continue, pragmatique et utile.' 
+  }
 ];
 
 onMounted(() => {
-  // Calculer la largeur totale d'un set d'images (incluant les gaps)
-  // On suppose que tous les items ont la même taille et le même gap
+  // Calculer la largeur totale d'un set de cartes (incluant les gaps)
+  // On suppose que tous les items ont la même taille (ou on prend le premier pour ref)
   const items = document.querySelectorAll('.carousel-item');
   if (items.length === 0) return;
 
@@ -48,13 +81,13 @@ onMounted(() => {
   const style = window.getComputedStyle(document.querySelector('.carousel-track'));
   const gap = parseFloat(style.getPropertyValue('gap')) || 0;
   
-  // La distance à parcourir est la largeur de (N images + N gaps)
-  // N = images.length (5)
-  const totalWidth = (itemWidth + gap) * images.length;
+  // La distance à parcourir est la largeur de (N cartes + N gaps)
+  // N = cards.length (7)
+  const totalWidth = (itemWidth + gap) * cards.length;
 
   gsap.to('.carousel-track', {
     x: -totalWidth,
-    duration: 30, // Vitesse du défilement
+    duration: 60, // Slower speed for reading text
     ease: 'none',
     repeat: -1
   });
@@ -62,8 +95,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* Optionnel : cacher la scrollbar si jamais */
 .carousel-container {
   -webkit-overflow-scrolling: touch;
 }
+/* Font Adjustments ensuring readability */
 </style>

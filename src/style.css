@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #03A3B5;
+  --accent: #FF925C;
+  --success: #74D282;
+
+  --bg-light: #F9FEFF;
+  --bg-warm: #FFF3EE;
+  --bg-success-light: #EBF9ED;
+
+  --white: #FFFFFF;
+  --dark: #001214;
+
+  --border-radius-primary: 50px;
+
+}
+
 @font-face {
   font-family: 'Clemente';
   src: url('/fonts/ClementePDaj-Regular.ttf') format('truetype');

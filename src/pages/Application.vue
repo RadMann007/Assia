@@ -5,11 +5,12 @@
     <div ref="loader" class="fixed inset-0 bg-[#ff925c] z-[100] flex items-center justify-center">
       <div class="relative text-center">
         <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
-          <span class="text-6xl md:text-8xl font-bold tracking-tighter">ASSIA</span>
+          <!-- <span class="text-6xl md:text-8xl font-bold tracking-tighter">ASSIA</span> -->
+          <img src="/img/loader/assiaLoader.jpeg" class="w-200 h-60 object-cover" alt="assiaLoader" />
         </div>
-        <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
+        <!-- <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
           L'application métier du social
-        </div>
+        </div> -->
         <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
       </div>
     </div>

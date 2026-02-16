@@ -133,7 +133,8 @@
       </div>
     </div>
 
-
+    <!-- FAQ Section -->
+    <FaqComponent />
     <!-- 3. SECTION "ET SI ON PARLAIT DE NOUS" -->
     <div class="py-16 md:py-20">
       <h2 class="text-center text-4xl md:text-6xl font-black text-[#03A3B5] uppercase mb-12 px-4 leading-tight">
@@ -186,6 +187,7 @@ import NavBar from '../components/NavBar.vue';
 import Etude from './Etude.vue';
 import Footer from '../components/Footer.vue';
 import ContactCarousel from '../components/ContactCarousel.vue';
+import FaqComponent from '../components/FaqComponent.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
