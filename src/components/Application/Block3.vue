@@ -20,7 +20,7 @@
             <h1 class="font-clemente text-orange-400 text-4xl md:text-6xl font-black leading-tight">
               Chaque structure est différente et a ses propres besoins
             </h1>
-            <p class="text-[#03A3B5] font-clementeMini text-3xl md:text-4xl leading-relaxed">
+            <p class="text-[var(--primary)] font-clementeMini text-3xl md:text-4xl leading-relaxed">
               C’est pourquoi, dès l’origine, la conception d’ASSIA a été pensée comme celle d’un outil s’adaptant au plus près des réalités de terrain. 
               Et la diversité des associations déjà outillées nous permet de vous indiquer comment ASSIA peut - ou non - répondre à vos besoins.
             </p>

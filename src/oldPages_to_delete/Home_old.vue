@@ -313,7 +313,7 @@ onUnmounted(() => {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-:root { --primary: #03A3B5; --secondary: #FF925C; }
+:root { --primary: var(--primary); --secondary: #FF925C; }
 .font-display { font-family: 'Montserrat', sans-serif; }
 .font-body { font-family: 'Inter', sans-serif; }
 .text-primary { color: var(--primary); }

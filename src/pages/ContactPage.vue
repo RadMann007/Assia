@@ -163,9 +163,6 @@
       </div>
     </div>
 
-    <!-- 3.5 SECTION CAROUSEL -->
-    <ContactCarousel />
-
     <!-- 4. FOOTER TEXT -->
     <div class="pb-24 pt-10 text-center px-4">
       <h2 class="text-4xl md:text-6xl font-black text-[#8CD898] uppercase leading-[0.9] tracking-tight">
@@ -185,7 +182,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import NavBar from '../components/NavBar.vue';
 import Etude from './Etude.vue';
 import Footer from '../components/Footer.vue';
-import ContactCarousel from '../components/ContactCarousel.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 

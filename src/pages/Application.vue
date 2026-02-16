@@ -309,7 +309,6 @@ onMounted(async () => {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;500;700;900&display=swap');
 .font-clemente { font-family: 'Clemente', 'Inter', sans-serif; font-weight: 900; }
 body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
 .font-display { font-family: 'Montserrat', sans-serif; }

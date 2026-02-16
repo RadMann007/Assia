@@ -39,7 +39,7 @@
           </div>
 
           <div class="w-full bg-white/40 p-8">
-            <p class="text-[#03A3B5] font-bold text-2xl md:text-4xl leading-relaxed">
+            <p class="text-[var(--primary)] font-bold text-2xl md:text-4xl leading-relaxed">
               ASSIA est bien adaptée aux activités pré et post-sentencielles :
               <span class="">
                 hébergement sortant de prison, placement extérieur, CJSE, CPPV, composition pénale, sursis probatoire, ESR, enquêtes de personnalité, stages de responsabilité, médiation pénale, réparation pénale des mineurs etc.

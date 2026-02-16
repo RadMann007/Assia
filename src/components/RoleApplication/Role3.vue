@@ -95,7 +95,7 @@ const toggleItem = async (index) => {
 
                       <!-- Contenu collapse -->
                       <div :ref="el => items[index].container = el" 
-                           class="overflow-hidden bg-[#fff3ee] px-8 font-clementeMini"
+                           class="overflow-hidden bg-[#F5F5DC] px-8 font-clementeMini"
                            :class="{ 'h-0': !item.isOpen }">
                           <ul class="pb-6 pt-2 text-left text-3xl font-medium space-y-4 font-clementeMini">
                               <li v-for="(point, pIndex) in item.content" :key="pIndex" class="flex items-start gap-2">

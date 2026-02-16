@@ -15,27 +15,27 @@
           <div class="px-6 md:px-12 lg:px-20 pb-0 pt-20 flex flex-col gap-10">
 
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center font-clementeMini">
-              <div class="anim-left flex-1 text-[#03A3B5]">
+              <div class="anim-left flex-1 text-[var(--primary)]">
                 <p class="mb-8 text-3xl md:text-4xl leading-relaxed">Sur le terrain, les équipes font face à :</p>
                 <ul class="space-y-6">
                   <li class="flex items-start gap-4">
-                    <span class="text-3xl leading-none mt-1 text-[#03A3B5]">•</span>
+                    <span class="text-3xl leading-none mt-1 text-[var(--primary)]">•</span>
                     <p class="text-3xl leading-tight">des outils pensés pour le reporting, pas pour l'accompagnement social</p>
                   </li>
                   <li class="flex items-start gap-4">
-                    <span class="text-3xl leading-none mt-1 text-[#03A3B5]">•</span>
+                    <span class="text-3xl leading-none mt-1 text-[var(--primary)]">•</span>
                     <p class="text-3xl leading-tight">des interfaces complexes et chronophages</p>
                   </li>
                   <li class="flex items-start gap-4">
-                    <span class="text-3xl leading-none mt-1 text-[#03A3B5]">•</span>
+                    <span class="text-3xl leading-none mt-1 text-[var(--primary)]">•</span>
                     <p class="text-3xl leading-tight">une multiplication de saisies et d'outils annexes</p>
                   </li>
                   <li class="flex items-start gap-4">
-                    <span class="text-3xl leading-none mt-1 text-[#03A3B5]">•</span>
+                    <span class="text-3xl leading-none mt-1 text-[var(--primary)]">•</span>
                     <p class="text-3xl leading-tight">des difficultés à produire des indicateurs sans dénaturer la pratique</p>
                   </li>
                   <li class="flex items-start gap-4">
-                    <span class="text-3xl leading-none mt-1 text-[#03A3B5]">•</span>
+                    <span class="text-3xl leading-none mt-1 text-[var(--primary)]">•</span>
                     <p class="text-3xl leading-tight">une faible appropriation des outils par les professionnels</p>
                   </li>
                 </ul>
@@ -46,22 +46,22 @@
             </div>
 
             <div class="text-center pt-4 mb-10">
-               <h2 class="text-[#03A3B5] text-3xl md:text-4xl font-black mx-[15%] leading-snug">
+               <h2 class="text-[var(--primary)] text-3xl md:text-4xl font-black mx-[15%] leading-snug">
                  Ce constat, nous l'avons fait aux côtés des équipes, au fil des projets et des échanges.
                </h2>
             </div>
 
             <!-- SECTION BLEUE -->
-            <div class="bg-[#03A3B5] -mx-6 md:-mx-12 lg:-mx-20 p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 text-white">
-              <div class="md:w-[65%] flex-shrink-0 w-full">
-                <img src="/img/assia/41.png" alt="Mockup ASSIA" class="w-full h-auto max-h-[550px] object-contain object-top" />
+            <div class="bg-[var(--primary)] -mx-6 md:-mx-12 lg:-mx-20 p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 text-white">
+              <div class="md:w-[70%] flex-shrink-0 w-full">
+                <img src="/img/assia/41.png" alt="Mockup ASSIA" class="w-full h-[550px] object-cover object-top" />
               </div>
 
               <div class="md:flex-1 flex flex-col gap-8">
                 <h2 class="text-3xl md:text-5xl font-black leading-tight">
                   Avec un système d'information pensé pour eux, les travailleurs sociaux trouvent un intérêt à le renseigner.
                 </h2>
-                <p class="text-3xl md:text-5xl font-black leading-tight">
+                <p class="text-3xl md:text-4xl font-black leading-tight">
                   L’outil n’est plus vécu comme une contrainte administrative, mais comme un appui au suivi et au travail collectif.
                 </p>
               </div>
@@ -89,20 +89,20 @@
                 <p class="mb-6 font-bold text-3xl md:text-4xl leading-relaxed">ASSIA est née parce que plusieurs associations exprimaient les mêmes besoins métier, sans trouver de réponse satisfaisante.</p>
                 <ul class="space-y-4">
                   <li class="flex items-start gap-3">
-                    <p class="text-3xl leading-tight font-clementeMini text-[#03A3B5]">
+                    <p class="text-3xl leading-tight font-clementeMini text-[var(--primary)]">
                       Plutôt que de multiplier des développements isolés, nous avons fait le choix de :</p>
                   </li>
                   <li class="flex items-start gap-3">
-                    <span class="text-2xl leading-none mt-1 text-[#03A3B5]">•</span>
-                    <p class="text-3xl leading-tight font-clementeMini text-[#03A3B5]">mutualiser les efforts.</p>
+                    <span class="text-2xl leading-none mt-1 text-[var(--primary)]">•</span>
+                    <p class="text-3xl leading-tight font-clementeMini text-[var(--primary)]">mutualiser les efforts.</p>
                   </li>
                   <li class="flex items-start gap-3">
-                    <span class="text-2xl leading-none mt-1 text-[#03A3B5]">•</span>
-                    <p class="text-3xl leading-tight font-clementeMini text-[#03A3B5]">co-construire une solution commune et faire évoluer l'outil avec ses utilisateurs.</p>
+                    <span class="text-2xl leading-none mt-1 text-[var(--primary)]">•</span>
+                    <p class="text-3xl leading-tight font-clementeMini text-[var(--primary)]">co-construire une solution commune et faire évoluer l'outil avec ses utilisateurs.</p>
                   </li>
                   <li class="flex items-start gap-3">
-                    <span class="text-2xl leading-none mt-1 text-[#03A3B5]">•</span>
-                    <p class="text-3xl leading-tight font-clementeMini text-[#03A3B5]">
+                    <span class="text-2xl leading-none mt-1 text-[var(--primary)]">•</span>
+                    <p class="text-3xl leading-tight font-clementeMini text-[var(--primary)]">
                      faire évoluer l’outil avec ses utilisateurs
                     </p>
                   </li>
@@ -117,7 +117,7 @@
           </div>
 
           <div class="text-center pt-4 mb-10">
-               <h2 class="text-[#03A3B5] text-3xl md:text-4xl font-black mx-[15%] leading-snug">
+               <h2 class="text-[var(--primary)] text-3xl md:text-4xl font-black mx-[15%] leading-snug">
                  Chaque dispositif ayant ses spécificités, ASSIA a été conçue 
 pour s’adapter à des contextes variés, sans imposer une 
 pratique standardisée.
@@ -132,7 +132,7 @@ d’y adapter l’outil, plutôt que l’inverse.
             </div>
 
           <div class="text-center pt-4 mb-10">
-               <h2 class="text-[#03A3B5] text-3xl md:text-4xl font-black mx-[15%] leading-snug">
+               <h2 class="text-[var(--primary)] text-3xl md:text-4xl font-black mx-[15%] leading-snug">
                  Ce travail partenarial permet d’enrichir l’outil sans alourdir les 
 coûts, et de favoriser les échanges de pratiques entre 
 structures.
@@ -154,7 +154,7 @@ structures.
           <div class="px-6 md:px-12 lg:px-20 pb-16 pt-20 flex flex-col gap-10">
 
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-start max-w-7xl mx-auto">
-              <div class="flex-1 text-[#03A3B5] space-y-6">
+              <div class="flex-1 text-[var(--primary)] space-y-6">
                 <p class="font-bold text-3xl md:text-4xl leading-relaxed">
                   ASSIA a été conçue sur le terrain, directement auprès des professionnels. Chaque évolution est guidée par les pratiques de terrain, pas par une logique de fonctionnalités.
                 </p>
