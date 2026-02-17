@@ -1,5 +1,5 @@
 <template>
-  <div class="main bg-white font-body min-h-screen selection:bg-[#ff925c] selection:text-white overflow-x-hidden" ref="mainContainer">
+  <div class="main bg-white font-body min-h-screen selection:bg-[var(--accent)] selection:text-white overflow-x-hidden" ref="mainContainer">
     
     <!-- LOADER AVEC LOGO ASSIA -->
     <div ref="loader" class="fixed inset-0 bg-[#ff925c] z-[100] flex items-center justify-center">
@@ -47,10 +47,10 @@
     <section class="py-24 px-6">
       <div class="max-w-7xl mx-auto p-0 relative overflow-hidden group">
         <div class="flex flex-col items-center gap-16">
-          <div class="relative w-full max-w-5xl flex justify-center items-end gap-4 mockup-container">
-            <img src="/img/assia/1.png" alt="Logiciel ASSIA" class="w-full h-auto rounded-[54px]">
+          <div class="relative w-full max-w-4xl flex justify-center items-end gap-4 mockup-container">
+            <img src="/img/assia/1.png" alt="Logiciel ASSIA" class="w-full h-auto rounded-[50px]">
           </div>
-          <h1 ref="textRevealContainer" class="text-4xl md:text-5xl font-black text-[#03A3B5] text-center leading-tight max-w-6xl font-clemente uppercase tracking-tight">
+          <h1 ref="textRevealContainer" class="text-3xl md:text-[40px] font-black text-[var(--primary)] text-center leading-tight max-w-4xl font-clemente tracking-tight">
             <span class="reveal-word">ASSIA</span> <span class="reveal-word">est</span> <span class="reveal-word">un</span> <span class="reveal-word">logiciel</span> <span class="reveal-word">métier</span> <span class="reveal-word">co-construit</span> <span class="reveal-word">avec</span> <span class="reveal-word">les</span> <span class="reveal-word">professionnels,</span> <span class="reveal-word">pour</span> <span class="reveal-word">traduire</span> <span class="reveal-word">leurs</span> <span class="reveal-word">pratiques</span> <span class="reveal-word">réelles</span> <span class="reveal-word">en</span> <span class="reveal-word">un</span> <span class="reveal-word">système</span> <span class="reveal-word">d'information</span> <span class="reveal-word">simple,</span> <span class="reveal-word">utile</span> <span class="reveal-word">et</span> <span class="reveal-word">évolutif.</span>
           </h1>
         </div>
@@ -65,8 +65,8 @@
     <!-- 4. SECTION EXCLUSION SOCIALE (DESIGN CORRIGÉ) -->
     <section class="pb-20 w-full">
       <!-- Titre retravaillé pour plus d'impact -->
-      <h1 class="w-full text-[#03A3B5] text-center font-clemente text-4xl md:text-6xl font-black uppercase mb-12 tracking-tighter">
-        PARCE QU'ON DOIT LUTTER CONTRE <br class="hidden md:block"> L'EXCLUSION SOCIALE !
+      <h1 class="w-full text-[var(--primary)] tracking-wider text-center font-clementeMini text-4xl md:text-6xl font-black uppercase mb-12 tracking-tighter">
+        PARCE QU'ON DOIT LUTTER CONTRE <br class="hidden md:block"> <p class="font-clemente italic">L'EXCLUSION SOCIALE ! </p> 
       </h1>
 
        <!-- ACCOMPAGNEMENT SOCIAL -->
@@ -75,7 +75,7 @@
         </div>
 
        <!-- TITRE QUE FAIT ASSIA -->
-       <h2 class="font-clemente text-[#03A3B5] text-4xl md:text-8xl font-black uppercase text-center tracking-tighter py-24">
+       <h2 class="font-clemente text-[var(--primary)] text-4xl md:text-8xl font-black uppercase text-center tracking-tighter py-24">
           QUE FAIT ASSIA ?
        </h2>
     </section>
@@ -98,11 +98,11 @@
 
     <!-- 7. SECTION ENGAGEMENT -->
     <section class="pb-32 px-6 flex flex-col gap-12 items-center">
-      <h2 class="font-clemente text-[#03A3B5] text-4xl mx-[30%] md:text-5xl font-black uppercase text-center tracking-tighter">
+      <h2 class="font-clemente text-[var(--primary)] text-4xl mx-[15%] md:text-5xl font-black uppercase text-center tracking-wider">
         Nous sommes engagés pour soutenir votre impact
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl">
-        <div v-for="(item, index) in engagementItems" :key="index" class="engagement-card flex flex-col justify-center items-center p-10 rounded-[50px] bg-orange-400 border-2 border-transparent hover:border-[#ff925c] transition-all duration-500 group shadow-sm hover:shadow-xl">
+        <div v-for="(item, index) in engagementItems" :key="index" class="engagement-card flex flex-col justify-center items-center p-10 rounded-[50px] bg-orange-400 border-2 border-transparent hover:border-[var(--accent)] transition-all duration-500 group shadow-sm hover:shadow-xl">
           <img :src="item.image" :alt="item.title" class="w-28 h-28 object-contain mb-6 " />
           <h3 class="font-clemente text-2xl font-black uppercase mb-4 text-center text-white" >{{ item.title }}</h3>
         </div>
@@ -115,9 +115,9 @@
      </section>
 
     <!-- 9. SECTION TEMOIGNAGES -->
-    <section class="py-24 px-6 bg-white rounded-t-[100px] shadow-[0_-20px_60px_rgba(0,0,0,0.05)] mt-10 border-t border-orange-100">
-      <div class="max-w-7xl mx-auto text-center">
-        <h2 class="font-clemente text-[#ff925c] text-4xl md:text-6xl font-black uppercase tracking-tighter mb-16">
+    <section class="py-24 px-6 bg-white ">
+      <div class="max-w-7xl mx-auto text-center font-clemente">
+        <h2 class="font-clemente text-[var(--accent)] text-4xl md:text-6xl font-black uppercase tracking-tighter mb-16">
           Ils témoignent de <br> notre engagement
         </h2>
         <section class="py-10 overflow-hidden mb-20">
@@ -134,23 +134,23 @@
     </section>
 
   </div>
-  <section class="py-24">
+  <!-- <section class="py-24">
 
-      <h1 class="text-6xl font-clemente mt-4 md:text-8xl text-center text-[#ff925c] font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+      <h1 class="text-6xl font-clemente mt-4 md:text-8xl text-center text-[var(--accent)] font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
         Des Questions ?
       </h1>
 
-      <a href="/contact" class="text-[#ff925c] border-4 border-[#ff925c] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clementeMini cursor-pointer">
+      <a href="/contact" class="text-[var(--accent)] border-4 border-[var(--accent)] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clementeMini cursor-pointer">
         Par ici les réponses ...
       </a>
-    </section>
+    </section> -->
 
-    <section class="py-24 border-4 border-[#ff925c] bg-[#ff925c]/20 w-fit  mx-auto rounded-[34px] mt-14">
-      <h2 class="text-4xl md:text-6xl text-center mx-[20%] text-[#ff925c] font-black font-display uppercase font-clemente px-4 leading-[0.9] tracking-tighter mb-16">
+    <section class="py-24 border-4 border-[var(--accent)] bg-[var(--accent)]/20 w-fit  mx-auto rounded-[34px] mt-14">
+      <h2 class="text-4xl md:text-6xl text-center mx-[20%] text-[var(--accent)] font-black font-display uppercase font-clemente px-4 leading-[0.9] tracking-tighter mb-16">
         Besoin de plus d'informations ?
       </h2>
-      <button class="text-white font-clementeMini font-bold bg-[#ff925c] border-4 border-[#ff925c] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase cursor-pointer">
-        écrivez-nous
+      <button class="text-white font-clementeMini tracking-wider italic font-bold bg-[var(--accent)] border-4 border-[var(--accent)] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl cursor-pointer">
+        Ecrivez-nous
       </button>
     </section>
   <Footer/>
@@ -195,12 +195,12 @@ const partners = [
 ];
 
 const engagementItems = [
-  { title: "Assistance", image: "/img/assia/icon/assistance.png", color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
-  { title: "Accompagnement", image: "/img/assia/icon/accompagnement.png", color: "bg-[#03A3B5]", textColor: "text-[#03A3B5]" },
-  { title: "Formation", image: "/img/assia/icon/formation.png", color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
-  { title: "Sécurité", image: "/img/assia/icon/security.png", color: "bg-[#03A3B5]", textColor: "text-[#03A3B5]" },
-  { title: "Adaptabilité", image: "/img/assia/icon/adaptability.png", color: "bg-[#ff925c]", textColor: "text-[#ff925c]" },
-  { title: "Évolutivité", image: "/img/assia/icon/evolution.png", color: "bg-[#03A3B5]", textColor: "text-[#03A3B5]" }
+  { title: "Assistance", image: "/img/assia/icon/assistance.png", color: "bg-[var(--accent)]", textColor: "text-[var(--accent)]" },
+  { title: "Accompagnement", image: "/img/assia/icon/accompagnement.png", color: "bg-[var(--primary)]", textColor: "text-[var(--primary)]" },
+  { title: "Formation", image: "/img/assia/icon/formation.png", color: "bg-[var(--accent)]", textColor: "text-[var(--accent)]" },
+  { title: "Sécurité", image: "/img/assia/icon/security.png", color: "bg-[var(--primary)]", textColor: "text-[var(--primary)]" },
+  { title: "Adaptabilité", image: "/img/assia/icon/adaptability.png", color: "bg-[var(--accent)]", textColor: "text-[var(--accent)]" },
+  { title: "Évolutivité", image: "/img/assia/icon/evolution.png", color: "bg-[var(--primary)]", textColor: "text-[var(--primary)]" }
 ];
 
 
@@ -310,7 +310,6 @@ onMounted(async () => {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;500;700;900&display=swap');
 .font-clemente { font-family: 'Clemente', 'Inter', sans-serif; font-weight: 900; }
 body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
 .font-display { font-family: 'Montserrat', sans-serif; }

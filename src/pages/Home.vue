@@ -448,13 +448,13 @@ onMounted(async () => {
         </div>
       </div>
 
-      <h2 class="text-3xl mt-12 md:mt-16 md:text-4xl lg:text-6xl text-center text-primary font-black font-display uppercase leading-[0.9] tracking-tighter mb-10 md:mb-16">
+      <!-- <h2 class="text-3xl mt-12 md:mt-16 md:text-4xl lg:text-6xl text-center text-primary font-black font-display uppercase leading-[0.9] tracking-tighter mb-10 md:mb-16">
         Des Questions ?
       </h2>
 
       <a href="/contact" class="text-primary border-2 border-primary flex justify-center w-fit mx-auto text-lg md:text-2xl py-4 md:py-5 px-8 md:px-12 rounded-xl uppercase font-clemente cursor-pointer hover:bg-primary hover:text-white transition-colors">
         Par ici les réponses
-      </a>
+      </a> -->
     </section>
 
     <!-- Contact Section -->

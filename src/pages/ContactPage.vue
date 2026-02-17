@@ -7,9 +7,9 @@
         <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
           <span class="text-6xl md:text-8xl font-bold tracking-tighter">CONTACT</span>
         </div>
-        <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
+        <!-- <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
           Nous contacter
-        </div>
+        </div> -->
         <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
       </div>
     </div>

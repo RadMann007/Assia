@@ -17,10 +17,10 @@
         <div class="px-6 md:px-16 py-20 flex flex-col md:flex-row items-center gap-12 pt-28 max-w-7xl mx-auto">
           
           <div class="anim-left flex-1 space-y-6">
-            <h1 class="font-clemente text-orange-400 text-4xl md:text-6xl font-black leading-tight">
+            <h1 class="font-clementeMini text-[var(--accent)] text-3xl md:text-4xl font-black leading-tight">
               Chaque structure est différente et a ses propres besoins
             </h1>
-            <p class="text-[#03A3B5] font-clementeMini text-3xl md:text-4xl leading-relaxed">
+            <p class="text-[var(--primary)] font-clementeMini text-2xl md:text-3xl leading-relaxed">
               C’est pourquoi, dès l’origine, la conception d’ASSIA a été pensée comme celle d’un outil s’adaptant au plus près des réalités de terrain. 
               Et la diversité des associations déjà outillées nous permet de vous indiquer comment ASSIA peut - ou non - répondre à vos besoins.
             </p>
@@ -53,32 +53,6 @@ gsap.registerPlugin(ScrollTrigger);
 const isOpen = ref(false);
 const contentRef = ref(null);
 
-onMounted(() => {
-  gsap.from(".anim-left", {
-    x: -300,
-    opacity: 0,
-    duration: 1.5,
-    ease: "power4.out",
-    scrollTrigger: {
-      trigger: ".anim-left",
-      start: "top 95%",
-      scrub: 1
-    }
-  });
-
-  gsap.from(".anim-right", {
-    x: 300,
-    opacity: 0,
-    duration: 1.5,
-    ease: "power4.out",
-    scrollTrigger: {
-      trigger: ".anim-right",
-      start: "top 95%",
-      scrub: 1
-    }
-  });
-});
-
 const toggleDiscovery = () => {
   if (isOpen.value) {
     // Fermeture
@@ -92,12 +66,21 @@ const toggleDiscovery = () => {
   } else {
     // Ouverture
     isOpen.value = true;
-    gsap.to(contentRef.value, { 
+    const el = contentRef.value;
+
+    gsap.to(el, { 
       height: "auto", 
       opacity: 1, 
       duration: 0.6, 
       ease: "power3.out"
     });
+
+    // Animate inner content
+    const animLeft = el.querySelectorAll('.anim-left');
+    const animRight = el.querySelectorAll('.anim-right');
+
+    if (animLeft.length) gsap.fromTo(animLeft, { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
+    if (animRight.length) gsap.fromTo(animRight, { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
   }
 };
 </script>

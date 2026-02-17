@@ -54,7 +54,7 @@ const toggle = (index) => {
                 
                 <button @click="toggle(index)" 
                         class="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none bg-white hover:bg-gray-50 transition-colors">
-                    <span class="text-lg md:text-xl font-semibold text-[#001214] font-clementeMini">
+                    <span class="text-lg md:text-xl font-semibold text-primary font-clementeMini">
                         {{ item.question }}
                     </span>
                     <span class="transform transition-transform duration-300 ml-4 flex-shrink-0"

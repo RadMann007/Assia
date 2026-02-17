@@ -74,17 +74,17 @@ const toggleItem = async (index) => {
 </script>
 
 <template>
-    <section class="action-section-left mr-4 md:mr-32 border-4 border-l-0 border-[#ff925c] rounded-r-[60px] p-8 md:p-12 bg-white shadow-lg overflow-hidden">
-            <div class="flex flex-col md:flex-row items-center gap-12">
+    <section class="action-section-left mr-4 md:mr-32 border-4 border-l-0 border-[var(--accent)] rounded-r-[60px] p-8 md:p-12 bg-white">
+            <div class="flex flex-col md:flex-row items-start gap-12">
               <div class="action-content flex-1 flex flex-col gap-4 order-2 md:order-1 w-full">
                   <div v-for="(item, index) in items" :key="index" 
-                       class="font-clemente text-white shadow-md rounded-[25px] overflow-hidden transition-all duration-300"
-                       :class="item.isOpen ? 'bg-[#ff925c]' : 'bg-[#ff925c] hover:scale-[1.02]'">
+                       class="font-clemente text-white rounded-[25px] overflow-hidden transition-all duration-300"
+                       :class="item.isOpen ? 'bg-[var(--accent)]' : 'bg-[var(--accent)] hover:scale-[1.02]'">
                       
                       <!-- Header cliquable -->
                       <div @click="toggleItem(index)" 
                            class="p-6 cursor-pointer flex justify-between items-center select-none">
-                          <p class="text-3xl md:text-4xl font-black leading-tight flex-1 text-center uppercase">
+                          <p class="text-2xl md:text-3xl font-black leading-tight flex-1 text-center">
                               {{ item.title }}
                           </p>
                           <div class="text-3xl font-light transition-transform duration-300 ml-4"
@@ -95,7 +95,7 @@ const toggleItem = async (index) => {
 
                       <!-- Contenu collapse -->
                       <div :ref="el => items[index].container = el" 
-                           class="overflow-hidden bg-[#fff3ee] px-8 font-clementeMini"
+                           class="overflow-hidden bg-[#F5F5DC] px-8 font-clementeMini"
                            :class="{ 'h-0': !item.isOpen }">
                           <ul class="pb-6 pt-2 text-left text-3xl font-medium space-y-4 font-clementeMini">
                               <li v-for="(point, pIndex) in item.content" :key="pIndex" class="flex items-start gap-2">
@@ -108,7 +108,7 @@ const toggleItem = async (index) => {
               </div>
               
               <div class="action-title flex-1 order-1 md:order-2 text-center md:text-left">
-                  <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#ff925c] leading-none">
+                  <h1 class="uppercase text-3xl md:text-5xl font-black font-clementeMini tracking-wider text-[var(--accent)] leading-none">
                       Suivre et piloter l’activité des services
                   </h1>
               </div>
