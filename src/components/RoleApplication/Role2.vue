@@ -89,17 +89,17 @@ const toggleItem = async (index) => {
 </script>
 
 <template>
-    <section class="action-section-right ml-4 md:ml-32 border-4 border-r-0 border-[#ff925c] rounded-l-[60px] p-8 md:p-12 bg-white shadow-lg overflow-hidden">
-            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+    <section class="action-section-right ml-4 md:ml-32 border-4 border-r-0 border-[var(--accent)] rounded-l-[60px] p-8 md:p-12 bg-white overflow-hidden">
+            <div class="flex flex-col md:flex-row-reverse items-start gap-12">
               <div class="action-content flex-1 flex flex-col gap-4 w-full">
                   <div v-for="(item, index) in items" :key="index" 
-                       class="font-clemente text-white shadow-md rounded-[25px] overflow-hidden transition-all duration-300"
-                       :class="item.isOpen ? 'bg-[#ff925c]' : 'bg-[#ff925c] hover:scale-[1.02]'">
+                       class="font-clemente text-white rounded-[25px] overflow-hidden transition-all duration-300"
+                       :class="item.isOpen ? 'bg-[var(--accent)]' : 'bg-[var(--accent)] hover:scale-[1.02]'">
                       
                       <!-- Header cliquable -->
                       <div @click="toggleItem(index)" 
                            class="p-6 cursor-pointer flex justify-between items-center select-none">
-                          <p class="text-3xl md:text-4xl font-black leading-tight flex-1 text-center uppercase">
+                          <p class="text-2xl md:text-3xl font-black leading-tight flex-1 text-center">
                               {{ item.title }}
                           </p>
                           <div class="text-3xl font-light transition-transform duration-300 ml-4"
@@ -122,9 +122,9 @@ const toggleItem = async (index) => {
                   </div>
               </div>
               
-              <div class="action-title flex-1 text-center md:text-right">
-                  <h1 class="uppercase text-4xl md:text-6xl font-black font-clemente text-[#ff925c] leading-none">
-                      Faciliter le quotidien à tous les niveaux
+              <div class="action-title flex-1 text-center md:text-left">
+                  <h1 class="uppercase text-3xl md:text-5xl font-black font-clementeMini tracking-wider text-[var(--accent)] leading-none">
+                      Faciliter le quotidien à tous les niveaux:
                   </h1>
               </div>
             </div>

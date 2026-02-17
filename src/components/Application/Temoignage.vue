@@ -9,7 +9,7 @@
       <div class="flex gap-1 mb-6 text-[#ff925c]">
         <Star v-for="s in 5" :key="s" class="w-5 h-5 fill-current" />
       </div>
-      <p class="text-gray-600 text-md leading-relaxed italic font-medium">"{{ testi.text }}"</p>
+      <p class=" font-clementeMini text-gray-600 text-md leading-relaxed italic font-medium">"{{ testi.text }}"</p>
     </div>
   </div>
 </template>

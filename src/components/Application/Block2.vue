@@ -18,7 +18,7 @@
          
        <div class="px-6 md:px-16 py-20 flex flex-col items-center gap-12 pt-32 max-w-7xl mx-auto">
           
-          <div class="flex flex-col lg:flex-row items-center gap-12 w-full">
+          <div class="anim-left flex flex-col lg:flex-row items-center gap-12 w-full">
             <div class="w-full lg:w-1/3 relative">
               <div class="absolute -inset-2 bg-[#ff925c] rounded-[45px] rotate-2 opacity-20"></div>
               <div class="w-full h-[400px] rounded-[40px] overflow-hidden relative z-10">
@@ -26,7 +26,7 @@
               </div>
             </div>
 
-            <div class="w-full lg:w-2/3">
+            <div class=" anim-right w-full lg:w-2/3">
               <ul class="space-y-4 text-[#ff925c] font-bold text-3xl md:text-4xl">
                 <li class="flex items-center gap-3"><span class="text-4xl">•</span> Hébergement d'urgence</li>
                 <li class="flex items-center gap-3"><span class="text-4xl">•</span> Hébergement d'insertion</li>
