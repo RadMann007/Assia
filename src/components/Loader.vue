@@ -40,7 +40,7 @@ const props = defineProps({
   },
   backgroundColor: {
     type: String,
-    default: 'bg-[var(--primary)]' // Default primary color
+    default: 'bg-[#03A3B5]' // Default primary color
   }
 });
 

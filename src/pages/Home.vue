@@ -37,28 +37,39 @@ const isComplexOpen = ref(false);
 
 const toggleItem = (index) => {
   itemStates.value[index] = !itemStates.value[index];
-  const content = document.querySelectorAll('.approach-content')[index];
-  const icon = document.querySelectorAll('.approach-icon')[index];
-  if (itemStates.value[index]) {
-    gsap.to(content, { height: "auto", opacity: 1, duration: 0.6, ease: "power3.out", paddingBottom: "2rem" });
-    gsap.to(icon, { rotate: 45, duration: 0.3 });
-  } else {
-    gsap.to(content, { height: 0, opacity: 0, duration: 0.5, ease: "power3.inOut", paddingBottom: "0rem" });
-    gsap.to(icon, { rotate: 0, duration: 0.3 });
-  }
+  // Utilisation de nextTick pour s'assurer que le DOM est mis à jour avant l'animation GSAP
+  nextTick(() => {
+    const contents = document.querySelectorAll('.approach-content');
+    const icons = document.querySelectorAll('.approach-icon');
+    if (contents[index] && icons[index]) {
+        const content = contents[index];
+        const icon = icons[index];
+        if (itemStates.value[index]) {
+          gsap.to(content, { height: "auto", opacity: 1, duration: 0.6, ease: "power3.out", paddingBottom: "1.5rem" }); // paddingBottom réduit pour mobile
+          gsap.to(icon, { rotate: 45, duration: 0.3 });
+        } else {
+          gsap.to(content, { height: 0, opacity: 0, duration: 0.5, ease: "power3.inOut", paddingBottom: "0rem" });
+          gsap.to(icon, { rotate: 0, duration: 0.3 });
+        }
+    }
+  });
 };
 
 const toggleComplex = () => {
   isComplexOpen.value = !isComplexOpen.value;
-  const content = document.querySelector('.complex-content');
-  const icon = document.querySelector('.complex-icon');
-  if (isComplexOpen.value) {
-    gsap.to(content, { height: "auto", opacity: 1, duration: 0.6, ease: "power3.out", paddingBottom: "2rem" });
-    gsap.to(icon, { rotate: 45, duration: 0.3 });
-  } else {
-    gsap.to(content, { height: 0, opacity: 0, duration: 0.5, ease: "power3.inOut", paddingBottom: "0rem" });
-    gsap.to(icon, { rotate: 0, duration: 0.3 });
-  }
+  nextTick(() => {
+      const content = document.querySelector('.complex-content');
+      const icon = document.querySelector('.complex-icon');
+      if (content && icon) {
+        if (isComplexOpen.value) {
+          gsap.to(content, { height: "auto", opacity: 1, duration: 0.6, ease: "power3.out", paddingBottom: "1.5rem" });
+          gsap.to(icon, { rotate: 45, duration: 0.3 });
+        } else {
+          gsap.to(content, { height: 0, opacity: 0, duration: 0.5, ease: "power3.inOut", paddingBottom: "0rem" });
+          gsap.to(icon, { rotate: 0, duration: 0.3 });
+        }
+      }
+  });
 };
 
 onMounted(async () => {
@@ -68,7 +79,7 @@ onMounted(async () => {
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => lenis.raf(time * 1000));
 
-  // ANIMATION DU LOADER ASSIA
+  // ANIMATION DU LOADER
   const loaderTl = gsap.timeline();
   loaderTl.to('.loader-text', { opacity: 1, duration: 0.5, delay: 0.2 })
     .to('.loader-subtitle', { opacity: 1, duration: 0.5 }, "-=0.3")
@@ -82,11 +93,10 @@ onMounted(async () => {
     });
 
   const heroTl = gsap.timeline();
-  // Animation image: vient de la droite vers la gauche (vers le texte)
   heroTl.from(".hero-title span", { y: 100, rotate: 5, duration: 1, stagger: 0.1, ease: "power4.out" })
         .from(".hero-image", { x: 200, opacity: 0, duration: 1.5, ease: "power4.out" }, "-=0.8");
 
-  // ANIMATIONS DES SECTIONS (GAUCHE / DROITE)
+  // ANIMATIONS DES SECTIONS
   gsap.from(".slide-right", { 
     x: -300, opacity: 0, ease: "power2.out",
     scrollTrigger: { trigger: ".slide-right", start: "top 95%", end: "top 70%", scrub: 1 } 
@@ -113,7 +123,7 @@ onMounted(async () => {
     scrollTrigger: { trigger: ".enjeux-content", start: "top 80%" }
   });
 
-  // ANIMATION DE TEXTE RÉVÉLATION AU SCROLL
+  // ANIMATION DE TEXTE RÉVÉLATION
   const textWords = document.querySelectorAll('.reveal-word');
   if (textWords.length > 0) {
     gsap.set(textWords, { opacity: 0.15 });
@@ -139,23 +149,26 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="main flex flex-col font-body min-h-screen">
+  <div class="main flex flex-col font-body min-h-screen bg-[#F9FEFF] overflow-x-hidden">
     
-    <!-- LOADER AVEC LOGO ASSIA -->
-    <div ref="loader" class="fixed inset-0 bg-primary z-[100] flex items-center justify-center">
-      <div class="relative font-clemente text-center">
-        <div class="loader-text opacity-0 text-[var(--white)] mb-4">
-          <span class="text-6xl md:text-8xl tracking-tighter">EDOSSAH</span>
+    <!-- LOADER -->
+    <div ref="loader" class="fixed inset-0 bg-primary z-[100] flex items-center justify-center p-4">
+      <div class="relative text-center">
+        <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
+          <!-- Texte responsive pour le loader -->
+          <!-- <span class="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter">EDOSSAH</span> -->
+          <img src="/img/loader/edoLoader.jpeg" class="w-200 h-60 object-cover" alt="edoLoader" />
         </div>
-        <div class="loader-subtitle opacity-0 text-[var(--white)] text-lg mb-6">
+        <!-- <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-base sm:text-lg mb-6">
           Le numérique pensé pour les associations
-        </div>
+        </div> -->
         <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
       </div>
     </div>
 
     <NavBar />
 
+    <!-- HERO SECTION -->
     <section class="container mx-auto px-6 h-screen flex flex-col justify-center relative z-10">
       <div class=" grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
         <div>
@@ -171,19 +184,21 @@ onMounted(async () => {
       </div>
     </section>
 
-    <section class="py-16 overflow-hidden mb-20">
+    <!-- PARTNERS MARQUEE -->
+    <section class="py-12 md:py-16 overflow-hidden mb-10 md:mb-20">
       <div class="w-full relative fade-mask">
-        <div class="flex items-center gap-20 md:gap-32 w-max marquee-track">
+        <div class="flex items-center gap-12 md:gap-20 lg:gap-32 w-max marquee-track">
           <div v-for="(p, index) in [...partners, ...partners, ...partners]" :key="index" class="flex-shrink-0">
-            <img :src="p.logo" :alt="p.name" class="h-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer" />
+            <img :src="p.logo" :alt="p.name" class="h-10 md:h-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer" />
           </div>
         </div>
       </div>
     </section>
 
-    <section ref="textRevealContainer" class="flex w-full bg-primary p-7">
-      <p class="text-white font-clemente text-center text-base md:text-xl lg:text-3xl mx-[15%]">
-        <span class="reveal-word">Nous</span> <span class="reveal-word">vous</span> <span class="reveal-word">accompagnons</span> <span class="reveal-word">dans</span> <span class="reveal-word">la</span> <span class="reveal-word">conception,</span> <span class="reveal-word">l'évolution</span> <span class="reveal-word">et</span> <span class="reveal-word">le</span> <span class="reveal-word">déploiement</span> <span class="reveal-word">de</span> <span class="reveal-word">vos</span> <span class="reveal-word">outils</span> <span class="reveal-word">numériques.</span> <span class="reveal-word">Et</span> <span class="reveal-word">grâce</span> <span class="reveal-word">à</span> <span class="reveal-word">notre</span> <span class="reveal-word">connaissance</span> <span class="reveal-word">de</span> <span class="reveal-word">vos</span> <span class="reveal-word">métiers,</span> <span class="reveal-word">nos</span> <span class="reveal-word">propositions</span> <span class="reveal-word">sont</span> <span class="reveal-word">adaptées,</span> <span class="reveal-word">durables</span> <span class="reveal-word">et</span> <span class="reveal-word">très</span> <span class="reveal-word">utiles.</span>
+    <!-- TEXT REVEAL -->
+    <section ref="textRevealContainer" class="flex w-full py-16 md:py-24 px-6 md:px-20 bg-primary">
+      <p class="text-white font-clementeMini text-center mx-auto md:mx-[10%] lg:mx-[25%] text-2xl sm:text-3xl md:text-4xl lg:text-[45px] leading-tight max-w-5xl">
+        <span class="reveal-word">Nous</span> <span class="reveal-word">vous</span> <span class="reveal-word">accompagnons</span> <span class="reveal-word">dans</span> <span class="reveal-word">la</span> <span class="reveal-word font-clemente">conception,</span> <span class="reveal-word font-clemente">l'évolution</span> <span class="reveal-word">et</span> <span class="reveal-word">le</span> <span class="reveal-word font-clemente">déploiement</span> <span class="reveal-word">de</span> <span class="reveal-word">vos</span> <span class="reveal-word">outils</span> <span class="reveal-word">numériques.</span> <span class="reveal-word">Et</span> <span class="reveal-word">grâce</span> <span class="reveal-word">à</span> <span class="reveal-word">notre</span> <span class="reveal-word font-clemente">connaissance</span> <span class="reveal-word font-clemente">de</span> <span class="reveal-word font-clemente">vos</span> <span class="reveal-word font-clemente">métiers,</span> <span class="reveal-word">nos</span> <span class="reveal-word">propositions</span> <span class="reveal-word">sont</span> <span class="reveal-word font-clemente">adaptées,</span> <span class="reveal-word font-clemente">durables</span> <span class="reveal-word">et</span> <span class="reveal-word font-clemente">très</span> <span class="reveal-word font-clemente">utiles.</span>
       </p>
     </section>
 
@@ -203,7 +218,7 @@ onMounted(async () => {
       </div>
     </section>
 
-    <!-- Notre approche -->
+    <!-- Notre Approche -->
     <section class="w-full py-20 overflow-hidden">
       <div class="slide-left  md:ml-32 border-2 border-r-0 border-primary p-8 bg-white rounded-l-[60px] md:rounded-l-[var(--border-radius-primary)]">
         <h2 class="font-display text-3xl md:text-6xl text-center uppercase font-black mb-8 text-primary tracking-tighter font-clemente">Notre Approche</h2>
@@ -226,7 +241,7 @@ onMounted(async () => {
       </div>
     </section>
 
-<!-- Issus du secteur associatif et de l'AHI -->
+    <!-- Notre ADN -->
     <section class="w-full py-20 overflow-hidden"> 
       <div class="slide-right-2 flex flex-col md:flex-row mr-4 md:mr-32 border-2 border-l-0 border-[var(--primary)] bg-white rounded-r-[60px] md:rounded-r-[var(--border-radius-primary)] ">
         <div class="md:w-1/2 flex flex-col items-center justify-center p-20 border-[var(--primary)]">
@@ -236,7 +251,7 @@ onMounted(async () => {
            <img src="/img/adn.png" class="w-40 h-40 object-contain mb-4 rotate-12 rounded-2xl"/>
            <h2 class="font-clemente font-display text-4xl md:text-[50px] text-[var(--primary)] font-black text-center tracking-tighter leading-tight uppercase">Notre ADN</h2>
         </div>
-        <div class="md:w-1/2 p-12 p-6 flex flex-col justify-center text-center md:text-left space-y-8">
+        <div class="md:w-1/2 p-12 flex flex-col justify-center text-center md:text-left space-y-8">
           <p class="text-[var(--primary)] space-y-4 text-2xl md:text-3xl font-clementeMini">Cet ancrage se traduit par des choix concrets :</p>
           
           <ul class="text-[var(--primary)] ml-10 text-[20px] md:text-[21px] font-clementeMini">
@@ -265,70 +280,71 @@ onMounted(async () => {
       </div>
     </section>
 
-    <section class="container mx-auto py-24 px-6 text-center enjeux-trigger">
-        <h2 class="font-display text-4xl md:text-7xl text-primary uppercase font-black leading-tight tracking-tighter max-w-5xl mx-auto enjeux-title">
+    <!-- Enjeux Title -->
+    <section class="container mx-auto py-16 md:py-24 px-6 text-center enjeux-trigger">
+        <h2 class="font-clemente font-display text-3xl md:text-5xl lg:text-7xl text-primary uppercase font-black leading-tight tracking-tighter max-w-5xl mx-auto enjeux-title tracking-wide">
             des besoins concrets,<br/> un accompagnement sur mesure
         </h2>
     </section>
 
+    <!-- Enjeux Content -->
     <section class="bg-primary p-8 md:p-20">
         <div class="container mx-auto">
-            <div class="grid lg:grid-cols-2 gap-16 mb-20 items-center">
+            <div class="grid lg:grid-cols-2 gap-12 md:gap-16 mb-12 md:mb-20 items-center">
                 <div class="p-2 overflow-hidden enjeux-image">
                     <img src="/img/2hand.jpg" class="w-full rounded-3xl h-full object-cover"/>
                 </div>
-                <div class="flex flex-col gap-8 text-center lg:text-left enjeux-content">
-                    <h2 class="text-4xl md:text-[60px] font-display font-black leading-tight text-white font-clemente">
+                <div class="flex flex-col gap-6 md:gap-8 text-center lg:text-left enjeux-content">
+                    <h2 class="text-3xl md:text-5xl font-display font-black text-white font-clemente tracking-wide">
                       Nous accompagnons les structures face à des enjeux très concrets
                     </h2>
-                    <!-- <p class="text-xl md:text-[30px] font-medium text-white font-clemente">Les structures que nous accompagnons rencontrent fréquemment les situations suivantes :</p> -->
                 </div>
             </div>
 
             <div class="flex justify-center w-full">
-                <div class="w-full max-w-4xl border-2 border-primary cursor-pointer transition-all duration-500 overflow-hidden rounded-[80px]"
+                <div class="w-full max-w-4xl border-2 border-primary cursor-pointer transition-all duration-500 overflow-hidden rounded-[40px] md:rounded-[80px]"
                      :class="isComplexOpen ? 'bg-white text-primary shadow-lg' : 'bg-white text-primary shadow-2xl'"
                      @click="toggleComplex">
                     
-                    <div class="p-10 flex flex-col md:flex-row justify-center items-center gap-6 select-none relative">
-                        <h3 class="text-4xl md:text-5xl font-black lowercase tracking-tighter text-center">voir les situations</h3>
-                        <div class="complex-icon text-5xl font-light transition-transform duration-300">+</div>
+                    <div class="p-6 md:p-10 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 select-none relative">
+                        <h3 class="font-clementeMini italic text-2xl md:text-4xl lg:text-5xl  text-center">Voir les situations</h3>
+                        <div class="complex-icon text-4xl md:text-5xl font-light transition-transform duration-300">+</div>
                     </div>
 
-                    <div class="complex-content h-0 opacity-0 overflow-hidden px-8">
-                        <div class="pb-12 space-y-10 text-center" :class="isComplexOpen ? 'text-primary' : 'text-white'">
-                            <p class="text-2xl font-clementeMini font-bold leading-relaxed max-w-2xl mx-[15%]">
+                    <div class="complex-content h-0 opacity-0 overflow-hidden px-6 md:px-8">
+                        <div class="pb-8 md:pb-12 space-y-8 md:space-y-10 text-center" :class="isComplexOpen ? 'text-primary' : 'text-white'">
+                            <p class="text-lg md:text-2xl lg:text-[35px] text-primary leading-tight font-clementeMini">
                                 Vos équipes passent plus de temps sur les tableurs que sur l'accompagnement humain. Nous simplifions vos processus pour :
                             </p>
-                            <ul class="flex flex-col items-start gap-6 max-w-2xl mx-auto">
-                                <li class="flex flex-col md:flex-row items-center gap-6 group">
-                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">01</span>
-                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Des outils multiples, peu connectés ou non-adaptables</span>
+                            <ul class="flex flex-col items-start gap-4 md:gap-6 max-w-2xl mx-auto ">
+                                <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
+                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">01</span>
+                                  <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Des outils multiples, peu connectés ou non-adaptables</span>
                                 </li>
 
-                                <li class="flex flex-col md:flex-row items-center gap-6 group">
-                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">02</span>
-                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Des besoins métiers mal couverts par les solutions existantes</span>
+                                <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
+                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">02</span>
+                                  <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Des besoins métiers mal couverts par les solutions existantes</span>
                                 </li>
 
-                                <li class="flex flex-col md:flex-row items-center gap-6 group">
-                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">03</span>
-                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Des indicateurs demandés par les financeurs difficiles à produire</span>
+                                <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
+                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">03</span>
+                                  <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Des indicateurs demandés par les financeurs difficiles à produire</span>
                                 </li>
 
-                                <li class="flex flex-col md:flex-row items-center gap-6 group">
-                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">04</span>
-                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Des pratiques de terrain complexes, peu traduites dans les outils numériques</span>
+                                <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
+                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">04</span>
+                                  <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Des pratiques de terrain complexes, peu traduites dans les outils numériques</span>
                                 </li>
 
-                                <li class="flex flex-col md:flex-row items-center gap-6 group">
-                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">05</span>
-                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Des contraintes réglementaires et RGPD insuffisamment outillées</span>
+                                <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
+                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">05</span>
+                                  <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Des contraintes réglementaires et RGPD insuffisamment outillées</span>
                                 </li>
 
-                                <li class="flex flex-col md:flex-row items-center gap-6 group">
-                                  <span class="flex-shrink-0 w-12 h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">06</span>
-                                  <span class="text-2xl font-clementeMini tracking-tight text-left">Un manque de temps et de ressources internes pour piloter les projets numériques</span>
+                                <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
+                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">06</span>
+                                  <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Un manque de temps et de ressources internes pour piloter les projets numériques</span>
                                 </li>
                               </ul>
                         </div>
@@ -336,73 +352,57 @@ onMounted(async () => {
                 </div>
             </div>
         </div>
+        
         <!-- Roles -->
-            <div class="container mx-auto mt-32 text-center text-white">
-              <h2 class="text-4xl md:text-6xl font-black font-display uppercase font-clemente mb-8 px-4 leading-[0.9] tracking-tighter">
-               Notre Rôle ?
-              </h2>
-              <p class="md:text-3xl max-w-5xl mx-auto mb-12 font-clemente">
-                Structurer, concevoir et faire évoluer votre système d'information. Chaque accompagnement est pensé en fonction du contexte, des 
-                usages et des moyens de la structure.
-              </p>
-
-              <!-- <div>
-                <button class="bg-white text-primary font-black uppercase text-lg md:text-xl py-4 px-10 rounded-full shadow-2xl hover:scale-105 transition-transform duration-300">
-                  Je découvre les cas pratiques
-                </button>
-              </div> -->
-            </div>
+        <div class="container mx-auto mt-16 md:mt-32 text-center text-white">
+          <h2 class="text-3xl md:text-4xl lg:text-6xl font-black font-display uppercase font-clemente mb-6 md:mb-8 px-4 leading-[0.9] tracking-tighter">
+           Notre Rôle ?
+          </h2>
+          <p class="text-lg md:text-2xl lg:text-3xl max-w-5xl mx-auto mb-8 md:mb-12 font-clementeMini px-4">
+            <b class="font-clemente">Structurer, concevoir</b> et <b class="font-clemente">faire évoluer</b> votre système d'information. Chaque accompagnement est pensé en fonction du contexte, des 
+            usages et des moyens de la structure.
+          </p>
+        </div>
     </section>
 
-    <!-- section ASSIA -->
-    <section class="bg-[#FFF5F0] py-20 mb-20">
-      <div class="container mx-auto px-6">
+    <!-- Section ASSIA -->
+    <section class="bg-[#fff3ee] py-16 md:py-20 mb-10 md:mb-20">
+      <div class="container mx-auto px-4 md:px-6">
         
-        <!-- 1. Grid: Titre + Image -->
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16">
-          <div class="flex flex-col justify-end items-end gap-4">
-
-              <h2 class="text-3xl md:text-[70px] text-[#ff925c] font-clemente text-right">
+        <!-- Grid Titre + Image -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center mb-12 md:mb-16">
+          <div class="flex flex-col justify-center items-center md:justify-end md:items-end gap-2 md:gap-4 text-center md:text-right order-2 lg:order-1">
+              <h2 class="text-3xl md:text-5xl lg:text-[70px] text-[var(--accent)] font-clemente uppercase">
                 Assia :
               </h2>
-              <h2 class="text-3xl md:text-[50px]  text-right text-[#03A3B5] font-clemente">
-                une réponse
-              </h2>
-              <h2 class="text-3xl md:text-[50px] text-right text-[#03A3B5] font-clemente">
-                mutualisée à un
-              </h2>
-              <h2 class="text-3xl md:text-[50px] text-right text-[#03A3B5] font-clemente">
-                besoin partagé
+              <h2 class="text-2xl md:text-5xl lg:text-[50px] text-[var(--primary)] font-clemente">
+                une réponse mutualisée à un besoin partagé
               </h2>
           </div>
-          <div class="relative">
-              <div class="size-3/4 rounded-[40px] overflow-hidden">
+          <div class="relative order-1 lg:order-2 flex justify-center">
+              <div class="w-full sm:w-3/4 rounded-[30px] md:rounded-[40px] overflow-hidden">
                 <img src="/img/mutualise.png" class="w-full h-full object-cover" alt="Assia Team"/>
               </div>
           </div>
         </div>
 
-        <!-- 2. Flux Vertical de Contenu -->
-        <div class="flex flex-col items-center text-center gap-10 text-white max-w-4xl mx-auto font-clemente">
+        <!-- Flux Vertical -->
+        <div class="flex flex-col items-center text-center gap-6 md:gap-10 text-white max-w-4xl mx-auto">
             
-            <p class="text-2xl md:text-3xl font-clementeMini leading-relaxed text-[#03A3B5]">
+            <p class="text-lg md:text-2xl lg:text-3xl font-clementeMini leading-relaxed text-[var(--primary)]">
               Lorsque plusieurs associations rencontrent des besoins métier similaires, nous faisons le choix de la mutualisation.
             </p>
 
-            <!-- <button class="text-white bg-[#ff925c] font-black uppercase text-lg md:text-xl py-4 px-10 rounded-full shadow-xl hover:scale-105 transition-transform duration-300 pointer-events-none">
-              ASSIA est l'un de ces projets :
-            </button> -->
-
-            <p class="text-2xl md:text-3xl font-clementeMini leading-relaxed text-[#03A3B5]">
+            <p class="text-lg md:text-2xl lg:text-3xl font-clementeMini leading-relaxed text-[var(--primary)]">
               <b>ASSIA est l'outil métier</b> dédié au <b>travail social, co-construit</b> avec les professionnels, <b>évolutif</b> et toujours <b>au service du quotidien.</b>
             </p>
 
-            <p class="text-2xl md:text-3xl font-clementeMini leading-relaxed text-[#03A3B5]">
+            <p class="text-lg md:text-2xl lg:text-3xl font-clementeMini leading-relaxed text-[var(--primary)]">
               ASSIA incarne notre capacité à <b>comprendre</b> les réalités de terrain et à les <b>traduire</b> en systèmes d'information <b>concrets</b> et <b>opérationnels.</b>
             </p>
 
             <div class="pt-4">
-               <a href="/application" class="text-white bg-[#ff925c] text-xl md:text-2xl py-5 px-12 rounded-full cursor-pointer">
+               <a href="/application" class="font-clementeMini italic inline-block text-white bg-[var(--accent)] text-lg md:text-xl lg:text-2xl py-4 md:py-5 px-8 md:px-12 rounded-full cursor-pointer hover:scale-105 transition-transform">
                  Je découvre ASSIA
                </a>
             </div>
@@ -412,59 +412,55 @@ onMounted(async () => {
       </div>
     </section>
 
-    <section class="py-16 overflow-hidden mb-20">
-      <h2 class="text-4xl md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-20">
-               On les accompagne tous les jours
-              </h2>
-      <div class="w-full relative fade-mask ">
-        <div class="flex items-center gap-20 md:gap-32 w-max marquee-track">
+    <!-- PARTNERS 2 -->
+    <section class="py-12 md:py-16 overflow-hidden mb-10 md:mb-20">
+      <h2 class="font-clemente text-3xl md:text-4xl lg:text-7xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-10 md:mb-20">
+         On les accompagne tous les jours
+      </h2>
+      <div class="w-full relative fade-mask">
+        <div class="flex items-center gap-12 md:gap-20 lg:gap-32 w-max marquee-track">
           <div v-for="(p, index) in [...partners, ...partners, ...partners]" :key="index" class="flex-shrink-0">
-            <img :src="p.logo" :alt="p.name" class="h-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer" />
+            <img :src="p.logo" :alt="p.name" class="h-10 md:h-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer" />
           </div>
         </div>
       </div>
     </section>
-    <div class="max-w-7xl mx-auto text-center">
+    
+    <div class="max-w-7xl mx-auto text-center px-4">
       <Temoignage />
     </div>
 
-    <section class="py-24">
-      <h2 class="text-4xl md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+    <!-- Soutien -->
+    <section class="py-16 md:py-24 px-4">
+      <h2 class="font-clemente text-3xl md:text-4xl lg:text-6xl text-center text-primary font-black font-display uppercase leading-[0.9] tracking-tighter mb-10 md:mb-16">
         Ils nous ont soutenu
       </h2>
-      <div class="bg-primary container rounded-[34px] mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-        <div class="w-96 h-64 p-8 flex items-center justify-center">
-          <img src="/logo/idf.png" class="w-full h-full object-contain brightness-0 invert" alt="Ile de France"/>
+      <div class="bg-primary container rounded-[24px] md:rounded-[34px] mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-16">
+        <!-- Ajustement des conteneurs d'images -->
+        <div class="w-full md:w-96 h-40 md:h-64 p-4 md:p-8 flex items-center justify-center">
+          <img src="/logo/idf.png" class="max-w-full max-h-full object-contain brightness-0 invert" alt="Ile de France"/>
         </div>
-        <div class="w-96 h-64 p-8 flex items-center justify-center">
-          <img src="/logo/bpi.png" class="w-full h-full object-contain brightness-0 invert" alt="BPI France"/>
+        <div class="w-full md:w-96 h-40 md:h-64 p-4 md:p-8 flex items-center justify-center">
+          <img src="/logo/bpi.png" class="max-w-full max-h-full object-contain brightness-0 invert" alt="BPI France"/>
         </div>
       </div>
 
-      <h2 class="text-4xl mt-16 md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+      <!-- <h2 class="text-3xl mt-12 md:mt-16 md:text-4xl lg:text-6xl text-center text-primary font-black font-display uppercase leading-[0.9] tracking-tighter mb-10 md:mb-16">
         Des Questions ?
       </h2>
 
-      <a href="/contact" class="text-primary border-2 border-primary flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
+      <a href="/contact" class="text-primary border-2 border-primary flex justify-center w-fit mx-auto text-lg md:text-2xl py-4 md:py-5 px-8 md:px-12 rounded-xl uppercase font-clemente cursor-pointer hover:bg-primary hover:text-white transition-colors">
         Par ici les réponses
-      </a>
+      </a> -->
     </section>
 
-    <!-- <section>
-      <h2 class="text-4xl md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
-        Ils nous font confiance
-      </h2>
-      <button class="text-white bg-primary border-2 border-primary flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
-        j'arrive
-      </button>
-    </section> -->
-
-    <section class="p-28 border-2 border-primary w-fit  mx-auto rounded-[34px]">
-      <h2 class="text-4xl md:text-6xl text-center text-primary font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
+    <!-- Contact Section -->
+    <section class="p-8 md:p-16 lg:p-28 border-2 border-primary mx-4 md:mx-auto w-auto md:w-fit md:max-w-4xl rounded-[24px] md:rounded-[34px] mb-10">
+      <h2 class="font-clemente tracking-wide text-3xl md:text-4xl lg:text-6xl text-center text-primary font-black font-display uppercase leading-[0.9] tracking-tighter mb-10 md:mb-16">
         Besoin de plus d'informations ?
       </h2>
-      <a href="/contact" class="text-white bg-primary border-2 border-primary flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clemente cursor-pointer">
-        écrivez-nous
+      <a href="/contact" class="text-white bg-primary border-2 border-primary flex justify-center w-fit mx-auto text-lg md:text-3xl py-4 md:py-5 px-8 md:px-12 rounded-xl font-clementeMini italic cursor-pointer hover:scale-105 transition-transform">
+        Ecrivez-nous
       </a>
     </section>
 
@@ -473,13 +469,14 @@ onMounted(async () => {
 </template>
 
 <style>
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700;900&display=swap');
+/* :root { --primary: var(--primary); --secondary: var(--accent); } */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: var(--bg-light); overflow-x: hidden; color: var(--dark); font-family: "Clemente"; }
+body { background-color: #F5F5F5; overflow-x: hidden; color: #1a1a1a; font-family: 'Inter', sans-serif; }
+.font-display { font-family: 'Montserrat', sans-serif; }
 .text-primary { color: var(--primary); }
 .bg-primary { background-color: var(--primary); }
 .border-primary { border-color: var(--primary); }
-
 
 .marquee-track { animation: scroll 40s linear infinite; }
 .marquee-track:hover { animation-play-state: paused; }

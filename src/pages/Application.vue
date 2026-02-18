@@ -2,14 +2,15 @@
   <div class="main bg-white font-body min-h-screen selection:bg-[var(--accent)] selection:text-white overflow-x-hidden" ref="mainContainer">
     
     <!-- LOADER AVEC LOGO ASSIA -->
-    <div ref="loader" class="fixed inset-0 bg-[var(--accent)] z-[100] flex items-center justify-center">
+    <div ref="loader" class="fixed inset-0 bg-[#ff925c] z-[100] flex items-center justify-center">
       <div class="relative text-center">
         <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
-          <span class=" font-clemente text-6xl md:text-8xl font-bold tracking-tighter">ASSIA</span>
+          <!-- <span class="text-6xl md:text-8xl font-bold tracking-tighter">ASSIA</span> -->
+          <img src="/img/loader/assiaLoader.jpeg" class="w-200 h-60 object-cover" alt="assiaLoader" />
         </div>
-        <div class="font-clemente loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
+        <!-- <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
           L'application métier du social
-        </div>
+        </div> -->
         <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
       </div>
     </div>
@@ -17,32 +18,27 @@
     <NavBar />
 
     <!-- 1. SECTION HERO -->
-    <section class="relative min-h-screen bg-[var(--accent)] pt-32 pb-20 px-0 flex flex-col items-center justify-center text-white text-center overflow-hidden">
+    <section class="relative min-h-screen bg-[#ff925c] pt-32 pb-20 px-0 flex flex-col items-center justify-center text-white text-center overflow-hidden">
       <!-- Container stretches to edges -->
       <div class="w-full flex flex-col md:flex-row justify-center items-stretch gap-0 mb-16 relative z-10">
-        <div class="hero-card-left flex-1 bg-white text-[var(--accent)] p-10 md:p-16 rounded-r-[60px] md:rounded-r-[50px] rounded-l-none shadow-none" style="align-content: center;">
+        <div class="hero-card-left flex-1 bg-white text-[#ff925c] p-10 md:p-16 rounded-r-[60px] md:rounded-r-[80px] rounded-l-none shadow-none">
           <!-- animer de gauche vers le centre -->
-          <h2 class="text-3xl md:text-4xl font-black uppercase leading-none tracking-tight font-clemente text-right">À la croisée de l'expertise de l'AHI</h2>
+          <h2 class="text-4xl md:text-6xl font-black uppercase leading-none tracking-tight font-clemente text-right">À la croisée de<br>l'expertise de l'AHI</h2>
         </div>
         
-        <div class="hero-ampersand-container flex items-center justify-center px-6 md:px-6 py-4 z-20">
-          <span class=" font-clemente hero-ampersand text-4xl md:text-5xl font-display font-black text-white">&</span>
+        <div class="hero-ampersand-container flex items-center justify-center px-6 md:px-12 py-4 z-20">
+          <span class="hero-ampersand text-6xl md:text-8xl font-display font-black text-white">&</span>
         </div>
 
-        <div class="hero-card-right flex-1 bg-white text-[var(--accent)] p-10 md:p-16 rounded-l-[60px] md:rounded-l-[50px] rounded-r-none shadow-none" style="align-content: center;">
+        <div class="hero-card-right flex-1 bg-white text-[#ff925c] p-10 md:p-16 rounded-l-[60px] md:rounded-l-[80px] rounded-r-none shadow-none">
           <!-- animer de droite vers le centre -->
-          <h2 class="text-3xl md:text-4xl text-left font-black uppercase leading-none tracking-tight font-clemente">De la technologie</h2>
+          <h2 class="text-4xl md:text-6xl text-left font-black uppercase leading-none tracking-tight font-clemente">De la<br>technologie</h2>
         </div>
       </div>
-      <!-- Flèches sous les cards -->
-      <div class=" absolute left-0 right-0 flex justify-around px-16 z-20">
-        <button class="md:text-8xl text-white text-4xl transition-transform duration-300 hover:translate-x-2">→</button>
-        <button class="md:text-8xl text-white text-4xl transition-transform duration-300 hover:-translate-x-2">←</button> 
-      </div>
-
-      <div class="max-w-4xl stagger-hero mt-8 ">
-        <p class="text-[22px] md:text-[40px] font-clementeMini leading-tight">
-          Ce n’est pas seulement un outil de reporting,<br /> c’est surtout <b class="italic">un logiciel du quotidien</b> utile aux professionnels de terrain
+      
+      <div class="max-w-5xl stagger-hero mt-8 px-6">
+        <p class="text-3xl font-clementeMini md:text-5xl leading-tight">
+          Ce n’est pas seulement un outil de reporting,c’est surtout <b class="font-clemente">un logiciel du quotidien</b> utile aux professionnels de terrain
         </p>
       </div>
     </section>
@@ -69,7 +65,7 @@
     <!-- 4. SECTION EXCLUSION SOCIALE (DESIGN CORRIGÉ) -->
     <section class="pb-20 w-full">
       <!-- Titre retravaillé pour plus d'impact -->
-      <h1 class="w-full text-[var(--primary)] tracking-wider text-center font-clementeMini text-4xl md:text-6xl font-black uppercase mb-12">
+      <h1 class="w-full text-[var(--primary)] tracking-wider text-center font-clementeMini text-4xl md:text-6xl font-black uppercase mb-12 tracking-tighter">
         PARCE QU'ON DOIT LUTTER CONTRE <br class="hidden md:block"> <p class="font-clemente italic">L'EXCLUSION SOCIALE ! </p> 
       </h1>
 
@@ -138,7 +134,7 @@
     </section>
 
   </div>
-  <section class="py-24">
+  <!-- <section class="py-24">
 
       <h1 class="text-6xl font-clemente mt-4 md:text-8xl text-center text-[var(--accent)] font-black font-display uppercase px-4 leading-[0.9] tracking-tighter mb-16">
         Des Questions ?
@@ -147,7 +143,7 @@
       <a href="/contact" class="text-[var(--accent)] border-4 border-[var(--accent)] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl uppercase font-clementeMini cursor-pointer">
         Par ici les réponses ...
       </a>
-    </section>
+    </section> -->
 
     <section class="py-24 border-4 border-[var(--accent)] bg-[var(--accent)]/20 w-fit  mx-auto rounded-[34px] mt-14">
       <h2 class="text-4xl md:text-6xl text-center mx-[20%] text-[var(--accent)] font-black font-display uppercase font-clemente px-4 leading-[0.9] tracking-tighter mb-16">

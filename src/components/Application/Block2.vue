@@ -89,7 +89,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const isSocialOpen = ref(false);
 const socialContainer = ref(null);
-let ctx = null; // Contexte GSAP pour le nettoyage propre
 
 const toggleSocial = async () => {
   // Si c'est déjà ouvert, on ferme
@@ -111,7 +110,9 @@ const toggleSocial = async () => {
   isSocialOpen.value = true;
   await nextTick(); // On attend que Vue affiche le DOM
 
-  gsap.to(socialContainer.value, {
+  const el = socialContainer.value;
+
+  gsap.to(el, {
     height: "auto",
     opacity: 1,
     duration: 0.6,
@@ -120,42 +121,16 @@ const toggleSocial = async () => {
       ScrollTrigger.refresh();
     }
   });
+
+  // Animate inner content
+  const animLeft = el.querySelectorAll('.anim-left');
+  const animRight = el.querySelectorAll('.anim-right');
+
+  if (animLeft.length) gsap.fromTo(animLeft, { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
+  if (animRight.length) gsap.fromTo(animRight, { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
 };
 
-onMounted(() => {
-  ctx = gsap.context(() => {
-    // Animation CARTE GAUCHE
-    gsap.from(".anim-left", {
-      x: -300,
-      opacity: 0,
-      duration: 1.5,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: ".anim-left",
-        start: "top 95%",
-        scrub: 1
-      }
-    });
-
-    // Animation CARTE DROITE
-    gsap.from(".anim-right", {
-      x: 300,
-      opacity: 0,
-      duration: 1.5,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: ".anim-right",
-        start: "top 95%",
-        scrub: 1
-      }
-    });
-  });
-});
-
-// Sécurité : nettoyage si on quitte la page
-onUnmounted(() => {
-  if (ctx) ctx.revert();
-});
+// Pas d'animations globales au montage pour éviter les conflits
 </script>
 
 

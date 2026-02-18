@@ -117,13 +117,13 @@
       </section>
 
       <!-- BLUE BANNER -->
-      <!-- <section class="reveal bg-primary py-16">
+      <section class="reveal bg-primary py-16">
         <div class="container mx-auto px-6 text-center">
           <p class="text-white text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto">
             Nous vous accompagnons dans la <span class="font-bold">conception</span>, l'é<span class="italic">volution</span> et le <span class="font-bold">déploiement</span> de vos outils numériques. Et grâce à notre <span class="font-bold">connaissance de vos métiers</span>, nos propositions sont <span class="font-bold">adaptées</span>, durables et <span class="italic">très utiles</span>.
           </p>
         </div>
-      </section> -->
+      </section>
 
       <!-- POURQUOIE EDOSSAH (Conservation du design "dots" mais avec animation d'apparition) -->
       <section class="container mx-auto px-6 py-20 relative">

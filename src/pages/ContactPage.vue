@@ -7,9 +7,9 @@
         <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
           <span class="text-6xl md:text-8xl font-bold tracking-tighter">CONTACT</span>
         </div>
-        <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
+        <!-- <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
           Nous contacter
-        </div>
+        </div> -->
         <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
       </div>
     </div>
@@ -133,7 +133,8 @@
       </div>
     </div>
 
-
+    <!-- FAQ Section -->
+    <FaqComponent />
     <!-- 3. SECTION "ET SI ON PARLAIT DE NOUS" -->
     <div class="py-16 md:py-20">
       <h2 class="text-center text-4xl md:text-6xl font-black text-[#03A3B5] uppercase mb-12 px-4 leading-tight">
@@ -163,6 +164,9 @@
       </div>
     </div>
 
+    <!-- 3.5 SECTION CAROUSEL -->
+    <ContactCarousel />
+
     <!-- 4. FOOTER TEXT -->
     <div class="pb-24 pt-10 text-center px-4">
       <h2 class="text-4xl md:text-6xl font-black text-[#8CD898] uppercase leading-[0.9] tracking-tight">
@@ -182,6 +186,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import NavBar from '../components/NavBar.vue';
 import Etude from './Etude.vue';
 import Footer from '../components/Footer.vue';
+import ContactCarousel from '../components/ContactCarousel.vue';
+import FaqComponent from '../components/FaqComponent.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 

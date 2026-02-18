@@ -240,6 +240,8 @@ const toggleCollapse = (index) => {
       if (prevEl) gsap.to(prevEl, { height: 0, opacity: 0, duration: 0.4, ease: "power3.inOut" });
     }
     activeCollapse.value = index;
+    
+    // Animate container
     gsap.to(currentEl, { 
       height: "auto", 
       opacity: 1, 
@@ -247,63 +249,22 @@ const toggleCollapse = (index) => {
       ease: "power3.out",
       onComplete: () => ScrollTrigger.refresh() 
     });
+
+    // Animate inner content
+    const animLeft = currentEl.querySelectorAll('.anim-left');
+    const animRight = currentEl.querySelectorAll('.anim-right');
+    const cardLeft = currentEl.querySelectorAll('.action-card-left');
+    const cardRight = currentEl.querySelectorAll('.action-card-right');
+
+    if (animLeft.length) gsap.fromTo(animLeft, { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
+    if (animRight.length) gsap.fromTo(animRight, { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
+    if (cardLeft.length) gsap.fromTo(cardLeft, { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, delay: 0.2 });
+    if (cardRight.length) gsap.fromTo(cardRight, { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, delay: 0.2 });
   }
 };
 
 onMounted(() => {
-  // Animation des cartes (Item 3)
-  gsap.from(".action-card-left", {
-    x: -300,
-    opacity: 0,
-    duration: 1.5,
-    ease: "power4.out",
-    scrollTrigger: {
-      trigger: ".action-card-left",
-      start: "top 95%",
-      scrub: 1
-    }
-  });
-
-  gsap.from(".action-card-right", {
-    x: 300,
-    opacity: 0,
-    duration: 1.5,
-    ease: "power4.out",
-    scrollTrigger: {
-      trigger: ".action-card-right",
-      start: "top 95%",
-      scrub: 1
-    }
-  });
-
-  // Animation des blocs standard (Item 1 & 2)
-  gsap.utils.toArray(".anim-left").forEach(el => {
-    gsap.from(el, {
-      x: -100,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 100%",
-        scrub: 0
-      }
-    });
-  });
-
-  gsap.utils.toArray(".anim-right").forEach(el => {
-    gsap.from(el, {
-      x: 100,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 100%",
-        scrub: 0
-      }
-    });
-  });
+  // Global animations removed to prevent conflicts and ensure visibility on expand
 });
 </script>
 

@@ -53,32 +53,6 @@ gsap.registerPlugin(ScrollTrigger);
 const isOpen = ref(false);
 const contentRef = ref(null);
 
-onMounted(() => {
-  gsap.from(".anim-left", {
-    x: -300,
-    opacity: 0,
-    duration: 1.5,
-    ease: "power4.out",
-    scrollTrigger: {
-      trigger: ".anim-left",
-      start: "top 95%",
-      scrub: 1
-    }
-  });
-
-  gsap.from(".anim-right", {
-    x: 300,
-    opacity: 0,
-    duration: 1.5,
-    ease: "power4.out",
-    scrollTrigger: {
-      trigger: ".anim-right",
-      start: "top 95%",
-      scrub: 1
-    }
-  });
-});
-
 const toggleDiscovery = () => {
   if (isOpen.value) {
     // Fermeture
@@ -92,12 +66,21 @@ const toggleDiscovery = () => {
   } else {
     // Ouverture
     isOpen.value = true;
-    gsap.to(contentRef.value, { 
+    const el = contentRef.value;
+
+    gsap.to(el, { 
       height: "auto", 
       opacity: 1, 
       duration: 0.6, 
       ease: "power3.out"
     });
+
+    // Animate inner content
+    const animLeft = el.querySelectorAll('.anim-left');
+    const animRight = el.querySelectorAll('.anim-right');
+
+    if (animLeft.length) gsap.fromTo(animLeft, { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
+    if (animRight.length) gsap.fromTo(animRight, { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
   }
 };
 </script>
