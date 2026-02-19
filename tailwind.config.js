@@ -9,6 +9,10 @@ export default {
       fontFamily: {
         clemente: ['Clemente', 'sans-serif'],
         clementeMini: ['Clemente-mini', 'sans-serif'],
+        clementePdap: ['Clemente-pdap', 'sans-serif'],
+        clementePdak: ['Clemente-pdak', 'sans-serif'],
+        clementePdai: ['Clemente-pdai', 'sans-serif'],
+        clementePdam: ['Clemente-pdam', 'sans-serif'],
       },
     },
   },

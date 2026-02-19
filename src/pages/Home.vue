@@ -197,8 +197,8 @@ onMounted(async () => {
 
     <!-- TEXT REVEAL -->
     <section ref="textRevealContainer" class="flex w-full py-16 md:py-24 px-6 md:px-20 bg-primary">
-      <p class="text-white font-clementeMini text-center mx-auto md:mx-[10%] lg:mx-[25%] text-2xl sm:text-3xl md:text-4xl lg:text-[45px] leading-tight max-w-5xl">
-        <span class="reveal-word">Nous</span> <span class="reveal-word">vous</span> <span class="reveal-word">accompagnons</span> <span class="reveal-word">dans</span> <span class="reveal-word">la</span> <span class="reveal-word font-clemente">conception,</span> <span class="reveal-word font-clemente">l'évolution</span> <span class="reveal-word">et</span> <span class="reveal-word">le</span> <span class="reveal-word font-clemente">déploiement</span> <span class="reveal-word">de</span> <span class="reveal-word">vos</span> <span class="reveal-word">outils</span> <span class="reveal-word">numériques.</span> <span class="reveal-word">Et</span> <span class="reveal-word">grâce</span> <span class="reveal-word">à</span> <span class="reveal-word">notre</span> <span class="reveal-word font-clemente">connaissance</span> <span class="reveal-word font-clemente">de</span> <span class="reveal-word font-clemente">vos</span> <span class="reveal-word font-clemente">métiers,</span> <span class="reveal-word">nos</span> <span class="reveal-word">propositions</span> <span class="reveal-word">sont</span> <span class="reveal-word font-clemente">adaptées,</span> <span class="reveal-word font-clemente">durables</span> <span class="reveal-word">et</span> <span class="reveal-word font-clemente">très</span> <span class="reveal-word font-clemente">utiles.</span>
+      <p class="text-white font-clementeMini text-center mx-auto md:mx-[5%] lg:mx-[15%] text-2xl sm:text-3xl md:text-4xl lg:text-[45px] leading-tight max-w-5xl">
+        <span class="reveal-word">Nous</span> <span class="reveal-word">vous</span> <span class="reveal-word">accompagnons</span> <span class="reveal-word">dans</span> <span class="reveal-word">la</span> <span class="reveal-word font-clementePdap">conception,</span> <span class="reveal-word font-clementePdap">l'évolution</span> <span class="reveal-word">et</span> <span class="reveal-word">le</span> <span class="reveal-word font-clementePdap">déploiement</span> <span class="reveal-word">de</span> <span class="reveal-word">vos</span> <span class="reveal-word">outils</span> <span class="reveal-word">numériques.</span> <span class="reveal-word">Et</span> <span class="reveal-word">grâce</span> <span class="reveal-word">à</span> <span class="reveal-word">notre</span> <span class="reveal-word font-clementePdap">connaissance</span> <span class="reveal-word font-clementePdap">de</span> <span class="reveal-word font-clementePdap">vos</span> <span class="reveal-word font-clementePdap">métiers,</span> <span class="reveal-word">nos</span> <span class="reveal-word">propositions</span> <span class="reveal-word">sont</span> <span class="reveal-word font-clementePdap">adaptées,</span> <span class="reveal-word font-clementePdap">durables</span> <span class="reveal-word">et</span> <span class="reveal-word font-clementePdap">très</span> <span class="reveal-word font-clementePdap">utiles.</span>
       </p>
     </section>
 
@@ -242,15 +242,25 @@ onMounted(async () => {
     </section>
 
     <!-- Notre ADN -->
-    <section class="w-full py-12 md:py-20 overflow-hidden"> 
-      <div class="slide-right-2 flex flex-col md:flex-row mr-4 md:mr-32 border-2 border-l-0 border-[var(--primary)] bg-white rounded-r-[40px] md:rounded-r-[var(--border-radius-primary)] ">
-        <div class="md:w-1/2 flex flex-col items-center justify-center p-8 md:p-20 border-[var(--primary)]">
+    <section class="w-full py-12 md:py-20 overflow-hidden">
+
+      <div class="slide-right-2 flex flex-co md:flex-row mr-4 md:mr-32 border-2 border-l-0 border-[var(--primary)] rounded-r-[40px] md:rounded-r-[var(--border-radius-primary)] ">
+        
+        <!-- <div class="md:w-1/2 flex flex-col items-center justify-center p-8 md:p-20 border-[var(--primary)]">
            <h3 class="font-clemente italic font-display text-2xl md:text-3xl lg:text-4xl text-[var(--primary)] text-center tracking-tight leading-tight mb-4 max-w-[90%] md:max-w-[80%]">
              Issus du secteur associatif, et de l'AHI
            </h3>
            <img src="/img/adn.png" class="w-32 h-32 md:w-40 md:h-40 object-contain mb-4 rotate-12 rounded-2xl"/>
            <h2 class="font-clemente font-display text-3xl md:text-4xl lg:text-[50px] text-[var(--primary)] font-black text-center tracking-tighter leading-tight uppercase">Notre ADN</h2>
+        </div> -->
+        <div class="w-1/2 flex flex-col justify-evenly items-center">
+          <h3 class="font-clementeMini italic text-2xl md:text-3xl lg:text-4xl text-[var(--primary)] text-center tracking-tight mb-4 max-w-[90%] md:max-w-[80%]">
+             Issus du secteur associatif, et de l'AHI
+           </h3>
+          <img src="/img/adn.png" class="w-32 h-32 md:w-40 md:h-40 object-contain mb-4 rotate-12 rounded-2xl"/>
+          <h2 class="font-clemente font-display text-3xl md:text-4xl lg:text-[50px] text-[var(--primary)] font-black text-center tracking-tighter leading-tight uppercase">Notre ADN</h2>
         </div>
+
         <div class="md:w-1/2 p-6 md:p-12 flex flex-col justify-center text-center md:text-left space-y-6 md:space-y-8">
           <p class="text-[var(--primary)] space-y-4 text-xl md:text-2xl lg:text-3xl font-clementeMini">Cet ancrage se traduit par des choix concrets :</p>
           
@@ -278,6 +288,7 @@ onMounted(async () => {
           </p>
         </div>
       </div>
+
     </section>
 
     <!-- Enjeux Title -->
@@ -295,7 +306,7 @@ onMounted(async () => {
                     <img src="/img/2hand.jpg" class="w-full rounded-3xl h-full object-cover"/>
                 </div>
                 <div class="flex flex-col gap-6 md:gap-8 text-center lg:text-left enjeux-content">
-                    <h2 class="text-3xl md:text-4xl lg:text-[60px] font-display font-black leading-tight text-white font-clemente">
+                    <h2 class="text-3xl md:text-4xl lg:text-[60px] font-black text-white font-clemente tracking-normal">
                       Nous accompagnons les structures face à des enjeux très concrets
                     </h2>
                 </div>
@@ -318,32 +329,32 @@ onMounted(async () => {
                             </p>
                             <ul class="flex flex-col items-start gap-4 md:gap-6 max-w-2xl mx-auto ">
                                 <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
-                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">01</span>
+                                  <!-- <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">01</span> -->
                                   <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Des outils multiples, peu connectés ou non-adaptables</span>
                                 </li>
 
                                 <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
-                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">02</span>
+                                  <!-- <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">02</span> -->
                                   <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Des besoins métiers mal couverts par les solutions existantes</span>
                                 </li>
 
                                 <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
-                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">03</span>
+                                  <!-- <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">03</span> -->
                                   <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Des indicateurs demandés par les financeurs difficiles à produire</span>
                                 </li>
 
                                 <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
-                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">04</span>
+                                  <!-- <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">04</span> -->
                                   <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Des pratiques de terrain complexes, peu traduites dans les outils numériques</span>
                                 </li>
 
                                 <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
-                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">05</span>
+                                  <!-- <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">05</span> -->
                                   <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Des contraintes réglementaires et RGPD insuffisamment outillées</span>
                                 </li>
 
                                 <li class="flex flex-col md:flex-row items-center gap-4 md:gap-6 group">
-                                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">06</span>
+                                  <!-- <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border-2 border-primary flex items-center justify-center font-black bg-primary text-white italic rounded-full text-sm">06</span> -->
                                   <span class="text-base md:text-xl lg:text-2xl font-clementeMini tracking-tight text-left">Un manque de temps et de ressources internes pour piloter les projets numériques</span>
                                 </li>
                               </ul>
@@ -475,7 +486,7 @@ onMounted(async () => {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700;900&display=swap');
 :root { --primary: #03A3B5; --secondary: #ff925c; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: #F5F5F5; overflow-x: hidden; color: #1a1a1a; font-family: 'Inter', sans-serif; }
+body { background-color: #F9FEFF; overflow-x: hidden; color: #1a1a1a; font-family: 'Inter', sans-serif; }
 .font-display { font-family: 'Montserrat', sans-serif; }
 .text-primary { color: var(--primary); }
 .bg-primary { background-color: var(--primary); }
