@@ -90,7 +90,11 @@
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
 
               <div class="anim-right flex-1 w-full flex justify-center">
+<<<<<<< HEAD
                 <img src="/img/assia/5.png" alt="Illustration" class="w-full max-w-md h-[250px] md:h-[400px] object-cover rounded-[30px] md:rounded-[50px]" />
+=======
+                <img src="/img/assia/5.png" alt="Illustration" class="w-full max-w-md h-[250px] md:h-[400px] object-cover rounded-[30px] md:rounded-[50px]" style="zoom: 1.2;" />
+>>>>>>> dev-cynth
               </div>
 
               <div class="anim-left flex-1 text-[var(--accent)]">
@@ -161,16 +165,16 @@ structures.
 
             <div class="flex flex-col gap-8 max-w-7xl mx-auto text-[var(--primary)]">
 
-                <p class="text-base md:text-2xl leading-relaxed font-clementeMini">
+                <p class="text-base md:text-4xl leading-relaxed font-clementeMini">
                   ASSIA a été conçue sur le terrain, directement auprès des professionnels. Chaque évolution est guidée par les pratiques de terrain, pas par une logique de fonctionnalités.
                 </p>
 
                 <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
                   <div class="anim-left flex-1 space-y-4 md:space-y-6">
-                    <p class="text-base md:text-2xl leading-relaxed font-clementeMini">
+                    <p class="text-base md:text-3xl leading-relaxed font-clementeMini">
                       Cette approche est rendue possible par la double compétence de notre équipe, issue à la fois du travail social et de l'informatique.
                     </p>
-                    <p class="text-base md:text-2xl leading-relaxed italic font-clementeMini">
+                    <p class="text-base md:text-3xl leading-relaxed font-clementeMini">
                       C'est ce qui nous permet de comprendre les réalités de terrain, les contraintes institutionnelles, et de traduire les pratiques en un système d'information réellement utile.
                     </p>
                   </div>
@@ -192,14 +196,14 @@ structures.
               
               <div class="action-card-left relative flex items-center p-4">
                 <div class="w-full md:w-[92%] border-2 border-[var(--accent)] rounded-[25px] md:rounded-[35px] p-5 md:p-10 relative z-10">
-                  <h4 class="text-[var(--accent)] font-clementePdak text-xl md:text-[48px] mb-3 md:mb-4">Gestion locative et organisationnelle :</h4>
+                  <h4 class="leading-tight text-[var(--accent)] font-clementePdak text-xl md:text-[48px] mb-3 md:mb-4">Gestion locative et organisationnelle :</h4>
                   <p class="text-[var(--accent)] font-thin font-clementePdai md:text-[35px] mb-3 md:mb-4">Au cœur des réalités de terrain, ASSIA intègre les fonctionnalités nécessaires à la gestion locative :</p>
-                  <ul class="space-y-2 md:space-y-3 text-[var(--accent)] font-thin font-clementePdai text-base md:text-[35px] list-disc pl-5 md:pl-6">
+                  <ul class="leading-tight space-y-2 md:space-y-3 text-[var(--accent)] font-thin font-clementePdai text-base md:text-[35px] list-disc pl-5 md:pl-6 ">
                     <li>visibilité sur l'ensemble des places et bâtiments (occupation, vacance, indisponibilité)</li>
                     <li>suivi des interventions et signalements liés au patrimoine</li>
                     <li>transmission facilitée des informations</li>
                   </ul>
-                  <p class="mt-4 md:mt-6 text-[var(--accent)] font-thin font-clementePdai text-base md:text-[35px]">
+                  <p class="leading-tight mt-4 md:mt-6 text-[var(--accent)] font-thin font-clementePdai text-base md:text-[35px]">
                     La communication entre les équipes éducatives et les services support est ainsi fluidifiée.
                   </p>
                 </div>
