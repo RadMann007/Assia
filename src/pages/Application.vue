@@ -6,7 +6,7 @@
       <div class="relative text-center">
         <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
           <!-- <span class="text-6xl md:text-8xl font-bold tracking-tighter">ASSIA</span> -->
-          <img src="/img/loader/assiaLoader.jpeg" class="w-200 h-60 object-cover" alt="assiaLoader" />
+          <img src="/img/loader/assiaLoader.jpeg" class="w-64 sm:w-140 md:w-[500px] h-auto object-cover mx-auto" alt="assiaLoader" />
         </div>
         <!-- <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
           L'application métier du social
@@ -18,39 +18,39 @@
     <NavBar />
 
     <!-- 1. SECTION HERO -->
-    <section class="relative min-h-screen bg-[#ff925c] pt-32 pb-20 px-0 flex flex-col items-center justify-center text-white text-center overflow-hidden">
+    <section class="relative min-h-screen bg-[#ff925c] pt-24 md:pt-32 pb-12 md:pb-20 px-0 flex flex-col items-center justify-center text-white text-center overflow-hidden">
       <!-- Container stretches to edges -->
       <div class="w-full flex flex-col md:flex-row justify-center items-stretch gap-0 mb-16 relative z-10">
-        <div class="hero-card-left flex-1 bg-white text-[#ff925c] p-10 md:p-16 rounded-r-[60px] md:rounded-r-[80px] rounded-l-none shadow-none">
+        <div class="hero-card-left flex-1 bg-white text-[#ff925c] p-6 md:p-16 rounded-r-[40px] md:rounded-r-[80px] rounded-l-none shadow-none">
           <!-- animer de gauche vers le centre -->
-          <h2 class="text-4xl md:text-6xl font-black uppercase leading-none tracking-tight font-clemente text-right">À la croisée de<br>l'expertise de l'AHI</h2>
+          <h2 class="text-2xl md:text-6xl font-black uppercase leading-none tracking-tight font-clemente text-right">À la croisée de<br>l'expertise de l'AHI</h2>
         </div>
         
-        <div class="hero-ampersand-container flex items-center justify-center px-6 md:px-12 py-4 z-20">
-          <span class="hero-ampersand text-6xl md:text-8xl font-display font-black text-white">&</span>
+        <div class="hero-ampersand-container flex items-center justify-center px-4 md:px-12 py-2 md:py-4 z-20">
+          <span class="hero-ampersand text-5xl md:text-8xl font-display font-black text-white">&</span>
         </div>
 
-        <div class="hero-card-right flex-1 bg-white text-[#ff925c] p-10 md:p-16 rounded-l-[60px] md:rounded-l-[80px] rounded-r-none shadow-none">
+        <div class="hero-card-right flex-1 bg-white text-[#ff925c] p-6 md:p-16 rounded-l-[40px] md:rounded-l-[80px] rounded-r-none shadow-none">
           <!-- animer de droite vers le centre -->
-          <h2 class="text-4xl md:text-6xl text-left font-black uppercase leading-none tracking-tight font-clemente">De la<br>technologie</h2>
+          <h2 class="text-2xl md:text-6xl text-left font-black uppercase leading-none tracking-tight font-clemente">De la<br>technologie</h2>
         </div>
       </div>
       
-      <div class="max-w-5xl stagger-hero mt-8 px-6">
-        <p class="text-3xl font-clementeMini md:text-5xl leading-tight">
-          Ce n’est pas seulement un outil de reporting,c’est surtout <b class="font-clemente">un logiciel du quotidien</b> utile aux professionnels de terrain
+      <div class="max-w-5xl stagger-hero mt-6 md:mt-8 px-4 md:px-6">
+        <p class="text-xl md:text-5xl font-clementeMini leading-tight">
+          Ce n'est pas seulement un outil de reporting,c'est surtout <b class="font-clemente">un logiciel du quotidien</b> utile aux professionnels de terrain
         </p>
       </div>
     </section>
 
     <!-- 2. SECTION INTRO -->
-    <section class="py-24 px-6">
+    <section class="py-12 md:py-24 px-4 md:px-6">
       <div class="max-w-7xl mx-auto p-0 relative overflow-hidden group">
         <div class="flex flex-col items-center gap-16">
           <div class="relative w-full max-w-4xl flex justify-center items-end gap-4 mockup-container">
-            <img src="/img/assia/1.png" alt="Logiciel ASSIA" class="w-full h-auto rounded-[50px]">
+            <img src="/img/assia/1.png" alt="Logiciel ASSIA" class="w-full h-auto rounded-[30px] md:rounded-[50px]">
           </div>
-          <h1 ref="textRevealContainer" class="text-3xl md:text-[40px] font-black text-[var(--primary)] text-center leading-tight max-w-4xl font-clemente tracking-tight">
+          <h1 ref="textRevealContainer" class="text-xl md:text-[40px] font-black text-[var(--primary)] text-center leading-tight max-w-4xl font-clemente tracking-tight">
             <span class="reveal-word">ASSIA</span> <span class="reveal-word">est</span> <span class="reveal-word">un</span> <span class="reveal-word">logiciel</span> <span class="reveal-word">métier</span> <span class="reveal-word">co-construit</span> <span class="reveal-word">avec</span> <span class="reveal-word">les</span> <span class="reveal-word">professionnels,</span> <span class="reveal-word">pour</span> <span class="reveal-word">traduire</span> <span class="reveal-word">leurs</span> <span class="reveal-word">pratiques</span> <span class="reveal-word">réelles</span> <span class="reveal-word">en</span> <span class="reveal-word">un</span> <span class="reveal-word">système</span> <span class="reveal-word">d'information</span> <span class="reveal-word">simple,</span> <span class="reveal-word">utile</span> <span class="reveal-word">et</span> <span class="reveal-word">évolutif.</span>
           </h1>
         </div>
@@ -58,31 +58,31 @@
     </section>
 
     <!-- 3. SECTION ACCORDION (CONTENU CORRIGÉ SELON L'IMAGE) -->
-     <section class="mx-[10%]">
+     <section class="mx-4 md:mx-[10%]">
        <BlocRealite />
      </section>
 
     <!-- 4. SECTION EXCLUSION SOCIALE (DESIGN CORRIGÉ) -->
-    <section class="pb-20 w-full">
+    <section class="pb-12 md:pb-20 w-full">
       <!-- Titre retravaillé pour plus d'impact -->
-      <h1 class="w-full text-[var(--primary)] tracking-wider text-center font-clementeMini text-4xl md:text-6xl font-black uppercase mb-12 tracking-tighter">
+      <h1 class="w-full text-[var(--primary)] text-center font-clementeMini text-2xl md:text-6xl font-black uppercase mb-8 md:mb-12 tracking-tighter px-4 md:px-0">
         PARCE QU'ON DOIT LUTTER CONTRE <br class="hidden md:block"> <p class="font-clemente italic">L'EXCLUSION SOCIALE ! </p> 
       </h1>
 
        <!-- ACCOMPAGNEMENT SOCIAL -->
-        <div class="mx-[10%]">
+        <div class="mx-4 md:mx-[10%]">
           <Block2 />
         </div>
 
        <!-- TITRE QUE FAIT ASSIA -->
-       <h2 class="font-clemente text-[var(--primary)] text-4xl md:text-8xl font-black uppercase text-center tracking-tighter py-24">
+       <h2 class="font-clemente text-[var(--primary)] text-3xl md:text-8xl font-black uppercase text-center tracking-tighter py-12 md:py-24 px-4 md:px-0">
           QUE FAIT ASSIA ?
        </h2>
     </section>
 
     <!-- 5. SECTION ACTIONS (MANUELLE - SANS BOUCLE) -->
-    <section class="bg-gray-50/50">
-        <div class="actions-container flex flex-col gap-24 pb-20 overflow-hidden">
+    <section class="">
+        <div class="actions-container flex flex-col gap-12 md:gap-24 pb-12 md:pb-20 overflow-hidden">
         
           <!-- Bloc 1 : L'outil permet notamment (ORANGE) -->
           <Role1 />
@@ -97,32 +97,32 @@
     </section>
 
     <!-- 7. SECTION ENGAGEMENT -->
-    <section class="pb-32 px-6 flex flex-col gap-12 items-center">
-      <h2 class="font-clemente text-[var(--primary)] text-4xl mx-[15%] md:text-5xl font-black uppercase text-center tracking-wider">
+    <section class="pb-16 md:pb-32 px-4 md:px-6 flex flex-col gap-8 md:gap-12 items-center">
+      <h2 class="font-clemente text-[var(--primary)] text-2xl mx-4 md:mx-[15%] md:text-5xl font-black uppercase text-center tracking-wider">
         Nous sommes engagés pour soutenir votre impact
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl">
-        <div v-for="(item, index) in engagementItems" :key="index" class="engagement-card flex flex-col justify-center items-center p-10 rounded-[50px] bg-orange-400 border-2 border-transparent hover:border-[var(--accent)] transition-all duration-500 group shadow-sm hover:shadow-xl">
-          <img :src="item.image" :alt="item.title" class="w-28 h-28 object-contain mb-6 " />
-          <h3 class="font-clemente text-2xl font-black uppercase mb-4 text-center text-white" >{{ item.title }}</h3>
+      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-7xl w-full">
+        <div v-for="(item, index) in engagementItems" :key="index" class="engagement-card flex flex-col justify-center items-center p-6 md:p-10 rounded-[30px] md:rounded-[50px] bg-orange-400 border-2 border-transparent hover:border-[var(--accent)] transition-all duration-500 group shadow-sm hover:shadow-xl">
+          <img :src="item.image" :alt="item.title" class="w-16 h-16 md:w-28 md:h-28 object-contain mb-4 md:mb-6" />
+          <h3 class="font-clemente text-base md:text-2xl font-black uppercase mb-2 md:mb-4 text-center text-white">{{ item.title }}</h3>
         </div>
       </div>
     </section>
 
     <!-- 8. SECTION DECOUVRIR ASSIA -->
-     <section class="mx-[10%]">
+     <section class="mx-4 md:mx-[10%]">
        <Block3 />
      </section>
 
     <!-- 9. SECTION TEMOIGNAGES -->
-    <section class="py-24 px-6 bg-white ">
+    <section class="py-12 md:py-24 px-4 md:px-6 bg-white">
       <div class="max-w-7xl mx-auto text-center font-clemente">
-        <h2 class="font-clemente text-[var(--accent)] text-4xl md:text-6xl font-black uppercase tracking-tighter mb-16">
+        <h2 class="font-clemente text-[var(--accent)] text-2xl md:text-6xl font-black uppercase tracking-tighter mb-8 md:mb-16">
           Ils témoignent de <br> notre engagement
         </h2>
         <section class="py-10 overflow-hidden mb-20">
           <div class="w-full relative fade-mask">
-            <div class="flex items-center gap-20 md:gap-32 w-max marquee-track">
+            <div class="flex items-center gap-10 md:gap-32 w-max marquee-track">
               <div v-for="(p, index) in [...partners, ...partners]" :key="index" class="flex-shrink-0">
                 <img :src="p.logo" :alt="p.name" class="h-14 md:h-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-500 cursor-pointer object-contain" />
               </div>
@@ -145,11 +145,11 @@
       </a>
     </section> -->
 
-    <section class="py-24 border-4 border-[var(--accent)] bg-[var(--accent)]/20 w-fit  mx-auto rounded-[34px] mt-14">
-      <h2 class="text-4xl md:text-6xl text-center mx-[20%] text-[var(--accent)] font-black font-display uppercase font-clemente px-4 leading-[0.9] tracking-tighter mb-16">
+    <section class="py-12 md:py-24 border-4 border-[var(--accent)] bg-[var(--accent)]/20 w-[90%] md:w-fit mx-auto rounded-[24px] md:rounded-[34px] mt-8 md:mt-14">
+      <h2 class="text-2xl md:text-6xl text-center mx-4 md:mx-[20%] text-[var(--accent)] font-black font-display uppercase font-clemente px-4 leading-[0.9] tracking-tighter mb-8 md:mb-16">
         Besoin de plus d'informations ?
       </h2>
-      <button class="text-white font-clementeMini tracking-wider italic font-bold bg-[var(--accent)] border-4 border-[var(--accent)] flex justify-center w-fit mx-auto text-xl md:text-2xl py-5 px-12 rounded-xl cursor-pointer">
+      <button class="text-white font-clementeMini tracking-wider italic font-bold bg-[var(--accent)] border-4 border-[var(--accent)] flex justify-center w-fit mx-auto text-lg md:text-2xl py-3 md:py-5 px-8 md:px-12 rounded-xl cursor-pointer">
         Ecrivez-nous
       </button>
     </section>

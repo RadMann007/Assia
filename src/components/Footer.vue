@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer-container bg-[#03A3B5] text-white pt-24 pb-12 px-6 rounded-t-[80px] md:rounded-t-[100px] mt-20 relative overflow-hidden opacity-0 translate-y-20">
+  <footer class=" footer-container bg-[#03A3B5] text-white pt-24 pb-12 px-6 rounded-t-[80px] md:rounded-t-[100px] mt-20 relative overflow-hidden opacity-0 translate-y-20">
     <!-- Fond décoratif discret -->
     <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
     
@@ -8,10 +8,10 @@
         
         <!-- Colonne 1 : Logo & Description -->
         <div class="flex flex-col gap-6">
-          <a href="/" class="text-3xl font-display font-black uppercase tracking-tighter text-white">
+          <a href="/" class="text-3xl font-display font-black uppercase tracking-wide text-white">
             edossah
           </a>
-          <p class="text-white/80 font-medium leading-relaxed max-w-xs">
+          <p class="font-clementeMini text-white/80 font-medium leading-relaxed max-w-xs">
             Agence numérique engagée pour les structures de l'accompagnement social. Nous transformons vos pratiques réelles en solutions utiles.
           </p>
           <div class="flex gap-4">
@@ -23,8 +23,8 @@
 
         <!-- Colonne 2 : Liens rapides -->
         <div class="flex flex-col gap-6">
-          <h4 class="text-white font-black uppercase tracking-widest text-sm underline decoration-white/20 underline-offset-8">Navigation</h4>
-          <nav class="flex flex-col gap-4">
+          <h4 class="font-clemente text-white font-black uppercase tracking-widest underline decoration-white/20 underline-offset-8">Navigation</h4>
+          <nav class="font-clementeMini flex flex-col gap-4">
             <a href="/" class="text-white/80 hover:text-white transition-colors font-medium">Accueil</a>
             <a href="/application" class="text-white/80 hover:text-white transition-colors font-medium">L'application ASSIA</a>
             <a href="/articles" class="text-white/80 hover:text-white transition-colors font-medium">Actualités</a>
@@ -34,8 +34,8 @@
 
         <!-- Colonne 3 : Contact -->
         <div class="flex flex-col gap-6">
-          <h4 class="text-white font-black uppercase tracking-widest text-sm underline decoration-white/20 underline-offset-8">Contactez-nous</h4>
-          <div class="flex flex-col gap-4">
+          <h4 class="font-clemente text-white font-black uppercase tracking-widest underline decoration-white/20 underline-offset-8">Contactez-nous</h4>
+          <div class="font-clementeMini flex flex-col gap-4">
             <a href="mailto:emilie@edossah.fr" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors group">
               <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                 <Mail class="w-4 h-4" />
@@ -53,8 +53,8 @@
 
         <!-- Colonne 4 : Légal -->
         <div class="flex flex-col gap-6">
-          <h4 class="text-white font-black uppercase tracking-widest text-sm underline decoration-white/20 underline-offset-8">Informations</h4>
-          <nav class="flex flex-col gap-4">
+          <h4 class="font-clemente text-white font-black uppercase tracking-widest underline decoration-white/20 underline-offset-8">Informations</h4>
+          <nav class="font-clementeMini flex flex-col gap-4">
             <a href="#" class="text-white/80 hover:text-white transition-colors font-medium">Mentions légales</a>
             <a href="#" class="text-white/80 hover:text-white transition-colors font-medium">Politique de confidentialité</a>
             <a href="#" class="text-white/80 hover:text-white transition-colors font-medium">Gestion des cookies</a>
@@ -96,5 +96,5 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.font-display { font-family: 'Montserrat', sans-serif; }
+.font-display { font-family: 'Clemente', sans-serif; }
 </style>

@@ -45,3 +45,38 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Clemente-pdap';
+  src: url('/fonts/ClementePDap-HeavyItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Clemente-pdak';
+  src: url('/fonts/ClementePDak-SemiBold.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Clemente-pdai';
+  src: url('/fonts/ClementePDai-Regular.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Clemente-pdam';
+  src: url('/fonts/ClementePDam-Bold.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ClementDam';
+  src: url('/fonts/ClementePDam-Bold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}

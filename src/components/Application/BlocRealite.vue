@@ -5,71 +5,71 @@
       <!-- ITEM 1 : LA RÉALITÉ -->
       <div class="font-clemente relative mb-8 text-slate-700 w-full">
         <!-- Header : Marges latérales remises (mx-4...) + Coins arrondis -->
-        <div @click="toggleCollapse(0)" class="relative z-20 py-8 px-10 md:py-10 md:px-15 mx-0 md:mx-0 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[var(--border-radius-primary)] shadow-none cursor-pointer hover:bg-[var(--accent)] transition-colors w-full">
-          <h3 class="text-2xl md:text-4xl font-black uppercase tracking-tight text-left flex-1 pr-8">Une réalité partagée par de nombreuses associations</h3>
-          <div class="w-16 h-16 flex items-center justify-center text-5xl font-light transition-transform duration-300 flex-shrink-0" :style="{ transform: activeCollapse === 0 ? 'rotate(45deg)' : 'rotate(0deg)' }">+</div>
+        <div @click="toggleCollapse(0)" class="relative z-20 py-6 px-6 md:py-10 md:px-15 mx-0 md:mx-0 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[var(--border-radius-primary)] shadow-none cursor-pointer hover:bg-[var(--accent)] transition-colors w-full">
+          <h3 class="text-lg md:text-4xl font-black uppercase tracking-tight text-left flex-1 pr-4 md:pr-8">Une réalité partagée par de nombreuses associations</h3>
+          <div class="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center text-3xl md:text-5xl font-light transition-transform duration-300 flex-shrink-0" :style="{ transform: activeCollapse === 0 ? 'rotate(45deg)' : 'rotate(0deg)' }">+</div>
         </div>
 
         <!-- Content : Reste en 100% width (w-full) et sans arrondis (rounded-none) -->
         <div :ref="el => contentRefs[0] = el" class="collapse-content relative z-10 overflow-hidden bg-white rounded-none -mt-10 h-0 opacity-0 w-full">
-          <div class=" px-6 md:px-12 lg:px-15 pb-0 pt-20 flex flex-col gap-10">
+          <div class="px-4 md:px-12 lg:px-15 pb-0 pt-14 md:pt-20 flex flex-col gap-6 md:gap-10">
 
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center font-clementeMini">
               <div class="anim-left flex-1 text-[var(--primary)]">
-                <p class="mb-8 text-2xl md:text-3xl leading-relaxed">Sur le terrain, les équipes font face à :</p>
-                <ul class="space-y-6">
-                  <li class="flex items-start gap-4">
-                    <span class="text-3xl leading-none  text-[var(--primary)]">•</span>
-                    <p class="text-2xl md:text-2xl leading-tight">des outils pensés pour le reporting, pas pour l'accompagnement social</p>
+                <p class="mb-4 md:mb-8 text-lg md:text-3xl leading-relaxed">Sur le terrain, les équipes font face à :</p>
+                <ul class="space-y-3 md:space-y-6">
+                  <li class="flex items-start gap-3 md:gap-4">
+                    <span class="text-xl md:text-3xl leading-none text-[var(--primary)]">•</span>
+                    <p class="text-base md:text-2xl leading-tight">des outils pensés pour le reporting, pas pour l'accompagnement social</p>
                   </li>
-                  <li class="flex items-start gap-4">
-                    <span class="text-3xl leading-none text-[var(--primary)]">•</span>
-                    <p class="text-2xl md:text-2xl leading-tight">des interfaces complexes et chronophages</p>
+                  <li class="flex items-start gap-3 md:gap-4">
+                    <span class="text-xl md:text-3xl leading-none text-[var(--primary)]">•</span>
+                    <p class="text-base md:text-2xl leading-tight">des interfaces complexes et chronophages</p>
                   </li>
-                  <li class="flex items-start gap-4">
-                    <span class="text-3xl leading-none text-[var(--primary)]">•</span>
-                    <p class="text-2xl md:text-2xl leading-tight">une multiplication de saisies et d'outils annexes</p>
+                  <li class="flex items-start gap-3 md:gap-4">
+                    <span class="text-xl md:text-3xl leading-none text-[var(--primary)]">•</span>
+                    <p class="text-base md:text-2xl leading-tight">une multiplication de saisies et d'outils annexes</p>
                   </li>
-                  <li class="flex items-start gap-4">
-                    <span class="text-3xl leading-none text-[var(--primary)]">•</span>
-                    <p class="text-2xl md:text-2xl leading-tight">des difficultés à produire des indicateurs sans dénaturer la pratique</p>
+                  <li class="flex items-start gap-3 md:gap-4">
+                    <span class="text-xl md:text-3xl leading-none text-[var(--primary)]">•</span>
+                    <p class="text-base md:text-2xl leading-tight">des difficultés à produire des indicateurs sans dénaturer la pratique</p>
                   </li>
-                  <li class="flex items-start gap-4">
-                    <span class="text-3xl leading-none text-[var(--primary)]">•</span>
-                    <p class="text-2xl md:text-2xl leading-tight">une faible appropriation des outils par les professionnels</p>
+                  <li class="flex items-start gap-3 md:gap-4">
+                    <span class="text-xl md:text-3xl leading-none text-[var(--primary)]">•</span>
+                    <p class="text-base md:text-2xl leading-tight">une faible appropriation des outils par les professionnels</p>
                   </li>
                 </ul>
               </div>
               <div class="anim-right flex-1 w-full flex justify-center">
-                <img src="/img/assia/3.jpg" alt="Illustration" class="w-full max-w-md h-[400px] object-cover rounded-[50px]" />
+                <img src="/img/assia/3.jpg" alt="Illustration" class="w-full max-w-md h-[250px] md:h-[400px] object-cover rounded-[30px] md:rounded-[50px]" />
               </div>
             </div>
 
             <div class="text-center pt-4 mb-10">
-               <h2 class="text-[var(--primary)] text-3xl md:text-4xl font-black mx-[15%] leading-snug">
+               <h2 class="text-[var(--primary)] text-xl md:text-4xl font-black mx-4 md:mx-[15%] leading-snug">
                  Ce constat, nous l'avons fait aux côtés des équipes, au fil des projets et des échanges.
                </h2>
             </div>
 
             <!-- SECTION BLEUE -->
-            <div class="bg-[var(--primary)] -mx-6 md:-mx-12 lg:-mx-20 p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 text-white">
+            <div class="bg-[var(--primary)] -mx-4 md:-mx-12 lg:-mx-20 p-4 md:p-16 flex flex-col md:flex-row items-center gap-6 md:gap-12 text-white">
   
-  <!-- Colonne image -->
-  <div class="w-full md:w-[50%] flex-shrink-0">
-    <img src="/img/assia/41.png" alt="Mockup ASSIA" class="w-full h-[550px] object-cover object-top rounded-lg" />
-  </div>
+            <!-- Colonne image -->
+            <div class="w-full md:w-[50%] flex-shrink-0">
+              <img src="/img/assia/41.png" alt="Mockup ASSIA" class="w-full h-[300px] md:h-[550px] object-cover object-top rounded-lg" />
+            </div>
 
-  <!-- Colonne texte -->
-  <div class="w-full md:flex-1 flex flex-col gap-6">
-    <h2 class="text-3xl md:text-4xl font-black leading-tight">
-      Avec un système d'information pensé pour eux, les travailleurs sociaux trouvent un intérêt à le renseigner.
-    </h2>
-    <p class="text-2xl md:text-3xl leading-snug">
-      L’outil n’est plus vécu comme une contrainte administrative, mais comme un appui au suivi et au travail collectif.
-    </p>
-  </div>
+            <!-- Colonne texte -->
+            <div class="w-full md:flex-1 flex flex-col gap-6">
+              <h2 class="text-xl md:text-4xl font-black leading-tight">
+                Avec un système d'information pensé pour eux, les travailleurs sociaux trouvent un intérêt à le renseigner.
+              </h2>
+              <p class="text-lg md:text-3xl leading-snug">
+                L'outil n'est plus vécu comme une contrainte administrative, mais comme un appui au suivi et au travail collectif.
+              </p>
+            </div>
 
-</div>
+          </div>
 
           </div>
         </div>
@@ -78,65 +78,67 @@
       <!-- ITEM 2 : LA MUTUALISATION -->
       <div class="font-clemente relative mb-8 text-slate-700 w-full">
         <!-- Header avec marge -->
-        <div @click="toggleCollapse(1)" class="relative z-20 py-8 px-10 md:py-10 md:px-15 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[50px] shadow-none cursor-pointer w-full">
-          <h3 class="text-2xl md:text-4xl font-black uppercase tracking-tight text-left flex-1 pr-8">Quand un besoin devient collectif, la mutualisation fait sens</h3>
-          <div class="w-16 h-16 flex items-center justify-center text-5xl font-light transition-transform duration-300 flex-shrink-0" :style="{ transform: activeCollapse === 1 ? 'rotate(45deg)' : 'rotate(0deg)' }">+</div>
+        <div @click="toggleCollapse(1)" class="relative z-20 py-6 px-6 md:py-10 md:px-15 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[50px] shadow-none cursor-pointer w-full">
+          <h3 class="text-lg md:text-4xl font-black uppercase tracking-tight text-left flex-1 pr-4 md:pr-8">Quand un besoin devient collectif, la mutualisation fait sens</h3>
+          <div class="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center text-3xl md:text-5xl font-light transition-transform duration-300 flex-shrink-0" :style="{ transform: activeCollapse === 1 ? 'rotate(45deg)' : 'rotate(0deg)' }">+</div>
         </div>
 
         <!-- Content Full Width -->
         <div :ref="el => contentRefs[1] = el" class="collapse-content relative z-10 overflow-hidden bg-white rounded-none -mt-10 h-0 opacity-0 w-full">
-          <div class="px-6 md:px-12 lg:px-20 pb-16 pt-20 flex flex-col gap-10">
+          <div class="px-4 md:px-12 lg:px-20 pb-10 md:pb-16 pt-14 md:pt-20 flex flex-col gap-6 md:gap-10">
 
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
 
+              <div class="anim-right flex-1 w-full flex justify-center">
+                <img src="/img/assia/5.png" alt="Illustration" class="w-full max-w-md h-[250px] md:h-[400px] object-cover rounded-[30px] md:rounded-[50px]" style="zoom: 1.2;" />
+              </div>
+
               <div class="anim-left flex-1 text-[var(--accent)]">
-                <p class="mb-6 font-bold text-3xl md:text-3xl leading-relaxed">ASSIA est née parce que plusieurs associations exprimaient les mêmes besoins métier, sans trouver de réponse satisfaisante.</p>
-                <ul class="space-y-4">
+                <p class="mb-4 md:mb-6 font-bold text-lg md:text-3xl leading-relaxed">ASSIA est née parce que plusieurs associations exprimaient les mêmes besoins métier, sans trouver de réponse satisfaisante.</p>
+                <ul class="space-y-4 font-thin font-clementeMini">
                   <li class="flex items-start gap-3">
-                    <p class="text-3xl leading-tight font-clementeMini text-[var(--primary)]">
+                    <p class="text-lg md:text-3xl leading-tight font-clementeMini text-[var(--primary)]">
                       Plutôt que de multiplier des développements isolés, nous avons fait le choix de :</p>
                   </li>
                   <li class="flex items-start gap-3">
-                    <span class="text-3xl leading-none text-[var(--primary)]">•</span>
-                    <p class="text-2xl md:text-2xl leading-tight font-clementeMini text-[var(--primary)]">mutualiser les efforts.</p>
+                    <span class="text-xl md:text-3xl leading-none text-[var(--primary)]">•</span>
+                    <p class="text-base md:text-2xl leading-tight font-clementeMini text-[var(--primary)]">mutualiser les efforts.</p>
                   </li>
                   <li class="flex items-start gap-3">
-                    <span class="text-3xl leading-none text-[var(--primary)]">•</span>
-                    <p class="text-2xl md:text-2xl leading-tight font-clementeMini text-[var(--primary)]">co-construire une solution commune et faire évoluer l'outil avec ses utilisateurs.</p>
+                    <span class="text-xl md:text-3xl leading-none text-[var(--primary)]">•</span>
+                    <p class="text-base md:text-2xl leading-tight font-clementeMini text-[var(--primary)]">co-construire une solution commune et faire évoluer l'outil avec ses utilisateurs.</p>
                   </li>
                   <li class="flex items-start gap-3">
-                    <span class="text-3xl leading-none text-[var(--primary)]">•</span>
-                    <p class="text-2xl md:text-2xl leading-tight font-clementeMini text-[var(--primary)]">
-                     faire évoluer l’outil avec ses utilisateurs
+                    <span class="text-xl md:text-3xl leading-none text-[var(--primary)]">•</span>
+                    <p class="text-base md:text-2xl leading-tight font-clementeMini text-[var(--primary)]">
+                     faire évoluer l'outil avec ses utilisateurs
                     </p>
                   </li>
                 </ul>
               </div>
 
-              <div class="anim-right flex-1 w-full flex justify-center">
-                <img src="/img/assia/5.png" alt="Illustration" class="w-full max-w-md h-[400px] object-cover rounded-[50px] rotate-1" />
-              </div>
+              
             </div>
 
           </div>
 
-          <div class="text-center pt-4 mb-10">
-               <h2 class="text-[var(--primary)] text-3xl md:text-4xl font-black mx-[15%] leading-snug">
+          <div class="text-center pt-4 mb-4">
+               <h2 class="text-[var(--primary)] text-xl md:text-4xl mx-4 md:mx-[15%] font-thin font-clementeMini">
                  Chaque dispositif ayant ses spécificités, ASSIA a été conçue 
 pour s’adapter à des contextes variés, sans imposer une 
 pratique standardisée.
                </h2>
             </div>
 
-          <div class="text-center pt-4 mb-10">
-               <h2 class="text-[var(--accent)] text-3xl md:text-4xl font-black mx-[15%] leading-snug">
+          <div class="text-center pt-4 mb-4">
+               <h2 class="text-[var(--accent)]  font-black mx-4 md:mx-[15%] text-[40px] font-clementePdap">
                  Notre ambition est de comprendre votre quotidien, et 
 d’y adapter l’outil, plutôt que l’inverse.
                </h2>
             </div>
 
-          <div class="text-center pt-4 mb-10">
-               <h2 class="text-[var(--primary)] text-3xl md:text-4xl font-black mx-[15%] leading-snug">
+          <div class="text-center pt-4 mb-4">
+               <h2 class="text-[var(--primary)] text-xl md:text-4xl mx-4 md:mx-[15%] font-thin font-clementeMini">
                  Ce travail partenarial permet d’enrichir l’outil sans alourdir les 
 coûts, et de favoriser les échanges de pratiques entre 
 structures.
@@ -147,63 +149,69 @@ structures.
 
       <!-- ITEM 3 : CO-CONSTRUCTION -->
       <div class="font-clemente relative mb-8 text-slate-700 w-full">
-        <div @click="toggleCollapse(2)" class="relative z-20 py-8 px-10 md:py-10 md:px-15 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[50px] shadow-none cursor-pointer hover:bg-[var(--accent)] transition-colors w-full">
-          <h3 class="text-2xl md:text-4xl font-black uppercase tracking-tight text-left flex-1 pr-8">
+        <div @click="toggleCollapse(2)" class="relative z-20 py-6 px-6 md:py-10 md:px-15 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[50px] shadow-none cursor-pointer hover:bg-[var(--accent)] transition-colors w-full">
+          <h3 class="text-lg md:text-4xl font-black uppercase tracking-tight text-left flex-1 pr-4 md:pr-8">
             UN PRODUIT CO-CONSTRUIT AVEC LES PROFESSIONNELS
           </h3>
-          <div class="w-16 h-16 flex items-center justify-center text-5xl font-light transition-transform duration-300 flex-shrink-0" :style="{ transform: activeCollapse === 2 ? 'rotate(45deg)' : 'rotate(0deg)' }">+</div>
+          <div class="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center text-3xl md:text-5xl font-light transition-transform duration-300 flex-shrink-0" :style="{ transform: activeCollapse === 2 ? 'rotate(45deg)' : 'rotate(0deg)' }">+</div>
         </div>
 
         <div :ref="el => contentRefs[2] = el" class="collapse-content relative z-10 overflow-hidden bg-white rounded-none -mt-10 h-0 opacity-0 w-full">
-          <div class="px-6 md:px-12 lg:px-20 pb-16 pt-20 flex flex-col gap-10">
+          <div class="px-4 md:px-12 lg:px-20 pb-10 md:pb-16 pt-14 md:pt-20 flex flex-col gap-6 md:gap-10">
 
-            <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-start max-w-7xl mx-auto">
-              <div class=" anim-left flex-1 text-[var(--primary)] space-y-6">
-                <p class="font-clemente text-2xl md:text-[20px] leading-relaxed">
+            <div class="flex flex-col gap-8 max-w-7xl mx-auto text-[var(--primary)]">
+
+                <p class="text-base md:text-4xl leading-relaxed font-clementeMini">
                   ASSIA a été conçue sur le terrain, directement auprès des professionnels. Chaque évolution est guidée par les pratiques de terrain, pas par une logique de fonctionnalités.
                 </p>
-                <p class="text-2xl md:text-[20px] leading-relaxed font-clemente">
-                  Cette approche est rendue possible par la double compétence de notre équipe, issue à la fois du travail social et de l'informatique.
-                </p>
-                <p class="text-2xl md:text-[20px] leading-relaxed italic font-clemente">
-                  C'est ce qui nous permet de comprendre les réalités de terrain, les contraintes institutionnelles, et de traduire les pratiques en un système d'information réellement utile.
-                </p>
-              </div>
-              <div class="anim-right flex-1 w-full flex justify-center md:justify-end">
-                <img src="/img/assia/6.jpg" alt="Co-construction" class="w-full max-w-sm h-auto object-cover rounded-[50px]" />
-              </div>
+
+                <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
+                  <div class="anim-left flex-1 space-y-4 md:space-y-6">
+                    <p class="text-base md:text-3xl leading-relaxed font-clementeMini">
+                      Cette approche est rendue possible par la double compétence de notre équipe, issue à la fois du travail social et de l'informatique.
+                    </p>
+                    <p class="text-base md:text-3xl leading-relaxed font-clementeMini">
+                      C'est ce qui nous permet de comprendre les réalités de terrain, les contraintes institutionnelles, et de traduire les pratiques en un système d'information réellement utile.
+                    </p>
+                  </div>
+
+                  <div class="anim-right flex-1 w-full flex justify-center md:justify-end">
+                    <img src="/img/assia/6.jpg" alt="Co-construction" class="w-full max-w-md h-[250px] md:h-[400px] object-cover rounded-[30px] md:rounded-[50px]" />
+                  </div>
+                </div>
+
             </div>
 
             <div class="text-center py-6">
-              <h2 class="text-[var(--accent)] text-4xl md:text-5xl font-black uppercase max-w-3xl mx-auto tracking-tight">
+              <h2 class="text-[var(--accent)] text-2xl md:text-5xl font-black uppercase max-w-3xl mx-auto tracking-tight">
                 LES FONCTIONNALITÉS SONT AU SERVICE DES USAGES MÉTIER
               </h2>
             </div>
 
             <div class="flex flex-col gap-12 mt-4 mb-10 max-w-6xl mx-auto w-full">
               
-              <div class="action-card-left relative flex items-center">
-                <div class="w-full md:w-[92%] border-2 border-orange-300 rounded-[35px] p-8 md:p-10 bg-white/60 shadow-sm relative z-10">
-                  <h4 class="text-[var(--accent)] text-3xl md:text-4xl font-black mb-4">Gestion locative et organisationnelle :</h4>
-                  <p class="text-[var(--accent)] text-3xl font-bold mb-4">Au cœur des réalités de terrain, ASSIA intègre les fonctionnalités nécessaires à la gestion locative :</p>
-                  <ul class="space-y-3 text-[var(--accent)]/90 font-clementeMini text-3xl list-disc pl-6">
+              <div class="action-card-left relative flex items-center p-4">
+                <div class="w-full md:w-[92%] border-2 border-[var(--accent)] rounded-[25px] md:rounded-[35px] p-5 md:p-10 relative z-10">
+                  <h4 class="leading-tight text-[var(--accent)] font-clementePdak text-xl md:text-[48px] mb-3 md:mb-4">Gestion locative et organisationnelle :</h4>
+                  <p class="text-[var(--accent)] font-thin font-clementePdai md:text-[35px] mb-3 md:mb-4">Au cœur des réalités de terrain, ASSIA intègre les fonctionnalités nécessaires à la gestion locative :</p>
+                  <ul class="leading-tight space-y-2 md:space-y-3 text-[var(--accent)] font-thin font-clementePdai text-base md:text-[35px] list-disc pl-5 md:pl-6 ">
                     <li>visibilité sur l'ensemble des places et bâtiments (occupation, vacance, indisponibilité)</li>
                     <li>suivi des interventions et signalements liés au patrimoine</li>
                     <li>transmission facilitée des informations</li>
                   </ul>
-                  <p class="mt-6 text-[var(--accent)] font-clementeMini text-3xl">
+                  <p class="leading-tight mt-4 md:mt-6 text-[var(--accent)] font-thin font-clementePdai text-base md:text-[35px]">
                     La communication entre les équipes éducatives et les services support est ainsi fluidifiée.
                   </p>
                 </div>
               </div>
 
-              <div class="action-card-right relative flex items-center justify-end">
-                <div class="w-full md:w-[92%] border-2 border-orange-300 rounded-[35px] p-8 md:p-10 bg-white/60 shadow-sm relative z-10 text-right">
-                  <h4 class="text-[var(--accent)] text-3xl md:text-4xl font-black mb-4">Interconnexion SI-SIAO :</h4>
-                  <p class="text-[var(--accent)] font-medium text-3xl mb-4 font-clementeMini">
-                    ASSIA est aujourd'hui <span class="font-clemente text-3xl">le seul outil proposant une interconnexion opérationnelle avec le SI-SIAO</span> (et sans bug !).
+              <div class="action-card-right relative flex items-center justify-end p-4">
+                <div class="w-full md:w-[92%] border-2 border-[var(--accent)] rounded-[25px] md:rounded-[35px] p-5 md:p-10 relative z-10 text-right">
+                  <h4 class="text-[var(--accent)] text-xl md:text-[48px] font-black mb-3 md:mb-4">Interconnexion SI-SIAO :</h4>
+                  <p class="text-[var(--accent)] font-medium text-base md:text-[35px] mb-3 md:mb-4 font-clementePdai">
+                    ASSIA est aujourd'hui <span class="font-clemente text-base md:text-3xl">le seul outil proposant une interconnexion opérationnelle avec le SI-SIAO</span> (et sans bug !).
                   </p>
-                  <p class="text-[var(--accent)]/90 font-bold text-3xl">
+                  <p class="text-[var(--accent)] font-thin font-clementePdai md:text-[35px]">
                     Les données saisies dans le SI-SIAO sont récupérées automatiquement dans ASSIA, en un clic, sans ressaisie.
                   </p>
                 </div>

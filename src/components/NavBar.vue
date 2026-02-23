@@ -1,7 +1,7 @@
 <template>
   <nav 
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-6"
-    :class="[currentPath === '/application' ? 'py-3 bg-[#ff925c] backdrop-blur-md shadow-md' : 'py-3 bg-[#03A3B5] backdrop-blur-md shadow-md']"
+    :class="[currentPath === '/application' ? 'py-3 bg-[#ff925c] backdrop-blur-md' : 'py-3 bg-[#F9FEFF] backdrop-blur-md']"
 
   >
     <div class="container mx-auto flex items-center justify-between">
@@ -9,13 +9,13 @@
       <!-- LOGO -->
       <a href="/" class="logo flex items-center gap-2 transition-transform hover:scale-105">
         <img v-if="currentPath === '/application'" 
-             src="/logo/LogoAssia.png" 
+             src="/logo/LogoAssia.svg" 
              alt="Assia" 
-             class="h-16 w-auto" />
+             class="size-16" />
         <img v-else 
-             src="/logo/LogoEdossah.png" 
+             src="/logo/LogoEdossah.svg" 
              alt="Edossah" 
-             class="h-16 w-auto" />
+             class="w-32 h-12" />
       </a>
 
       <!-- MENU DESKTOP -->
