@@ -90,11 +90,7 @@
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
 
               <div class="anim-right flex-1 w-full flex justify-center">
-<<<<<<< HEAD
-                <img src="/img/assia/5.png" alt="Illustration" class="w-full max-w-md h-[250px] md:h-[400px] object-cover rounded-[30px] md:rounded-[50px]" />
-=======
                 <img src="/img/assia/5.png" alt="Illustration" class="w-full max-w-md h-[250px] md:h-[400px] object-cover rounded-[30px] md:rounded-[50px]" style="zoom: 1.2;" />
->>>>>>> dev-cynth
               </div>
 
               <div class="anim-left flex-1 text-[var(--accent)]">
@@ -265,13 +261,36 @@ const toggleCollapse = (index) => {
     // Animate inner content
     const animLeft = currentEl.querySelectorAll('.anim-left');
     const animRight = currentEl.querySelectorAll('.anim-right');
+    if (animLeft.length) gsap.fromTo(animLeft, { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
+    if (animRight.length) gsap.fromTo(animRight, { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
+
+    // Cards: ScrollTrigger + scrub (comme Block2.vue)
     const cardLeft = currentEl.querySelectorAll('.action-card-left');
     const cardRight = currentEl.querySelectorAll('.action-card-right');
 
-    if (animLeft.length) gsap.fromTo(animLeft, { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
-    if (animRight.length) gsap.fromTo(animRight, { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, delay: 0.2, stagger: 0.1 });
-    if (cardLeft.length) gsap.fromTo(cardLeft, { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, delay: 0.2 });
-    if (cardRight.length) gsap.fromTo(cardRight, { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, delay: 0.2 });
+    cardLeft.forEach(card => {
+      gsap.fromTo(card, { x: -300, opacity: 0 }, {
+        x: 0, opacity: 1,
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 90%',
+          end: 'top 40%',
+          scrub: 1,
+        }
+      });
+    });
+
+    cardRight.forEach(card => {
+      gsap.fromTo(card, { x: 300, opacity: 0 }, {
+        x: 0, opacity: 1,
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 90%',
+          end: 'top 40%',
+          scrub: 1,
+        }
+      });
+    });
   }
 };
 

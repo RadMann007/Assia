@@ -11,11 +11,11 @@
         <img v-if="currentPath === '/application'" 
              src="/logo/LogoAssia.svg" 
              alt="Assia" 
-             class="size-16" />
+             class="w-36 h-16" />
         <img v-else 
              src="/logo/LogoEdossah.svg" 
              alt="Edossah" 
-             class="w-32 h-12" />
+             class="w-36 h-16" />
       </a>
 
       <!-- MENU DESKTOP -->
