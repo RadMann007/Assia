@@ -85,12 +85,12 @@
 
         <!-- Content Full Width -->
         <div :ref="el => contentRefs[1] = el" class="collapse-content relative z-10 overflow-hidden bg-white rounded-none -mt-10 h-0 opacity-0 w-full">
-          <div class="px-4 md:px-12 lg:px-20 pb-10 md:pb-16 pt-14 md:pt-20 flex flex-col gap-6 md:gap-10">
+          <div class="px-4 md:px-12 pb-10 md:pb-16 pt-14 md:pt-20 flex flex-col gap-6 md:gap-10">
 
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
 
               <div class="anim-right flex-1 w-full flex justify-center">
-                <img src="/img/assia/5.png" alt="Illustration" class="w-full max-w-md h-[250px] md:h-[400px] object-cover rounded-[30px] md:rounded-[50px]" style="zoom: 1.2;" />
+                <img src="/img/assia/5.png" alt="Illustration" class="w-full max-w-md h-[250px] md:h-[400px] object-cover rounded-[30px] md:rounded-[50px]" style="zoom: 1.3;" />
               </div>
 
               <div class="anim-left flex-1 text-[var(--accent)]">
@@ -106,7 +106,7 @@
                   </li>
                   <li class="flex items-start gap-3">
                     <span class="text-xl md:text-3xl leading-none text-[var(--primary)]">•</span>
-                    <p class="text-base md:text-2xl leading-tight font-clementeMini text-[var(--primary)]">co-construire une solution commune et faire évoluer l'outil avec ses utilisateurs.</p>
+                    <p class="text-base md:text-2xl leading-tight font-clementeMini text-[var(--primary)]">co-construire une solution commune </p>
                   </li>
                   <li class="flex items-start gap-3">
                     <span class="text-xl md:text-3xl leading-none text-[var(--primary)]">•</span>
@@ -123,7 +123,7 @@
           </div>
 
           <div class="text-center pt-4 mb-4">
-               <h2 class="text-[var(--primary)] text-xl md:text-4xl mx-4 md:mx-[15%] font-thin font-clementeMini">
+               <h2 class="text-[var(--primary)] text-xl md:text-4xl mx-4 font-thin font-clementeMini">
                  Chaque dispositif ayant ses spécificités, ASSIA a été conçue 
 pour s’adapter à des contextes variés, sans imposer une 
 pratique standardisée.
@@ -131,14 +131,14 @@ pratique standardisée.
             </div>
 
           <div class="text-center pt-4 mb-4">
-               <h2 class="text-[var(--accent)]  font-black mx-4 md:mx-[15%] text-[40px] font-clementePdap">
+               <h2 class="text-[var(--accent)]  font-black mx-4  text-[40px] font-clementePdap leading-tight">
                  Notre ambition est de comprendre votre quotidien, et 
 d’y adapter l’outil, plutôt que l’inverse.
                </h2>
             </div>
 
           <div class="text-center pt-4 mb-4">
-               <h2 class="text-[var(--primary)] text-xl md:text-4xl mx-4 md:mx-[15%] font-thin font-clementeMini">
+               <h2 class="text-[var(--primary)] text-xl md:text-4xl mx-4 font-thin font-clementeMini">
                  Ce travail partenarial permet d’enrichir l’outil sans alourdir les 
 coûts, et de favoriser les échanges de pratiques entre 
 structures.
@@ -191,7 +191,7 @@ structures.
             <div class="flex flex-col gap-12 mt-4 mb-10 max-w-6xl mx-auto w-full">
               
               <div class="action-card-left relative flex items-center p-4">
-                <div class="w-full md:w-[92%] border-2 border-[var(--accent)] rounded-[25px] md:rounded-[35px] p-5 md:p-10 relative z-10">
+                <div class="border-2 border-[var(--accent)] rounded-r-[35px] rounded-l-none p-5 md:p-10 relative z-10 border-l-0">
                   <h4 class="leading-tight text-[var(--accent)] font-clementePdak text-xl md:text-[48px] mb-3 md:mb-4">Gestion locative et organisationnelle :</h4>
                   <p class="text-[var(--accent)] font-thin font-clementePdai md:text-[35px] mb-3 md:mb-4">Au cœur des réalités de terrain, ASSIA intègre les fonctionnalités nécessaires à la gestion locative :</p>
                   <ul class="leading-tight space-y-2 md:space-y-3 text-[var(--accent)] font-thin font-clementePdai text-base md:text-[35px] list-disc pl-5 md:pl-6 ">
@@ -206,12 +206,12 @@ structures.
               </div>
 
               <div class="action-card-right relative flex items-center justify-end p-4">
-                <div class="w-full md:w-[92%] border-2 border-[var(--accent)] rounded-[25px] md:rounded-[35px] p-5 md:p-10 relative z-10 text-right">
-                  <h4 class="text-[var(--accent)] text-xl md:text-[48px] font-black mb-3 md:mb-4">Interconnexion SI-SIAO :</h4>
+                <div class="border-2 border-[var(--accent)] rounded-l-[35px] rounded-r-none p-5 md:p-10 relative z-10 text-right border-r-0">
+                  <h4 class="text-[var(--accent)] text-xl md:text-[48px] font-black mb-3 md:mb-10">Interconnexion SI-SIAO :</h4>
                   <p class="text-[var(--accent)] font-medium text-base md:text-[35px] mb-3 md:mb-4 font-clementePdai">
                     ASSIA est aujourd'hui <span class="font-clemente text-base md:text-3xl">le seul outil proposant une interconnexion opérationnelle avec le SI-SIAO</span> (et sans bug !).
                   </p>
-                  <p class="text-[var(--accent)] font-thin font-clementePdai md:text-[35px]">
+                  <p class="text-[var(--accent)] font-thin font-clementePdai md:text-[35px] leading-tight">
                     Les données saisies dans le SI-SIAO sont récupérées automatiquement dans ASSIA, en un clic, sans ressaisie.
                   </p>
                 </div>

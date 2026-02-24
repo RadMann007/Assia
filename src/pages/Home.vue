@@ -6,6 +6,7 @@ import Lenis from '@studio-freight/lenis';
 import NavBar from '../components/NavBar.vue';
 import Footer from '../components/Footer.vue';
 import Temoignage from '../components/Application/Temoignage.vue';
+import Resolution from '../components/Resolution.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -172,7 +173,7 @@ onMounted(async () => {
     <section class="container mx-auto px-4 md:px-6 min-h-screen flex flex-col justify-center relative z-10">
       <div class="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center w-full">
         <div>
-          <h1 class="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-[70px] leading-tight">
+          <h1 class="hero-title font-clementePdaq text-4xl sm:text-5xl md:text-6xl lg:text-[70px] leading-tight">
             Le numérique pensé pour fluidifier le quotidien des associations
           </h1>
         </div>
@@ -222,7 +223,7 @@ onMounted(async () => {
 
     <!-- Notre Approche -->
     <section class="w-full py-12 md:py-20 ">
-      <div class="slide-left md:ml-32 border-2 border-r-0 border-primary p-4 md:p-8 bg-white rounded-l-[40px] md:rounded-l-[var(--border-radius-primary)]">
+      <div class="slide-left md:ml-32 border-2 border-r-0 border-primary p-4 md:p-8 bg-[#F9FEFF] rounded-l-[40px] md:rounded-l-[var(--border-radius-primary)]">
         <h2 class="font-display text-2xl md:text-3xl lg:text-6xl text-center uppercase font-black mb-6 md:mb-8 text-primary tracking-tighter font-clemente">Notre Approche</h2>
         <div class="flex flex-col gap-4 md:gap-5 max-w-4xl mx-auto">
             <div v-for="(item, index) in approachItems" :key="index" 
@@ -303,19 +304,20 @@ onMounted(async () => {
     <!-- Enjeux Content -->
     <section class="bg-primary p-8 md:p-20">
         <div class="container mx-auto">
-            <div class="grid lg:grid-cols-2 gap-12 md:gap-16 mb-12 md:mb-20 items-center">
-                <div class="p-2  enjeux-image">
-                    <img src="/img/2hand.jpg" class="w-full rounded-3xl h-full object-cover"/>
+            <div class="grid lg:grid-cols-2 gap-12 md:gap-28 mb-12 md:mb-20 items-center">
+                <div class="p-2 enjeux-image overflow-hidden rounded-[70px]">
+                    <img src="/img/group-friends.jpeg" class="w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover object-center rounded-[70px]"/>
                 </div>
                 <div class="flex flex-col gap-6 md:gap-8 text-center lg:text-left enjeux-content">
-                    <h2 class="text-3xl md:text-4xl lg:text-[46px] font-black text-white font-clemente tracking-normal">
+                    <h1 class="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-clemente text-white">
+                    <!-- <h1 class="text-4xl md:text-[50px] lg:text-[56px] text-white tracking-normal"> -->
                       Nous accompagnons les structures face à des enjeux très concrets
-                    </h2>
+                    </h1>
                 </div>
             </div>
 
             <div class="flex justify-center w-full">
-                <div class="w-full max-w-4xl border-2 border-primary cursor-pointer transition-all duration-500  rounded-[40px] md:rounded-[80px]"
+                <div class="w-full max-w-4xl border-2 border-primary cursor-pointer transition-all duration-500  rounded-[40px] md:rounded-[80px] mt-8"
                      :class="isComplexOpen ? 'bg-white text-primary shadow-lg' : 'bg-white text-primary shadow-2xl'"
                      @click="toggleComplex">
                     
@@ -394,7 +396,7 @@ onMounted(async () => {
           </div>
           <div class="relative order-1 lg:order-2 flex justify-center">
               <div class="w-full sm:w-3/4 rounded-[30px] md:rounded-[40px] ">
-                <img src="/img/mutualise.png" class="w-full h-full object-cover" alt="Assia Team"/>
+                <img src="/img/mutualise.png" class="w-full h-full object-cover rounded-[30px] md:rounded-[40px]" alt="Assia Team"/>
               </div>
           </div>
         </div>
@@ -457,14 +459,6 @@ onMounted(async () => {
           <img src="/logo/bpi.png" class="max-w-full max-h-full object-contain brightness-0 invert" alt="BPI France"/>
         </div>
       </div>
-
-      <!-- <h2 class="text-3xl mt-12 md:mt-16 md:text-4xl lg:text-6xl text-center text-primary font-black font-display uppercase leading-[0.9] tracking-tighter mb-10 md:mb-16">
-        Des Questions ?
-      </h2>
-
-      <a href="/contact" class="text-primary border-2 border-primary flex justify-center w-fit mx-auto text-lg md:text-2xl py-4 md:py-5 px-8 md:px-12 rounded-xl uppercase font-clemente cursor-pointer hover:bg-primary hover:text-white transition-colors">
-        Par ici les réponses
-      </a> -->
     </section>
 
     <!-- Contact Section -->
@@ -483,10 +477,6 @@ onMounted(async () => {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700;900&display=swap');
-/* :root { --primary: var(--primary); --secondary: #ff925c; } */
-/* * { margin: 0; padding: 0; box-sizing: border-box; } */
-/* body { background-color: #F9FEFF; overflow-x: hidden; color: #1a1a1a; font-family: 'Inter', sans-serif; } */
-/* .font-display { font-family: 'Montserrat', sans-serif; } */
 .text-primary { color: var(--primary); }
 .bg-primary { background-color: var(--primary); }
 .border-primary { border-color: var(--primary); }
@@ -503,7 +493,7 @@ onMounted(async () => {
 .hero-title {
   /* letter-spacing: -0.04em; */
   /* font-size: 64px; removed in favor of tailwind classes */
-  font-family: 'Clemente', sans-serif; /* font-display */
+  /* font-family: 'Clemente', sans-serif;  font-display */
   font-weight: 700;                  /* font-black */
   line-height:  1.05;            /* tracking-[-1.5px] */
   color: var(--primary);             /* text-primary */

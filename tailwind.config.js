@@ -13,6 +13,7 @@ export default {
         clementePdak: ['Clemente-pdak', 'sans-serif'],
         clementePdai: ['Clemente-pdai', 'sans-serif'],
         clementePdam: ['Clemente-pdam', 'sans-serif'],
+        clementePdaq: ['Clemente-pdaq', 'sans-serif'],
       },
     },
   },
