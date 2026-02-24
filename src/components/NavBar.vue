@@ -11,12 +11,13 @@
         <img v-if="currentPath === '/application'" 
              src="/logo/LogoAssia.svg" 
              alt="Assia" 
-             class="size-16" />
+             class="w-36 h-16" />
         <img v-else 
              src="/logo/LogoEdossah.svg" 
              alt="Edossah" 
-             class="w-32 h-12" />
+             class="w-36 h-16" />
       </a>
+      <Resolution />
 
       <!-- MENU DESKTOP -->
       <ul 
@@ -29,7 +30,7 @@
       >
         
         <a v-for="(link, index) in links" :key="index" :href="link.url"
-           class="px-5 py-2.5 rounded-lg cursor-pointer transition-all duration-300"
+           class="px-5 py-2.5 rounded-lg cursor-pointer transition-all duration-300 font-clementeMini"
            :class="[
              currentPath === '/application'
                ? (currentPath === link.url ? 'bg-[#ff925c] text-white' : 'hover:bg-[#ff925c] hover:text-white')
@@ -44,7 +45,7 @@
       <div class="flex items-center gap-4">
         <!-- BOUTON CONTACT -->
         <button @click="openDemoModal" 
-           class="hidden md:block text-white px-8 py-3 font-bold rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 uppercase text-xs tracking-wider"
+           class="hidden md:block text-white font-clementeMini px-8 py-3 font-bold rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 uppercase text-xs tracking-wider"
            :class="[
              currentPath !== '/application' 
                ? 'bg-[#008d9d] hover:bg-[#03A3B5]' 
@@ -131,6 +132,7 @@
 
 <script setup>
 import { ref, reactive, onMounted, onUnmounted } from 'vue';
+import Resolution from './Resolution.vue';
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);

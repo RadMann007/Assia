@@ -14,7 +14,7 @@
     <div ref="contentRef"
          class="relative z-10 overflow-hidden bg-white rounded-none -mt-12 h-0 opacity-0 w-full">
          
-        <div class="px-4 md:px-16 py-12 md:py-20 flex flex-col md:flex-row items-center gap-8 md:gap-12 pt-16 md:pt-28 max-w-7xl mx-auto">
+        <div class="px-4 md:px-10 py-12 md:py-20 flex flex-col md:flex-row items-center gap-8 md:gap-12 pt-16  max-w-7xl mx-auto">
           
           <div class="anim-left flex-1 space-y-6">
             <h1 class="font-clementeMini text-[var(--accent)] text-xl md:text-4xl font-black leading-tight">
@@ -24,11 +24,6 @@
               C’est pourquoi, dès l’origine, la conception d’ASSIA a été pensée comme celle d’un outil s’adaptant au plus près des réalités de terrain. 
               Et la diversité des associations déjà outillées nous permet de vous indiquer comment ASSIA peut - ou non - répondre à vos besoins.
             </p>
-            <!-- <div class="pt-4">
-              <button class="bg-[#ff925c] text-white font-clemente font-bold py-3 px-8 rounded-full hover:bg-[#ff925c] transition-transform hover:scale-105 uppercase tracking-wide">
-                Voir des cas d'usage
-              </button>
-            </div> -->
           </div>
 
           <div class="anim-right flex-1 relative">
@@ -37,8 +32,12 @@
                  alt="Logiciel ASSIA sur ordinateur" 
                  class="w-full h-auto transform relative z-10 rounded-[30px] md:rounded-[50px]">
           </div>
-          
        </div>
+        <div class="pt-4 flex justify-center">
+               <a href="/application" class="italic font-clementeMini inline-block text-white bg-[#ff925c] text-lg md:text-xl lg:text-2xl py-4 md:py-5 px-8 md:px-12 rounded-full cursor-pointer hover:scale-105 transition-transform">
+                 Voir des cas d'usage
+               </a>
+            </div>
     </div>
   </div>
 </template>

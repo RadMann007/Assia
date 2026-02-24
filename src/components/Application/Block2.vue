@@ -38,7 +38,7 @@
           </div>
 
           <div class="w-full bg-white/40 p-8">
-            <p class="text-[var(--primary)] text-center font-ClementPDai text-[40px] md:text-4xl leading-relaxed">
+            <p class="text-[var(--primary)] text-center font-clementePdai text-[40px] md:text-4xl leading-relaxed font-thin">
               ASSIA est bien adaptée aux activités pré et post-sentencielles :
               <span class="">
                 hébergement sortant de prison, placement extérieur, CJSE, CPPV, composition pénale, sursis probatoire, ESR, enquêtes de personnalité, stages de responsabilité, médiation pénale, réparation pénale des mineurs etc.
@@ -49,8 +49,8 @@
           <div class="w-full space-y-10 overflow-hidden py-10 bg-[#FFF3EE] p-4 rounded-xl">
             <!-- CARTE GAUCHE (action-card-left) -->
             <div class="action-card-left relative flex items-center ">
-              <div class="w-full md:w-[85%] p-5 md:p-10 rounded-[25px] md:rounded-[40px] border-2 border-[var(--accent)] shadow-sm relative z-10">
-                <h4 class="text-[#ff925c] text-xl md:text-[45px] font-clementePdak mb-4 md:mb-6 uppercase">L'outil permet notamment :</h4>
+              <div class="rounded-r-[35px] rounded-l-nonep-5 md:p-10  border-2 border-[var(--accent)] shadow-sm relative z-10 border-l-0">
+                <h4 class="text-[#ff925c] text-xl md:text-[45px] font-clementePdak mb-4 md:mb-10">L'outil permet notamment :</h4>
                 <ul class="space-y-2 md:space-y-3 text-[var(--accent)] font-semibold list-disc pl-5 md:pl-6 text-base md:text-3xl">
                   <li>la gestion de tous les types de mesures avec leurs spécificités</li>
                   <li>le suivi des délais d'envoi des rapports (tranches, alertes)</li>
@@ -63,9 +63,9 @@
 
             <!-- CARTE DROITE (action-card-right) -->
             <div class="action-card-right relative flex items-center justify-end">
-              <div class="w-full md:w-[85%] p-5 md:p-10 rounded-[25px] md:rounded-[40px] border-2 border-[var(--accent)] shadow-sm relative z-10 text-right">
-                <h4 class="text-[#ff925c] text-xl md:text-[45px] font-clementePdak mb-4 md:mb-6 uppercase">Et surtout à des structures qui recherchent :</h4>
-                <ul class="space-y-2 md:space-y-3 text-[var(--accent)] font-semibold list-none text-base md:text-3xl">
+              <div class="rounded-l-[35px] rounded-r-nonep-5 md:p-10  border-2 border-[var(--accent)] shadow-sm relative z-10 border-r-0 text-left">
+                <h4 class="text-[#ff925c] text-xl md:text-[45px] font-clementePdak mb-4 md:mb-10 leading-tight">Et surtout à des structures qui recherchent :</h4>
+                <ul class="space-y-2 md:space-y-3 text-[var(--accent)] font-semibold list-disc pl-5 md:pl-6 text-base md:text-3xl">
                   <li>un logiciel qui plaît à leurs professionnels</li>
                   <li>un prestataire à l'écoute qui connaît le métier</li>
                   <li>une solution évolutive, construite pour durer</li>
