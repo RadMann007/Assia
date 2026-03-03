@@ -33,17 +33,18 @@
                  class="w-full h-auto transform relative z-10 rounded-[30px] md:rounded-[50px]">
           </div>
        </div>
-        <div class="pt-4 flex justify-center">
+
+        <!-- <div class="pt-4 flex justify-center">
                <a href="/application" class="italic font-clementeMini inline-block text-white bg-[#ff925c] text-lg md:text-xl lg:text-2xl py-4 md:py-5 px-8 md:px-12 rounded-full cursor-pointer hover:scale-105 transition-transform">
                  Voir des cas d'usage
                </a>
-            </div>
+            </div> -->
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-[#FFF5F0] min-h-screen font-body text-[#1a1a1a] overflow-x-hidden">
+  <div class="bg-[#F9FEFF] min-h-screen font-body text-[#1a1a1a] overflow-x-hidden">
     
     <!-- NAVBAR -->
     <NavBar />
 
     <!-- HERO SECTION -->
-    <header v-if="article" class="relative pt-40 pb-20 px-6 container mx-auto">
+    <header v-if="article" class="relative pt-40 pb-20 px-6 container mx-auto font-clemente">
       <router-link 
         to="/articles" 
         class="inline-flex items-center gap-2 mb-10 text-[#03A3B5] font-bold uppercase tracking-widest hover:translate-x-[-10px] transition-transform"
@@ -16,7 +16,7 @@
 
       <div class="flex flex-col gap-8 max-w-5xl">
         <div class="flex items-center gap-4">
-          <span class="bg-orange-100 text-orange-500 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">
+          <span class="bg-[#ff925c]/10 text-[#ff925c] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest font-clemente">
             {{ getCategoryName(article) }}
           </span>
           <span class="text-gray-400 font-medium text-sm">
@@ -36,16 +36,16 @@
       <div class="max-w-5xl mx-auto flex flex-col gap-12">
         
         <!-- Featured Image -->
-        <div class="relative aspect-video rounded-[60px] overflow-hidden shadow-2xl border-8 border-white">
+        <!-- <div class="relative aspect-video rounded-[60px] overflow-hidden shadow-2xl border-8 border-white">
           <img 
             :src="getFeaturedImage(article)" 
             :alt="article.title.rendered"
             class="w-full h-full object-cover"
           />
-        </div>
+        </div> -->
 
         <!-- Article text -->
-        <div class="bg-white p-8 md:p-12 rounded-[50px] shadow-sm border border-orange-100 flex flex-col md:flex-row items-center gap-6 mb-8">
+        <div class="bg-white p-8 md:p-12 rounded-[50px] shadow-sm border border-[#03A3B5] font-clemente flex flex-col md:flex-row items-center gap-6 mb-8">
            <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-orange-50 shadow-sm flex-shrink-0">
              <img :src="getAuthorAvatar(article)" :alt="getAuthorName(article)" class="w-full h-full object-cover">
            </div>
@@ -56,7 +56,7 @@
         </div>
 
         <div 
-          class="article-content bg-white p-8 md:p-16 rounded-[60px] shadow-sm border border-orange-100 text-lg md:text-xl leading-relaxed text-gray-700 font-medium"
+          class="article-content bg-white p-8 md:p-16 rounded-[60px] shadow-sm border border-[#03A3B5] text-lg md:text-xl leading-relaxed text-gray-700 font-medium font-clementeMini"
           v-html="article.content.rendered"
         ></div>
 

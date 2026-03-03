@@ -1,6 +1,6 @@
 <template>
   <div class="py-16 md:py-24 overflow-hidden bg-white w-full select-none">
-    
+    <h2 class="font-display text-2xl md:text-3xl lg:text-6xl text-center uppercase font-black mb-6 md:mb-8 text-primary tracking-tighter font-clemente">Nos principes et valeurs</h2>
     <div class="mb-12 px-6 md:px-12 max-w-7xl mx-auto">
       <!-- <h2 class="text-3xl md:text-5xl font-black text-[#03A3B5] uppercase leading-tight">
         UN ENVIRONNEMENT <br> DE TRAVAIL <span class="text-[#ff925c]">STIMULANT</span>
@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted } from 'vue';
 import gsap from 'gsap';
 
 const cards = [

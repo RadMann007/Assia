@@ -1,18 +1,15 @@
 <template>
-  <div class="bg-[#FFF5F0] min-h-screen font-body text-[#1a1a1a] overflow-x-hidden">
+  <div class="bg-[#F9FEFF] min-h-screen font-body text-[#1a1a1a] overflow-x-hidden">
     
     <!-- LOADER AVEC LOGO ASSIA -->
-    <div ref="loader" class="fixed inset-0 bg-primary z-[100] flex items-center justify-center">
+    <!-- <div ref="loader" class="fixed inset-0 bg-primary z-[100] flex items-center justify-center">
       <div class="relative text-center">
         <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
           <span class="text-6xl md:text-8xl font-bold tracking-tighter">ACTUALITES</span>
         </div>
-        <!-- <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
-          Nos Actualités
-        </div> -->
         <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
       </div>
-    </div>
+    </div> -->
 
     <!-- NAVBAR -->
     <NavBar />
@@ -20,9 +17,9 @@
     <!-- HERO SECTION -->
     <header class="relative pt-32 pb-20 px-6 container mx-auto text-center">
       <h1 class="text-5xl md:text-8xl font-clemente font-black text-[#03A3B5] uppercase leading-tight tracking-tighter mb-8">
-        Nos <span class="text-[#ff925c]">Actualités</span>
+        Nos Actualités
       </h1>
-      <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 font-medium leading-relaxed">
+      <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 font-clementeMini leading-relaxed">
         Découvrez les dernières nouvelles, témoignages et actualités du monde de l'accompagnement social avec ASSIA.
       </p>
     </header>
@@ -72,7 +69,7 @@
       </div>
 
       <!-- ERROR STATE -->
-      <div v-else-if="error" class="text-center py-20 bg-white rounded-[60px] border-2 border-dashed border-orange-200">
+      <div v-else-if="error" class="text-center py-20 bg-white rounded-[60px] border-2 border-dashed border-orange-200 font-clemente">
         <div class="text-6xl mb-6 text-[#ff925c]">⚠️</div>
         <h3 class="text-2xl font-black text-gray-800 uppercase mb-4">Erreur de chargement</h3>
         <p class="text-gray-600 mb-8 max-w-md mx-auto">{{ error }}</p>
@@ -82,17 +79,17 @@
       </div>
 
       <!-- NO RESULTS -->
-      <div v-else-if="filteredArticles.length === 0" class="text-center py-20 bg-white rounded-[60px]">
+      <div v-else-if="filteredArticles.length === 0" class="text-center py-20 bg-white rounded-[60px] font-clemente">
         <div class="text-6xl mb-6">🔍</div>
         <h3 class="text-2xl font-black text-gray-800 uppercase mb-4">Aucun résultat</h3>
-        <p class="text-gray-600">Aucun article ne correspond à votre recherche pour le moment.</p>
-        <button @click="resetFilters" class="mt-8 text-[#03A3B5] font-bold border-b-2 border-[#03A3B5]">
+        <p class="text-gray-600 font-clementeMini">Aucun article ne correspond à votre recherche pour le moment.</p>
+        <button @click="resetFilters" class="mt-8 text-[#03A3B5] font-bold font-clementeMini border-b-2 border-[#03A3B5]">
           Réinitialiser les filtres
         </button>
       </div>
 
       <!-- GRID -->
-      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
+      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch font-clemente">
         <article 
           v-for="(article, index) in filteredArticles" 
           :key="article.id"
@@ -120,7 +117,7 @@
               v-html="article.title.rendered"
             ></h2>
             <div 
-              class="text-gray-600 leading-relaxed mb-6 line-clamp-3 text-sm font-medium" 
+              class="text-gray-600 leading-relaxed mb-6 line-clamp-3 font-clementeMini" 
               v-html="article.excerpt.rendered"
             ></div>
             
@@ -129,7 +126,7 @@
                 <div class="w-10 h-10 rounded-full bg-orange-100 border-2 border-white overflow-hidden">
                   <img :src="getAuthorAvatar(article)" :alt="getAuthorName(article)" class="w-full h-full object-cover">
                 </div>
-                <span class="text-sm font-bold text-gray-700">{{ getAuthorName(article) }}</span>
+                <span class="text-sm font-bold text-gray-700 font-clementeMini">{{ getAuthorName(article) }}</span>
               </div>
               <router-link 
                 :to="'/articles/' + article.id" 

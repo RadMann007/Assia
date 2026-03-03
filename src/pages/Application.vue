@@ -21,7 +21,7 @@
     <section class="relative min-h-screen bg-[#ff925c] pt-24 md:pt-32 pb-12 md:pb-20 px-0 flex flex-col items-center justify-center text-white text-center overflow-hidden">
       <!-- Container stretches to edges -->
       <div class="w-full flex flex-col md:flex-row justify-center items-stretch gap-0 mb-16 relative z-10">
-        <div class="hero-card-left flex-1 bg-white text-[#ff925c] p-6 md:p-16 rounded-r-[40px] md:rounded-r-[80px] rounded-l-none shadow-none">
+        <div class="hero-card-left flex-1 flex items-center justify-center bg-white text-[#ff925c] p-6 md:p-16 rounded-r-[40px] md:rounded-r-[80px] rounded-l-none shadow-none">
           <!-- animer de gauche vers le centre -->
           <h2 class="text-2xl md:text-6xl font-black uppercase leading-none tracking-tight font-clemente text-right">À la croisée de<br>l'expertise de l'AHI</h2>
         </div>
@@ -30,7 +30,7 @@
           <span class="hero-ampersand text-5xl md:text-8xl font-display font-black text-white">&</span>
         </div>
 
-        <div class="hero-card-right flex-1 bg-white text-[#ff925c] p-6 md:p-16 rounded-l-[40px] md:rounded-l-[80px] rounded-r-none shadow-none">
+        <div class="hero-card-right flex-1 flex justify-start items-center bg-white text-[#ff925c] p-6 md:p-16 rounded-l-[40px] md:rounded-l-[80px] rounded-r-none shadow-none">
           <!-- animer de droite vers le centre -->
           <h2 class="text-2xl md:text-6xl text-left font-black uppercase leading-none tracking-tight font-clemente">De la<br>technologie</h2>
         </div>
@@ -102,7 +102,7 @@
         Nous sommes engagés pour soutenir votre impact
       </h2>
       <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-7xl w-full">
-        <div v-for="(item, index) in engagementItems" :key="index" class="engagement-card flex flex-col justify-center items-center p-6 md:p-10 rounded-[30px] md:rounded-[50px] bg-orange-400 border-2 border-transparent hover:border-[var(--accent)] transition-all duration-500 group shadow-sm hover:shadow-xl">
+        <div v-for="(item, index) in engagementItems" :key="index" class="engagement-card flex flex-col justify-center items-center p-6 md:p-10 rounded-[30px] md:rounded-[50px] bg-[#ff925c] border-2 border-transparent hover:border-[var(--accent)] transition-all duration-500 group shadow-sm hover:shadow-xl">
           <img :src="item.image" :alt="item.title" class="w-16 h-16 md:w-28 md:h-28 object-contain mb-4 md:mb-6" />
           <h3 class="font-clemente text-base md:text-2xl font-black uppercase mb-2 md:mb-4 text-center text-white">{{ item.title }}</h3>
         </div>
@@ -113,6 +113,10 @@
      <section class="mx-4 md:mx-[10%]">
        <Block3 />
      </section>
+
+    <!-- <section class="mx-4 md:mx-[10%]">
+    </section> -->
+    <ESms />
 
     <!-- 9. SECTION TEMOIGNAGES -->
     <section class="py-12 md:py-24 px-4 md:px-6 bg-white">
@@ -149,9 +153,9 @@
       <h2 class="text-2xl md:text-6xl text-center mx-4 md:mx-[20%] text-[var(--accent)] font-black font-display uppercase font-clemente px-4 leading-[0.9] tracking-tighter mb-8 md:mb-16">
         Besoin de plus d'informations ?
       </h2>
-      <button class="text-white font-clementeMini tracking-wider italic font-bold bg-[var(--accent)] border-4 border-[var(--accent)] flex justify-center w-fit mx-auto text-lg md:text-2xl py-3 md:py-5 px-8 md:px-12 rounded-xl cursor-pointer">
+      <a href="/contact" class="text-white font-clementeMini tracking-wider italic font-bold bg-[var(--accent)] border-4 border-[var(--accent)] flex justify-center w-fit mx-auto text-lg md:text-2xl py-3 md:py-5 px-8 md:px-12 rounded-xl cursor-pointer">
         Ecrivez-nous
-      </button>
+      </a>
     </section>
   <Footer/>
 </template>
@@ -171,6 +175,7 @@ import Footer from '../components/Footer.vue';
 import Role1 from '../components/RoleApplication/Role1.vue';
 import Role2 from '../components/RoleApplication/Role2.vue';
 import Role3 from '../components/RoleApplication/Role3.vue';
+import ESms from '../components/Application/ESms.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
