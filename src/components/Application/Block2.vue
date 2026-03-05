@@ -21,7 +21,7 @@
           <div class="anim-left flex flex-col lg:flex-row items-center gap-12 w-full">
             <div class="w-full lg:w-1/3 relative">
               <div class="w-full h-[250px] md:h-[400px] rounded-[30px] md:rounded-[40px] overflow-hidden relative z-10">
-                 <img src="/img/assia/7.jpg" alt="Bénéficiaire" class="w-full h-full object-cover">
+                 <img src="/img/assia/7.jpeg" alt="Bénéficiaire" class="w-full h-full object-cover">
               </div>
             </div>
 
@@ -46,10 +46,10 @@
             </p>
           </div>
 
-          <div class="w-full space-y-10 overflow-hidden py-10 bg-[#FFF3EE] p-4 rounded-xl">
+          <div class="w-full space-y-10 overflow-hidden py-10 p-4 rounded-xl">
             <!-- CARTE GAUCHE (action-card-left) -->
             <div class="action-card-left relative flex items-center ">
-              <div class="rounded-r-[35px] rounded-l-nonep-5 md:p-10  border-2 border-[var(--accent)] shadow-sm relative z-10 border-l-0">
+              <div class="rounded-r-[35px] rounded-l-nonep-5 md:p-10  border-2 border-[var(--accent)] relative z-10 border-l-0">
                 <h4 class="text-[#ff925c] text-xl md:text-[45px] font-clementePdak mb-4 md:mb-10">L'outil permet notamment :</h4>
                 <ul class="space-y-2 md:space-y-3 text-[var(--accent)] font-semibold list-disc pl-5 md:pl-6 text-base md:text-3xl">
                   <li>la gestion de tous les types de mesures avec leurs spécificités</li>
@@ -63,7 +63,7 @@
 
             <!-- CARTE DROITE (action-card-right) -->
             <div class="action-card-right relative flex items-center justify-end">
-              <div class="rounded-l-[35px] rounded-r-nonep-5 md:p-10  border-2 border-[var(--accent)] shadow-sm relative z-10 border-r-0 text-left">
+              <div class="rounded-l-[35px] rounded-r-nonep-5 md:p-10  border-2 border-[var(--accent)] relative z-10 border-r-0 text-left">
                 <h4 class="text-[#ff925c] text-xl md:text-[45px] font-clementePdak mb-4 md:mb-10 leading-tight">Et surtout à des structures qui recherchent :</h4>
                 <ul class="space-y-2 md:space-y-3 text-[var(--accent)] font-semibold list-disc pl-5 md:pl-6 text-base md:text-3xl">
                   <li>un logiciel qui plaît à leurs professionnels</li>

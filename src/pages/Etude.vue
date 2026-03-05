@@ -3,40 +3,43 @@
     <!-- <NavBar /> -->
     <section class="relative py-20 px-6 max-w-7xl mx-auto flex flex-col items-center">
       
-      <div class="env-image-container w-full max-w-5xl rounded-[40px] overflow-hidden shadow-2xl mb-12 border-[12px] border-white">
+      <div class="env-image-container w-full max-w-5xl rounded-[40px] overflow-hidden mb-12  ">
         <img src="/img/contact/2.jpg" 
              alt="Environnement" class="w-full h-[500px] object-cover transform scale-110">
       </div>
 
       <div class="text-center max-w-4xl mb-16 section-fade">
-        <p class="text-[#64C27D] font-bold text-xl md:text-2xl leading-relaxed">
+        <p class="text-[#74D282] font-clementePdam text-xl  md:text-[50px] leading-tight">
           Chez EDOSSAH, nous œuvrons au quotidien au service de l’impact social, et alignons toutes nos actions sur une démarche responsable de l’environnement.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-16">
-        <div class="eco-card p-10 rounded-[45px] border-2 border-[#64C27D]/20 bg-white shadow-xl text-center flex flex-col items-center justify-between min-h-[320px]">
-          <p class="italic text-slate-600 text-lg">Nos prestataires sont des <br><span class="text-[#64C27D] font-black not-italic text-2xl uppercase">coopératives françaises</span> :</p>
-          <div class="w-full space-y-4">
+        <div class="eco-card p-10 rounded-[45px] border-2 border-[#74D282] bg-white text-center flex flex-col items-center justify-between min-h-[320px]">
+          <p class="text-[#74D282] text-lg">Nos prestataires sont des <br><span class="text-[#74D282] font-clementePdag italic text-[25px]">coopératives françaises</span> :</p>
+          <img src="/logo/telecoop.png" class="w-auto h-36 object-cover" />
+          <!-- <div class="w-full space-y-4">
              <div class="text-xl font-bold text-slate-400 uppercase tracking-widest italic">Crédit Coopératif</div>
              <div class="text-2xl font-black text-[#64C27D] uppercase tracking-tighter">TeleCoop</div>
-          </div>
+          </div> -->
         </div>
 
-        <div class="eco-card p-10 rounded-[45px] border-2 border-[#64C27D]/20 bg-white shadow-xl text-center flex flex-col items-center justify-between min-h-[320px]">
-          <p class="italic text-slate-600 text-lg">Notre serveur web et notre suite d’outils numériques sont <br><span class="text-[#64C27D] font-black not-italic text-2xl uppercase">propres et durables</span>, grâce à :</p>
-          <div class="text-4xl font-black text-[#03A3B5] tracking-tighter">infomaniak</div>
+        <div class="eco-card p-10 rounded-[45px] border-2 border-[#74D282] bg-white text-center flex flex-col items-center justify-between min-h-[320px]">
+          <p class="text-lg text-[#74D282]">Notre serveur web et notre suite d’outils numériques sont <br>
+            <span class="text-[#74D282] font-black italic text-2xl">propres et durables</span>, grâce à :</p>
+             <img src="/logo/infomaniak.png" class="w-full h-16 object-cover" />
+          <!-- <div class="text-4xl font-black text-[#03A3B5] tracking-tighter">infomaniak</div> -->
         </div>
 
-        <div class="eco-card p-10 rounded-[45px] border-2 border-[#64C27D]/20 bg-white shadow-xl text-center flex flex-col items-center justify-between min-h-[320px]">
-          <p class="italic text-slate-600 text-lg">Nous accompagnons les <br><span class="text-[#64C27D] font-black not-italic text-2xl uppercase">futurs professionnels</span> sur des terrains bienveillants et formateurs.</p>
+        <div class="eco-card p-10 rounded-[45px] border-2 border-[#74D282] bg-white text-center flex flex-col items-center justify-between min-h-[320px]">
+          <p class="text-lg text-[#74D282]">Nous accompagnons les <br><span class="text-[#74D282] font-black italic text-2xl">futurs professionnels</span> sur des terrains bienveillants et formateurs.</p>
           <div class="text-6xl">
             <img src="/img/contact/etudiant.png" class="w-16 h-16 object-cover" />
           </div>
         </div>
       </div>
 
-      <div class="server-banner w-full max-w-5xl bg-[#64C27D] p-10 rounded-[40px] shadow-2xl text-center text-white font-bold text-xl md:text-2xl leading-snug">
+      <div class="server-banner w-full max-w-5xl bg-[#74D282] p-10 rounded-[40px] shadow-2xl text-center text-white font-bold text-xl md:text-[45px] leading-snug">
         Notre serveur applicatif (hébergeant Assia) est dans un centre de données en France, chez un hébergeur français.
       </div>
     </section>
@@ -44,41 +47,49 @@
     <section class="relative py-24 bg-white overflow-hidden">
       <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="magic-text">
-          <h2 class="text-[#64C27D] text-5xl md:text-8xl font-black uppercase leading-[0.9] mb-8">
+          <h2 class="text-[#64C27D] text-5xl md:text-8xl font-clementePdaq uppercase leading-[0.9] mb-8">
             C'EST ICI <br> QUE LA <br> MAGIE <br> OPÈRE !
           </h2>
         </div>
         <div class="relative">
-          <div class="magic-img-1 w-full h-[500px] rounded-[50px] overflow-hidden border-[15px] border-[#F9FDF9] shadow-2xl relative z-10">
+          <div class="magic-img-1 w-full h-[500px] rounded-[50px] overflow-hidden relative z-10">
             <img src="/img/contact/4.jfif" class="w-full h-full object-cover">
           </div>
-          <div class="magic-img-2 absolute -bottom-10 -left-10 w-3/4 h-64 rounded-[40px] overflow-hidden border-[12px] border-white shadow-2xl z-20 hidden md:block">
+          <div class="magic-img-2 absolute -bottom-10 -left-10 w-3/4 h-64 rounded-[40px] overflow-hidden z-20 hidden md:block">
             <img src="/img/contact/3.jpg" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-20 px-6 max-w-5xl mx-auto text-center">
+    <section class="py-20 px-6 max-w-5xl mx-auto text-center font-clementeMini">
       <div ref="textRevealContainer" class="waste-content space-y-12 opacity-0">
         <p class="text-xl md:text-3xl leading-relaxed text-slate-700">
-          <span class="reveal-word">Nous</span> <span class="reveal-word">tendons</span> <span class="reveal-word">vers</span> <span class="reveal-word">le</span> <span class="reveal-word text-[#64C27D] font-black">0</span> <span class="reveal-word text-[#64C27D] font-black">déchet</span> <span class="reveal-word">et</span> <span class="reveal-word">alimentons</span> <span class="reveal-word">chaque</span> <span class="reveal-word">jour</span> <span class="reveal-word">le</span> <span class="reveal-word text-[#64C27D] font-black">compost</span> <span class="reveal-word">de</span> <span class="reveal-word">La</span> <span class="reveal-word">Turbine,</span> <span class="reveal-word">qui</span> <span class="reveal-word">est</span> <span class="reveal-word">notre</span> <span class="reveal-word">pépinière</span> <span class="reveal-word">bien</span> <span class="reveal-word">implantée</span> <span class="reveal-word">dans</span> <span class="reveal-word">son</span> <span class="reveal-word">territoire,</span> <span class="reveal-word">à</span> <span class="reveal-word">Cergy.</span>
+          <span class="reveal-word">Nous</span> <span class="reveal-word">tendons</span> <span class="reveal-word">vers</span> <span class="reveal-word">le</span> <span class="reveal-word font-clementePdap">0</span> <span class="reveal-word font-clementePdap">déchet</span>
+          <span class="reveal-word"> et</span> <span class="reveal-word">alimentons</span>
+          <span class="reveal-word"> chaque</span>
+          <span class="reveal-word"> jour</span> <span class="reveal-word">le</span>
+          <span class="reveal-word font-clementePdap"> compost</span> <span class="reveal-word">de </span>
+          <span class="reveal-word">La</span> <span class="reveal-word">Turbine,</span> <span class="reveal-word">qui </span>
+          <span class="reveal-word">est</span> <span class="reveal-word">notre</span> <span class="reveal-word">pépinière </span>
+          <span class="reveal-word">bien</span> <span class="reveal-word">implantée</span> <span class="reveal-word">dans</span> <span class="reveal-word">son</span> <span class="reveal-word">territoire,</span> <span class="reveal-word">à</span> <span class="reveal-word">Cergy.</span>
         </p>
         <p class="text-xl md:text-3xl leading-relaxed text-slate-700">
-          Où nous rapprochons l’emploi des territoires, et nos collaborateurs habitant dans d’autres régions sont en télétravail. Cette organisation permet de <span class="text-[#64C27D] font-black">limiter les déplacements professionnels</span>, majoritairement réalisés à vélo ou en transports en commun.
+          Où nous rapprochons l’emploi des territoires, et nos collaborateurs habitant dans d’autres régions sont en télétravail. Cette organisation permet de 
+          <span class="font-clementePdap">limiter les déplacements professionnels</span>, majoritairement réalisés à vélo ou en transports en commun.
         </p>
       </div>
     </section>
 
     <section class="py-16 px-6 max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
-        <div class="jungle-img h-80 rounded-[40px] overflow-hidden shadow-xl -rotate-2">
-          <img src="/img/contact/5.jpeg" class="w-full h-full object-cover">
+        <div class="jungle-img h-80 rounded-[40px] overflow-hidden -rotate-2">
+          <img src="/img/contact/plante2.jpeg" class="w-full h-full object-cover">
         </div>
-        <div class="jungle-img h-[500px] rounded-[50px] overflow-hidden shadow-2xl z-10 border-8 border-white">
+        <div class="jungle-img h-[500px] rounded-[50px] overflow-hidden z-10">
           <img src="/img/contact/6.jpeg" class="w-full h-full object-cover">
         </div>
-        <div class="jungle-img h-80 rounded-[40px] overflow-hidden shadow-xl rotate-2">
+        <div class="jungle-img h-80 rounded-[40px] overflow-hidden rotate-2">
           <img src="/img/contact/5.jpeg" class="w-full h-full object-cover">
         </div>
       </div>
@@ -89,9 +100,9 @@
 
     <section class="mt-24 bg-[#03A3B5] py-24 px-6 text-white overflow-hidden rounded-t-[60px]">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        <div class="map-text space-y-8">
-          <h2 class="text-6xl md:text-8xl uppercase leading-none">Bientôt <br> chez <br> vous ?!</h2>
-          <div class="space-y-6 md:text-2xl opacity-95">
+        <div class="map-text space-y-8 p-12">
+          <h2 class="text-6xl md:text-[40px] uppercase leading-none font-clementePdaq">Bientôt chez vous ?!</h2>
+          <div class="space-y-6 md:text-[25px] opacity-95 font-clementePdag">
             <p>Notre équipe est basée en Ile-de-France, avec un bureau historique à Cergy (la ville de naissance d’ASSIA).</p>
             <p>Nous avons récemment ouvert une antenne à Nantes, et nous nous déployons sur de multiples territoires.</p>
           </div>

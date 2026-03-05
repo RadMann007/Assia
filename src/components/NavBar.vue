@@ -2,39 +2,41 @@
   <nav 
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-6"
     :class="[currentPath === '/application' ? 'py-3 bg-[#ff925c] backdrop-blur-md' : 'py-3 bg-[#F9FEFF] backdrop-blur-md']"
+    
 
   >
+  <!-- :class="[currentPath === '/application' ? 'py-3 bg-[#ff925c] backdrop-blur-md' : 'py-3 bg-[#F9FEFF] backdrop-blur-md']" -->
     <div class="container mx-auto flex items-center justify-between">
       
       <!-- LOGO -->
       <a href="/" class="logo flex items-center gap-2 transition-transform hover:scale-105">
         <img v-if="currentPath === '/application'" 
-             src="/logo/LogoAssia.svg" 
+             src="/logo/AssiaLogo.png" 
              alt="Assia" 
-             class="w-36 h-16" />
+             class="w-full h-8" />
         <img v-else 
-             src="/logo/LogoEdossah.svg" 
+             src="/logo/LogoEdossah.jpeg" 
              alt="Edossah" 
-             class="w-36 h-16" />
+             class="w-full h-8" />
       </a>
-      <Resolution />
+      <!-- <Resolution /> -->
 
       <!-- MENU DESKTOP -->
       <ul 
-        class="hidden md:flex items-center gap-1 font-display font-black uppercase text-[12px] tracking-widest p-1.5 rounded-xl backdrop-blur-sm shadow-sm border-2 transition-colors duration-300"
+        class="hidden md:flex items-center gap-1 font-display text-[20px] tracking-widest p-1.5 rounded-full backdrop-blur-sm shadow-sm border transition-colors duration-300"
         :class="[
           currentPath === '/application' 
-            ? 'border-[#ff925c] bg-white text-[#ff925c]' 
-            : 'border-[#03A3B5] bg-white text-[#03A3B5]'
+            ? 'border-[#ff925c] bg-[#FFFFFF] text-[#ff925c]' 
+            : 'border-[#03A3B5] text-[#03A3B5]'
         ]"
       >
         
         <a v-for="(link, index) in links" :key="index" :href="link.url"
-           class="px-5 py-2.5 rounded-lg cursor-pointer transition-all duration-300 font-clementeMini"
+           class="px-5 py-2.5 rounded-2xl cursor-pointer transition-all duration-300 font-clementeMini"
            :class="[
              currentPath === '/application'
-               ? (currentPath === link.url ? 'bg-[#ff925c] text-white' : 'hover:bg-[#ff925c] hover:text-white')
-               : (currentPath === link.url ? 'bg-[#03A3B5] text-white' : 'hover:bg-[#03A3B5] hover:text-white')
+               ? (currentPath === link.url ? 'text-bold font-clemente' : '')
+               : (currentPath === link.url ? 'text-bold font-clemente' : '')
            ]">
            {{ link.name }}
         </a>
@@ -45,10 +47,10 @@
       <div class="flex items-center gap-4">
         <!-- BOUTON CONTACT -->
         <button @click="openDemoModal" 
-           class="hidden md:block text-white font-clementeMini px-8 py-3 font-bold rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 uppercase text-xs tracking-wider"
+           class="hidden md:block text-white font-clementeMini px-8 py-3 font-bold rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 uppercase text-xs tracking-wider"
            :class="[
              currentPath !== '/application' 
-               ? 'bg-[#008d9d] hover:bg-[#03A3B5]' 
+               ? 'bg-[#03A3B5] hover:bg-[#008d9d]'
                : 'bg-[#e07b48] hover:bg-[#ff925c]'
            ]">
           Demander une démo
@@ -66,9 +68,9 @@
 
     <!-- MENU MOBILE OVERLAY -->
     <transition name="fade">
-      <div v-if="isMobileMenuOpen" class="absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl flex flex-col p-6 gap-4 md:hidden">
+      <div v-if="isMobileMenuOpen" class="absolute top-full left-0 w-full bg-white border-t font-clementeMini border-gray-100 shadow-xl flex flex-col p-6 gap-4 md:hidden">
         <a v-for="(link, index) in links" :key="index" :href="link.url" 
-           class="font-display font-black uppercase text-sm text-center py-3 border-b border-gray-100 transition-colors"
+           class="font-display font-clementeMini uppercase text-sm text-center py-3 border-b border-gray-100 transition-colors"
            :class="currentPath === link.url ? 'text-[#ff925c]' : 'text-[#03A3B5] hover:text-[#ff925c]'">
           {{ link.name }}
         </a>
@@ -97,10 +99,10 @@
               </svg>
             </button>
             
-            <h2 class="font-display font-black text-2xl md:text-3xl text-center mb-2 uppercase text-[#03A3B5]">Demander une démo</h2>
-            <p class="text-center text-gray-500 mb-8 text-sm">Remplissez ce formulaire pour être recontacté.</p>
+            <h2 class="font-display font-black text-2xl md:text-3xl text-center mb-2 uppercase text-[#03A3B5] font-clemente">Demander une démo</h2>
+            <p class="text-center text-gray-500 mb-8 text-sm font-clementeMini">Remplissez ce formulaire pour être recontacté.</p>
 
-            <div class="space-y-4">
+            <div class="space-y-4 font-clemente">
               <div>
                 <label class="block text-xs font-bold uppercase text-gray-500 mb-1 ml-3">Nom</label>
                 <input type="text" v-model="demoForm.nom" placeholder="Votre nom" class="w-full bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-[#03A3B5] transition-colors">
@@ -132,7 +134,7 @@
 
 <script setup>
 import { ref, reactive, onMounted, onUnmounted } from 'vue';
-import Resolution from './Resolution.vue';
+// import Resolution from './Resolution.vue';
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);

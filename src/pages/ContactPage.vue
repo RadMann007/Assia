@@ -2,17 +2,14 @@
   <div class="font-clemente w-full min-h-screen bg-white text-slate-700 overflow-x-hidden">
     
     <!-- LOADER AVEC LOGO ASSIA -->
-    <div ref="loader" class="fixed inset-0 bg-[#03A3B5] z-[100] flex items-center justify-center">
+    <!-- <div ref="loader" class="fixed inset-0 bg-[#03A3B5] z-[100] flex items-center justify-center">
       <div class="relative text-center">
         <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
           <span class="text-6xl md:text-8xl font-bold tracking-tighter">CONTACT</span>
         </div>
-        <!-- <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
-          Nous contacter
-        </div> -->
         <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Navbar (Composant importé) -->
     <NavBar />
@@ -146,7 +143,7 @@
         <div class="max-w-6xl mx-auto flex flex-col items-center">
           
           <!-- Photo -->
-          <div class="w-full md:w-[90%] h-64 md:h-[500px] bg-gray-300 rounded-[40px] overflow-hidden shadow-2xl mb-12 border-8 border-white/20">
+          <div class="w-full md:w-[90%] h-64 md:h-[500px] bg-gray-300 rounded-[40px] overflow-hidden shadow-2xl mb-12">
              <img src="/img/contact/1.jpg" 
                   alt="Équipe Edossah" 
                   class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700">
@@ -154,8 +151,8 @@
 
           <!-- Chiffre Clé & Texte -->
           <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-white">
-            <span class="text-[120px] md:text-[180px] font-black italic leading-[0.8] tracking-tighter drop-shadow-lg">12</span>
-            <p class="max-w-lg text-center md:text-left text-xl md:text-2xl font-medium leading-relaxed">
+            <span class="text-[120px] md:text-[180px] font-black italic leading-[0.8] tracking-tighter drop-shadow-lg mt-8">12</span>
+            <p class="max-w-lg text-center md:text-left text-xl md:text-2xl font-medium leading-relaxed p-4">
               C'est le nombre d'<span class="font-black italic bg-white/20 px-2 rounded-lg">experts</span> chez EDOSSAH, qui unissent leur connaissance des métiers du social à une maîtrise des technologies au service de l'humain.
             </p>
           </div>
@@ -168,9 +165,9 @@
     <ContactCarousel />
 
     <!-- 4. FOOTER TEXT -->
-    <div class="pb-24 pt-10 text-center px-4">
-      <h2 class="text-4xl md:text-6xl font-black text-[#8CD898] uppercase leading-[0.9] tracking-tight">
-        TOUT EN CONSIDÉRANT <br> LES ENJEUX <br> ENVIRONNEMENTAUX
+    <div class=" pt-10 text-center px-4">
+      <h2 class="text-4xl md:text-6xl font-clementePdaq text-[#8CD898] uppercase leading-[0.9] tracking-tight">
+        Conscients des enjeux <br> ENVIRONNEMENTAUX
       </h2>
     </div>
 

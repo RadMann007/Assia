@@ -1,6 +1,6 @@
 <template>
   <div class="py-16 md:py-24 overflow-hidden bg-white w-full select-none">
-    
+    <h2 class="font-display text-2xl md:text-3xl lg:text-6xl text-center uppercase font-black mb-6 md:mb-8 text-primary tracking-tighter font-clemente">Nos principes et valeurs</h2>
     <div class="mb-12 px-6 md:px-12 max-w-7xl mx-auto">
       <!-- <h2 class="text-3xl md:text-5xl font-black text-[#03A3B5] uppercase leading-tight">
         UN ENVIRONNEMENT <br> DE TRAVAIL <span class="text-[#ff925c]">STIMULANT</span>
@@ -12,7 +12,7 @@
         <!-- Original Set -->
         <div v-for="(card, index) in cards" :key="'orig-'+index" 
              class="carousel-item relative flex-shrink-0 w-[300px] md:w-[400px] bg-primary border-2 border-[#03A3B5] rounded-[35px] p-8 md:p-10 flex flex-col gap-4 shadow-lg hover:shadow-xl transition-shadow cursor-default group">
-            <h3 class="text-2xl md:text-3xl font-black text-white uppercase font-display ">
+            <h3 class="text-2xl md:text-3xl font-black text-white uppercase font-display font-clemente ">
               {{ card.title }}
             </h3>
             <p class="text-base md:text-lg text-white font-clementeMini leading-relaxed">
@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted } from 'vue';
 import gsap from 'gsap';
 
 const cards = [

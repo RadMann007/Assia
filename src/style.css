@@ -80,3 +80,24 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Clemente-pdaj';
+  src: url('/fonts/ClementePDaj-RegularItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clemente-pdan';
+  src: url('/fonts/ClementePDan-BoldItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clemente-pdag';
+  src: url('/fonts/ClementePDag-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}

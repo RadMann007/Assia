@@ -91,11 +91,42 @@ onMounted(async () => {
       y: '-100%', 
       duration: 1.2, 
       ease: 'power4.inOut' 
-    });
+    })
 
-  const heroTl = gsap.timeline();
-  heroTl.from(".hero-title span", { y: 100, rotate: 5, duration: 1, stagger: 0.1, ease: "power4.out" })
-        .from(".hero-image", { x: 200, opacity: 0, duration: 1.5, ease: "power4.out" }, "-=0.8");
+ /* === HERO ANIMATION APRÈS LOADER === */
+
+.from(
+  ["#leftBlock", "#rightBlock"],
+  {
+    opacity: 0,
+    duration: 1,
+    ease: "power4.out",
+    stagger: 0
+  }
+)
+.from(
+  "#leftBlock",
+  {
+    x: -300,
+    duration: 1,
+    ease: "power4.out"
+  },
+  "<"   // démarre au même moment que l'animation précédente
+)
+.from(
+  "#rightBlock",
+  {
+    x: 300,
+    duration: 1,
+    ease: "power4.out"
+  },
+  "<"   // démarre au même moment
+)
+
+
+ // const heroTl = gsap.timeline();
+ // heroTl.from(".hero-title span", { y: 100, rotate: 5, duration: 1, stagger: 0.1, ease: "power4.out" })
+        //.from(".hero-image", { x: 200, opacity: 0, duration: 1.5, ease: "power4.out" }, "-=0.8");
 
   // ANIMATIONS DES SECTIONS
   gsap.from(".slide-right", { 
@@ -170,17 +201,32 @@ onMounted(async () => {
     <NavBar />
 
     <!-- HERO SECTION -->
-    <section class="container mx-auto px-4 md:px-6 min-h-screen flex flex-col justify-center relative z-10">
-      <div class="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center w-full">
-        <div>
-          <h1 class="hero-title font-clementePdaq text-4xl sm:text-5xl md:text-6xl lg:text-[70px] leading-tight">
-            Le numérique pensé pour fluidifier le quotidien des associations
-          </h1>
+    <section class="container mx-auto px-4 md:px-6 min-h-[50vh] flex flex-col mt-52 justify-center  relative overflow-hidden">
+
+      <!-- LEFT BLOCK -->
+      <div id="leftBlock" class=" md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2 flex justify-center md:justify-end">
+        <div class="font-clemente bg-[var(--primary)] text-white p-10 py-20 md:p-12 md:py-20 rounded-r-3xl w-80 md:w-[28rem] lg:w-[32rem] text-center md:text-right">
+          <p class="font-bold uppercase text-2xl sm:text-3xl md:text-4xl lg:text-[48px] leading-tight">
+            Le numérique pensé pour
+          </p>
         </div>
-        <div class="relative hero-image flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
-          <div class="rounded-2xl md:rounded-[50px]  relative z-10 w-full max-w-lg lg:max-w-(50%)">
-            <img src="/img/heroPC.png" class="w-full h-full object-cover rounded-2xl md:rounded-[50px] " alt="Dashboard" />
-          </div>
+      </div>
+
+    <!-- HERO CENTER TEXT -->
+      <div class="text-center relative z-10">
+        <h1 class="hero-title font-clementePdaq text-2xl sm:text-3xl md:text-4xl lg:text-[50px] leading-tight">
+          FLUIDIFIER LE <br />
+          QUOTIDIEN DES <br />
+          ASSOCIATIONS
+        </h1>
+      </div>
+
+      <!-- RIGHT BLOCK -->
+      <div id="rightBlock" class="md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 flex justify-center md:justify-start">
+        <div class="font-clemente bg-[var(--primary)] text-white p-10 py-20 md:p-12 md:py-20 rounded-l-3xl w-80 md:w-[28rem] lg:w-[32rem] text-center md:text-left">
+          <p class="font-bold uppercase text-2xl sm:text-3xl md:text-4xl lg:text-[48px] leading-tight">
+            Conçu par et pour vous
+          </p>
         </div>
       </div>
     </section>
@@ -296,7 +342,7 @@ onMounted(async () => {
 
     <!-- Enjeux Title -->
     <section class="container mx-auto py-16 md:py-24 px-6 text-center enjeux-trigger">
-        <h2 class="font-display font-clemente text-3xl md:text-5xl lg:text-7xl text-primary uppercase font-black leading-tight tracking-tighter max-w-5xl mx-auto enjeux-title">
+        <h2 class="font-clementePdaq text-4xl md:text-5xl lg:text-7xl text-primary uppercase leading-tight tracking-tighter max-w-5xl mx-auto enjeux-title">
             des besoins concrets,<br/> un accompagnement <br /> sur mesure
         </h2>
     </section>
@@ -322,7 +368,7 @@ onMounted(async () => {
                      @click="toggleComplex">
                     
                     <div class="p-6 md:p-10 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 select-none relative">
-                        <h3 class="font-clementeMini italic text-2xl md:text-4xl lg:text-5xl font-black  tracking-tighter text-center">Voir les situations</h3>
+                        <h3 class="font-clemente-pdaj italic text-2xl md:text-4xl lg:text-5xl font-black  tracking-tighter text-center">Voir les situations</h3>
                         <div class="complex-icon text-4xl md:text-5xl font-light transition-transform duration-300">+</div>
                     </div>
 
@@ -476,7 +522,7 @@ onMounted(async () => {
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700;900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700;900&display=swap'); */
 .text-primary { color: var(--primary); }
 .bg-primary { background-color: var(--primary); }
 .border-primary { border-color: var(--primary); }
@@ -500,5 +546,35 @@ onMounted(async () => {
   text-transform: uppercase;         /* uppercase */
   display: flex;                     /* flex */
   flex-direction: column; 
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(-100%) translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(100%) translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.8s ease-out forwards;
+}
+
+.animate-slideRight {
+  animation: slideRight 0.8s ease-out forwards;
 }
 </style>

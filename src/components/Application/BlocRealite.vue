@@ -11,7 +11,7 @@
         </div>
 
         <!-- Content : Reste en 100% width (w-full) et sans arrondis (rounded-none) -->
-        <div :ref="el => contentRefs[0] = el" class="collapse-content relative z-10 overflow-hidden bg-white rounded-none -mt-10 h-0 opacity-0 w-full">
+        <div :ref="el => contentRefs[0] = el" class="collapse-content relative z-10 bg-white rounded-none -mt-10 h-0 opacity-0 w-full">
           <div class="px-4 md:px-12 lg:px-15 pb-0 pt-14 md:pt-20 flex flex-col gap-6 md:gap-10">
 
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center font-clementeMini">
@@ -52,11 +52,13 @@
             </div>
 
             <!-- SECTION BLEUE -->
-            <div class="bg-[var(--primary)] -mx-4 md:-mx-12 lg:-mx-20 p-4 md:p-16 flex flex-col md:flex-row items-center gap-6 md:gap-12 text-white">
+            <div class="bg-[var(--primary)] rounded-[5%] p-4 md:p-16 flex flex-col md:flex-row items-center gap-6 md:gap-12 text-white">
+            <!-- <div class="bg-[var(--primary)] -mx-4 md:-mx-12 lg:-mx-20 p-4 rounded-[5%] md:p-16 flex flex-col md:flex-row items-center gap-6 md:gap-12 text-white"> -->
   
             <!-- Colonne image -->
             <div class="w-full md:w-[50%] flex-shrink-0">
-              <img src="/img/assia/41.png" alt="Mockup ASSIA" class="w-full h-[300px] md:h-[550px] object-cover object-top rounded-lg" />
+              <!-- <img src="/img/assia/41.png" alt="Mockup ASSIA" class="w-full object-cover h-[300px] md:h-[500px]" /> -->
+              <img src="/img/assia/41.png" alt="Mockup ASSIA" class="w-full h-[300px] md:h-[550px] object-cover object-top" />
             </div>
 
             <!-- Colonne texte -->

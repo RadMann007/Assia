@@ -124,7 +124,7 @@ const toggleItem = async (index) => {
               
               <div class="action-title flex-1 text-center md:text-left">
                   <h1 class="uppercase text-xl md:text-[50px] font-clementePdam font-black tracking-wider text-[var(--accent)] leading-none">
-                      Faciliter le quotidien à tous les niveaux:
+                      Faciliter le quotidien à tous les niveaux
                   </h1>
               </div>
             </div>
