@@ -3,8 +3,8 @@
     
     <!-- BOUTON D'OUVERTURE -->
     <div @click="toggleSocial" 
-         class="relative z-20 py-6 px-6 md:px-16 mx-0 md:mx-0 flex justify-between items-center select-none bg-[#ff925c] text-white rounded-[50px] shadow-none cursor-pointer hover:bg-[#ff925c] transition-all active:scale-95 w-full">
-      <h3 class="text-lg md:text-4xl font-black uppercase tracking-tight text-left flex-1 pr-4 md:pr-8 leading-tight">
+         class="relative z-20 py-6 px-6 mx-0 md:mx-0 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[50px] shadow-none cursor-pointer hover:bg-[var(--accent)] transition-all active:scale-95 w-full">
+      <h3 class="text-[35px]  uppercase font-clementePdam text-left flex-1 pr-4 md:pr-8">
         ASSIA S'ADRESSE AUX STRUCTURES <br class="md:hidden"> D'ACCOMPAGNEMENT SOCIAL
       </h3>
       <div class="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center text-3xl md:text-5xl font-light transition-transform duration-500 flex-shrink-0"
@@ -26,7 +26,7 @@
             </div>
 
             <div class=" anim-right w-full lg:w-2/3">
-              <ul class="space-y-3 md:space-y-4 text-[#ff925c] font-bold text-lg md:text-4xl">
+              <ul class="space-y-3 md:space-y-4 text-[var(--accent)] font-bold text-lg md:text-4xl">
                 <li class="flex items-center gap-2 md:gap-3"><span class="text-xl md:text-4xl">•</span> Hébergement d'urgence</li>
                 <li class="flex items-center gap-2 md:gap-3"><span class="text-xl md:text-4xl">•</span> Hébergement d'insertion</li>
                 <li class="flex items-center gap-2 md:gap-3"><span class="text-xl md:text-4xl">•</span> Accompagnement Vers et Dans le Logement</li>
@@ -50,7 +50,7 @@
             <!-- CARTE GAUCHE (action-card-left) -->
             <div class="action-card-left relative flex items-center ">
               <div class="rounded-r-[35px] rounded-l-nonep-5 md:p-10  border-2 border-[var(--accent)] relative z-10 border-l-0">
-                <h4 class="text-[#ff925c] text-xl md:text-[45px] font-clementePdak mb-4 md:mb-10">L'outil permet notamment :</h4>
+                <h4 class="text-[var(--accent)] text-xl md:text-[45px] font-clementePdak mb-4 md:mb-10">L'outil permet notamment :</h4>
                 <ul class="space-y-2 md:space-y-3 text-[var(--accent)] font-semibold list-disc pl-5 md:pl-6 text-base md:text-3xl">
                   <li>la gestion de tous les types de mesures avec leurs spécificités</li>
                   <li>le suivi des délais d'envoi des rapports (tranches, alertes)</li>
@@ -64,7 +64,7 @@
             <!-- CARTE DROITE (action-card-right) -->
             <div class="action-card-right relative flex items-center justify-end">
               <div class="rounded-l-[35px] rounded-r-nonep-5 md:p-10  border-2 border-[var(--accent)] relative z-10 border-r-0 text-left">
-                <h4 class="text-[#ff925c] text-xl md:text-[45px] font-clementePdak mb-4 md:mb-10 leading-tight">Et surtout à des structures qui recherchent :</h4>
+                <h4 class="text-[var(--accent)] text-xl md:text-[45px] font-clementePdak mb-4 md:mb-10 leading-tight">Et surtout à des structures qui recherchent :</h4>
                 <ul class="space-y-2 md:space-y-3 text-[var(--accent)] font-semibold list-disc pl-5 md:pl-6 text-base md:text-3xl">
                   <li>un logiciel qui plaît à leurs professionnels</li>
                   <li>un prestataire à l'écoute qui connaît le métier</li>
@@ -97,6 +97,7 @@ const toggleSocial = async () => {
       opacity: 0,
       duration: 0.5,
       ease: "power3.inOut",
+      zIndex: -1,
       onComplete: () => {
         isSocialOpen.value = false;
         ScrollTrigger.refresh();

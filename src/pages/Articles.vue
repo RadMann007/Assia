@@ -16,10 +16,10 @@
 
     <!-- HERO SECTION -->
     <header class="relative pt-32 pb-20 px-6 container mx-auto text-center">
-      <h1 class="text-5xl md:text-8xl font-clemente font-black text-[#03A3B5] uppercase leading-tight tracking-tighter mb-8">
+      <h1 class="text-5xl md:text-8xl font-clementePdaq font-black text-[#03A3B5] uppercase leading-tight  mb-8">
         Nos Actualités
       </h1>
-      <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 font-clementeMini leading-relaxed">
+      <p class="max-w-2xl mx-auto text-lg md:text-4xl text-gray-600 font-clementeMini leading-relaxed">
         Découvrez les dernières nouvelles, témoignages et actualités du monde de l'accompagnement social avec ASSIA.
       </p>
     </header>

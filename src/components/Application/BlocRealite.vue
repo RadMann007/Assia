@@ -5,8 +5,8 @@
       <!-- ITEM 1 : LA RÉALITÉ -->
       <div class="font-clemente relative mb-8 text-slate-700 w-full">
         <!-- Header : Marges latérales remises (mx-4...) + Coins arrondis -->
-        <div @click="toggleCollapse(0)" class="relative z-20 py-6 px-6 md:py-10 md:px-15 mx-0 md:mx-0 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[var(--border-radius-primary)] shadow-none cursor-pointer hover:bg-[var(--accent)] transition-colors w-full">
-          <h3 class="text-lg md:text-4xl font-black uppercase tracking-tight text-left flex-1 pr-4 md:pr-8">Une réalité partagée par de nombreuses associations</h3>
+        <div @click="toggleCollapse(0)" class="relative z-20 py-6 px-6 md:px-15 mx-0 md:mx-0 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[var(--border-radius-primary)] shadow-none cursor-pointer hover:bg-[var(--accent)] transition-colors w-full">
+          <h3 class="text-[35px]  uppercase font-clementePdam text-left flex-1 pr-4 md:pr-8">Une réalité partagée par de nombreuses associations</h3>
           <div class="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center text-3xl md:text-5xl font-light transition-transform duration-300 flex-shrink-0" :style="{ transform: activeCollapse === 0 ? 'rotate(45deg)' : 'rotate(0deg)' }">+</div>
         </div>
 
@@ -80,8 +80,8 @@
       <!-- ITEM 2 : LA MUTUALISATION -->
       <div class="font-clemente relative mb-8 text-slate-700 w-full">
         <!-- Header avec marge -->
-        <div @click="toggleCollapse(1)" class="relative z-20 py-6 px-6 md:py-10 md:px-15 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[50px] shadow-none cursor-pointer w-full">
-          <h3 class="text-lg md:text-4xl font-black uppercase tracking-tight text-left flex-1 pr-4 md:pr-8">Quand un besoin devient collectif, la mutualisation fait sens</h3>
+        <div @click="toggleCollapse(1)" class="relative z-20 py-6 px-6  md:px-15 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[50px] shadow-none cursor-pointer w-full">
+          <h3 class="text-[35px] uppercase font-clementePdam text-left flex-1 pr-4 md:pr-8">Quand un besoin devient collectif, la mutualisation fait sens</h3>
           <div class="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center text-3xl md:text-5xl font-light transition-transform duration-300 flex-shrink-0" :style="{ transform: activeCollapse === 1 ? 'rotate(45deg)' : 'rotate(0deg)' }">+</div>
         </div>
 
@@ -151,8 +151,8 @@ structures.
 
       <!-- ITEM 3 : CO-CONSTRUCTION -->
       <div class="font-clemente relative mb-8 text-slate-700 w-full">
-        <div @click="toggleCollapse(2)" class="relative z-20 py-6 px-6 md:py-10 md:px-15 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[50px] shadow-none cursor-pointer hover:bg-[var(--accent)] transition-colors w-full">
-          <h3 class="text-lg md:text-4xl font-black uppercase tracking-tight text-left flex-1 pr-4 md:pr-8">
+        <div @click="toggleCollapse(2)" class="relative z-20 py-6 px-6 md:px-15 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[50px] shadow-none cursor-pointer hover:bg-[var(--accent)] transition-colors w-full">
+          <h3 class="text-[35px] uppercase font-clementePdam text-left flex-1 pr-4 md:pr-8">
             UN PRODUIT CO-CONSTRUIT AVEC LES PROFESSIONNELS
           </h3>
           <div class="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center text-3xl md:text-5xl font-light transition-transform duration-300 flex-shrink-0" :style="{ transform: activeCollapse === 2 ? 'rotate(45deg)' : 'rotate(0deg)' }">+</div>
@@ -185,7 +185,7 @@ structures.
             </div>
 
             <div class="text-center py-6">
-              <h2 class="text-[var(--accent)] text-2xl md:text-5xl font-black uppercase max-w-3xl mx-auto tracking-tight">
+              <h2 class="font-clementePdam text-[var(--accent)] text-2xl md:text-5xl uppercase max-w-3xl mx-auto">
                 LES FONCTIONNALITÉS SONT AU SERVICE DES USAGES MÉTIER
               </h2>
             </div>
