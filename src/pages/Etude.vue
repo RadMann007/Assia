@@ -1,5 +1,5 @@
 <template>
-  <div class="font-clemente bg-[#F9FDF9] min-h-screen overflow-x-hidden text-slate-800">
+  <div class="font-clemente bg-[var(--bg-light)] min-h-screen overflow-x-hidden text-slate-800">
     <!-- <NavBar /> -->
     <section class="relative py-20 px-6 max-w-7xl mx-auto flex flex-col items-center">
       
@@ -98,7 +98,7 @@
       </h3>
     </section>
 
-    <section class="mt-24 bg-[#03A3B5] py-24 px-6 text-white overflow-hidden rounded-t-[60px]">
+    <section class="mt-24 bg-[var(--primary)] py-20 px-6 text-white overflow-hidden rounded-t-[60px]">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div class="map-text space-y-8 p-12">
           <h2 class="text-6xl md:text-[40px] uppercase leading-none font-clementePdaq">Bientôt chez vous ?!</h2>

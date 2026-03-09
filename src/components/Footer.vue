@@ -1,7 +1,7 @@
 <template>
-  <footer class="footer-container bg-[#03A3B5] text-white pt-12 sm:pt-16 md:pt-24 pb-8 sm:pb-12 px-4 sm:px-6 rounded-t-[40px] sm:rounded-t-[60px] md:rounded-t-[80px] lg:rounded-t-[100px] mt-10 md:mt-20 relative overflow-hidden opacity-0 translate-y-20">
+  <footer class="footer-container">
     <!-- Fond décoratif discret -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
     
     <div class="container mx-auto">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-10 sm:mb-14 md:mb-20">
@@ -97,4 +97,30 @@ onMounted(() => {
 
 <style scoped>
 .font-display { font-family: 'Clemente', sans-serif; }
+.footer-container{
+  background: var(--primary);
+  color:white;
+
+  padding-top:6rem;
+  padding-bottom:3rem;
+  padding-left:1.5rem;
+  padding-right:1.5rem;
+
+  border-top-left-radius:80px;
+  border-top-right-radius:80px;
+
+  margin-top:5rem;
+
+  position:relative;
+
+  opacity:0;
+  transform:translateY(5rem);
+}
+
+@media (min-width:768px){
+  .footer-container{
+    border-top-left-radius:100px;
+    border-top-right-radius:100px;
+  }
+}
 </style>
