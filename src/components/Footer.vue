@@ -1,14 +1,14 @@
 <template>
-  <footer class=" footer-container bg-[#03A3B5] text-white pt-24 pb-12 px-6 rounded-t-[80px] md:rounded-t-[100px] mt-20 relative overflow-hidden opacity-0 translate-y-20">
+  <footer class="footer-container bg-[#03A3B5] text-white pt-12 sm:pt-16 md:pt-24 pb-8 sm:pb-12 px-4 sm:px-6 rounded-t-[40px] sm:rounded-t-[60px] md:rounded-t-[80px] lg:rounded-t-[100px] mt-10 md:mt-20 relative overflow-hidden opacity-0 translate-y-20">
     <!-- Fond décoratif discret -->
     <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
     
     <div class="container mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-10 sm:mb-14 md:mb-20">
         
         <!-- Colonne 1 : Logo & Description -->
         <div class="flex flex-col gap-6">
-          <a href="/" class="text-3xl font-display font-black uppercase tracking-wide text-white">
+          <a href="/" class="text-2xl sm:text-3xl font-display font-black uppercase tracking-wide text-white">
             edossah
           </a>
           <p class="font-clementeMini text-white/80 font-medium leading-relaxed max-w-xs">
