@@ -12,7 +12,7 @@
         <!-- Original Set -->
         <div v-for="(card, index) in cards" :key="'orig-'+index" 
              class="carousel-item relative flex-shrink-0 w-[300px] md:w-[400px] bg-primary border-2 border-[#03A3B5] rounded-[35px] p-8 md:p-10 flex flex-col gap-4 shadow-lg hover:shadow-xl transition-shadow cursor-default group">
-            <h3 class="text-2xl md:text-3xl font-black text-white uppercase font-display ">
+            <h3 class="text-2xl md:text-3xl font-black text-white uppercase font-display font-clemente ">
               {{ card.title }}
             </h3>
             <p class="text-base md:text-lg text-white font-clementeMini leading-relaxed">

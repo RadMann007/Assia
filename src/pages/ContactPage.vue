@@ -165,7 +165,7 @@
     <ContactCarousel />
 
     <!-- 4. FOOTER TEXT -->
-    <div class="pb-24 pt-10 text-center px-4">
+    <div class=" pt-10 text-center px-4">
       <h2 class="text-4xl md:text-6xl font-clementePdaq text-[#8CD898] uppercase leading-[0.9] tracking-tight">
         Conscients des enjeux <br> ENVIRONNEMENTAUX
       </h2>

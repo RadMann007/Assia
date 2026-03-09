@@ -4,6 +4,7 @@
     <button 
       v-if="canScrollLeft" 
       class="slider-arrow slider-arrow-left" 
+      :style="{ background: accentColor }"
       @click="scrollPrev"
       aria-label="Précédent"
     >
@@ -16,10 +17,11 @@
         v-for="(testi, idx) in testimonials" 
         :key="idx" 
         class="testimonial-card"
+        :style="{ borderColor: accentColor }"
       >
         <h4 class="testi-name font-clemente font-black uppercase text-gray-800 leading-tight mb-1">{{ testi.name }}</h4>
         <p class="testi-role font-bold italic">{{ testi.role }}</p>
-        <div class="testi-stars flex gap-1 text-[#ff925c]">
+        <div class="testi-stars flex gap-1" :style="{ color: accentColor }">
           <Star v-for="s in 5" :key="s" class="w-5 h-5 fill-current" />
         </div>
         <p class="testi-text font-clementeMini text-gray-600 leading-relaxed italic font-medium">"{{ testi.text }}"</p>
@@ -30,6 +32,7 @@
     <button 
       v-if="canScrollRight" 
       class="slider-arrow slider-arrow-right" 
+      :style="{ background: accentColor }"
       @click="scrollNext"
       aria-label="Suivant"
     >
@@ -42,6 +45,7 @@
         v-for="(_, idx) in testimonials" 
         :key="idx"
         :class="['slider-dot', { active: activeIndex === idx }]"
+        :style="activeIndex === idx ? { background: accentColor, borderColor: accentColor } : { borderColor: accentColor }"
         @click="scrollToCard(idx)"
         :aria-label="'Témoignage ' + (idx + 1)"
       />
@@ -50,8 +54,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue';
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-vue-next';
+
+const currentPath = ref('/');
+const accentColor = computed(() => currentPath.value === '/application' ? '#ff925c' : '#03A3B5');
 
 const sliderRef = ref(null);
 const canScrollLeft = ref(false);
@@ -135,6 +142,7 @@ function handleResize() {
 }
 
 onMounted(() => {
+  currentPath.value = window.location.pathname;
   nextTick(() => updateScrollState());
   window.addEventListener('resize', handleResize);
 });
@@ -170,8 +178,8 @@ onUnmounted(() => {
   flex: 0 0 calc((100% - 5rem) / 3); /* 3 cards visible */
   scroll-snap-align: start;
   min-width: 0;
-  background: #FFF3EE;
-  border: 2px solid #FF925C;
+  /* background: #FFF3EE; */
+  border: 2px solid transparent; /* border color is set dynamically via :style */
   padding: 2.5rem;
   border-radius: 60px;
   display: flex;
@@ -206,7 +214,7 @@ onUnmounted(() => {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #FF925C;
+  /* background is set dynamically via :style */
   color: white;
   border: none;
   display: flex;
@@ -242,7 +250,7 @@ onUnmounted(() => {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 2px solid var(--primary, #ff925c);
+  border: 2px solid currentColor;
   background: transparent;
   cursor: pointer;
   padding: 0;
@@ -250,7 +258,7 @@ onUnmounted(() => {
 }
 
 .slider-dot.active {
-  background: var(--primary, #ff925c);
+  /* background set dynamically via :style */
   transform: scale(1.2);
 }
 

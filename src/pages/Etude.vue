@@ -3,13 +3,13 @@
     <!-- <NavBar /> -->
     <section class="relative py-20 px-6 max-w-7xl mx-auto flex flex-col items-center">
       
-      <div class="env-image-container w-full max-w-5xl rounded-[40px] overflow-hidden shadow-2xl mb-12 border-[12px] border-white">
+      <div class="env-image-container w-full max-w-5xl rounded-[40px] overflow-hidden mb-12  ">
         <img src="/img/contact/2.jpg" 
              alt="Environnement" class="w-full h-[500px] object-cover transform scale-110">
       </div>
 
       <div class="text-center max-w-4xl mb-16 section-fade">
-        <p class="text-[#74D282] font-clementePdam text-xl md:text-[30px] leading-relaxed">
+        <p class="text-[#74D282] font-clementePdam text-xl  md:text-[50px] leading-tight">
           Chez EDOSSAH, nous œuvrons au quotidien au service de l’impact social, et alignons toutes nos actions sur une démarche responsable de l’environnement.
         </p>
       </div>
@@ -100,9 +100,9 @@
 
     <section class="mt-24 bg-[#03A3B5] py-24 px-6 text-white overflow-hidden rounded-t-[60px]">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        <div class="map-text space-y-8">
-          <h2 class="text-6xl md:text-[30px] uppercase leading-none font-clementePdaq">Bientôt chez vous ?!</h2>
-          <div class="space-y-6 md:text-[20px] opacity-95 font-clementePdag">
+        <div class="map-text space-y-8 p-12">
+          <h2 class="text-6xl md:text-[40px] uppercase leading-none font-clementePdaq">Bientôt chez vous ?!</h2>
+          <div class="space-y-6 md:text-[25px] opacity-95 font-clementePdag">
             <p>Notre équipe est basée en Ile-de-France, avec un bureau historique à Cergy (la ville de naissance d’ASSIA).</p>
             <p>Nous avons récemment ouvert une antenne à Nantes, et nous nous déployons sur de multiples territoires.</p>
           </div>

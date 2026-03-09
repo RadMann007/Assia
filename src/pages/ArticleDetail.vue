@@ -45,7 +45,7 @@
         </div> -->
 
         <!-- Article text -->
-        <div class="bg-white p-8 md:p-12 rounded-[50px] shadow-sm border border-[#03A3B5] font-clemente flex flex-col md:flex-row items-center gap-6 mb-8">
+        <!-- <div class="bg-white p-8 md:p-12 rounded-[50px] shadow-sm border border-[#03A3B5] font-clemente flex flex-col md:flex-row items-center gap-6 mb-8">
            <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-orange-50 shadow-sm flex-shrink-0">
              <img :src="getAuthorAvatar(article)" :alt="getAuthorName(article)" class="w-full h-full object-cover">
            </div>
@@ -53,7 +53,7 @@
              <p class="text-gray-400 text-xs font-black uppercase tracking-widest mb-1">Écrit par</p>
              <h4 class="text-xl font-bold text-gray-800">{{ getAuthorName(article) }}</h4>
            </div>
-        </div>
+        </div> -->
 
         <div 
           class="article-content bg-white p-8 md:p-16 rounded-[60px] shadow-sm border border-[#03A3B5] text-lg md:text-xl leading-relaxed text-gray-700 font-medium font-clementeMini"
@@ -88,7 +88,7 @@
       <div class="container mx-auto text-center">
         <h2 class="text-4xl md:text-6xl font-clemente font-black uppercase mb-8">Partager cet article</h2>
         <div class="flex justify-center gap-6">
-          <a href="#" class="bg-white text-[#03A3B5] px-10 py-4 rounded-full font-bold uppercase hover:scale-105 transition-transform shadow-lg">
+          <a href="#" class="font-clementeMini bg-white text-[#03A3B5] px-10 py-4 rounded-full font-bold uppercase hover:scale-105 transition-transform shadow-lg">
             Copier le lien
           </a>
         </div>
