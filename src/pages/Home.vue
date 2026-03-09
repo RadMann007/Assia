@@ -6,7 +6,7 @@ import Lenis from '@studio-freight/lenis';
 import NavBar from '../components/NavBar.vue';
 import Footer from '../components/Footer.vue';
 import Temoignage from '../components/Application/Temoignage.vue';
-import Resolution from '../components/Resolution.vue';
+// import Resolution from '../components/Resolution.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -213,7 +213,7 @@ onMounted(async () => {
       </div>
 
     <!-- HERO CENTER TEXT -->
-     <div class="text-center relative z-10 w-full max-w-[30%] mx-auto mx-auto">
+     <div class="text-center relative z-10 w-full max-w-[30%] mx-auto">
         <h1 class="hero-title font-clementePdaq text-[45px]">
           FLUIDIFIER LE
           QUOTIDIEN DES
@@ -487,7 +487,7 @@ onMounted(async () => {
       </div>
     </section>
     
-    <div class="max-w-7xl mx-auto text-center px-4">
+    <div class="py-12 md:py-24 px-4 md:px-6 bg-white">
       <Temoignage />
     </div>
 
