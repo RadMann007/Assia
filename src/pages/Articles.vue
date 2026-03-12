@@ -20,7 +20,7 @@
         Nos Actualités
       </h1>
       <p class="max-w-2xl mx-auto text-lg md:text-4xl text-gray-600 font-clementeMini leading-relaxed">
-        Découvrez les dernières nouvelles, témoignages et actualités du monde de l'accompagnement social avec ASSIA.
+        Découvrez les dernières nouvelles, témoignages et actualités du monde de l'accompagnement social avec ASSIA
       </p>
     </header>
 

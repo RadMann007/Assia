@@ -4,11 +4,11 @@
     <div class="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
     
     <div class="container mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-10 sm:mb-14 md:mb-20">
         
         <!-- Colonne 1 : Logo & Description -->
         <div class="flex flex-col gap-6">
-          <a href="/" class="text-3xl font-display font-black uppercase tracking-wide text-white">
+          <a href="/" class="text-2xl sm:text-3xl font-display font-black uppercase tracking-wide text-white">
             edossah
           </a>
           <p class="font-clementeMini text-white/80 font-medium leading-relaxed max-w-xs">
@@ -34,7 +34,7 @@
 
         <!-- Colonne 3 : Contact -->
         <div class="flex flex-col gap-6">
-          <h4 class="font-clemente text-white font-black uppercase tracking-widest underline decoration-white/20 underline-offset-8">Contactez-nous</h4>
+          <h4 class="font-clemente text-white font-black uppercase tracking-widest underline decoration-white/20 underline-offset-8">Notre Contact</h4>
           <div class="font-clementeMini flex flex-col gap-4">
             <a href="mailto:emilie@edossah.fr" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors group">
               <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">

@@ -22,14 +22,14 @@
         
         <!-- Colonne Gauche : Titre + Inputs -->
         <div class="flex flex-col gap-8">
-          <h1 class="text-5xl md:text-7xl font-black text-[var(--primary)] uppercase leading-none tracking-tight">
+          <h1 class="text-5xl md:text-7xl text-[var(--primary)] uppercase font-clementePdaq">
             NOUS ÉCRIRE
           </h1>
 
           <div class="space-y-6 mt-2">
             <!-- Input Nom -->
             <div class="flex flex-col gap-2">
-              <label class="ml-6 font-bold text-slate-500 text-sm uppercase tracking-wide">Nom*</label>
+              <label class="ml-6 font-bold text-slate-500 text-sm uppercase">Nom*</label>
               <input type="text"
                      v-model="formData.nom"
                      placeholder="Votre nom"
@@ -38,7 +38,7 @@
 
             <!-- Input Email -->
             <div class="flex flex-col gap-2">
-              <label class="ml-6 font-bold text-slate-500 text-sm uppercase tracking-wide">Email*</label>
+              <label class="ml-6 font-bold text-slate-500 text-sm uppercase">Email*</label>
               <input type="email"
                      v-model="formData.email"
                      placeholder="Votre email"
@@ -53,7 +53,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
               </svg>
             </div>
-            <p class="text-sm md:text-base leading-tight text-slate-600 font-clementeMini">
+            <p class="text-sm md:text-base text-slate-600 font-clementeMini">
               Vous préférez nous contacter directement, vous pouvez envoyer un email à <br>
               <a href="mailto:emilie@edossah.fr" class="text-[var(--primary)] font-black underline decoration-2 underline-offset-2 hover:text-[#0d7a80]">emilie@edossah.fr</a>
             </p>
@@ -62,13 +62,13 @@
 
         <!-- Colonne Droite : Intro + Textarea + Bouton -->
         <div class="flex flex-col h-full pt-2">
-          <p class="text-xl text-[var(--primary)] font-medium mb-8 leading-relaxed font-clemente">
+          <p class="text-xl text-[var(--primary)] font-medium mb-8  font-clemente">
             Si une question persiste, n'hésitez pas à solliciter notre réactivité par le moyen qui vous plaît :
           </p>
           
           <div class="flex-grow flex flex-col gap-6">
             <div class="relative w-full">
-                <label class="absolute -top-3 left-8 bg-white px-2 font-bold text-slate-500 text-sm uppercase tracking-wide">Votre message</label>
+                <label class="absolute -top-3 left-8 bg-white px-2 font-bold text-slate-500 text-sm uppercase">Votre message</label>
                 <textarea placeholder="..." 
                         v-model="formData.message"
                         class="w-full h-64 md:h-80 border-2 border-[var(--primary)] rounded-[35px] p-8 text-lg focus:outline-none focus:ring-4 focus:ring-[var(--primary)]/20 transition-all bg-white resize-none"></textarea>
@@ -135,7 +135,7 @@
     <FaqComponent />
     <!-- 3. SECTION "ET SI ON PARLAIT DE NOUS" -->
     <div class="py-16 md:py-20">
-      <h2 class="text-center text-4xl md:text-6xl font-black text-[var(--primary)] uppercase mb-12 px-4 leading-tight">
+      <h2 class="text-center text-4xl md:text-6xl font-clementePdaq text-[var(--primary)] uppercase mb-12 px-4 ">
         ET SI ON VOUS PARLAIT <br> UN PEU DE NOUS ?
       </h2>
 
@@ -152,7 +152,7 @@
 
           <!-- Chiffre Clé & Texte -->
           <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-white">
-            <span class="text-[120px] md:text-[180px] font-black italic leading-[0.8] tracking-tighter drop-shadow-lg mt-8">12</span>
+            <span class="text-[120px] md:text-[180px] font-black italic leading-[0.8] drop-shadow-lg mt-8">12</span>
             <p class="max-w-lg text-center md:text-left text-xl md:text-2xl font-medium leading-relaxed p-4">
               C'est le nombre d'<span class="font-black italic bg-white/20 px-2 rounded-lg">experts</span> chez EDOSSAH, qui unissent leur connaissance des métiers du social à une maîtrise des technologies au service de l'humain.
             </p>
@@ -167,7 +167,7 @@
 
     <!-- 4. FOOTER TEXT -->
     <div class=" pt-10 text-center px-4">
-      <h2 class="text-4xl md:text-6xl font-clementePdaq text-[#8CD898] uppercase leading-[0.9] tracking-tight">
+      <h2 class="text-4xl md:text-6xl font-clementePdaq text-[#8CD898] uppercase">
         Conscients des enjeux <br> ENVIRONNEMENTAUX
       </h2>
     </div>

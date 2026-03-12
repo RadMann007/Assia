@@ -1,27 +1,24 @@
 <template>
   <div class="main bg-white font-body min-h-screen selection:bg-[var(--accent)] selection:text-white overflow-x-hidden" ref="mainContainer">
+    <!-- <div class="main flex flex-col font-body min-h-screen bg-[var(--bg-light)] overflow-x-hidden" ref="mainContainer"> -->
     
     <!-- LOADER AVEC LOGO ASSIA -->
-    <div ref="loader" class="fixed inset-0 bg-[var(--accent)] z-[100] flex items-center justify-center">
+    <div ref="loader" class="fixed inset-0 bg-[var(--accent)] z-[100] flex items-center justify-center p-4">
       <div class="relative text-center">
         <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
-          <!-- <span class="text-6xl md:text-8xl font-bold tracking-tighter">ASSIA</span> -->
-          <img src="/img/loader/assiaLoader.jpeg" class="w-64 sm:w-140 md:w-[500px] h-auto object-cover mx-auto" alt="assiaLoader" />
+          <img src="/img/loader/assiaLoader.jpeg" class="w-64 sm:w-96 md:w-[500px] h-auto object-cover mx-auto" alt="assiaLoader" />
         </div>
-        <!-- <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-lg mb-6">
-          L'application métier du social
-        </div> -->
         <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
       </div>
     </div>
 
     <NavBar />
-
+    
     <!-- 1. SECTION HERO -->
     <section class="relative min-h-screen bg-[var(--accent)] pt-24 md:pt-32 pb-12 md:pb-20 px-0 flex flex-col items-center justify-center text-white text-center overflow-hidden">
       <!-- Container stretches to edges -->
       <div class="w-full flex flex-col md:flex-row justify-center items-stretch gap-0 mb-16 relative z-10 font-clementePdaq">
-        <div class="hero-card-left flex-1 flex items-center justify-center bg-white text-[var(--accent)] p-6 md:p-16 rounded-r-[40px] md:rounded-r-[80px] rounded-l-none shadow-none">
+        <div class="hero-card-left flex-1 flex items-center justify-center bg-white text-[var(--accent)] p-6 md:p-16 rounded-r-[40px] md:rounded-r-[80px] rounded-l-none mr-8 md:mr-0 shadow-none">
           <!-- animer de gauche vers le centre -->
           <h2 class="text-2xl md:text-6xl uppercase leading-none text-right">À la croisée de l'expertise de l'AHI</h2>
         </div>
@@ -30,7 +27,7 @@
           <span class="hero-ampersand text-5xl md:text-8xl text-white">&</span>
         </div>
 
-        <div class="hero-card-right flex-1 flex justify-start items-center bg-white text-[var(--accent)] p-6 md:p-16 rounded-l-[40px] md:rounded-l-[80px] rounded-r-none shadow-none">
+        <div class="hero-card-right flex-1 flex justify-start items-center bg-white text-[var(--accent)] p-6 md:p-16 rounded-l-[40px] md:rounded-l-[80px] rounded-r-none ml-8 md:ml-0 shadow-none">
           <!-- animer de droite vers le centre -->
           <h2 class="text-2xl md:text-6xl text-left font-black uppercase leading-none ">De la<br>technologie</h2>
         </div>
@@ -58,7 +55,7 @@
     </section>
 
     <!-- 3. SECTION ACCORDION (CONTENU CORRIGÉ SELON L'IMAGE) -->
-     <section class="mx-4 md:mx-[10%]">
+     <section class="mx-4 md:mx-[10%] overflow-hidden">
        <BlocRealite />
      </section>
 
@@ -70,7 +67,7 @@
       </h1>
 
        <!-- ACCOMPAGNEMENT SOCIAL -->
-        <div class="mx-4 md:mx-[10%]">
+        <div class="mx-4 md:mx-[10%] overflow-hidden">
           <Block2 />
         </div>
 
@@ -81,7 +78,7 @@
     </section>
 
     <!-- 5. SECTION ACTIONS (MANUELLE - SANS BOUCLE) -->
-    <section class="relative z-20">
+    <section class="relative z-20 overflow-hidden">
         <div class="actions-container flex flex-col gap-12 md:gap-24 pb-12 md:pb-20 overflow-hidden">
         
           <!-- Bloc 1 : L'outil permet notamment (ORANGE) -->
@@ -97,11 +94,11 @@
     </section>
 
     <!-- 7. SECTION ENGAGEMENT -->
-    <section class="pb-16 md:pb-32 px-4 md:px-6 flex flex-col gap-8 md:gap-12 items-center">
-      <h2 class="font-clementePdaq text-[var(--primary)] text-[50px] uppercase text-center">
+    <section class="pb-16 md:pb-32 px-4 md:px-6 flex flex-col gap-8 md:gap-12 items-center overflow-hidden">
+      <h2 class="text-[25px] sm:text-[32px] md:text-[50px] font-clementePdaq text-[var(--primary)] uppercase text-center">
         Nous sommes engagés pour soutenir votre impact
       </h2>
-      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-7xl w-full">
+      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-7xl w-full overflow-hidden">
         <div v-for="(item, index) in engagementItems" :key="index" class="engagement-card flex flex-col justify-center items-center p-6 md:p-10 rounded-[30px] md:rounded-[50px] bg-[var(--accent)] border-2 border-transparent hover:border-[var(--accent)] transition-all duration-500 group shadow-sm hover:shadow-xl">
           <img :src="item.image" :alt="item.title" class="w-16 h-16 md:w-28 md:h-28 object-contain mb-4 md:mb-6" />
           <h3 class="font-clemente text-base md:text-2xl font-black uppercase mb-2 md:mb-4 text-center text-white">{{ item.title }}</h3>
@@ -110,7 +107,7 @@
     </section>
 
     <!-- 8. SECTION DECOUVRIR ASSIA -->
-     <section class="mx-4 md:mx-[10%]">
+     <section class="mx-4 md:mx-[10%] overflow-hidden">
        <Block3 />
      </section>
 
@@ -119,7 +116,7 @@
     <ESms />
 
     <!-- 9. SECTION TEMOIGNAGES -->
-    <section class="py-12 md:py-24 px-4 md:px-6 bg-white">
+    <section class="py-12 md:py-24 px-4 md:px-6 bg-[#fff3EE] mb-4">
       <div class="max-w-7xl mx-auto text-center font-clemente">
         <h2 class="font-clementePdaq text-[var(--accent)] text-2xl md:text-6xl uppercase mb-8 md:mb-16">
           Ils témoignent de <br> notre engagement
@@ -251,7 +248,12 @@ onMounted(async () => {
     .to(loader.value, { 
       y: '-100%', 
       duration: 1.2, 
-      ease: 'power4.inOut' 
+      ease: 'power4.inOut',
+      onComplete: () => {
+        if (loader.value) {
+          loader.value.style.display = 'none';
+        }
+      }
     });
 
   gsap.from(".hero-card-left", { x: -800, opacity: 0, rotate: -10, duration: 1.8, ease: "power4.out", delay: 2.2 });

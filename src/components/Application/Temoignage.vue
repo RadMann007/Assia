@@ -1,5 +1,5 @@
 <template>
-  <div class="temoignage-slider-wrapper">
+  <div class="temoignage-slider-wrapper px-2 sm:px-0 overflow-hidden">
     <!-- Left arrow -->
     <button 
       v-if="canScrollLeft" 
@@ -166,7 +166,7 @@ onUnmounted(() => {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.25rem;
 }
 
 .temoignage-slider::-webkit-scrollbar {

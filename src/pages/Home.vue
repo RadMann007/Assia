@@ -6,7 +6,7 @@ import Lenis from '@studio-freight/lenis';
 import NavBar from '../components/NavBar.vue';
 import Footer from '../components/Footer.vue';
 import Temoignage from '../components/Application/Temoignage.vue';
-// import Resolution from '../components/Resolution.vue';
+import Resolution from '../components/Resolution.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -181,19 +181,14 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="main flex flex-col font-body min-h-screen bg-[var(--bg-light)] ">
+  <div class="main flex flex-col font-body min-h-screen bg-[var(--bg-light)] overflow-x-hidden">
     
     <!-- LOADER -->
     <div ref="loader" class="fixed inset-0 bg-primary z-[100] flex items-center justify-center p-4">
       <div class="relative text-center">
         <div class="loader-text opacity-0 text-[#F3F0E7] mb-4">
-          <!-- Texte responsive pour le loader -->
-          <!-- <span class="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter">EDOSSAH</span> -->
           <img src="/img/loader/edoLoader.jpeg" class="w-64 sm:w-96 md:w-[500px] h-auto object-cover mx-auto" alt="edoLoader" />
         </div>
-        <!-- <div class="loader-subtitle opacity-0 text-[#F3F0E7] text-base sm:text-lg mb-6">
-          Le numérique pensé pour les associations
-        </div> -->
         <div class="loader-progress w-0 h-1 bg-white mt-4"></div>
       </div>
     </div>
@@ -201,33 +196,38 @@ onMounted(async () => {
     <NavBar />
 
     <!-- HERO SECTION -->
-    <section class="container mx-auto px-4 md:px-6 min-h-[50vh] flex flex-col mt-52 justify-center  relative ">
+    <section class="container mx-auto px-4 md:px-6 min-h-[50vh] flex flex-col mt-28 md:mt-52 justify-center relative">
 
-      <!-- LEFT BLOCK -->
-      <div id="leftBlock" class=" md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2 flex justify-center md:justify-end w-[35%]">
-        <div class="font-clemente bg-[var(--primary)] text-white p-10  rounded-r-3xl w-80 md:w-[28rem] lg:w-[32rem] text-center md:text-right">
-          <p class="uppercase text-[45px] ">
-            Le numérique pensé pour
-          </p>
+      <!-- Mobile: stacked layout / Desktop: absolute positioned -->
+      <div class="flex flex-col items-center gap-6 md:gap-0">
+
+        <!-- LEFT BLOCK -->
+        <div id="leftBlock"  class="w-full md:w-[35%] md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2 flex justify-center md:justify-end translate-y-0">
+          <div class="font-clemente bg-[var(--primary)] text-white p-6 md:p-10 rounded-3xl md:rounded-r-3xl md:rounded-l-none w-[90%] md:w-[28rem] lg:w-[32rem] text-center md:text-right">
+            <p class="uppercase text-[22px] sm:text-[30px] md:text-[45px]">
+              Le numérique pensé pour
+            </p>
+          </div>
         </div>
-      </div>
 
-    <!-- HERO CENTER TEXT -->
-     <div class="text-center relative z-10 w-full max-w-[30%] mx-auto">
-        <h1 class="hero-title font-clementePdaq text-[45px]">
-          FLUIDIFIER LE
-          QUOTIDIEN DES
-          ASSOCIATIONS
-        </h1>
-      </div>
-
-      <!-- RIGHT BLOCK -->
-      <div id="rightBlock" class="md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 flex justify-center md:justify-start w-[35%]">
-        <div class="font-clemente bg-[var(--primary)] text-white p-10 rounded-l-3xl w-full text-center md:text-left">
-          <p class="uppercase text-[45px]">
-            Conçu par et pour vous
-          </p>
+        <!-- HERO CENTER TEXT -->
+        <div class="text-center relative z-10 w-full max-w-[90%] md:max-w-[30%] mx-auto">
+          <h1 class="hero-title font-clementePdaq text-[24px] sm:text-[32px] md:text-[45px]">
+            FLUIDIFIER LE
+            QUOTIDIEN DES
+            ASSOCIATIONS
+          </h1>
         </div>
+
+        <!-- RIGHT BLOCK -->
+        <div id="rightBlock" class="w-full md:w-[35%] md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 flex justify-center md:justify-start">
+          <div class="font-clemente bg-[var(--primary)] text-white p-6 md:p-10 rounded-3xl md:rounded-l-3xl md:rounded-r-none w-[90%] md:w-full text-center md:text-left">
+            <p class="uppercase text-[22px] sm:text-[30px] md:text-[45px]">
+              Conçu par et pour vous
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -245,7 +245,7 @@ onMounted(async () => {
     <!-- TEXT REVEAL -->
     <section ref="textRevealContainer" class="flex justify-center w-full py-16 md:py-24 px-6 md:px-20 bg-primary">
       <p class="text-white font-clementeMini text-center mx-auto md:mx-[5%]
-           text-[40px]
+           text-[20px] sm:text-[28px] md:text-[40px]
            max-w-5xl">
         <span class="reveal-word">Nous</span> <span class="reveal-word">vous</span> <span class="reveal-word">accompagnons</span> <span class="reveal-word">dans</span> <span class="reveal-word">la</span> <span class="reveal-word font-clementePdap">conception,</span> <span class="reveal-word font-clementePdap">l'évolution</span> <span class="reveal-word">et</span> <span class="reveal-word">le</span> <span class="reveal-word font-clementePdap">déploiement</span> <span class="reveal-word">de</span> <span class="reveal-word">vos</span> <span class="reveal-word">outils</span> <span class="reveal-word">numériques.</span> <span class="reveal-word">Et</span> <span class="reveal-word">grâce</span> <span class="reveal-word">à</span> <span class="reveal-word">notre</span> <span class="reveal-word font-clementePdap">connaissance</span> <span class="reveal-word font-clementePdap">de</span> <span class="reveal-word font-clementePdap">vos</span> <span class="reveal-word font-clementePdap">métiers,</span> <span class="reveal-word">nos</span> <span class="reveal-word">propositions</span> <span class="reveal-word">sont</span> <span class="reveal-word font-clementePdap">adaptées,</span> <span class="reveal-word font-clementePdap">durables</span> <span class="reveal-word">et</span> <span class="reveal-word font-clementePdap">très</span> <span class="reveal-word font-clementePdap">utiles.</span>
       </p>
@@ -256,11 +256,11 @@ onMounted(async () => {
       <div class="slide-right flex flex-col md:flex-row mr-4 md:mr-32 border-2 border-l-0 border-primary rounded-r-[40px] md:rounded-r-[50px] ">
         <div class="md:w-1/3 flex flex-col items-center justify-center p-8 md:p-12 border-primary bg-primary/5">
            <img src="/img/tree.png" class="w-32 h-32 md:w-48 md:h-48 object-contain mb-6 md:mb-8"/>
-           <h2 class="font-clementePdaq md:text-[40px] text-primary  uppercase text-center">Pourquoi <br/> Edossah ?</h2>
+           <h2 class="font-clementePdaq text-[24px] sm:text-[30px] md:text-[40px] text-primary uppercase text-center">Pourquoi <br/> Edossah ?</h2>
         </div>
         <div class=" md:w-2/3 p-6 md:p-12 lg:p-20 flex flex-col justify-center text-center md:text-left space-y-6 md:space-y-8">
-          <p class="font-clementeMini text-[30px] text-primary">Tout simplement pour notre expérience du terrain: <b class="italic">on comprend vos besoins !</b></p>
-          <p class="font-clementeMini text-[30px] text-primary">
+          <p class="font-clementeMini text-[18px] sm:text-[22px] md:text-[30px] text-primary">Tout simplement pour notre expérience du terrain: <b class="italic">on comprend vos besoins !</b></p>
+          <p class="font-clementeMini text-[18px] sm:text-[22px] md:text-[30px] text-primary">
             Les professionnels méritent un outil qui allège leur quotidien, et on y répond de manière sur mesure pour permettre à votre organisation de se concentrer sur le plus important : <b class="italic"> son activité.</b>
           </p>
         </div>
@@ -270,18 +270,18 @@ onMounted(async () => {
     <!-- Notre Approche -->
     <section class="w-full py-12 md:py-20 ">
       <div class="slide-left md:ml-32 border-2 border-r-0 border-primary p-4 md:p-8 bg-[var(--bg-light)] rounded-l-[40px] md:rounded-l-[var(--border-radius-primary)]">
-        <h2 class=" mb-6 md:mb-8 font-clementePdaq text-[50px] text-primary uppercase text-center ">Notre Approche</h2>
+        <h2 class="mb-6 md:mb-8 font-clementePdaq text-[28px] sm:text-[36px] md:text-[50px] text-primary uppercase text-center">Notre Approche</h2>
         <div class="flex flex-col gap-4 md:gap-5 max-w-4xl mx-auto">
             <div v-for="(item, index) in approachItems" :key="index" 
                  class="border-2 border-primary cursor-pointer transition-all duration-500 rounded-[15px] "
                  :class="itemStates[index] ? 'bg-white text-primary' : 'bg-primary text-white'"
                  @click="toggleItem(index)">
                 <div class="p-3 md:p-4 flex justify-between items-center select-none">
-                    <h3 class="font-clementePdam text-[40px] leading-none pr-2">{{ item.title }}</h3>
+                    <h3 class="font-clementePdam text-[20px] sm:text-[28px] md:text-[40px] leading-none pr-2">{{ item.title }}</h3>
                     <div class="approach-icon text-2xl md:text-3xl font-light transition-transform duration-300 flex-shrink-0" :class="itemStates[index] ? 'text-primary' : 'text-white'">+</div>
                 </div>
                 <div class="approach-content h-0 opacity-0  px-4 md:px-8">
-                  <p class="text-[30px] font-clementePdag" :class="itemStates[index] ? 'text-slate-900' : 'text-white/90'">
+                  <p class="text-[16px] sm:text-[22px] md:text-[30px] font-clementePdag" :class="itemStates[index] ? 'text-slate-900' : 'text-white/90'">
                     {{ item.content }}
                   </p>
                 </div>
@@ -293,7 +293,7 @@ onMounted(async () => {
     <!-- Notre ADN -->
     <section class="w-full py-12 md:py-20 ">
 
-      <div class="p-8 slide-right-2 flex flex-co md:flex-row mr-4 md:mr-32 border-2 border-l-0 border-[var(--primary)] rounded-r-[40px] md:rounded-r-[var(--border-radius-primary)] ">
+      <div class="p-4 md:p-8 slide-right-2 flex flex-col md:flex-row mr-4 md:mr-32 border-2 border-l-0 border-[var(--primary)] rounded-r-[40px] md:rounded-r-[var(--border-radius-primary)]">
         
         <!-- <div class="md:w-1/2 flex flex-col items-center justify-center p-8 md:p-20 border-[var(--primary)]">
            <h3 class="font-clemente italic font-display text-2xl md:text-3xl lg:text-4xl text-[var(--primary)] text-center tracking-tight leading-tight mb-4 max-w-[90%] md:max-w-[80%]">
@@ -302,15 +302,15 @@ onMounted(async () => {
            <img src="/img/adn.png" class="w-32 h-32 md:w-40 md:h-40 object-contain mb-4 rotate-12 rounded-2xl"/>
            <h2 class="font-clemente font-display text-3xl md:text-4xl lg:text-[50px] text-[var(--primary)] font-black text-center tracking-tighter leading-tight uppercase">Notre ADN</h2>
         </div> -->
-        <div class="w-1/2 flex flex-col justify-between items-center ">
-          <h3 class="font-clementePdap text-[30px] text-[var(--primary)] text-center mb-4 max-w-[90%] md:max-w-[80%]">
+        <div class="w-full md:w-1/2 flex flex-col justify-between items-center">
+          <h3 class="font-clementePdap text-[18px] sm:text-[24px] md:text-[30px] text-[var(--primary)] text-center mb-4 max-w-[90%] md:max-w-[80%]">
              Issus du secteur associatif, et de l'AHI
            </h3>
-          <img src="/img/adn.png" class="w-32 h-32 md:w-40 md:h-40 object-contain mb-4 rotate-12 rounded-2xl"/>
-          <h2 class="font-clementePdaq text-[50px] text-[var(--primary)] text-center uppercase">Notre ADN</h2>
+          <img src="/img/adn.png" class="w-24 h-24 md:w-40 md:h-40 object-contain mb-4 rotate-12 rounded-2xl"/>
+          <h2 class="font-clementePdaq text-[28px] sm:text-[36px] md:text-[50px] text-[var(--primary)] text-center uppercase">Notre ADN</h2>
         </div>
 
-        <div class="md:w-1/2 flex flex-col justify-center text-center md:text-left space-y-6 md:space-y-8">
+        <div class="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left space-y-6 md:space-y-8">
           <p class="text-[var(--primary)] space-y-4 text-xl md:text-2xl lg:text-3xl font-clementeMini">Cet ancrage se traduit par des choix concrets :</p>
           
           <ul class="text-[var(--primary)] ml-4 md:ml-10 text-lg md:text-[20px] lg:text-[21px] font-clementeMini">
@@ -342,7 +342,7 @@ onMounted(async () => {
 
     <!-- Enjeux Title -->
     <section class="container mx-auto py-10 pb-20 px-6 text-center ">
-        <h2 class="font-clementePdaq text-[60px] text-primary uppercase  max-w-5xl mx-auto">
+        <h2 class="font-clementePdaq text-[28px] sm:text-[40px] md:text-[60px] text-primary uppercase max-w-5xl mx-auto">
             des besoins concrets,<br/> un accompagnement <br /> sur mesure
         </h2>
     </section>
@@ -355,7 +355,7 @@ onMounted(async () => {
                     <img src="/img/group-friends.jpeg" class="w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover object-center rounded-[70px]"/>
                 </div>
                 <div class="flex flex-col gap-6 md:gap-8 text-center lg:text-left enjeux-content">
-                    <h1 class="text-[50px] font-clementePdaq text-white">
+                    <h1 class="text-[24px] sm:text-[36px] md:text-[50px] font-clementePdaq text-white">
                     <!-- <h1 class="text-4xl md:text-[50px] lg:text-[56px] text-white tracking-normal"> -->
                       Nous accompagnons les structures face à des enjeux très concrets
                     </h1>
@@ -427,7 +427,7 @@ onMounted(async () => {
     </section>
 
     <!-- Section ASSIA -->
-    <section class="bg-[#fff3ee] py-16 md:py-20 mb-10 md:mb-20">
+    <section class="bg-[#fff3EE] py-16 md:py-20 mb-10 md:mb-20">
       <div class="container mx-auto px-4 md:px-6">
         
         <!-- Grid Titre + Image -->
@@ -455,11 +455,11 @@ onMounted(async () => {
             </p>
 
             <p class="text-lg md:text-2xl lg:text-3xl font-clementeMini leading-relaxed text-[var(--primary)]">
-              <b>ASSIA est l'outil métier</b> dédié au <b>travail social, co-construit</b> avec les professionnels, <b>évolutif</b> et toujours <b>au service du quotidien.</b>
+              <span class="font-clementePdan">ASSIA est l'outil métier</span> dédié au <span class="font-clementePdan">travail social, co-construit</span> avec les professionnels, <span class="font-clementePdan">évolutif</span> et toujours <span class="font-clementePdan">au service du quotidien.</span>
             </p>
 
             <p class="text-lg md:text-2xl lg:text-3xl font-clementeMini leading-relaxed text-[var(--primary)]">
-              ASSIA incarne notre capacité à <b>comprendre</b> les réalités de terrain et à les <b>traduire</b> en systèmes d'information <b>concrets</b> et <b>opérationnels.</b>
+              ASSIA incarne notre capacité à <span class="font-clementePdan">comprendre</span> les réalités de terrain et à les <span class="font-clementePdan">traduire</span> en systèmes d'information <span class="font-clementePdan">concrets</span> et <span class="font-clementePdan">opérationnels.</span>
             </p>
 
             <div class="pt-4">
@@ -487,9 +487,11 @@ onMounted(async () => {
       </div>
     </section>
     
-    <div class="py-12 md:py-24 px-4 md:px-6 bg-white">
-      <Temoignage />
-    </div>
+     <section class="py-12 md:py-24 px-4 md:px-6 bg-white">
+      <div class="max-w-7xl mx-auto text-center font-clemente">
+        <Temoignage />
+      </div>
+    </section>
 
     <!-- Soutien -->
     <section class="py-16 md:py-24 px-4">

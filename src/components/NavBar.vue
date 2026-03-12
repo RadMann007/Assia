@@ -1,23 +1,21 @@
 <template>
   <nav 
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-6"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out px-3 sm:px-6 max-w-full"
     :class="[currentPath === '/application' ? 'py-3 bg-[#ff925c] backdrop-blur-md' : 'py-3 bg-[#F9FEFF] backdrop-blur-md']"
-    
-
   >
   <!-- :class="[currentPath === '/application' ? 'py-3 bg-[#ff925c] backdrop-blur-md' : 'py-3 bg-[#F9FEFF] backdrop-blur-md']" -->
     <div class="container mx-auto flex items-center justify-between">
       
       <!-- LOGO -->
-      <a href="/" class="logo flex items-center gap-2 transition-transform hover:scale-105">
+      <a href="/" class="logo flex items-center gap-2 transition-transform hover:scale-105 flex-shrink-0">
         <img v-if="currentPath === '/application'" 
              src="/logo/AssiaLogo.png" 
              alt="Assia" 
-             class="w-full h-8" />
+             class="h-8 w-auto max-w-[100px] sm:max-w-[150px] object-contain" />
         <img v-else 
              src="/logo/LogoEdossah.jpeg" 
              alt="Edossah" 
-             class="w-full h-8" />
+             class="h-8 w-auto max-w-[100px] sm:max-w-[150px] object-contain" />
       </a>
       <!-- <Resolution /> -->
 
@@ -26,17 +24,17 @@
         class="hidden md:flex items-center gap-1 font-display text-[20px] tracking-widest p-1.5 rounded-full backdrop-blur-sm shadow-sm border transition-colors duration-300"
         :class="[
           currentPath === '/application' 
-            ? 'border-[#ff925c] bg-[#FFFFFF] text-[#ff925c]' 
-            : 'border-[#03A3B5] text-[#03A3B5]'
+            ? 'border-[#ff925c] bg-[#FFFFFF]' 
+            : 'border-[#03A3B5]'
         ]"
       >
         
         <a v-for="(link, index) in links" :key="index" :href="link.url"
            class="px-5 py-2.5 rounded-2xl cursor-pointer transition-all duration-300 font-clementeMini"
            :class="[
-             currentPath === '/application'
-               ? (currentPath === link.url ? 'text-bold font-clemente' : '')
-               : (currentPath === link.url ? 'text-bold font-clemente' : '')
+             currentPath === '/application' && link.url === '/application'
+               ? 'text-[#ff925c] text-bold font-clemente'
+               : 'text-[#03A3B5]'
            ]">
            {{ link.name }}
         </a>
@@ -57,7 +55,13 @@
         </button>
 
         <!-- BURGER MENU (MOBILE) -->
-        <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="md:hidden text-[#03A3B5] focus:outline-none bg-white/80 p-2 rounded-lg">
+        <button @click="isMobileMenuOpen = !isMobileMenuOpen" 
+           class="md:hidden focus:outline-none p-2 rounded-lg flex-shrink-0 relative z-[150] shadow-md transition-all active:scale-95"
+           :class="[
+             currentPath === '/application' 
+               ? 'bg-white text-[#ff925c]' 
+               : 'bg-[#03A3B5] text-white'
+           ]">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path v-if="!isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
             <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
@@ -66,23 +70,54 @@
       </div>
     </div>
 
-    <!-- MENU MOBILE OVERLAY -->
-    <transition name="fade">
-      <div v-if="isMobileMenuOpen" class="absolute top-full left-0 w-full bg-white border-t font-clementeMini border-gray-100 shadow-xl flex flex-col p-6 gap-4 md:hidden">
-        <a v-for="(link, index) in links" :key="index" :href="link.url" 
-           class="font-display font-clementeMini uppercase text-sm text-center py-3 border-b border-gray-100 transition-colors"
-           :class="currentPath === link.url ? 'text-[#ff925c]' : 'text-[#03A3B5] hover:text-[#ff925c]'">
-          {{ link.name }}
-        </a>
-        <button @click="openDemoModal" 
-           class="text-white w-full py-4 font-bold rounded-xl uppercase tracking-widest mt-2"
-           :class="[
-             currentPath === '/' ? 'bg-[#03A3B5]' : 'bg-[#ff925c]'
-           ]">
-          Demander une démo
-        </button>
-      </div>
-    </transition>
+    <!-- MENU MOBILE OVERLAY (FULL SCREEN) -->
+    <Teleport to="body">
+      <transition name="fade">
+        <div v-if="isMobileMenuOpen" class="fixed inset-0 z-[110] md:hidden">
+          <div class="absolute inset-0 bg-white shadow-2xl overflow-hidden flex flex-col">
+            
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+              <a href="/" class="logo flex items-center gap-2" @click="isMobileMenuOpen = false">
+                <img v-if="currentPath === '/application'" 
+                     src="/logo/AssiaLogo.png" 
+                     alt="Assia" 
+                     class="h-6 w-auto object-contain" />
+                <img v-else 
+                     src="/logo/LogoEdossah.jpeg" 
+                     alt="Edossah" 
+                     class="h-6 w-auto object-contain" />
+              </a>
+              <button @click="isMobileMenuOpen = false" class="p-2 text-gray-500 hover:text-gray-800">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="flex-1 flex flex-col justify-center items-center gap-8 p-10 font-clementeMini overflow-y-auto">
+              <a v-for="(link, index) in links" :key="index" :href="link.url" 
+                 class="text-3xl font-display tracking-widest transition-colors font-clemente"
+                 :class="currentPath === '/application' && link.url === '/application' ? 'text-[#ff925c]' : 'text-[#03A3B5]'"
+                 @click="isMobileMenuOpen = false">
+                {{ link.name }}
+              </a>
+              
+              <button @click="openDemoModal" 
+                 class="text-white w-full max-w-xs py-5 px-8 font-bold rounded-2xl uppercase tracking-widest mt-6 shadow-xl active:scale-95 transition-transform"
+                 :class="[
+                   currentPath !== '/application' ? 'bg-[#03A3B5]' : 'bg-[#ff925c]'
+                 ]">
+                Demander une démo
+              </button>
+            </div>
+
+            <div class="p-8 border-t border-gray-50 text-center">
+              <p class="text-xs uppercase tracking-widest text-gray-400 font-clementeMini">© {{ new Date().getFullYear() }} Edossah</p>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </Teleport>
 
     <!-- DEMO MODAL -->
     <Teleport to="body">
@@ -133,12 +168,14 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, onUnmounted } from 'vue';
+import { ref, reactive, onMounted, onUnmounted, computed } from 'vue';
+import { useRoute } from 'vue-router';
 // import Resolution from './Resolution.vue';
 
+const route = useRoute();
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
-const currentPath = ref('/'); // Par défaut '/'
+const currentPath = computed(() => route?.path || '/'); // Reactive path tracking
 const showDemoModal = ref(false);
 const isLoading = ref(false);
 
@@ -225,10 +262,7 @@ const submitDemo = async () => {
 
 
 onMounted(() => {
-  // 1. Détection de l'URL actuelle au chargement de la page
-  currentPath.value = window.location.pathname;
-
-  // 2. Gestion du scroll
+  // Gestion du scroll
   window.addEventListener('scroll', handleScroll);
 });
 

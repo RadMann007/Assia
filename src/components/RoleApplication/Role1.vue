@@ -112,7 +112,7 @@ const toggleItem = async (index) => {
 
               
               <div class="action-title flex-1 order-1 md:order-2 text-center md:text-left">
-                  <h1 class="uppercase text-[50px] font-clementePdam text-[var(--accent)]">
+                  <h1 class="text-[22px] sm:text-[30px] md:text-[50px] uppercase font-clementePdam text-[var(--accent)]">
                      CollaborATION entre professionnels sur chaque suivi
                   </h1>
               </div>

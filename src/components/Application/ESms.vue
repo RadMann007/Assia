@@ -5,7 +5,7 @@
       <div class="bg-[#ff925c] text-white p-8 rounded-[30px]">
         <h2 class="text-3xl md:text-5xl font-black uppercase whitespace-nowrap">ASSIA ESMS</h2>
       </div>
-      <p class="text-[#ff925c] font-clementePdam text-xl md:text-[40px] leading-tight text-center md:text-left">
+      <p class="text-[#ff925c] font-clementePdam text-3xl md:text-[40px] leading-tight text-center md:text-left">
         ASSIA en cours de référencement par le 
         Ségur du Numérique, sur le couloir de l'AHI
       </p>

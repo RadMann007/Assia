@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 :root {
   --primary: #03A3B5;
   --accent: #FF925C;
@@ -16,7 +22,6 @@
 
   --border-radius-primary: 50px;
   --font-size-title: 50px
-
 }
 
 @font-face {
@@ -172,3 +177,7 @@
   font-weight: 900;
   font-style: italic;
 }
+
+/* * {
+  outline: 1px solid red !important;
+} */

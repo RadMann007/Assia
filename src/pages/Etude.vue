@@ -16,7 +16,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-16">
         <div class="eco-card p-10 rounded-[45px] border-2 border-[#74D282] bg-white text-center flex flex-col items-center justify-between min-h-[320px]">
-          <p class="text-[#74D282] text-lg">Nos prestataires sont des <br><span class="text-[#74D282] font-clementePdag italic text-[25px]">coopératives françaises</span> :</p>
+          <p class="text-[#74D282] text-[25px] font-clementeMini">Nos prestataires sont des <br><span class="text-[#74D282] font-clemente italic ">coopératives françaises</span> :</p>
           <img src="/logo/telecoop.png" class="w-auto h-36 object-cover" />
           <!-- <div class="w-full space-y-4">
              <div class="text-xl font-bold text-slate-400 uppercase tracking-widest italic">Crédit Coopératif</div>
@@ -25,14 +25,14 @@
         </div>
 
         <div class="eco-card p-10 rounded-[45px] border-2 border-[#74D282] bg-white text-center flex flex-col items-center justify-between min-h-[320px]">
-          <p class="text-lg text-[#74D282]">Notre serveur web et notre suite d’outils numériques sont <br>
-            <span class="text-[#74D282] font-black italic text-2xl">propres et durables</span>, grâce à :</p>
+          <p class="text-[#74D282] text-[25px] font-clementeMini">Notre serveur web et notre suite d’outils numériques sont <br>
+            <span class="text-[#74D282] font-clemente italic">propres et durables</span>, grâce à :</p>
              <img src="/logo/infomaniak.png" class="w-full h-16 object-cover" />
           <!-- <div class="text-4xl font-black text-[#03A3B5] tracking-tighter">infomaniak</div> -->
         </div>
 
         <div class="eco-card p-10 rounded-[45px] border-2 border-[#74D282] bg-white text-center flex flex-col items-center justify-between min-h-[320px]">
-          <p class="text-lg text-[#74D282]">Nous accompagnons les <br><span class="text-[#74D282] font-black italic text-2xl">futurs professionnels</span> sur des terrains bienveillants et formateurs.</p>
+          <p class="text-[#74D282] text-[25px] font-clementeMini">Nous accompagnons les <br><span class="text-[#74D282] font-clemente italic">futurs professionnels</span> sur des terrains bienveillants et formateurs.</p>
           <div class="text-6xl">
             <img src="/img/contact/etudiant.png" class="w-16 h-16 object-cover" />
           </div>

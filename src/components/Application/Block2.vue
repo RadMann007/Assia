@@ -4,7 +4,7 @@
     <!-- BOUTON D'OUVERTURE -->
     <div @click="toggleSocial" 
          class="relative z-20 py-6 px-6 mx-0 md:mx-0 flex justify-between items-center select-none bg-[var(--accent)] text-white rounded-[50px] shadow-none cursor-pointer hover:bg-[var(--accent)] transition-all active:scale-95 w-full">
-      <h3 class="text-[35px]  uppercase font-clementePdam text-left flex-1 pr-4 md:pr-8">
+      <h3 class="text-[20px] sm:text-[28px] md:text-[35px]  uppercase font-clementePdam text-left flex-1 pr-4 md:pr-8">
         ASSIA S'ADRESSE AUX STRUCTURES <br class="md:hidden"> D'ACCOMPAGNEMENT SOCIAL
       </h3>
       <div class="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center text-3xl md:text-5xl font-light transition-transform duration-500 flex-shrink-0"

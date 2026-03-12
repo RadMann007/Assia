@@ -45,7 +45,7 @@
         </div> -->
 
         <!-- Article text -->
-        <div class="bg-white p-8 md:p-12 rounded-[50px] shadow-sm border border-[#03A3B5] font-clemente flex flex-col md:flex-row items-center gap-6 mb-8">
+        <!-- <div class="bg-white p-8 md:p-12 rounded-[50px] shadow-sm border border-[#03A3B5] font-clemente flex flex-col md:flex-row items-center gap-6 mb-8">
            <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-orange-50 shadow-sm flex-shrink-0">
              <img :src="getAuthorAvatar(article)" :alt="getAuthorName(article)" class="w-full h-full object-cover">
            </div>
@@ -53,10 +53,10 @@
              <p class="text-gray-400 text-xs font-black uppercase tracking-widest mb-1">Écrit par</p>
              <h4 class="text-xl font-bold text-gray-800">{{ getAuthorName(article) }}</h4>
            </div>
-        </div>
+        </div> -->
 
         <div 
-          class="article-content bg-white p-8 md:p-16 rounded-[60px] shadow-sm border border-[#03A3B5] text-lg md:text-xl leading-relaxed text-gray-700 font-medium font-clementeMini"
+          class="article-content bg-[#F9FEFF] p-8 md:p-16 rounded-[60px] shadow-sm border border-[#03A3B5] text-lg md:text-xl leading-relaxed text-gray-700 font-medium font-sans"
           v-html="article.content.rendered"
         ></div>
 
@@ -67,7 +67,7 @@
     <div v-if="loading" class="min-h-screen flex items-center justify-center">
       <div class="text-center">
         <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#03A3B5] mb-4"></div>
-        <p class="text-gray-500 font-bold uppercase tracking-widest">Chargement de l'article...</p>
+        <p class="text-gray-500 font-clementePdae uppercase tracking-widest">Chargement de l'article...</p>
       </div>
     </div>
 
