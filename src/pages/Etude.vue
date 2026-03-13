@@ -39,15 +39,15 @@
         </div>
       </div>
 
-      <div class="server-banner w-full max-w-5xl bg-[#74D282] p-10 rounded-[40px] shadow-2xl text-center text-white font-bold text-xl md:text-[45px] leading-snug">
+      <div class="server-banner w-full max-w-5xl bg-[#74D282] p-10 rounded-[40px] text-center text-white font-bold text-xl md:text-[45px] ">
         Notre serveur applicatif (hébergeant Assia) est dans un centre de données en France, chez un hébergeur français.
       </div>
     </section>
 
-    <section class="relative py-24 bg-white overflow-hidden">
+    <section class="relative py-0 md:py-20 bg-white overflow-hidden">
       <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="magic-text">
-          <h2 class="text-[#64C27D] text-5xl md:text-8xl font-clementePdaq uppercase leading-[0.9] mb-8">
+          <h2 class="text-[#64C27D] text-7xl md:text-8xl font-clementePdaq uppercase mb-8 md:text-left text-center">
             C'EST ICI <br> QUE LA <br> MAGIE <br> OPÈRE !
           </h2>
         </div>
@@ -98,11 +98,11 @@
       </h3>
     </section>
 
-    <section class="mt-24 bg-[var(--primary)] py-20 px-6 text-white overflow-hidden rounded-t-[60px]">
+    <section class="mt-24 bg-[var(--primary)] py-16 md:py-20 px-6 text-white overflow-hidden rounded-t-[50px]">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        <div class="map-text space-y-8 p-12">
-          <h2 class="text-6xl md:text-[40px] uppercase leading-none font-clementePdaq">Bientôt chez vous ?!</h2>
-          <div class="space-y-6 md:text-[25px] opacity-95 font-clementePdag">
+        <div class="map-text space-y-8 p-0 md:p-12">
+          <h2 class="text-4xl md:text-[40px] uppercase font-clementePdaq">Bientôt chez vous ?!</h2>
+          <div class="space-y-6 md:text-[25px] text-[20px] opacity-95 font-clementePdag">
             <p>Notre équipe est basée en Ile-de-France, avec un bureau historique à Cergy (la ville de naissance d’ASSIA).</p>
             <p>Nous avons récemment ouvert une antenne à Nantes, et nous nous déployons sur de multiples territoires.</p>
           </div>

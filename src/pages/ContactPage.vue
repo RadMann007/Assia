@@ -1,6 +1,7 @@
 <template>
   <div class="page-contact">
-  <div class="font-clemente w-full min-h-screen bg-white text-slate-700 overflow-x-hidden">
+  <!-- <div class="font-clemente w-full min-h-screen bg-white text-slate-700 overflow-x-hidden"> -->
+    <div class="main flex flex-col font-body min-h-screen bg-[var(--bg-light)] overflow-x-hidden font-clemente">
     
     <!-- LOADER AVEC LOGO ASSIA -->
     <!-- <div ref="loader" class="fixed inset-0 bg-[var(--primary)] z-[100] flex items-center justify-center">
@@ -99,7 +100,7 @@
       <div class="max-w-7xl mx-auto px-4 md:px-12 flex flex-col md:flex-row gap-8 md:gap-16">
         
         <!-- Carte Gauche : Réseaux -->
-        <div class="social-card flex-1 bg-[var(--primary)] rounded-[45px] p-8 md:p-12 flex items-center justify-between text-white shadow-2xl relative z-10 opacity-0">
+        <div class="social-card flex-1 bg-[var(--primary)] rounded-[45px] p-8 md:p-12 flex items-center justify-between text-white relative z-10 opacity-0">
           <h3 class="font-black text-2xl md:text-4xl leading-[1.1] uppercase tracking-wide">
             NOS<br>RÉSEAUX<br>SOCIAUX :
           </h3>
@@ -116,7 +117,7 @@
         </div>
 
         <!-- Carte Droite : Adresse -->
-        <div class="address-card flex-1 bg-[var(--primary)] rounded-[45px] p-8 md:p-12 flex items-center justify-between text-white shadow-2xl relative z-10 opacity-0">
+        <div class="address-card flex-1 bg-[var(--primary)] rounded-[45px] p-8 md:p-12 flex items-center justify-between text-white  relative z-10 opacity-0">
           <div class="text-xl md:text-3xl font-bold leading-snug">
             La Turbine, 32 boulevard <br> du port, 95000 Cergy
           </div>
@@ -281,7 +282,7 @@ onMounted(async () => {
           .from("input", { y: 30, opacity: 0, stagger: 0.1 }, "-=0.6")
           .from("textarea", { y: 30, opacity: 0 }, "-=0.6")
           .from("button", { scale: 0.9, opacity: 0 }, "-=0.4")
-          .from(".social-card", { x: -50, opacity: 0 }, "-=0.8") // Petite intro douce si visible
+          // .from(".social-card", { x: -50, opacity: 0 }, "-=0.8") // Petite intro douce si visible
           
     // Animation Carte Gauche (Arrive de la GAUCHE)
     gsap.fromTo(".social-card", 

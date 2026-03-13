@@ -108,7 +108,7 @@ const toggleItem = async (index) => {
               </div>
               
               <div class="action-title flex-1 order-1 md:order-2 text-center md:text-left">
-                  <h1 class="text-[22px] sm:text-[30px] md:text-[50px]uppercase font-clementePdam text-[var(--accent)]">
+                  <h1 class="text-[22px] sm:text-[30px] md:text-[50px] uppercase font-clementePdam text-[var(--accent)]">
                       Suivre et piloter l’activité des services
                   </h1>
               </div>

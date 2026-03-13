@@ -1,5 +1,6 @@
 <template>
-  <div class="bg-[#F9FEFF] min-h-screen font-body text-[#1a1a1a] overflow-x-hidden">
+  <!-- <div class="bg-[#F9FEFF] min-h-screen font-body text-[#1a1a1a] overflow-x-hidden"> -->
+    <div class="main flex flex-col font-body min-h-screen bg-[var(--bg-light)] overflow-x-hidden">
     
     <!-- LOADER AVEC LOGO ASSIA -->
     <!-- <div ref="loader" class="fixed inset-0 bg-primary z-[100] flex items-center justify-center">
